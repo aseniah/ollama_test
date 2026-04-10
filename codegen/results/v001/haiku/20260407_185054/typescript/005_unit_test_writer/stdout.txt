@@ -1,0 +1,8 @@
+PASS: quantity < 10: no discount
+PASS: quantity = 10: 10% discount applies
+PASS: quantity = 49: 10% discount (not 25%)
+PASS: quantity = 50: 25% discount applies
+PASS: quantity = 0: no discount
+PASS: quantity = 100: 25% discount
+
+Total: 6 passed, 0 failed

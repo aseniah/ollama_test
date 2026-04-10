@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:33:6: multiple-value reader.Read() (value of type (record []string, err error)) in single-value context
+./solution.go:34:20: reader.Record undefined (type *csv.Reader has no field or method Record)
+./solution.go:42:13: undefined: strconv
+./solution.go:59:43: undefined: referenceYear

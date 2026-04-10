@@ -1,0 +1,5 @@
+PASS: Quantity 9 (Boundary: below first discount tier)
+PASS: Quantity 10 (Boundary: start of 10% discount tier)
+PASS: Quantity 49 (Boundary: end of 10% discount tier)
+PASS: Quantity 50 (Boundary: start of 25% discount tier)
+PASS: Quantity 100 (Standard case: deep discount tier)

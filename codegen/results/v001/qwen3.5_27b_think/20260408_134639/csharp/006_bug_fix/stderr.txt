@@ -1,0 +1,15 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(1,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(2,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(3,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(4,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(5,1): error CS0246: The type or namespace name 'Buzz' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(6,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(7,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(8,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(9,1): error CS0246: The type or namespace name 'Fizz' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(10,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(11,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(12,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(13,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(14,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5u_ua5v8/solution.csx(15,1): error CS0103: The name 'FizzBuzz' does not exist in the current context

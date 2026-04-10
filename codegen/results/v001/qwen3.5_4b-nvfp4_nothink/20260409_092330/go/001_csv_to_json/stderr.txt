@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:82:49: syntax error: unexpected :, expected {
+./solution.go:84:5: syntax error: unexpected keyword break, expected expression
+./solution.go:117:1: syntax error: imports must appear before other declarations

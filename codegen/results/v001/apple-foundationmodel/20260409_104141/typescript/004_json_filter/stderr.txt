@@ -1,0 +1,1 @@
+Usage: tsx input/data.json output/output.json

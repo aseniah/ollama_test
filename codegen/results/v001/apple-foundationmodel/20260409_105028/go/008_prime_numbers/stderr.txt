@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:13:26: undefined: math
+./solution.go:30:13: undefined: strconv

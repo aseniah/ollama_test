@@ -1,0 +1,4 @@
+solution.go:11:2: no required module provides package github.com/golang/glog: go.mod file not found in current directory or any parent directory; see 'go help modules'
+solution.go:12:2: no required module provides package github.com/spf13/cobra: go.mod file not found in current directory or any parent directory; see 'go help modules'
+solution.go:14:2: no required module provides package github.com/spf13/cobra/terminalui: go.mod file not found in current directory or any parent directory; see 'go help modules'
+solution.go:13:2: no required module provides package github.com/spf13/cobra/v2: go.mod file not found in current directory or any parent directory; see 'go help modules'

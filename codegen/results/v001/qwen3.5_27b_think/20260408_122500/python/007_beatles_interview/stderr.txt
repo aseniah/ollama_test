@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzu_ys2jv/solution.py", line 48, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzu_ys2jv/solution.py", line 39, in main
+    'age': calculate_age(row.get('birth_date') or row.get('dob')),
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzu_ys2jv/solution.py", line 7, in calculate_age
+    birth_date = date.fromisoformat(birth_date_str)
+TypeError: fromisoformat: argument must be str

@@ -1,0 +1,4 @@
+PASS: single item (quantity 9)
+PASS: first discount tier (quantity 10)
+PASS: second discount tier (quantity 49)
+PASS: first bulk discount tier (quantity 50)

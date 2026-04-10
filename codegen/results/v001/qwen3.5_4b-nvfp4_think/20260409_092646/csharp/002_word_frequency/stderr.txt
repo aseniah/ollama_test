@@ -1,0 +1,11 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(4,1): error CS0006: Metadata file 'System.Collections.Generic' could not be found
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(14,26): error CS1503: Argument 1: cannot convert from 'byte[]' to 'char[]?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(29,35): error CS1503: Argument 1: cannot convert from 'char' to 'string?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(31,17): error CS0136: A local or parameter named 'arrayFile' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(37,25): error CS0023: Operator '++' cannot be applied to operand of type 'Dictionary<string, int>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(41,35): error CS1503: Argument 1: cannot convert from 'byte' to 'char'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(41,46): error CS0117: 'char' does not contain a definition for 'IsLetterAndDigit'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(42,33): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<char>' to 'char[]'. An explicit conversion exists (are you missing a cast?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(54,9): error CS0103: The name 'wordCount' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(56,9): error CS0103: The name 'wordCount' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0o733r2d/solution.csx(60,19): error CS0103: The name 'wordCount' does not exist in the current context

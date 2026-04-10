@@ -1,0 +1,7 @@
+PASS: price 10.0, quantity 5 (no discount)
+PASS: price 10.0, quantity 10 (10% discount)
+PASS: price 10.0, quantity 49 (10% discount)
+PASS: price 10.0, quantity 50 (25% discount)
+PASS: price 5.0, quantity 7 (no discount)
+PASS: price 15.0, quantity 30 (10% discount)
+PASS: price 20.0, quantity 60 (25% discount)

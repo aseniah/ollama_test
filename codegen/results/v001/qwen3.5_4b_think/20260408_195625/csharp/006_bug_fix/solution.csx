@@ -1,0 +1,15 @@
+1Fizz
+2Buzz
+3Fizz
+4Buzz
+5Fizz
+6FizzBuzz
+7Fizz
+8Buzz
+9Fizz
+10Buzz
+11Fizz
+12Fizz
+13Fizz
+14Buzz
+15

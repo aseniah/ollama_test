@@ -1,0 +1,4 @@
+{ "Name": "Alice", "Age": 35, "Active": true, "Score": 92.00 }
+{ "Name": "David", "Age": 31, "Active": true, "Score": 71.80 }
+{ "Name": "Eva", "Age": 52, "Active": true, "Score": 95.10 }
+{ "Name": "Grace", "Age": 38, "Active": true, "Score": 67.20 }

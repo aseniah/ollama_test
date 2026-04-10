@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbi3bhfc3/solution.py", line 18, in <module>
+    birthdate = datetime.strptime(row['BirthDate'], '%m/%d/%Y')
+                                  ~~~^^^^^^^^^^^^^
+KeyError: 'BirthDate'

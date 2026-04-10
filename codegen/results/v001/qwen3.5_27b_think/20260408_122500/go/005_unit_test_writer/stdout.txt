@@ -1,0 +1,4 @@
+PASS: Quantity 9: No discount applied
+PASS: Quantity 10: 10% discount threshold
+PASS: Quantity 49: 10% discount upper bound
+PASS: Quantity 50: 25% discount threshold

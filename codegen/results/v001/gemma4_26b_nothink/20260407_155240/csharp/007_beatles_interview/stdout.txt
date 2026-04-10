@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "John Winston Lennon",
+    "Birthday": "10/9/1940",
+    "age": 84,
+    "Died": "12/8/1980",
+    "Father": "Alfred Lennon",
+    "Mother": "Julia Stanley",
+    "Brother": "null",
+    "Sister": "null"
+  },
+  {
+    "Name": "James Paul McCartney",
+    "Birthday": "6/18/1942",
+    "age": 83,
+    "Died": "null",
+    "Father": "Jim McCartney",
+    "Mother": "Mary McCartney",
+    "Brother": "Mike McGear",
+    "Sister": "null"
+  },
+  {
+    "Name": "Ringo Starr",
+    "Birthday": "7/7/1940",
+    "age": 84,
+    "Died": "null",
+    "Father": "Richard Starkey",
+    "Mother": "Elsie Gleave",
+    "Brother": "null",
+    "Sister": "Marie Maguire"
+  },
+  {
+    "Name": "George Harrison",
+    "Birthday": "2/25/1943",
+    "age": 82,
+    "Died": "11/29/2001",
+    "Father": "Harold Harrison",
+    "Mother": "Louise French",
+    "Brother": "Peter Harrison",
+    "Sister": "Louise Harrison"
+  }
+]

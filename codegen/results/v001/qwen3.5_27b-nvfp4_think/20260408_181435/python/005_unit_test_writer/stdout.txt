@@ -1,0 +1,4 @@
+PASS: Boundary: Quantity < 10 (no discount)
+PASS: Boundary: Quantity >= 10 (start of 10% off)
+PASS: Boundary: Quantity < 50 (end of 10% off)
+PASS: Boundary: Quantity >= 50 (start of 25% off)

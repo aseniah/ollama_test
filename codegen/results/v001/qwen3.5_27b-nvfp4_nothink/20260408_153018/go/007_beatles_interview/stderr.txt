@@ -1,0 +1,1 @@
+CSV must contain 'name' and 'date_of_birth' (or similar) columnsexit status 1

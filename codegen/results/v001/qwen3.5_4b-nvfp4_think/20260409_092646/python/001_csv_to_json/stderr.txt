@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8se1srf9/solution.py", line 8, in <module>
+    "Name": row["Name"],
+            ^^^
+NameError: name 'row' is not defined. Did you mean: 'rows'?

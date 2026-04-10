@@ -1,0 +1,9 @@
+An error occurred: Error: ENOENT: no such file or directory, open '/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpan0hgory/output/filtered_data.json'
+    at async open (node:internal/fs/promises:1281:25)
+    at async Object.writeFile (node:internal/fs/promises:1899:14)
+    at async main (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpan0hgory/solution.ts:21:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpan0hgory/output/filtered_data.json'
+}

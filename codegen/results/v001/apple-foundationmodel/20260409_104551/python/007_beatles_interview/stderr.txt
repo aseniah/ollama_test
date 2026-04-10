@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp1_dolz4s/solution.py", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'

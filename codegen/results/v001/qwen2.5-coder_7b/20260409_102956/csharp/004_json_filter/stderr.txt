@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpp1pwx0me/solution.csx(5,86): error CS1061: 'JsonNode' does not contain a definition for 'GetInt32' and no accessible extension method 'GetInt32' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)

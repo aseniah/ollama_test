@@ -1,0 +1,38 @@
+[
+  {
+    "name": "John Winston Lennon",
+    "birthday": 10,
+    "died": 12,
+    "father": "Alfred Lennon",
+    "mother": "Julia Stanley",
+    "brother": "null",
+    "sister": "null"
+  },
+  {
+    "name": "James Paul McCartney",
+    "birthday": 6,
+    "died": "null",
+    "father": "Jim McCartney",
+    "mother": "Mary McCartney",
+    "brother": "Mike McGear",
+    "sister": "null"
+  },
+  {
+    "name": "Ringo Starr",
+    "birthday": 7,
+    "died": "null",
+    "father": "Richard Starkey",
+    "mother": "Elsie Gleave",
+    "brother": "null",
+    "sister": "Marie Maguire"
+  },
+  {
+    "name": "George Harrison",
+    "birthday": 2,
+    "died": 11,
+    "father": "Harold Harrison",
+    "mother": "Louise French",
+    "brother": "Peter Harrison",
+    "sister": "Louise Harrison"
+  }
+]

@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:15:9: assignment mismatch: 1 variable but strconv.ParseInt returns 2 values

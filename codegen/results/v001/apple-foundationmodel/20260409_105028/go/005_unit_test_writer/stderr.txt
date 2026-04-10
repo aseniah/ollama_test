@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:29:8: no new variables on left side of :=
+./solution.go:30:11: no new variables on left side of :=
+./solution.go:31:11: no new variables on left side of :=
+./solution.go:32:9: no new variables on left side of :=
+./solution.go:40:8: no new variables on left side of :=
+./solution.go:41:11: no new variables on left side of :=
+./solution.go:42:11: no new variables on left side of :=
+./solution.go:43:9: no new variables on left side of :=
+./solution.go:51:8: no new variables on left side of :=
+./solution.go:52:11: no new variables on left side of :=
+./solution.go:52:11: too many errors

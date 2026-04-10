@@ -1,0 +1,18 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(1,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(2,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(3,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(4,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(4,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(5,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(6,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(7,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(8,1): error CS0246: The type or namespace name 'Fizz' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(9,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(10,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(10,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(11,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(12,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(12,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(13,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(14,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzj9xratz/solution.csx(15,1): error CS0103: The name 'FizzBuzz' does not exist in the current context

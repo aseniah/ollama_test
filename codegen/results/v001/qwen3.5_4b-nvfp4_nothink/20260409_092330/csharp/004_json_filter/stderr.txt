@@ -1,0 +1,9 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(37,19): warning CS8321: The local function 'AddItem' is declared but never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(16,26): error CS0019: Operator '??' cannot be applied to operands of type 'JsonElement' and '<null>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(18,21): error CS0019: Operator '??' cannot be applied to operands of type 'JsonElement' and 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(19,26): error CS0019: Operator '??' cannot be applied to operands of type 'JsonElement' and 'bool'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(38,23): error CS1061: 'JsonArray' does not contain a definition for 'IsList' and no accessible extension method 'IsList' accepting a first argument of type 'JsonArray' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(38,88): error CS1620: Argument 1 must be passed with the 'ref' keyword
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(39,19): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(40,19): error CS0117: 'Array' does not contain a definition for 'Add'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp143_8aww/solution.csx(43,9): error CS0234: The type or namespace name 'Extension' does not exist in the namespace 'System.Runtime.CompilerServices' (are you missing an assembly reference?)

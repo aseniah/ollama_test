@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Alice Johnson",
+    "age": 34,
+    "email": "alice@example.com",
+    "score": 92.5
+  },
+  {
+    "name": "Bob Smith",
+    "age": 28,
+    "email": "bob@example.com",
+    "score": 78
+  },
+  {
+    "name": "Carol White",
+    "age": 45,
+    "email": "carol@example.com",
+    "score": 88.3
+  },
+  {
+    "name": "David Lee",
+    "age": 31,
+    "email": "david@example.com",
+    "score": 95.1
+  },
+  {
+    "name": "Eva Martinez",
+    "age": 52,
+    "email": "eva@example.com",
+    "score": 71.8
+  }
+]

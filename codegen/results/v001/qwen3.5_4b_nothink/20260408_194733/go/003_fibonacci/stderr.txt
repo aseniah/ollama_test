@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:16:9: assignment mismatch: 1 variable but fmt.Scanf returns 2 values

@@ -1,0 +1,7 @@
+PASS: quantity 9 with price 10 - no discount
+PASS: quantity 10 with price 10 - 10% discount
+PASS: quantity 49 with price 10 - 10% discount
+PASS: quantity 50 with price 10 - 25% discount
+PASS: quantity 1 with price 5 - no discount
+PASS: quantity 25 with price 20 - 10% discount
+PASS: quantity 100 with price 15 - 25% discount

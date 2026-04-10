@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmplk21r7ho/solution.py", line 20
+    </think>
+    ^
+SyntaxError: invalid syntax

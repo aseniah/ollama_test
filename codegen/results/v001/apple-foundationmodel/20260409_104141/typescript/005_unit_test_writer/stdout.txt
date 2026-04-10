@@ -1,0 +1,7 @@
+FAIL: Calculate discount for price 10 and quantity 10. Expected: 100, got: 90
+FAIL: Calculate discount for price 10 and quantity 11. Expected: 110, got: 99
+FAIL: Calculate discount for price 50 and quantity 50. Expected: 2500, got: 1875
+FAIL: Calculate discount for price 50 and quantity 51. Expected: 2625, got: 1912.5
+FAIL: Calculate discount for price 100 and quantity 10. Expected: 1000, got: 900
+FAIL: Calculate discount for price 100 and quantity 100. Expected: 10000, got: 7500
+FAIL: Calculate discount for price 100 and quantity 50. Expected: 5000, got: 3750

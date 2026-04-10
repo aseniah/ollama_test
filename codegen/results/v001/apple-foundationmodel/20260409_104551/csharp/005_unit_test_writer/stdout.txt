@@ -1,0 +1,4 @@
+PASS: Test case 1 (quantity 9)
+FAIL: Test case 2 (quantity 10) (expected: 1500, got: 1350)
+FAIL: Test case 3 (quantity 49) (expected: 1950, got: 8820)
+FAIL: Test case 4 (quantity 50) (expected: 12500, got: 9375)

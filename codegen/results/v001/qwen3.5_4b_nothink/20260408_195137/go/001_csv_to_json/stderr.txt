@@ -1,0 +1,8 @@
+# command-line-arguments
+./solution.go:26:26: cannot use csv.NewReader(os.Stdin) (value of type *csv.Reader) as io.Reader value in argument to csv.NewReader: *csv.Reader does not implement io.Reader (wrong type for method Read)
+		have Read() ([]string, error)
+		want Read([]byte) (int, error)
+./solution.go:27:5: declared and not used: reader
+./solution.go:27:20: assignment mismatch: 2 variables but csv.NewReader returns 1 value
+./solution.go:27:34: cannot use content (variable of type []byte) as io.Reader value in argument to csv.NewReader: []byte does not implement io.Reader (missing method Read)
+./solution.go:77:9: cannot use f (variable of type int) as float64 value in return statement

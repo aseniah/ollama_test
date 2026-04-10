@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:27:2: declared and not used: record
+./solution.go:45:15: cannot use fmt.Sscanf(record[1], "%d", &age) (value of type int) as float64 value in assignment
+./solution.go:54:17: cannot use fmt.Sscanf(record[3], "%f", &score) (value of type int) as float64 value in assignment

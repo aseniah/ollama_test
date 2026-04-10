@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp52__kc3l/solution.csx(117,27): error CS1503: Argument 1: cannot convert from 'string[]' to 'System.Text.Json.Nodes.JsonNodeOptions?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp52__kc3l/solution.csx(124,26): error CS1061: 'JsonDocument' does not contain a definition for 'ValueKind' and no accessible extension method 'ValueKind' accepting a first argument of type 'JsonDocument' could be found (are you missing a using directive or an assembly reference?)

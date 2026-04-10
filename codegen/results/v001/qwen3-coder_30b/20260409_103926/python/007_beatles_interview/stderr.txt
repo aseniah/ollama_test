@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0y6ajxuw/solution.py", line 30, in <module>
+    transform_csv_to_json()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0y6ajxuw/solution.py", line 20, in transform_csv_to_json
+    "id": int(row["id"]),
+              ~~~^^^^^^
+KeyError: 'id'

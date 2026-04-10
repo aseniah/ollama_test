@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2ytqktdx/solution.py", line 1
+    1 2 3 4 Fizz 6 7 FizzBuzz 9 10 Fizz 11 12 FizzBuzz 14
+      ^
+SyntaxError: invalid syntax

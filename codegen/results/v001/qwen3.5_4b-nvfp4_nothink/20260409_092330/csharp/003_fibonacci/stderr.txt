@@ -1,0 +1,25 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(17,13): warning CS0219: The variable 'prev' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(18,13): warning CS0219: The variable 'current' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(128,9): warning CS0219: The variable 'a' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(129,9): warning CS0219: The variable 'b' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(188,9): warning CS0219: The variable 'b' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(205,9): warning CS0219: The variable 'prev' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(206,9): warning CS0219: The variable 'curr' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(226,9): warning CS0219: The variable 'f1' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(227,10): warning CS0219: The variable 'startLoop' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(239,13): warning CS0219: The variable 'prev' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(240,13): warning CS0219: The variable 'current' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(300,13): warning CS0219: The variable 'prevVal' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(301,13): warning CS0219: The variable 'currVal' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(304,13): warning CS0219: The variable 'f' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(306,13): warning CS0219: The variable 'b_val' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(324,5): warning CS0168: The variable 'n' is declared but never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(338,5): warning CS0219: The variable 'a' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(339,5): warning CS0219: The variable 'b' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(239,13): error CS0136: A local or parameter named 'prev' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(255,13): error CS0136: A local or parameter named 'a' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(256,13): error CS0136: A local or parameter named 'b' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(324,5): error CS0128: A local variable or function named 'n' is already defined in this scope
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(338,5): error CS0128: A local variable or function named 'a' is already defined in this scope
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(339,5): error CS0128: A local variable or function named 'b' is already defined in this scope
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsrjdpg9n/solution.csx(369,2): error CS1513: } expected

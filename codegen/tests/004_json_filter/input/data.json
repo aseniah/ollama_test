@@ -1,0 +1,9 @@
+[
+  {"name": "Alice", "age": 35, "active": true,  "score": 92.0},
+  {"name": "Bob",   "age": 28, "active": true,  "score": 78.0},
+  {"name": "Carol", "age": 45, "active": false, "score": 88.3},
+  {"name": "David", "age": 31, "active": true,  "score": 71.8},
+  {"name": "Eva",   "age": 52, "active": true,  "score": 95.1},
+  {"name": "Frank", "age": 29, "active": false, "score": 83.4},
+  {"name": "Grace", "age": 38, "active": true,  "score": 67.2}
+]

@@ -1,0 +1,8 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(1,1): error CS0103: The name 'N' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(1,10): error CS0103: The name 'N' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(1,16): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(3,9): error CS0030: Cannot convert type 'string' to 'int[]'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(3,24): error CS0019: Operator '<' cannot be applied to operands of type 'collection expression' and 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(3,32): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(4,9): error CS0103: The name 'Exit' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbni7n5kf/solution.csx(7,13): error CS0030: Cannot convert type 'string' to 'int'

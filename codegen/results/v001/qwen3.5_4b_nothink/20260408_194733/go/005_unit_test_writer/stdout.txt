@@ -1,0 +1,6 @@
+PASS: single item price
+PASS: boundary below 10
+PASS: boundary at 10
+PASS: boundary below 50
+PASS: boundary at 50
+PASS: large quantity

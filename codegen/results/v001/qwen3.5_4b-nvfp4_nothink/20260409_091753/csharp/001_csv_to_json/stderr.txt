@@ -1,0 +1,20 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(20,76): error CS0103: The name 'h' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(27,47): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(27,47): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(27,47): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(28,48): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(28,48): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(28,48): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(29,48): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(29,48): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(29,61): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(29,61): error CS1010: Newline in constant
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(29,63): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(30,5): error CS0103: The name 'var' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(30,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(30,9): error CS0103: The name 'scoreStr' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(30,67): error CS1003: Syntax error, ']' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(42,17): error CS0103: The name 'scoreStr' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(42,27): error CS0103: The name 'CultureInfo' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(48,32): error CS0103: The name 'scoreStr' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpctqvmf71/solution.csx(48,44): error CS0103: The name 'CultureInfo' does not exist in the current context

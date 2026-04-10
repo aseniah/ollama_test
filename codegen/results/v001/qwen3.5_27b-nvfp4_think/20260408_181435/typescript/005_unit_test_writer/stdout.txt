@@ -1,0 +1,11 @@
+Running calculateDiscount tests...
+
+PASS: Quantity 9 - no discount
+PASS: Quantity 10 - 10% discount boundary
+PASS: Quantity 49 - still 10% discount
+PASS: Quantity 50 - 25% discount boundary
+PASS: Quantity 1 - no discount
+PASS: Quantity 25 - 10% discount mid-range
+PASS: Quantity 100 - 25% discount large quantity
+
+Tests completed.

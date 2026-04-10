@@ -1,0 +1,4 @@
+PASS: Quantity 9 should not have a discount
+PASS: Quantity 10 should have a 10% discount
+PASS: Quantity 49 should have a 10% discount
+PASS: Quantity 50 should have a 25% discount

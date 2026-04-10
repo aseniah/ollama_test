@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:122:9: cannot use result (variable of type []OutputRecord) as []map[string]interface{} value in return statement

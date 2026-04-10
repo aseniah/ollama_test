@@ -1,0 +1,5 @@
+PASS: Boundary: Quantity 9 (no discount)
+PASS: Boundary: Quantity 10 (10% discount)
+PASS: Boundary: Quantity 49 (10% discount)
+PASS: Boundary: Quantity 50 (25% discount)
+PASS: Large Quantity: Quantity 100 (25% discount)

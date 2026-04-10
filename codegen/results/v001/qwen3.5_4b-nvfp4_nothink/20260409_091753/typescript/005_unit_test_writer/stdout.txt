@@ -1,0 +1,10 @@
+Running 6 test cases...
+
+FAIL: Single item (quantity < 10) (expected: 20, got: 10)
+PASS: Five items (quantity < 10)
+PASS: 9 items (boundary below discount tier)
+FAIL: 10 items (boundary first discount tier) (expected: 81, got: 72.9)
+FAIL: 49 items (boundary before second discount) (expected: 351, got: 308.7)
+FAIL: 50 items (boundary for major discount) (expected: 288.75, got: 343.125)
+
+Result: 2/6 tests passed.

@@ -1,0 +1,7 @@
+{
+  "checks": {
+    "correct_sequence": true,
+    "no_extra_output": true
+  },
+  "passed": true
+}

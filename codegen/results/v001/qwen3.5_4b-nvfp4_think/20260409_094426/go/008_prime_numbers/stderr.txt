@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:6:2: "os" imported and not used
+./solution.go:10:5: declared and not used: err
+./solution.go:10:12: undefined: strconv
+./solution.go:10:42: flag.Lookup("n").Default undefined (type *flag.Flag has no field or method Default)

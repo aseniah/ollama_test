@@ -1,0 +1,14 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(18,7): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(25,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(25,11): error CS0103: The name 'stream' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(26,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(26,11): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(26,37): error CS0103: The name 'stream' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(29,8): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(31,16): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(107,15): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(188,51): error CS0144: Cannot create an instance of the abstract type or interface 'JsonValue'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(189,43): error CS0144: Cannot create an instance of the abstract type or interface 'JsonValue'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(190,46): error CS0144: Cannot create an instance of the abstract type or interface 'JsonValue'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(191,44): error CS0144: Cannot create an instance of the abstract type or interface 'JsonValue'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpprb7pvf2/solution.csx(192,22): error CS0144: Cannot create an instance of the abstract type or interface 'JsonValue'

@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpyt_qxesn/solution.csx(31,9): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpyt_qxesn/solution.csx(69,35): error CS1061: 'JsonObject' does not contain a definition for 'Keys' and no accessible extension method 'Keys' accepting a first argument of type 'JsonObject' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpyt_qxesn/solution.csx(90,19): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpyt_qxesn/solution.csx(122,19): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.

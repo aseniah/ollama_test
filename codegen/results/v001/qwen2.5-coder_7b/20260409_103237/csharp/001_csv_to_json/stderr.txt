@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_7z_k41q/solution.csx(24,15): error CS0103: The name 'JsonSerializer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_7z_k41q/solution.csx(24,50): error CS0246: The type or namespace name 'JsonSerializerOptions' could not be found (are you missing a using directive or an assembly reference?)

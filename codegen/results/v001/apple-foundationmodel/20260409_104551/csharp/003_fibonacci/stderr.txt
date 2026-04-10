@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6tp_r5s5/solution.csx(8,17): warning CS7022: The entry point of the program is global code; ignoring 'FibonacciSequence.Main(string[])' entry point.

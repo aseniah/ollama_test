@@ -1,0 +1,7 @@
+PASS: boundary_low - price 10.0, quantity 9
+PASS: low - price 10.0, quantity 5
+PASS: boundary_mid - price 10.0, quantity 10
+PASS: mid - price 10.0, quantity 25
+PASS: boundary_high - price 10.0, quantity 49
+PASS: high - price 10.0, quantity 100
+PASS: boundary_very_high - price 10.0, quantity 50

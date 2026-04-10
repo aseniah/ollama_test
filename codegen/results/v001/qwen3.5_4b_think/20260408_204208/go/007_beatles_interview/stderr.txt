@@ -1,0 +1,4 @@
+Error parsing date 10/9/1940: parsing time "10/9/1940" as "2006-01-02": cannot parse "10/9/1940" as "2006"
+Error parsing date 6/18/1942: parsing time "6/18/1942" as "2006-01-02": cannot parse "6/18/1942" as "2006"
+Error parsing date 7/7/1940: parsing time "7/7/1940" as "2006-01-02": cannot parse "7/7/1940" as "2006"
+Error parsing date 2/25/1943: parsing time "2/25/1943" as "2006-01-02": cannot parse "2/25/1943" as "2006"

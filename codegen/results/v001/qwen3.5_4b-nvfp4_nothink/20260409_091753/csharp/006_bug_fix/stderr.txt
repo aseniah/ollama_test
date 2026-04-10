@@ -1,0 +1,25 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(1,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(2,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(3,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(3,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(4,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(5,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(5,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(6,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(7,1): error CS0103: The name 'FizzBuzz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(7,9): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(8,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(9,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(9,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(10,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(11,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(11,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(12,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(13,1): error CS0103: The name 'FizzBuzz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(13,9): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(14,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(15,1): error CS0103: The name 'Fizz' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(15,5): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(16,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(17,3): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwjqlpqkb/solution.csx(18,1): error CS0103: The name 'Fizz' does not exist in the current context

@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpztwkkkyk/solution.csx(23,33): error CS1503: Argument 2: cannot convert from 'string' to 'int'

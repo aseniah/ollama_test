@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvq6_7p8t/solution.csx(22,9): error CS0200: Property or indexer '<anonymous type: string Name, int Age, string Email, float Score>.Name' cannot be assigned to -- it is read only
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvq6_7p8t/solution.csx(23,9): error CS0200: Property or indexer '<anonymous type: string Name, int Age, string Email, float Score>.Age' cannot be assigned to -- it is read only
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvq6_7p8t/solution.csx(24,9): error CS0200: Property or indexer '<anonymous type: string Name, int Age, string Email, float Score>.Email' cannot be assigned to -- it is read only
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvq6_7p8t/solution.csx(25,9): error CS0200: Property or indexer '<anonymous type: string Name, int Age, string Email, float Score>.Score' cannot be assigned to -- it is read only
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvq6_7p8t/solution.csx(32,44): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<object>' to 'System.IO.Stream'

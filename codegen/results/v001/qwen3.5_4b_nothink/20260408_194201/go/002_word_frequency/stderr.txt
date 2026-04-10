@@ -1,0 +1,10 @@
+# command-line-arguments
+./solution.go:5:2: "encoding/json" imported and not used
+./solution.go:16:2: declared and not used: outputFile
+./solution.go:50:12: declared and not used: count
+./solution.go:58:19: undefined: sortedWord
+./solution.go:63:16: sorter[i].Count undefined (type SortWord has no field or method Count)
+./solution.go:63:35: sorter[j].Count undefined (type SortWord has no field or method Count)
+./solution.go:64:21: sorter[i].Count undefined (type SortWord has no field or method Count)
+./solution.go:64:39: sorter[j].Count undefined (type SortWord has no field or method Count)
+./solution.go:71:36: w.Count undefined (type SortWord has no field or method Count)

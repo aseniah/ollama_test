@@ -1,0 +1,14 @@
+1
+Fizz
+Buzz
+FizzBuzz
+1
+Fizz
+Buzz
+1
+Fizz
+Buzz
+FizzBuzz
+1
+Fizz
+Buzz

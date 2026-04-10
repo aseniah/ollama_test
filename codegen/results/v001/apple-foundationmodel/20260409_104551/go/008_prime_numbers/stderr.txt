@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:12:26: undefined: math
+./solution.go:26:16: undefined: os.Atoi

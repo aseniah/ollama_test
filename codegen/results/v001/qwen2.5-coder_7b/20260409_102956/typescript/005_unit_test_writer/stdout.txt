@@ -1,0 +1,4 @@
+PASS: calculateDiscount(10, 9) = 90
+FAIL: calculateDiscount(10, 10) = 90 (expected: 100)
+PASS: calculateDiscount(10, 49) = 441
+PASS: calculateDiscount(10, 50) = 375

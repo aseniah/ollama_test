@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:162:50: syntax error: unexpected { at end of statement
+./solution.go:277:2: syntax error: non-declaration statement outside function body

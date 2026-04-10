@@ -1,0 +1,30 @@
+[
+  {
+    "id": "",
+    "fullName": "",
+    "age": 0,
+    "registrationDate": "",
+    "status": "inactive"
+  },
+  {
+    "id": "",
+    "fullName": "",
+    "age": 0,
+    "registrationDate": "",
+    "status": "inactive"
+  },
+  {
+    "id": "",
+    "fullName": "",
+    "age": 0,
+    "registrationDate": "",
+    "status": "inactive"
+  },
+  {
+    "id": "",
+    "fullName": "",
+    "age": 0,
+    "registrationDate": "",
+    "status": "inactive"
+  }
+]

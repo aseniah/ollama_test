@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn5eudqe0/solution.csx(22,26): error CS0029: Cannot implicitly convert type 'int[]' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn5eudqe0/solution.csx(37,21): error CS0021: Cannot apply indexing with [] to an expression of type 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn5eudqe0/solution.csx(38,21): error CS0021: Cannot apply indexing with [] to an expression of type 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn5eudqe0/solution.csx(48,17): error CS0021: Cannot apply indexing with [] to an expression of type 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn5eudqe0/solution.csx(51,43): error CS0021: Cannot apply indexing with [] to an expression of type 'int'

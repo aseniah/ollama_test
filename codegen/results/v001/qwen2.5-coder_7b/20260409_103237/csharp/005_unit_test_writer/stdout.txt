@@ -1,0 +1,4 @@
+PASS: CalculateDiscount(10, 9) returned the expected value of 90
+FAIL: CalculateDiscount(10, 10) returned 90 instead of the expected value of 100
+PASS: CalculateDiscount(10, 49) returned the expected value of 441
+PASS: CalculateDiscount(10, 50) returned the expected value of 375

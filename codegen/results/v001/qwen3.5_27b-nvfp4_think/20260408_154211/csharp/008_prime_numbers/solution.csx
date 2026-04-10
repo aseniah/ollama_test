@@ -1,0 +1,23 @@
+using System;
+
+if (Args.Count == 0) return;
+
+int n = int.Parse(Args[0]);
+
+for (int i = 2; i <= n; i++)
+{
+    bool isPrime = true;
+    for (int j = 2; (long)j * j <= i; j++)
+    {
+        if (i % j == 0)
+        {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime)
+    {
+        Console.WriteLine(i);
+    }
+}

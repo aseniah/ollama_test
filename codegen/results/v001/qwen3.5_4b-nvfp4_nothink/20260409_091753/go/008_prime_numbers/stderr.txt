@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:31:8: undefined: flag.SetOutput

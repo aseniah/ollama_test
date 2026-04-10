@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsdx37zx5/solution.csx(21,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsdx37zx5/solution.csx(21,11): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsdx37zx5/solution.csx(22,18): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsdx37zx5/solution.csx(72,15): error CS0103: The name 'JsonNode' does not exist in the current context

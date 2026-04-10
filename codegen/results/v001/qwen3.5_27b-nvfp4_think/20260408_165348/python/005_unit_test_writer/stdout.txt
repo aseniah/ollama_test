@@ -1,0 +1,4 @@
+PASS: Boundary: Quantity 9 (No discount)
+PASS: Boundary: Quantity 10 (Start of 10% off)
+FAIL: Boundary: Quantity 49 (End of 10% off) (expected: 441.0, got: 4410.0)
+FAIL: Boundary: Quantity 50 (Start of 25% off) (expected: 375.0, got: 3750.0)

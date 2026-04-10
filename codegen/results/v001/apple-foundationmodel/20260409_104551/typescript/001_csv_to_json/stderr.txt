@@ -1,0 +1,4 @@
+Error processing CSV file: TypeError: Cannot read properties of undefined (reading 'trim')
+    at <anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj588_aox/solution.ts:15:37)
+    at Array.map (<anonymous>)
+    at processCsvToJson (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj588_aox/solution.ts:12:44)

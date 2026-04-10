@@ -1,0 +1,6 @@
+# command-line-arguments
+./solution.go:7:2: "io/ioutil" imported and not used
+./solution.go:9:2: "sort" imported and not used
+./solution.go:48:6: Person redeclared in this block
+	./solution.go:14:6: other declaration of Person
+./solution.go:127:30: invalid operation: cannot indirect birthTime (variable of struct type time.Time)

@@ -1,0 +1,9 @@
+--- Test Case 1: quantity=9 (Boundary), price=50.0 ---
+PASS: quantity=9 units test
+--- Test Case 2: quantity=10 (Boundary), price=50.0 ---
+PASS: quantity=10 units test
+--- Test Case 3: quantity=49 (Boundary), price=50.0 ---
+PASS: quantity=49 units test
+--- Test Case 4: quantity=50 (Boundary), price=50.0 ---
+PASS: quantity=50 units test
+--- Test Summary ---

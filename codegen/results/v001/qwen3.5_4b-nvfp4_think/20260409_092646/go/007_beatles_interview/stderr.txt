@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:12:23: undefined: time
+./solution.go:36:14: undefined: time
+./solution.go:38:14: undefined: time
+./solution.go:44:18: undefined: time
+./solution.go:45:13: undefined: time
+./solution.go:47:49: undefined: time
+./solution.go:61:7: declared and not used: k
+./solution.go:67:3: declared and not used: cols
+./solution.go:67:14: invalid operation: colName (variable of type string) is not an interface
+./solution.go:89:13: undefined: io
+./solution.go:61:7: too many errors

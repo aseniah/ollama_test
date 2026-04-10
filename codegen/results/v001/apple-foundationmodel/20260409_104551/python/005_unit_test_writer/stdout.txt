@@ -1,0 +1,4 @@
+PASS: Test case 1 - quantity = 9 (no discount)
+PASS: Test case 2 - quantity = 10 (10% discount)
+PASS: Test case 3 - quantity = 49 (9% discount)
+FAIL: Test case 4 - quantity = 50 (expected: 7500.0, got: 3750.0)

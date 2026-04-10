@@ -1,0 +1,4 @@
+PASS: price=10, quantity=9, result=90
+PASS: price=10, quantity=10, result=90
+PASS: price=10, quantity=49, result=441
+PASS: price=10, quantity=50, result=375

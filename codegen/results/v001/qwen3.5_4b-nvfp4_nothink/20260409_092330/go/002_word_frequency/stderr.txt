@@ -1,0 +1,1 @@
+solution.go:9:9: string literal not terminated

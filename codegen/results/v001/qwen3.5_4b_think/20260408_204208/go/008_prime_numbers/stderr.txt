@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:26:19: invalid operation: i <= n (mismatched types int and int64)
+./solution.go:27:14: cannot use i (variable of type int) as int64 value in argument to isPrime
+./solution.go:46:6: invalid operation: n % i (mismatched types int64 and int)

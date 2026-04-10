@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppf0ba25s/solution.csx(6,13): warning CS7022: The entry point of the program is global code; ignoring 'Main(string[])' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppf0ba25s/solution.csx(10,54): error CS0117: 'Environment' does not contain a definition for 'GetCommandLine'

@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:9:2: "strconv" imported and not used
+./solution.go:40:10: reader.Reset undefined (type *csv.Reader has no field or method Reset)

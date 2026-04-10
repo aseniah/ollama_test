@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpb0anfl7g/solution.csx(123,11): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpb0anfl7g/solution.csx(146,21): error CS1501: No overload for method 'Add' takes 2 arguments

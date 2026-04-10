@@ -1,0 +1,5 @@
+PASS: Quantity 9 (No discount)
+PASS: Quantity 10 (First boundary - 10% discount)
+PASS: Quantity 49 (Second boundary - 10% discount)
+PASS: Quantity 50 (Third boundary - 25% discount)
+PASS: Quantity 60 (Above threshold - 25% discount)

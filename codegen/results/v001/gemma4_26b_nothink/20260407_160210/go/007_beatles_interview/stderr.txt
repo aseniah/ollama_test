@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:101:30: syntax error: unexpected :, expected )
+./solution.go:102:3: syntax error: unexpected name years, expected {
+./solution.go:103:2: syntax error: unexpected }, expected expression

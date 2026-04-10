@@ -1,0 +1,7 @@
+PASS: Below threshold (9 units)
+PASS: Boundary: Exactly threshold (10 units)
+PASS: Mid-tier (49 units)
+PASS: Boundary: Next threshold (50 units)
+PASS: Large quantity (100 units)
+
+Test Summary: 5 passed, 0 failed.

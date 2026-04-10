@@ -1,0 +1,10 @@
+Running tests for calculate_discount...
+
+PASS: Quantity less than 10 (no discount)
+PASS: Minimum quantity for 10% discount
+FAIL: Maximum quantity for 10% discount (expected: 44.1, got: 441.0)
+FAIL: Minimum quantity for 25% discount (expected: 37.5, got: 375.0)
+FAIL: Mid-range price and quantity (expected: 90, got: 900.0)
+
+==============================
+Tests completed: 2/5 passed

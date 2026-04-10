@@ -1,0 +1,4 @@
+PASS: Test case 1: Price 10, Quantity 9
+FAIL: Test case 2: Price 10, Quantity 10 (expected: 100, got: 90)
+PASS: Test case 3: Price 10, Quantity 49
+PASS: Test case 4: Price 10, Quantity 50

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2gavq8n6/solution.py", line 10, in <module>
+    reader = csv.DictReader(f)
+             ^^^
+NameError: name 'csv' is not defined. Did you forget to import 'csv'?

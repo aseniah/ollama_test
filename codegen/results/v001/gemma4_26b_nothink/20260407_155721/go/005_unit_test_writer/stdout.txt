@@ -1,0 +1,5 @@
+PASS: Small quantity (below 10)
+PASS: Boundary case (exactly 10) - 10% discount starts
+PASS: Mid-range quantity (below 50)
+PASS: Boundary case (exactly 50) - 25% discount starts
+PASS: Large quantity (above 50)

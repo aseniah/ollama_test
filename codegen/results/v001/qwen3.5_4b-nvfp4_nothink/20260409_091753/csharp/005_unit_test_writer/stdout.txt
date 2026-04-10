@@ -1,0 +1,8 @@
+PASS: No discount (1 item)
+PASS: Partial discount (9 items)
+PASS: Break-even point (10 items)
+FAIL: Deep discount (49 items) (expected: 3510, got: 4410);
+PASS: Discount starts at 50 (50 items)
+
+--- Summary ---
+Passed: 4/5 tests

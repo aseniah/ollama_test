@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5os0_r2u/solution.py", line 56, in <module>
+    test_calculate_discount()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5os0_r2u/solution.py", line 39, in test_calculate_discount
+    pass_count += 1
+    ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'pass_count' where it is not associated with a value

@@ -1,0 +1,4 @@
+FAIL: Test case 1: expected 90.0, got 900.0
+FAIL: Test case 2: expected 90.0, got 900.0
+FAIL: Test case 3: expected 81.0, got 4410.0
+FAIL: Test case 4: expected 75.0, got 3750.0

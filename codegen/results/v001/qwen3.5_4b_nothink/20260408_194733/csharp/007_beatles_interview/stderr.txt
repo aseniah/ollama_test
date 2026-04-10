@@ -1,0 +1,14 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(7,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(7,11): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(8,13): error CS0103: The name 'reader' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(46,68): error CS0103: The name 'DateTimeStyles' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(50,73): error CS0103: The name 'DateTimeStyles' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(54,73): error CS0103: The name 'DateTimeStyles' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(81,29): error CS1061: 'TimeSpan' does not contain a definition for 'Years' and no accessible extension method 'Years' accepting a first argument of type 'TimeSpan' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(95,16): error CS0144: Cannot create an instance of the abstract type or interface 'JsonNode'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(97,9): error CS0117: 'JsonNode' does not contain a definition for 'Name'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(98,9): error CS0117: 'JsonNode' does not contain a definition for 'Age'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(99,9): error CS0117: 'JsonNode' does not contain a definition for 'DateOfBirth'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(99,23): error CS0144: Cannot create an instance of the abstract type or interface 'JsonValue'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(99,69): error CS1503: Argument 2: cannot convert from 'System.DateTime' to 'System.IFormatProvider?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpii93oh9b/solution.csx(105,34): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<System.Text.Json.Nodes.JsonNode>' to 'System.Text.Json.Nodes.JsonNodeOptions?'

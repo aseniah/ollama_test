@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:45:10: assignment mismatch: 1 variable but strconv.Atoi returns 2 values
+./solution.go:53:9: assignment mismatch: 1 variable but strconv.Atoi returns 2 values
+./solution.go:61:9: assignment mismatch: 1 variable but strconv.Atoi returns 2 values
+./solution.go:79:14: undefined: json

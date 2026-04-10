@@ -1,0 +1,4 @@
+PASS: Single item discount (quantity < 10)
+PASS: No discount applied at boundary (quantity = 10)
+PASS: Discount at 0.9 (quantity = 49)
+PASS: Discount at 0.75 (quantity = 50)

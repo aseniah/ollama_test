@@ -1,0 +1,8 @@
+Running discount calculation tests...
+
+PASS: quantity < 10 (No Discount Tier)
+PASS: quantity >= 10 and < 50 (First Discount Tier)
+PASS: quantity < 50 boundary (Second Discount Tier)
+PASS: quantity >= 50 (Third Discount Tier)
+
+Test suite completed using process.argv for configuration.

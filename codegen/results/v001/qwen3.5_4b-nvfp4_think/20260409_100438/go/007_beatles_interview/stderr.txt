@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:21:26: reader.TextLimit undefined (type *csv.Reader has no field or method TextLimit)
+./solution.go:25:33: multiple-value reader.Read() (value of type (record []string, err error)) in single-value context
+./solution.go:29:2: declared and not used: header
+./solution.go:29:19: reader.Record undefined (type *csv.Reader has no field or method Record)
+./solution.go:33:10: assignment mismatch: 1 variable but reader.Read returns 2 values
+./solution.go:42:3: declared and not used: ageYear
+./solution.go:42:12: declared and not used: ageDay
+./solution.go:85:15: ageResult.Year undefined (type time.Duration has no field or method Year)
+./solution.go:86:24: ageResult.Year undefined (type time.Duration has no field or method Year)
+./solution.go:90:20: ageResult.Days undefined (type time.Duration has no field or method Days)
+./solution.go:90:20: too many errors

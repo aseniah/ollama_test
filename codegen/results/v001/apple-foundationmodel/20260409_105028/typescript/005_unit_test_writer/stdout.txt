@@ -1,0 +1,4 @@
+PASS: Test with quantity 9 (below 10)
+FAIL: Test with quantity 10 (exactly 10) (expected: 1000, got: 900)
+FAIL: Test with quantity 49 (just below 50) (expected: 4900, got: 4410)
+FAIL: Test with quantity 50 (exactly 50) (expected: 5000, got: 3750)

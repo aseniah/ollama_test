@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0kmyq6c7/solution.py", line 9
+    *   Handle partial years by counting full years, then adding days/months if the birthdate hasn't occurred yet in the reference year, or subtracting them if it has.
+                                                                                                  ^
+SyntaxError: unterminated string literal (detected at line 9)

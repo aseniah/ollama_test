@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:42:33: syntax error: cannot use s, _ := fmt.Sscanf(fmt.Sprintf("%g", gotsVal), "%g") as value
+./solution.go:44:20: syntax error: unexpected := in composite literal; possibly missing comma or }

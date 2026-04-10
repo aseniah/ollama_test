@@ -1,0 +1,55 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,4): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,20): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,20): error CS0103: The name 'or' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,23): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,56): error CS0246: The type or namespace name 'or' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,59): error CS7002: Unexpected use of a generic name
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,59): error CS0102: The type 'Submission#0' already contains a definition for 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,59): error CS0548: 'n': property or indexer must have at least one accessor
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,63): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(1,65): error CS1003: Syntax error, '>' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(2,5): error CS1014: A get or set accessor expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(2,11): error CS1014: A get or set accessor expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(5,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(5,24): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(6,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(6,19): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,6): error CS0103: The name 'a' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,6): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,9): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,10): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,10): error CS1525: Invalid expression term ')'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,12): error CS1525: Invalid expression term '<'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,15): error CS0103: The name 'zip' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(8,29): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,8): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,8): error CS0103: The name 'a' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,12): error CS0229: Ambiguity between 'n' and 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,14): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,14): error CS0103: The name 'then' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,19): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,19): error CS1003: Syntax error, 'while' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,19): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,19): error CS1525: Invalid expression term 'break'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,19): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,19): error CS0139: No enclosing loop out of which to break or continue
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(9,24): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(10,5): error CS0246: The type or namespace name 'yield' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(10,12): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,5): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,5): error CS0103: The name 'num' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,5): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,12): error CS0103: The name 'Fib' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,16): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,16): error CS1525: Invalid expression term 'do'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(12,16): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,5): error CS0103: The name 'print' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,11): error CS1003: Syntax error, 'while' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,11): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,17): error CS0103: The name 'num' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,27): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(13,27): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(14,7): error CS1733: Expected expression
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxza7hyua/solution.csx(14,7): error CS1002: ; expected

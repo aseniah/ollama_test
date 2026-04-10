@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpd5fjpgc_/solution.py", line 1, in <module>
+    Buzz
+NameError: name 'Buzz' is not defined

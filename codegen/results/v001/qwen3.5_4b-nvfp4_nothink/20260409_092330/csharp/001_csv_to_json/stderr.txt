@@ -1,0 +1,37 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(12,49): error CS1012: Too many characters in character literal
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(15,23): error CS1012: Too many characters in character literal
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(25,27): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(26,26): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(26,77): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(26,77): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(26,77): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(26,79): error CS1525: Invalid expression term '??'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(26,82): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(27,28): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(27,40): error CS0103: The name 'parts' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(28,28): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(28,40): error CS0103: The name 'parts' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(28,81): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(28,83): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(28,83): error CS1525: Invalid expression term '??'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(28,86): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(30,19): error CS1061: 'JsonNode' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(30,23): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,9): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,11): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,18): error CS0119: 'Exception' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,28): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,28): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,28): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,29): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(31,29): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(33,19): error CS1061: 'JsonNode' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(33,23): error CS0103: The name 'Node' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(35,5): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(35,7): error CS8641: 'else' cannot start a statement.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(35,7): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(35,7): error CS1525: Invalid expression term 'else'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(35,7): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(35,7): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(36,9): error CS0139: No enclosing loop out of which to break or continue
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl4y1_t4_/solution.csx(38,1): error CS7017: Member definition, statement, or end-of-file expected

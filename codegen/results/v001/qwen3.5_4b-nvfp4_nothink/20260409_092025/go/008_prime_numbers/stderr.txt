@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:40:19: invalid operation: i <= maxVal (mismatched types int and int64)
+./solution.go:41:14: cannot use i (variable of type int) as int64 value in argument to isPrime

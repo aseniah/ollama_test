@@ -1,0 +1,15 @@
+[tool.pyright]
+pythonVersion = "3.11"
+useLibraryCodeForTypes = false
+reportUnknownVariableType = "error"
+reportUnknownParameterType = "error"
+reportUnknownMemberType = "error"
+reportUnknownArgumentType = "error"
+exclude = ["**/results/**"]
+
+[tool.ruff]
+exclude = ["**/results/**"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "ANN"]
+ignore = ["E501"]

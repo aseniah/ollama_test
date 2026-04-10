@@ -1,0 +1,3 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphf0g7iey/solution.py", line 3
+    with open('input/data.json') as f:
+IndentationError: unexpected indent

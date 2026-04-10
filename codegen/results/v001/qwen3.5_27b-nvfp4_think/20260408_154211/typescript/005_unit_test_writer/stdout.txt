@@ -1,0 +1,10 @@
+Running calculateDiscount tests...
+
+PASS: Quantity 9 (no discount)
+PASS: Quantity 10 (boundary - 10% discount starts)
+PASS: Quantity 49 (boundary - 10% discount ends)
+PASS: Quantity 50 (boundary - 25% discount starts)
+PASS: Quantity 1 (minimum - no discount)
+PASS: Quantity 75 (well into 25% discount tier)
+
+Results: 6 passed, 0 failed

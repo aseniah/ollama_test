@@ -1,0 +1,4 @@
+PASS: For price 10 and quantity 9, expected 90 and got 90
+PASS: For price 10 and quantity 10, expected 90 and got 90
+PASS: For price 10 and quantity 49, expected 441 and got 441
+PASS: For price 10 and quantity 50, expected 375 and got 375

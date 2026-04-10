@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:50:2: declared and not used: curr
+./solution.go:51:2: declared and not used: next
+./solution.go:58:2: declared and not used: second
