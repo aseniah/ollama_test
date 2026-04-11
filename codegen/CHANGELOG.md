@@ -22,7 +22,15 @@ The C# LANG_NOTE update gives models explicit guidance on CSV and JSON parsing w
 - `benchmark.py` / `run_claude_test.py`: `verify_error` flag in exception handler corrected to `True` (was `False`)
 - `benchmark.py` LANG_NOTE C#: added CSV parsing guidance (`File.ReadAllLines()` / `string.Split(',')`); "no NuGet packages" moved earlier in the note
 - `run_claude_test.py`: removed `--gen-ms` argument; `ms` is now stored as `null` for all Claude API runs. Generation time is not captured — Claude API latency includes network and subagent overhead, making it incomparable to Ollama inference times. Pass/fail is the primary signal for Claude comparisons.
-- `run_claude_test.py` / `README.md`: Claude API orchestration methodology updated. Subagents now only return code — the orchestrator extracts it and calls `run_claude_test.py`. Previously, subagents were instructed to run the verifier themselves, which allowed them to see failures and iterate (invalidating first-shot measurement). The new approach enforces a single generation attempt per test.
+- `benchmark.py` / `run_claude_test.py`: updated all paths for the new test directory structure (`test/prompt.md`, `test/input/`, `grading/verify.py`)
+
+### Test directory restructure
+
+Each test directory now has `test/` (prompt.md + input/) and `grading/` (verify.py) subdirectories. README.md stays in the test root. This prevents Claude subagents from reading grading artifacts during generation — previously subagents had filesystem access to verify.py, which could influence code generation and invalidate first-shot measurement.
+
+### Claude orchestration
+
+Overhauled to enforce genuine first-shot measurement. The orchestrator now assembles fully-resolved prompts before dispatching — reading `benchmark.py` once, substituting `{language}` and `{source_code}`, and for test 007 embedding both `input.csv` and `expected_format.json` contents directly in the briefing. Subagents receive only the resolved system and user prompts, require no tool access, and return only raw source code. The orchestrator extracts the code and calls `run_claude_test.py` itself. Runs proceed in waves of 4 (one test × all 4 languages simultaneously) to prevent cross-language contamination within a test. Previously, subagents had full filesystem access and ran the verifier themselves, which allowed iteration on failures and invalidated first-shot measurement.
 
 ## v1 (2026-04-05)
 

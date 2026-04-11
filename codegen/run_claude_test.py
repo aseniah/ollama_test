@@ -153,7 +153,7 @@ def run_code(
 
 
 def load_verify(test_dir: Path) -> types.ModuleType:
-    spec = importlib.util.spec_from_file_location("verify", test_dir / "verify.py")
+    spec = importlib.util.spec_from_file_location("verify", test_dir / "grading" / "verify.py")
     assert spec and spec.loader
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)  # type: ignore[union-attr]
@@ -185,7 +185,7 @@ def main() -> None:
     code = Path(args.code_file).read_text()
     test_dir = BASE_DIR / "tests" / test_id
 
-    input_dir = test_dir / "input" if (test_dir / "input").is_dir() else None
+    input_dir = test_dir / "test" / "input" if (test_dir / "test" / "input").is_dir() else None
     test_args = TEST_ARGS.get(test_id, [])
 
     exec_result = run_code(code, language, input_dir, test_args)

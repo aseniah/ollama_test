@@ -28,6 +28,47 @@ python3 benchmark.py 3 --apple    # 3 runs
 Ollama must be running. With `--apple`, apfel is started automatically on port 11435 and
 stopped when the run completes (unless it was already running).
 
+## Running Claude Tests (sonnet / haiku / opus)
+
+### Orchestrator steps
+
+1. Generate run_id: `python3 -c "import datetime; print(datetime.datetime.now().strftime('%Y%m%d_%H%M%S'))"` (local time, no UTC)
+2. Read `benchmark.py` to extract `LANGUAGES`, `LANG_EXT`, `LANG_NAME`, `LANG_NOTE`, and `_VARIANT_TEMPLATES["C"]`
+3. Read `run_claude_test.py` for `PROMPT_VERSION`
+4. Discover tests by listing subdirectories of `tests/` (skip `_`-prefixed dirs)
+5. For each test, pre-read all files the subagent will need (see "Per-cell prompt assembly" below)
+6. Build the full 32-cell queue (8 tests × 4 languages)
+7. **Run in waves of 4, grouped by test**: dispatch all 4 languages for one test simultaneously, wait for all 4 to return, then move to the next test. This ensures no subagent for a given test can observe solutions from another language.
+8. For each completed subagent: strip any markdown fences from the returned code, write to `/tmp/{test_id}_{language}_solution{ext}`, then run:
+   ```
+   python3 run_claude_test.py {language} {test_id} /tmp/{test_id}_{language}_solution{ext} {run_id} --model {model}
+   ```
+   from the `codegen/` directory
+9. Collect and display all results when all waves complete
+
+### Per-cell prompt assembly (orchestrator does this, not the subagent)
+
+For each (test_id, language) cell, build two strings to pass to the subagent:
+
+**System prompt:** `_VARIANT_TEMPLATES["C"].format(language=LANG_NAME[language], lang_note=LANG_NOTE[language]).strip()`
+
+**User prompt:** start with `tests/{test_id}/test/prompt.md`, then apply substitutions:
+- Always: `{language}` → `LANG_NAME[language]`
+- Test 005 only: `{source_code}` → contents of `tests/005_unit_test_writer/test/input/source{ext}` (fall back to `.cs` if no match)
+- Test 006 only: `{source_code}` → contents of `tests/006_bug_fix/test/input/buggy{ext}` (fall back to `.cs` if no match)
+- Test 007 only: append both input file contents after the prompt text:
+  ```
+  --- input/input.csv ---
+  {contents of tests/007_beatles_interview/test/input/input.csv}
+
+  --- input/expected_format.json ---
+  {contents of tests/007_beatles_interview/test/input/expected_format.json}
+  ```
+
+### Each subagent's job
+
+The subagent receives the fully-resolved system prompt and user prompt as strings — no file access required. It has one job: **return only raw source code**. No explanation, no markdown fences, no tool calls. The subagent must not read any files from the repository.
+
 ## Analyzing Results
 
 Results are per-model JSONL files. Use targeted jq queries — don't load all records at once.

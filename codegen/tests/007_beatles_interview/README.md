@@ -12,10 +12,14 @@ This test runs in all 4 languages (Python, TypeScript, Go, C#) using the same in
 
 ## Input
 
-Both files are copied into the working directory at runtime.
-
 - `input/input.csv` — raw data: names, birthdays, death dates, relatives
 - `input/expected_format.json` — one example record showing the target JSON shape
+
+**Both files are required for generation, not just at runtime.** The model must read them to understand the transformation: what fields exist, how names are split, how dates are formatted, how ages are calculated, how relatives are structured. Without seeing both files, a model cannot write correct code — it has no way to know the CSV column names, the JSON field names, or the nesting structure.
+
+For **Ollama runs**: both files are copied into the working directory at runtime. The model writes code that reads and interprets both files dynamically to produce the output.
+
+For **Claude runs**: the orchestrator reads both file contents and embeds them directly in the subagent briefing before generation — the same way tests 005 and 006 embed source code via `{source_code}`. The subagent sees the actual data and schema during generation, then writes code that reads the files at runtime (which are also available in the working directory).
 
 ## Scoring
 

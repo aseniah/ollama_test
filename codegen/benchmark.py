@@ -192,7 +192,7 @@ TEST_ARGS: dict[str, list[str]] = {
 
 
 def load_verify(test_dir: Path) -> types.ModuleType:
-    spec = importlib.util.spec_from_file_location("verify", test_dir / "verify.py")
+    spec = importlib.util.spec_from_file_location("verify", test_dir / "grading" / "verify.py")
     mod = importlib.util.module_from_spec(spec)  # type: ignore[arg-type]
     spec.loader.exec_module(mod)  # type: ignore[union-attr]
     return mod
@@ -206,10 +206,10 @@ def load_tests(tests_dir: Path) -> list[TestCase]:
         test_id = test_dir.name
         case: TestCase = {
             "id":         test_id,
-            "prompt":     (test_dir / "prompt.md").read_text(),
+            "prompt":     (test_dir / "test" / "prompt.md").read_text(),
             "verify_mod": load_verify(test_dir),
         }
-        input_dir = test_dir / "input"
+        input_dir = test_dir / "test" / "input"
         if input_dir.is_dir():
             case["input_dir"] = input_dir
         if test_id in TEST_ARGS:

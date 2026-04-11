@@ -49,7 +49,7 @@ Results are written to `results/v001/{model}/results.jsonl`.
 
 This benchmark uses [Claude Code](https://claude.ai/code) as the orchestrator. Edit the `MODELS` dict in `run_claude_test.py` to uncomment the Claude models you want to test, then start a Claude Code session and say:
 
-> Run the Claude codegen benchmark. For each active model in `run_claude_test.py`, dispatch all test × language combinations in parallel. For each combination, spawn a subagent using that Claude model whose **only job is to return the raw source code** — the subagent may read input files to understand the task but must not run `run_claude_test.py` or any verifier. After the subagent returns, extract the raw code from its response (strip any explanation or markdown fences), save it to a temp file, then call `run_claude_test.py` to execute, verify, and record the result. The subagent must never see verifier output — it generates once and returns.
+> Run the Claude codegen benchmark for [sonnet/haiku/opus]. Follow the orchestration instructions in `CLAUDE.md` exactly.
 
 Results are written to `results/v002/{model}/results.jsonl` (e.g. `results/v002/opus/results.jsonl`).
 
@@ -65,8 +65,9 @@ Results are analyzed via targeted `jq` queries against the per-model JSONL files
 |---|---|
 | `benchmark.py` | Main Ollama test runner |
 | `run_claude_test.py` | Claude API test helper — executes and verifies generated code |
-| `tests/NNN_name/prompt.md` | Task prompt for each test |
-| `tests/NNN_name/verify.py` | Correctness verifier for each test |
+| `tests/NNN_name/test/prompt.md` | Task prompt for each test |
+| `tests/NNN_name/test/input/` | Input files for tests that need them |
+| `tests/NNN_name/grading/verify.py` | Correctness verifier for each test |
 | `results/v{NNN}/{model}/results.jsonl` | Per-model benchmark results (Ollama + Claude) |
 | `results/v{NNN}/{model}/{timestamp}/` | Per-run artifacts (solution, stdout, stderr) |
 | `findings/FINDINGS_v{NNN}.md` | Human-readable analysis and conclusions |
