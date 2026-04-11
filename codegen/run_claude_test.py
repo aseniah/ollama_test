@@ -170,8 +170,16 @@ def main() -> None:
     parser.add_argument("--results-dir", dest="results_dir", default=None, help="Results root directory (default: results/v{PROMPT_VERSION:03d}/)")
     args = parser.parse_args()
 
-    friendly = args.model
-    model = MODELS.get(friendly, friendly)  # fall back to raw value if not a known alias
+    # Accept either a friendly alias ("haiku") or a full model ID.
+    # If a full model ID is passed, reverse-look up the alias so the results
+    # directory uses the short name consistently.
+    _reverse = {v: k for k, v in MODELS.items()}
+    if args.model in MODELS:
+        friendly, model = args.model, MODELS[args.model]
+    elif args.model in _reverse:
+        friendly, model = _reverse[args.model], args.model
+    else:
+        friendly, model = args.model, args.model  # unknown model — use as-is
     results_dir = (
         Path(args.results_dir)
         if args.results_dir
