@@ -49,11 +49,11 @@ Results are written to `results/v001/{model}/results.jsonl`.
 
 This benchmark uses [Claude Code](https://claude.ai/code) as the orchestrator. Edit the `MODELS` dict in `run_claude_test.py` to uncomment the Claude models you want to test, then start a Claude Code session and say:
 
-> Run the Claude codegen benchmark. For each active model in `run_claude_test.py`, spawn a subagent using that Claude model to generate code for each test × language combination. For each subagent call, record the wall clock time before and after using `date +%s%3N`, compute the difference in milliseconds, and pass it as `--gen-ms <ms>` when calling `run_claude_test.py` to execute, verify, and record the result.
+> Run the Claude codegen benchmark. For each active model in `run_claude_test.py`, dispatch all test × language combinations in parallel. For each combination, spawn a subagent using that Claude model whose **only job is to return the raw source code** — the subagent may read input files to understand the task but must not run `run_claude_test.py` or any verifier. After the subagent returns, extract the raw code from its response (strip any explanation or markdown fences), save it to a temp file, then call `run_claude_test.py` to execute, verify, and record the result. The subagent must never see verifier output — it generates once and returns.
 
-Results are written to `results/v001/{model}/results.jsonl` (e.g. `results/v001/sonnet/results.jsonl`).
+Results are written to `results/v002/{model}/results.jsonl` (e.g. `results/v002/opus/results.jsonl`).
 
-> **Note on timing:** Claude generation times include API round-trip latency and subagent dispatch overhead, so they are not directly comparable to Ollama on-device measurements. They reflect end-to-end wall clock time from request to result rather than raw inference speed.
+> **Note on timing:** Generation time (`ms`) is not captured for Claude API runs — it is stored as `null` in results. Claude API latency includes network round-trips and subagent overhead, making it incomparable to Ollama on-device inference times. Pass/fail and partial scores are the primary signals for Claude API comparisons.
 
 ## Reviewing results
 

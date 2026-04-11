@@ -21,6 +21,8 @@ The C# LANG_NOTE update gives models explicit guidance on CSV and JSON parsing w
 
 - `benchmark.py` / `run_claude_test.py`: `verify_error` flag in exception handler corrected to `True` (was `False`)
 - `benchmark.py` LANG_NOTE C#: added CSV parsing guidance (`File.ReadAllLines()` / `string.Split(',')`); "no NuGet packages" moved earlier in the note
+- `run_claude_test.py`: removed `--gen-ms` argument; `ms` is now stored as `null` for all Claude API runs. Generation time is not captured — Claude API latency includes network and subagent overhead, making it incomparable to Ollama inference times. Pass/fail is the primary signal for Claude comparisons.
+- `run_claude_test.py` / `README.md`: Claude API orchestration methodology updated. Subagents now only return code — the orchestrator extracts it and calls `run_claude_test.py`. Previously, subagents were instructed to run the verifier themselves, which allowed them to see failures and iterate (invalidating first-shot measurement). The new approach enforces a single generation attempt per test.
 
 ## v1 (2026-04-05)
 

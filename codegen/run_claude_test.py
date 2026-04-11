@@ -31,8 +31,8 @@ PROMPT_VERSION = 2
 # model ID:      recorded in results.jsonl
 # Comment out models you don't want to run.
 MODELS: dict[str, str] = {
-    # "opus":   "claude-opus-4-6",
-    "sonnet": "claude-sonnet-4-6",
+    "opus":   "claude-opus-4-6",
+    # "sonnet": "claude-sonnet-4-6",
     # "haiku":  "claude-haiku-4-5-20251001",
 }
 
@@ -167,7 +167,6 @@ def main() -> None:
     parser.add_argument("code_file", help="Path to the generated solution file")
     parser.add_argument("run_id", help="Run ID (e.g. 20260407_140352)")
     parser.add_argument("--model", default="sonnet", help="Friendly model name: opus, sonnet, haiku (default: sonnet)")
-    parser.add_argument("--gen-ms", type=int, default=0, dest="gen_ms", help="Generation time in ms (default: 0)")
     parser.add_argument("--results-dir", dest="results_dir", default=None, help="Results root directory (default: results/v{PROMPT_VERSION:03d}/)")
     args = parser.parse_args()
 
@@ -182,7 +181,6 @@ def main() -> None:
     language = args.language
     test_id = args.test_id
     run_id = args.run_id
-    gen_ms = args.gen_ms
 
     code = Path(args.code_file).read_text()
     test_dir = BASE_DIR / "tests" / test_id
@@ -227,7 +225,7 @@ def main() -> None:
         "response_raw":   code,
         "code_extracted": False,
         "code":           code,
-        "ms":             gen_ms,
+        "ms":             None,
         "eval_count":     0,
         "tok_per_sec":    0.0,
         "ran":            exec_result["ran"],
@@ -249,7 +247,7 @@ def main() -> None:
     status = "PASS" if passed else "FAIL"
     print(
         f"  {status}  model={model}  lang={language}  test={test_id}"
-        f"  exit={exec_result['exit_code']}  gen_ms={gen_ms}  run_ms={exec_result['run_ms']}",
+        f"  exit={exec_result['exit_code']}  run_ms={exec_result['run_ms']}",
     )
     sys.exit(0 if passed else 1)
 

@@ -98,16 +98,16 @@ class TestCase(TypedDict):
 # ---------------------------------------------------------------------------
 
 MODELS: list[ModelConfig] = [
-    # {"name": "gemma4:26b",          "options": {"think": False}},
-    # {"name": "gemma4:26b",          "options": {"think": True},  "infer_timeout": 600},
-    # {"name": "qwen3.5:27b",         "options": {"think": False}},
-    # {"name": "qwen3.5:27b",         "options": {"think": True},  "infer_timeout": 600},
-    # {"name": "qwen3.5:27b-nvfp4",   "options": {"think": False}},
-    # {"name": "qwen3.5:27b-nvfp4",   "options": {"think": True},  "infer_timeout": 600},
-    # {"name": "qwen3.5:4b",          "options": {"think": False}},
-    # {"name": "qwen3.5:4b",          "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.5:4b-nvfp4",    "options": {"think": False}},
-    # {"name": "qwen3.5:4b-nvfp4",    "options": {"think": True},  "infer_timeout": 300},
+    {"name": "gemma4:26b",          "options": {"think": False}},
+    {"name": "gemma4:26b",          "options": {"think": True},  "infer_timeout": 600},
+    {"name": "qwen3.5:27b",         "options": {"think": False}},
+    {"name": "qwen3.5:27b",         "options": {"think": True},  "infer_timeout": 600},
+    {"name": "qwen3.5:27b-nvfp4",   "options": {"think": False}},
+    {"name": "qwen3.5:27b-nvfp4",   "options": {"think": True},  "infer_timeout": 600},
+    {"name": "qwen3.5:4b",          "options": {"think": False}},
+    {"name": "qwen3.5:4b",          "options": {"think": True},  "infer_timeout": 600},
+    {"name": "qwen3.5:4b-nvfp4",    "options": {"think": False}},
+    {"name": "qwen3.5:4b-nvfp4",    "options": {"think": True},  "infer_timeout": 600},
     {"name": "qwen2.5-coder:7b",    "options": {}},
     {"name": "qwen3-coder:30b",     "options": {}},
 ]
