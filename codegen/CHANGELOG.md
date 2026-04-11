@@ -32,6 +32,10 @@ Each test directory now has `test/` (prompt.md + input/) and `grading/` (verify.
 
 Overhauled to enforce genuine first-shot measurement. The orchestrator now assembles fully-resolved prompts before dispatching — reading `benchmark.py` once, substituting `{language}` and `{source_code}`, and for test 007 embedding both `input.csv` and `expected_format.json` contents directly in the briefing. Subagents receive only the resolved system and user prompts, require no tool access, and return only raw source code. The orchestrator extracts the code and calls `run_claude_test.py` itself. Runs proceed in waves of 4 (one test × all 4 languages simultaneously) to prevent cross-language contamination within a test. Previously, subagents had full filesystem access and ran the verifier themselves, which allowed iteration on failures and invalidated first-shot measurement.
 
+### Codegen worker agent
+
+Added `.claude/agents/codegen-worker.md` — a project-scoped Claude Code sub-agent definition for code generation cells. The agent has no tools, preventing any filesystem access during generation. This closes the remaining validity gap from the v2 orchestration overhaul: general-purpose subagents carried the full Claude Code system prompt and tool availability even when those tools went unused. The `codegen-worker` agent strips that scaffolding so generation context is limited to the resolved system and user prompts, matching Ollama's inference conditions as closely as possible within the Claude Pro (no direct API) constraint.
+
 ## v1 (2026-04-05)
 
 Initial release.

@@ -31,9 +31,9 @@ PROMPT_VERSION = 2
 # model ID:      recorded in results.jsonl
 # Comment out models you don't want to run.
 MODELS: dict[str, str] = {
-    "opus":   "claude-opus-4-6",
+    # "opus":   "claude-opus-4-6",
     # "sonnet": "claude-sonnet-4-6",
-    # "haiku":  "claude-haiku-4-5-20251001",
+    "haiku":  "claude-haiku-4-5-20251001",
 }
 
 LANG_EXT: dict[str, str] = {

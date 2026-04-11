@@ -17,4 +17,5 @@ obj/
 node_modules/
 
 # Claude Code
-.claude/
+**/.claude/settings.json
+**/.claude/settings.local.json

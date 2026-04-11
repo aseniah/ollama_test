@@ -67,7 +67,9 @@ For each (test_id, language) cell, build two strings to pass to the subagent:
 
 ### Each subagent's job
 
-The subagent receives the fully-resolved system prompt and user prompt as strings — no file access required. It has one job: **return only raw source code**. No explanation, no markdown fences, no tool calls. The subagent must not read any files from the repository.
+Dispatch each cell using `subagent_type: "codegen-worker"`. This agent has no tools, preventing any filesystem access during generation. Do not use the default general-purpose agent — it carries tool access and Claude Code scaffolding that would give the model context beyond the resolved prompts.
+
+The subagent receives the fully-resolved system prompt and user prompt as strings — no file access required. It has one job: **return only raw source code**. No explanation, no markdown fences, no tool calls.
 
 ## Analyzing Results
 
