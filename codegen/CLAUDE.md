@@ -56,13 +56,10 @@ For each (test_id, language) cell, build two strings to pass to the subagent:
 - Always: `{language}` → `LANG_NAME[language]`
 - Test 005 only: `{source_code}` → contents of `tests/005_unit_test_writer/test/input/source{ext}` (fall back to `.cs` if no match)
 - Test 006 only: `{source_code}` → contents of `tests/006_bug_fix/test/input/buggy{ext}` (fall back to `.cs` if no match)
-- Test 007 only: append both input file contents after the prompt text:
+- All tests with data input files (001, 002, 004, 007): after all substitutions, append each file in `tests/{test_id}/test/input/` that is NOT a language source file (i.e. skip `.py`, `.ts`, `.go`, `.cs`, `.csx`), in sorted order:
   ```
-  --- input/input.csv ---
-  {contents of tests/007_beatles_interview/test/input/input.csv}
-
-  --- input/expected_format.json ---
-  {contents of tests/007_beatles_interview/test/input/expected_format.json}
+  --- input/{filename} ---
+  {file contents}
   ```
 
 ### Each subagent's job

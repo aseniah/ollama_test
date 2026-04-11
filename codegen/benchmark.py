@@ -149,6 +149,10 @@ LANG_COLOR: dict[str, str] = {
     "csharp":     _MAGENTA,
 }
 
+# Extensions used for language source files — excluded from data-file inlining
+# in build_messages so {source_code} substitutions aren't double-appended.
+_LANG_EXTENSIONS: frozenset[str] = frozenset({".py", ".ts", ".go", ".cs", ".csx"})
+
 
 # ---------------------------------------------------------------------------
 # Prompt variants
@@ -404,6 +408,14 @@ def build_messages(
             if candidates:
                 task = task.replace("{source_code}", candidates[0].read_text())
                 break
+    # Append data input files inline so models see actual content rather than
+    # having to infer schema from the prompt description alone. Language source
+    # files (.py, .ts, .go, .cs, .csx) are skipped — already inlined via
+    # {source_code} for tests that use it (005, 006).
+    if "input_dir" in test:
+        for f in sorted(test["input_dir"].iterdir()):
+            if f.is_file() and f.suffix not in _LANG_EXTENSIONS:
+                task += f"\n\n--- input/{f.name} ---\n{f.read_text()}"
     return [
         {"role": "system", "content": variant["system_prompt"]},
         {"role": "user",   "content": task},
