@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:45:27: (1 << 63 - 2) * int64(2) (constant 18446744073709551612 of type int64) overflows int64

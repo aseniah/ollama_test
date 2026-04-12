@@ -1,0 +1,6 @@
+PASS: Quantity below discount threshold
+PASS: Quantity at 10% discount threshold
+PASS: Quantity below 25% discount threshold
+PASS: Quantity at 25% discount threshold
+PASS: Small quantity with different price
+PASS: Large quantity with 25% discount

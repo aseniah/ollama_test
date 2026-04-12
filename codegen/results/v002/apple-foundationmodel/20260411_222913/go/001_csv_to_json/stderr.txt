@@ -1,0 +1,7 @@
+# command-line-arguments
+./solution.go:5:2: "fmt" imported and not used
+./solution.go:35:10: undefined: strings
+./solution.go:43:13: undefined: strings
+./solution.go:64:40: not enough arguments in call to json.Indent
+	have (*os.File, []Person, string)
+	want (*bytes.Buffer, []byte, string, string)

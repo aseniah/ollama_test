@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp26v0_avu/solution.csx(19,82): error CS0030: Cannot convert type 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp26v0_avu/solution.csx(35,19): error CS0103: The name 'JsonSerializer' does not exist in the current context

@@ -1,0 +1,11 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(11,9): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(13,12): error CS0029: Cannot implicitly convert type 'System.Text.Json.JsonElement' to 'System.Text.Json.Nodes.JsonNode'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(18,26): error CS1061: 'JsonNode' does not contain a definition for 'ValueKind' and no accessible extension method 'ValueKind' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(22,18): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(22,38): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(25,32): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonNode' to 'System.ReadOnlyMemory<byte>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(26,25): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(27,17): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(28,21): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(29,21): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpatam8gny/solution.csx(33,17): error CS1503: Argument 1: cannot convert from 'string' to 'int'

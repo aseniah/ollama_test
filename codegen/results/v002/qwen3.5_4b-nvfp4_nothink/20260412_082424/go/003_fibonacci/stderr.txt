@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:7:13: undefined: fmt.Args
+./solution.go:12:17: undefined: fmt.Args
+./solution.go:21:2: declared and not used: hasPrinted

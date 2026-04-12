@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5q7h67pg/solution.csx(7,49): error CS1503: Argument 2: cannot convert from 'out long' to 'out int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5q7h67pg/solution.csx(9,9): error CS0266: Cannot implicitly convert type 'long' to 'int'. An explicit conversion exists (are you missing a cast?)

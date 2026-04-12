@@ -1,0 +1,5 @@
+FAIL: test_quantity_9 (expected: 10.0, got: 90.0)
+FAIL: test_quantity_10 (expected: 10.0, got: 90.0)
+FAIL: test_quantity_49 (expected: 10.0, got: 441.0)
+FAIL: test_quantity_50 (expected: 10.0, got: 375.0)
+FAIL: test_quantity_99 (expected: 10.0, got: 742.5)

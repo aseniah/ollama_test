@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:20:27: unknown field Scopes in struct literal of type bufio.Scanner

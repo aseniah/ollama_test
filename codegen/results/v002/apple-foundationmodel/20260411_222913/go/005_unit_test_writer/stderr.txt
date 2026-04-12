@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:22:45: too many values in struct literal of type struct{description string; quantity int; expected float64}
+./solution.go:23:47: too many values in struct literal of type struct{description string; quantity int; expected float64}
+./solution.go:24:48: too many values in struct literal of type struct{description string; quantity int; expected float64}
+./solution.go:25:48: too many values in struct literal of type struct{description string; quantity int; expected float64}

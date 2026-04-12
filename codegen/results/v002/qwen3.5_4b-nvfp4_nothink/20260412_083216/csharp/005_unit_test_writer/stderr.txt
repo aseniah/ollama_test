@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7oayoq3s/solution.csx(13,5): error CS1503: Argument 1: cannot convert from 'method group' to 'int'

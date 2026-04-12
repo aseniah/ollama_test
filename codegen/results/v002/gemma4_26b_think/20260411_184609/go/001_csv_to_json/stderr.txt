@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:24:15: use of package os not in selector
+./solution.go:24:18: undefined: Open

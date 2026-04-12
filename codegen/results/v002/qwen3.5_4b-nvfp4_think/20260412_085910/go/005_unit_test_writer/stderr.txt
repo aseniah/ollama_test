@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:65:6: declared and not used: i
+./solution.go:74:5: declared and not used: expectedStr
+./solution.go:75:5: declared and not used: gotStr

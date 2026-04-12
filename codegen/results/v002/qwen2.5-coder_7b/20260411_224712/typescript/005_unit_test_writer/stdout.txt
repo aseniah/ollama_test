@@ -1,0 +1,4 @@
+PASS: Expected discount for price 10 and quantity 9 is 90
+FAIL: Expected discount for price 10 and quantity 10 to be 100, but got 90
+PASS: Expected discount for price 10 and quantity 49 is 441
+PASS: Expected discount for price 10 and quantity 50 is 375

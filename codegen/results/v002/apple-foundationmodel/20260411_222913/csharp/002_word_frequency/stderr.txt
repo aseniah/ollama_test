@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpk3j7qnjx/solution.csx(6,52): error CS0826: No best type found for implicitly-typed array

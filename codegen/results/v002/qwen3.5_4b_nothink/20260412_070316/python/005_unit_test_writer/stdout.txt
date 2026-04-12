@@ -1,0 +1,4 @@
+PASS: No discount applied for quantity 9
+PASS: 10% discount applied for quantity 10
+PASS: 10% discount applied for quantity 49
+PASS: 25% discount applied for quantity 50

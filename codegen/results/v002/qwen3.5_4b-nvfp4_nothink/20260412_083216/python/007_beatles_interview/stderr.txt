@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqgni3edu/solution.py", line 23, in main
+    birth_year, birth_month, birth_day = [int(d) for d in str(birthday_dt).split('-')]
+                                          ~~~^^^
+ValueError: invalid literal for int() with base 10: '09 00:00:00'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqgni3edu/solution.py", line 89, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqgni3edu/solution.py", line 86, in main
+    print(f"Error processing file: {e}", file=sys.stderr)
+                                              ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'?

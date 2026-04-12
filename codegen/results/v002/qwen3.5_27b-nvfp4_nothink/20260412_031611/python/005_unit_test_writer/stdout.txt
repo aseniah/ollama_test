@@ -1,0 +1,5 @@
+PASS: Quantity below threshold (9 units): no discount
+PASS: Lower boundary of 10% discount (10 units)
+PASS: Upper boundary of 10% discount (49 units)
+PASS: Lower boundary of 25% discount (50 units)
+PASS: High quantity above 50 (60 units)

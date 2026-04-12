@@ -1,0 +1,6 @@
+PASS: quantity=9 (no discount)
+PASS: quantity=10 (10% discount)
+FAIL: quantity=49 (10% discount) (expected: 441, got: 4410)
+PASS: quantity=50 (25% off)
+PASS: quantity=1 (discount level 1)
+PASS: quantity=100 (25% off)

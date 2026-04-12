@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbg0ufior/solution.py", line 14, in <module>
+    first_name, last_name = row['Name'].split()
+    ^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2, got 3)

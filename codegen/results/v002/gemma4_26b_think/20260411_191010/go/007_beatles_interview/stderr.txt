@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:60:2: declared and not used: age
+./solution.go:60:28: birth.Years undefined (type time.Time has no field or method Years)

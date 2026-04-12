@@ -1,0 +1,114 @@
+[
+  {
+    "FirstName": "John",
+    "LastName": "Winston Lennon",
+    "Birthday": "1940-10-09",
+    "Age": 84,
+    "Relatives": [
+      {
+        "firstName": "Alfred",
+        "lastName": "Lennon",
+        "Relationship": "Father"
+      },
+      {
+        "firstName": "Julia",
+        "lastName": "Stanley",
+        "Relationship": "Mother"
+      },
+      {
+        "firstName": "null",
+        "lastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "firstName": "null",
+        "lastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "James",
+    "LastName": "Paul McCartney",
+    "Birthday": "1942-06-18",
+    "Age": 83,
+    "Relatives": [
+      {
+        "firstName": "Jim",
+        "lastName": "McCartney",
+        "Relationship": "Father"
+      },
+      {
+        "firstName": "Mary",
+        "lastName": "McCartney",
+        "Relationship": "Mother"
+      },
+      {
+        "firstName": "Mike",
+        "lastName": "McGear",
+        "Relationship": "Brother"
+      },
+      {
+        "firstName": "null",
+        "lastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "Ringo",
+    "LastName": "Starr",
+    "Birthday": "1940-07-07",
+    "Age": 84,
+    "Relatives": [
+      {
+        "firstName": "Richard",
+        "lastName": "Starkey",
+        "Relationship": "Father"
+      },
+      {
+        "firstName": "Elsie",
+        "lastName": "Gleave",
+        "Relationship": "Mother"
+      },
+      {
+        "firstName": "null",
+        "lastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "firstName": "Marie",
+        "lastName": "Maguire",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "George",
+    "LastName": "Harrison",
+    "Birthday": "1943-02-25",
+    "Age": 82,
+    "Relatives": [
+      {
+        "firstName": "Harold",
+        "lastName": "Harrison",
+        "Relationship": "Father"
+      },
+      {
+        "firstName": "Louise",
+        "lastName": "French",
+        "Relationship": "Mother"
+      },
+      {
+        "firstName": "Peter",
+        "lastName": "Harrison",
+        "Relationship": "Brother"
+      },
+      {
+        "firstName": "Louise",
+        "lastName": "Harrison",
+        "Relationship": "Sister"
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofq7rg1u/solution.csx(60,25): error CS0103: The name 'years' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofq7rg1u/solution.csx(76,9): error CS0815: Cannot assign <null> to an implicitly-typed variable
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofq7rg1u/solution.csx(90,9): error CS0815: Cannot assign <null> to an implicitly-typed variable
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofq7rg1u/solution.csx(105,23): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.Dictionary<string, string>' to 'System.Collections.Generic.Dictionary<string, object>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofq7rg1u/solution.csx(106,23): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.Dictionary<string, string>' to 'System.Collections.Generic.Dictionary<string, object>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofq7rg1u/solution.csx(126,19): error CS0103: The name 'JsonConvert' does not exist in the current context

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8ri_xtl1/solution.py", line 77, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8ri_xtl1/solution.py", line 24, in main
+    birthday = parse_date(row['Birthday'])
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8ri_xtl1/solution.py", line 8, in parse_date
+    return date(year, month, day)
+ValueError: month must be in 1..12, not 18

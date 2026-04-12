@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:97:4: undefined: birthDate
+./solution.go:101:3: declared and not used: refDate
+./solution.go:105:4: unknown field FirstName in struct literal of type PersonData
+./solution.go:106:4: unknown field LastName in struct literal of type PersonData
+./solution.go:125:29: assignment mismatch: 4 variables but strconv.Atoi returns 2 values
+./solution.go:132:7: pd.Age undefined (type *PersonData has no field or method Age)
+./solution.go:132:37: undefined: refDate
+./solution.go:144:18: pd.FirstName undefined (type PersonData has no field or method FirstName)
+./solution.go:145:18: pd.LastName undefined (type PersonData has no field or method LastName)
+./solution.go:147:18: pd.Age undefined (type PersonData has no field or method Age)
+./solution.go:101:3: too many errors

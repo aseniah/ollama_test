@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_y_sha3r/solution.csx(17,30): error CS1579: foreach statement cannot operate on variables of type 'JsonNode' because 'JsonNode' does not contain a public instance or extension definition for 'GetEnumerator'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_y_sha3r/solution.csx(19,15): error CS0030: Cannot convert type 'System.Text.Json.JsonElement' to 'System.Text.Json.Nodes.JsonObject'

@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpli53me9l/solution.csx(40,54): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpli53me9l/solution.csx(43,5): error CS1912: Duplicate initialization of member 'PropertyNamingPolicy'

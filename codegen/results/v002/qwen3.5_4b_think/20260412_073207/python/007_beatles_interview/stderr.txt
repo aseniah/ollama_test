@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpi_z77neb/solution.py", line 84, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpi_z77neb/solution.py", line 63, in main
+    "Age": calculate_age(birthday),
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpi_z77neb/solution.py", line 12, in calculate_age
+    birth_date = date(
+        int(birthday.split('-')[0]),
+        int(birthday.split('-')[1]),
+        int(birthday.split('-')[2])
+    )
+ValueError: month must be in 1..12, not 18

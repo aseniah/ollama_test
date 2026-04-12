@@ -1,0 +1,10 @@
+Running Discount Calculation Tests...
+
+PASS: Boundary Test - Quantity 9 (No discount)
+PASS: Boundary Test - Quantity 10 (10% discount)
+PASS: Boundary Test - Quantity 49 (10% discount)
+PASS: Boundary Test - Quantity 50 (25% discount)
+PASS: General Test - High quantity (25% discount)
+PASS: General Test - Very small quantity (No discount)
+
+Tests Completed.

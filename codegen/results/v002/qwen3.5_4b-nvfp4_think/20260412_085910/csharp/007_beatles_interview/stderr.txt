@@ -1,0 +1,14 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(2,15): error CS0234: The type or namespace name 'File' does not exist in the namespace 'System' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(18,21): error CS0234: The type or namespace name 'JsonDocumentSerializer' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,54): error CS0117: 'JsonNode' does not contain a definition for 'FromValue'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,64): error CS0119: 'object' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,79): error CS0119: 'List<JsonProperty>' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,111): error CS0246: The type or namespace name 'JsonProperty' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,126): error CS0119: 'string' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,141): error CS0119: 'int' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(19,155): error CS0119: 'DateTime' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(28,123): error CS1061: 'DateTime' does not contain a definition for 'ToGregorianCalendar' and no accessible extension method 'ToGregorianCalendar' accepting a first argument of type 'DateTime' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(33,51): error CS0103: The name 'ReferenceDate' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(33,122): error CS1503: Argument 2: cannot convert from 'string' to 'System.IFormatProvider?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(33,134): error CS1503: Argument 3: cannot convert from 'System.Globalization.CultureInfo' to 'System.Globalization.DateTimeStyles'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp30uj8rdp/solution.csx(33,188): error CS0103: The name 'ReferenceDate' does not exist in the current context

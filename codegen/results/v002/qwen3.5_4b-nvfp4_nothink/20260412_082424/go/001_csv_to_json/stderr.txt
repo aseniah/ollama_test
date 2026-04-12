@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:73:6: syntax error: unexpected name main, expected (

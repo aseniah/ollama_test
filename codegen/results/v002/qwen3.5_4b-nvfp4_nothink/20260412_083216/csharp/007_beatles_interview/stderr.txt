@@ -1,0 +1,11 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(35,171): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(35,171): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(35,171): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(35,173): error CS0103: The name 'Days' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(35,173): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(36,17): error CS0103: The name 'header' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(40,22): error CS0103: The name 'header' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(45,9): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(46,5): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(48,17): error CS0103: The name 'dict' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp48b68f8y/solution.csx(49,1): error CS7017: Member definition, statement, or end-of-file expected

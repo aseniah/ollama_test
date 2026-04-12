@@ -1,0 +1,4 @@
+PASS: Quantity 9 (No Discount)
+PASS: Quantity 10 (10% Discount Threshold)
+PASS: Quantity 49 (10% Discount Max)
+PASS: Quantity 50 (25% Discount Threshold)

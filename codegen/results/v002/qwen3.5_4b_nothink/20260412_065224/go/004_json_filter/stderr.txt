@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:21:16: cannot use err.Error (value of type func() string) as io.Writer value in argument to fmt.Fprintln: func() string does not implement io.Writer (missing method Write)
+./solution.go:27:16: cannot use err.Error (value of type func() string) as io.Writer value in argument to fmt.Fprintln: func() string does not implement io.Writer (missing method Write)
+./solution.go:47:16: cannot use err.Error (value of type func() string) as io.Writer value in argument to fmt.Fprintln: func() string does not implement io.Writer (missing method Write)

@@ -1,0 +1,4 @@
+PASS: Test case with quantity=9 (no discount)
+PASS: Test case with quantity=10 (10% off)
+PASS: Test case with quantity=49 (10% off)
+PASS: Test case with quantity=50 (25% off)

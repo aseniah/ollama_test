@@ -1,0 +1,4 @@
+PASS: Test 1: quantity=9, price=100 (no discount)
+PASS: Test 2: quantity=10, price=100 (10% discount)
+PASS: Test 3: quantity=49, price=100 (10% discount)
+PASS: Test 4: quantity=50, price=100 (25% discount)

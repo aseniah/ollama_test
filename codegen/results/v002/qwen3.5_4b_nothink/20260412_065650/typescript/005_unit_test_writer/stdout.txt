@@ -1,0 +1,6 @@
+PASS: Less than 10 items with no discount
+PASS: Boundary: 9 items (no discount)
+PASS: Boundary: 10 items (90% discount)
+PASS: Boundary: 49 items (90% discount)
+PASS: Boundary: 50 items (75% discount)
+PASS: Large quantity with maximum discount

@@ -1,0 +1,17 @@
+node:internal/readline/interface:300
+  input.on('error', onerror);
+        ^
+
+TypeError: input.on is not a function
+    at Interface.InterfaceConstructor (node:internal/readline/interface:300:9)
+    at new Interface (node:readline:115:3)
+    at createInterface (node:readline:212:10)
+    at <anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpp_bxyv7u/solution.ts:2:12)
+    at Object.<anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpp_bxyv7u/solution.ts:37:37)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Object.transformer (/opt/homebrew/lib/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+
+Node.js v25.9.0

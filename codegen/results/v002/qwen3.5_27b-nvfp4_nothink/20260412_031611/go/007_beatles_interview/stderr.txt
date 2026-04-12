@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:57:3: declared and not used: sisterName
+./solution.go:63:18: undefined: time.NewCSVDate

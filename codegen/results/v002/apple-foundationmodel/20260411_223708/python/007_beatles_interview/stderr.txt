@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz8dmq1ta/solution.py", line 25, in <module>
+    "LastName": row['LastName'],
+                ~~~^^^^^^^^^^^^
+KeyError: 'LastName'

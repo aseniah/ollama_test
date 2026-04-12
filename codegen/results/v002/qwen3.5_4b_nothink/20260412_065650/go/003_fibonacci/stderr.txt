@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:16:2: declared and not used: n
+./solution.go:16:5: declared and not used: err

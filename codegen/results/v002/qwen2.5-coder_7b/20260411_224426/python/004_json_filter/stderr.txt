@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpu_s6iby7/solution.py", line 14, in <module>
+    json.dump(filtered_data, stdout, indent=2)
+                             ^^^^^^
+NameError: name 'stdout' is not defined

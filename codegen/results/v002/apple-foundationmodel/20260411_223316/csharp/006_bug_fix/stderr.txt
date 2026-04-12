@@ -1,0 +1,15 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(22,26): error CS1579: foreach statement cannot operate on variables of type 'JsonDocument' because 'JsonDocument' does not contain a public instance or extension definition for 'GetEnumerator'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,6): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,6): error CS0103: The name 'name' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,10): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,14): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,14): error CS0103: The name 'John' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,18): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,18): error CS1010: Newline in constant
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(30,20): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(31,10): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(31,12): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(31,14): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(31,14): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(32,1): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm0yyl2ap/solution.csx(32,2): error CS1010: Newline in constant

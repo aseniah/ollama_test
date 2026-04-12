@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxw865rb1/solution.csx(6,16): error CS0246: The type or namespace name 'JsonArray' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxw865rb1/solution.csx(11,26): error CS0246: The type or namespace name 'JsonObject' could not be found (are you missing a using directive or an assembly reference?)

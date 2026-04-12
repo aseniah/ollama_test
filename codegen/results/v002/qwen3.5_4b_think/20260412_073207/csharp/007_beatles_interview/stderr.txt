@@ -1,0 +1,3 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5wno46j0/solution.csx(6,5): error CS0161: 'main()': not all code paths return a value
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5wno46j0/solution.csx(51,25): error CS0029: Cannot implicitly convert type 'int' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5wno46j0/solution.csx(123,21): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.Dictionary<string, object>' to 'System.Collections.Generic.Dictionary<string, string>'

@@ -1,0 +1,10 @@
+Running calculateDiscount function tests...
+===========================================
+PASS: Quantity 9 (no discount, boundary before 10)
+PASS: Quantity 10 (10% discount, boundary at 10)
+PASS: Quantity 49 (10% discount, boundary before 50)
+PASS: Quantity 50 (25% discount, boundary at 50)
+PASS: Quantity 100 (25% discount, large quantity)
+PASS: Quantity 1 (no discount, minimum quantity)
+===========================================
+Total tests: 6

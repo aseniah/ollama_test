@@ -1,0 +1,4 @@
+PASS: Quantity 9 (No Discount)
+PASS: Quantity 10 (Start of 10% Discount)
+PASS: Quantity 49 (End of 10% Discount)
+PASS: Quantity 50 (Start of 25% Discount)

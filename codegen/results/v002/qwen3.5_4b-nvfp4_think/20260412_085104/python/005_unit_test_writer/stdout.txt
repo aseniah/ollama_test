@@ -1,0 +1,7 @@
+PASS: quantity=9, price=100.0 (no discount expected)
+PASS: quantity=10, price=100.0 (10% discount expected)
+PASS: quantity=49, price=100.0 (10% discount expected)
+PASS: quantity=50, price=100.0 (25% discount expected)
+PASS: quantity=100, price=100.0 (25% discount expected)
+PASS: price=50.0, quantity=7 (no discount expected)
+PASS: quantity=8, price=100.0 (no discount expected)

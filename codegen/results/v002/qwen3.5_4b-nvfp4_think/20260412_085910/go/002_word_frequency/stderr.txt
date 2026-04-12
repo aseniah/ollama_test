@@ -1,0 +1,6 @@
+# command-line-arguments
+./solution.go:29:24: cannot use r (variable of type byte) as rune value in argument to unicode.IsLetter
+./solution.go:55:5: undefined: currentWord
+./solution.go:58:35: undefined: currentWord
+./solution.go:59:16: undefined: currentWord
+./solution.go:70:2: undefined: sort

@@ -1,0 +1,6 @@
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   at Submission#0.<<Initialize>>d__0.MoveNext() in /private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_kbt7qgm/solution.csx:line 6
+--- End of stack trace from previous location ---
+   at Dotnet.Script.Core.ScriptRunner.Execute[TReturn](String dllPath, IEnumerable`1 commandLineArgs) in C:\Users\runneradmin\AppData\Local\Temp\tmphjjxd2\Dotnet.Script.Core\ScriptRunner.cs:line 110

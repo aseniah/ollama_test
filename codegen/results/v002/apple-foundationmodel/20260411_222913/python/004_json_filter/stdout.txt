@@ -1,0 +1,24 @@
+{
+  "name": "Alice",
+  "age": 35,
+  "active": true,
+  "score": 92.0
+}
+{
+  "name": "David",
+  "age": 31,
+  "active": true,
+  "score": 71.8
+}
+{
+  "name": "Eva",
+  "age": 52,
+  "active": true,
+  "score": 95.1
+}
+{
+  "name": "Grace",
+  "age": 38,
+  "active": true,
+  "score": 67.2
+}

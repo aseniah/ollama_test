@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz5z99e50/solution.csx(7,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz5z99e50/solution.csx(10,15): error CS0246: The type or namespace name 'JsonObject' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz5z99e50/solution.csx(10,50): error CS0246: The type or namespace name 'JsonObject' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz5z99e50/solution.csx(15,23): error CS0103: The name 'JsonObject' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz5z99e50/solution.csx(19,34): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.IList<JsonObject>' to 'System.IO.Stream'

@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:35:9: declared and not used: tolerance
+./solution.go:37:13: undefined: fmt
+./solution.go:40:13: undefined: fmt
+./solution.go:46:5: undefined: fmt

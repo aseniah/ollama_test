@@ -1,0 +1,17 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0ug6ix77/solution.ts:10
+  return lines.slice(1).map(row => row.split(',').trim()) as any[];
+                                                  ^
+
+TypeError: row.split(...).trim is not a function
+    at <anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0ug6ix77/solution.ts:10:51)
+    at Array.map (<anonymous>)
+    at parseCSV (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0ug6ix77/solution.ts:10:25)
+    at <anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0ug6ix77/solution.ts:17:14)
+    at Object.<anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp0ug6ix77/solution.ts:31:42)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Object.transformer (/opt/homebrew/lib/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+
+Node.js v25.9.0

@@ -1,0 +1,7 @@
+PASS: quantity 5 with price 10.0
+PASS: quantity 9 with price 10.0
+PASS: quantity 10 with price 10.0
+PASS: quantity 49 with price 10.0
+PASS: quantity 50 with price 10.0
+PASS: quantity 20 with price 5.0
+PASS: quantity 60 with price 15.0

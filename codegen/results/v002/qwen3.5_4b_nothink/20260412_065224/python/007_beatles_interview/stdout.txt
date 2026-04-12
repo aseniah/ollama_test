@@ -1,0 +1,94 @@
+[
+  {
+    "FirstName": "John",
+    "LastName": "Winston",
+    "Birthday": "10-9-1940",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Alfred",
+        "LastName": "Lennon",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Julia",
+        "LastName": "Stanley",
+        "Relationship": "Mother"
+      }
+    ]
+  },
+  {
+    "FirstName": "James",
+    "LastName": "Paul",
+    "Birthday": "6-18-1942",
+    "Age": 83,
+    "Relatives": [
+      {
+        "FirstName": "Jim",
+        "LastName": "McCartney",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Mary",
+        "LastName": "McCartney",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Mike",
+        "LastName": "McGear",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  {
+    "FirstName": "Ringo",
+    "LastName": "Starr",
+    "Birthday": "7-7-1940",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Richard",
+        "LastName": "Starkey",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Elsie",
+        "LastName": "Gleave",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Marie",
+        "LastName": "Maguire",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "George",
+    "LastName": "Harrison",
+    "Birthday": "2-25-1943",
+    "Age": 82,
+    "Relatives": [
+      {
+        "FirstName": "Harold",
+        "LastName": "Harrison",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Louise",
+        "LastName": "French",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Peter",
+        "LastName": "Harrison",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "Louise",
+        "LastName": "Harrison",
+        "Relationship": "Sister"
+      }
+    ]
+  }
+]

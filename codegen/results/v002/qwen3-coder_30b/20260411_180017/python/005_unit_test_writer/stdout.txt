@@ -1,0 +1,6 @@
+PASS: quantity 5 (less than 10) - no discount
+PASS: quantity 10 (boundary between no discount and 10% off)
+PASS: quantity 49 (boundary between 10% off and 25% off)
+PASS: quantity 50 (boundary for 25% off)
+PASS: quantity 25 (10% off) - normal case
+PASS: quantity 75 (25% off) - normal case

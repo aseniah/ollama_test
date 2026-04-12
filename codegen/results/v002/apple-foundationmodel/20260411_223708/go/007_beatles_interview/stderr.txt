@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:30:9: assignment mismatch: 1 variable but reader.ReadString returns 2 values
+./solution.go:40:19: cannot use strconv.Atoi(err[0]) (value of type int) as string value in assignment
+./solution.go:44:18: cannot use strconv.Atoi(err[1]) (value of type int) as string value in assignment
+./solution.go:52:8: invalid operation: firstName * 100 (mismatched types string and untyped int)
+./solution.go:63:29: cannot use strconv.Atoi(err[idx]) (value of type int) as string value in assignment
+./solution.go:67:28: cannot use strconv.Atoi(err[idx + 1]) (value of type int) as string value in assignment
+./solution.go:79:29: cannot use strconv.Atoi(err[idx]) (value of type int) as string value in assignment
+./solution.go:83:28: cannot use strconv.Atoi(err[idx + 1]) (value of type int) as string value in assignment
+./solution.go:100:17: cannot use birthday (variable of type int) as string value in struct literal
+./solution.go:108:2: declared and not used: dobTime
+./solution.go:108:2: too many errors

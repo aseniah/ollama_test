@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3e8gye0v/solution.csx(29,31): warning CS9113: Parameter 'description' is unread.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3e8gye0v/solution.csx(29,51): warning CS9113: Parameter 'price' is unread.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3e8gye0v/solution.csx(29,62): warning CS9113: Parameter 'quantity' is unread.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3e8gye0v/solution.csx(29,79): warning CS9113: Parameter 'expected' is unread.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3e8gye0v/solution.csx(11,21): error CS0305: Using the generic type 'List<T>' requires 1 type arguments

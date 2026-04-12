@@ -1,0 +1,50 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(1,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(1,62): error CS0117: 'RuntimeEnvironment' does not contain a definition for 'GetCommandLineArgs'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(1,82): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,9): error CS1525: Invalid expression term 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,13): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,13): error CS0246: The type or namespace name 'TryParse' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,22): error CS0246: The type or namespace name 'args' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,27): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,27): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,27): error CS1031: Type expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,27): error CS0270: Array size cannot be specified in a variable declaration (try initializing with a 'new' expression)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,27): error CS0541: '(?[], n, then, i, in ?[], let, isPrime, print)': explicit interface declaration can only be declared in a class, record, struct or interface
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,27): error CS0501: '(?[], n, then, i, in ?[], let, isPrime, print)' must declare a body because it is not marked abstract, extern, or partial
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,30): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(2,30): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,4): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,4): error CS0246: The type or namespace name 'n' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,6): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,6): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,11): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,11): error CS0246: The type or namespace name 'then' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,15): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(3,15): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,7): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,7): error CS0246: The type or namespace name 'i' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,9): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,12): error CS1031: Type expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,12): error CS0270: Array size cannot be specified in a variable declaration (try initializing with a 'new' expression)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,19): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,19): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(4,21): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(5,5): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(6,11): error CS0103: The name 'i' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,20): error CS0103: The name 'fun' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,25): error CS0103: The name 'acc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,30): error CS0103: The name 'd' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,44): error CS0103: The name 'i' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,48): error CS0103: The name 'd' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,52): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(7,56): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(8,8): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(8,8): error CS0246: The type or namespace name 'isPrime' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(8,20): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(9,1): error CS1737: Optional parameters must appear after all required parameters
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(9,7): error CS0246: The type or namespace name 'print' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(9,14): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(9,14): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp67krliqd/solution.csx(9,14): error CS1737: Optional parameters must appear after all required parameters

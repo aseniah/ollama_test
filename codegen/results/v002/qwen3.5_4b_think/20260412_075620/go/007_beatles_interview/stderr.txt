@@ -1,0 +1,10 @@
+# command-line-arguments
+./solution.go:39:13: undefined: strconv
+./solution.go:44:15: undefined: strconv
+./solution.go:49:14: undefined: strconv
+./solution.go:86:13: invalid operation: err != nil (mismatched types string and untyped nil)
+./solution.go:90:28: cannot use parseDate(record[1]) (value of interface type error) as string value in assignment
+./solution.go:91:13: invalid operation: err != nil (mismatched types string and untyped nil)
+./solution.go:95:65: not enough arguments in call to time.Date
+	have (int, time.Month, int, number, number, number, *time.Location)
+	want (int, time.Month, int, int, int, int, int, *time.Location)

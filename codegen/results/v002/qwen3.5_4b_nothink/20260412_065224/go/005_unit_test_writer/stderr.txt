@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:35:45: cannot use 393.30 (untyped float constant 393.3) as int value in argument to testDiscount (truncated)

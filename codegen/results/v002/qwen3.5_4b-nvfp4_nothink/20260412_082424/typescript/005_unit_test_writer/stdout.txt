@@ -1,0 +1,13 @@
+Running discount tests...
+
+PASS: No discount for quantity 9 at price 10 (result: 90)
+PASS: 9% discount for quantity 10 at price 20 (result: 180)
+PASS: 9% discount for quantity 49 at price 15 (result: 661.5)
+PASS: 7.5% discount for quantity 50 at price 25 (result: 937.5)
+PASS: 7.5% discount for quantity 60 at price 12 (result: 540)
+PASS: No discount for quantity 5 at price 8 (result: 40)
+
+--- Logic Check ---
+PASS: Correct discount rate applied at boundary (49 uses 9%, 50 uses 7.5%)
+
+Tests complete.

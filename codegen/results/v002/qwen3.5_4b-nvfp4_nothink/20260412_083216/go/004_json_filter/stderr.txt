@@ -1,0 +1,1 @@
+solution.go:8:2: no required module provides package golang.org/x/exp/constraints: go.mod file not found in current directory or any parent directory; see 'go help modules'

@@ -1,0 +1,8 @@
+[
+  {
+    "Name": "Alice Johnson",
+    "Age": 34,
+    "Email": "alice@example.com",
+    "Score": 92.5
+  }
+]

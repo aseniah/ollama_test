@@ -1,0 +1,4 @@
+PASS: Correct discount calculated for price=50, quantity=9
+FAIL: Expected 500, got 450
+FAIL: Expected 2450, got 2205
+FAIL: Expected 2500, got 1875

@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "valid_json": true,
+    "row_count": true,
+    "age_is_int": false,
+    "score_is_float": false,
+    "correct_first_name": true
+  },
+  "passed": false
+}

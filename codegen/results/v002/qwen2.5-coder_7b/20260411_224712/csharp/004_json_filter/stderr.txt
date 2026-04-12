@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpwr2wer_0/solution.csx(8,20): error CS0019: Operator '&&' cannot be applied to operands of type 'bool?' and 'bool'

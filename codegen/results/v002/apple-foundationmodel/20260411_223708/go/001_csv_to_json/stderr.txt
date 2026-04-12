@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:5:2: "fmt" imported and not used
+./solution.go:29:10: undefined: strings
+./solution.go:43:13: undefined: strings

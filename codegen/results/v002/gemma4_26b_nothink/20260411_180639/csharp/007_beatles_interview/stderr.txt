@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpq5ib38gt/solution.csx(82,49): error CS0103: The name 'StringSplitToptions' does not exist in the current context

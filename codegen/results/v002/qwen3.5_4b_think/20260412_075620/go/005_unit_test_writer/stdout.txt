@@ -1,0 +1,11 @@
+PASS: 5 units, price $10 (less than 10)
+PASS: 9 units, price $10 (boundary under 10)
+PASS: 10 units, price $10 (boundary at 10)
+PASS: 49 units, price $10 (boundary just under 50)
+PASS: 50 units, price $10 (boundary at 50)
+PASS: 25 units, price $10 (in 10-49 range)
+PASS: 100 units, price $10 (above 50)
+PASS: 1 unit, price $50 (quantity = 1)
+PASS: 7 units, price $20
+
+Test Summary: 9 passed, 0 failed

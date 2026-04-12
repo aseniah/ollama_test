@@ -1,0 +1,17 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2b9mf8ek/solution.ts:134
+    LastName: rowData[0] === "null" ? "" : rows[i][0].split(" ")[1]?.trim() || "Lennon", // Wait, last name is usually last part of full name? 
+                                           ^
+
+ReferenceError: rows is not defined
+    at rows (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2b9mf8ek/solution.ts:134:44)
+    at Object.<anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2b9mf8ek/solution.ts:217:49)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Object.transformer (/opt/homebrew/lib/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:327:3)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:232:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:437:25)
+
+Node.js v25.9.0

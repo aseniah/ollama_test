@@ -1,0 +1,6 @@
+Running calculateDiscount tests...
+
+PASS: quantity 9 (no discount)
+PASS: quantity 10 (boundary - 10%% discount)
+PASS: quantity 49 (10%% discount)
+PASS: quantity 50 (boundary - 25%% discount)

@@ -1,0 +1,5 @@
+FAIL: Basic case (expected: 10.00, got: 90.00)
+FAIL: Small discount (expected: 4.50, got: 50.00)
+FAIL: Medium discount (expected: 43.27, got: 441.00)
+FAIL: Large discount (expected: 45.00, got: 375.00)
+FAIL: Minimum quantity (expected: 9.00, got: 90.00)

@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn2bo53vp/solution.csx(4,20): warning CS7022: The entry point of the program is global code; ignoring 'Main(IList<string>)' entry point.

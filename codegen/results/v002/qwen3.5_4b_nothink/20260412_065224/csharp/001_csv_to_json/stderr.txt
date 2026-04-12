@@ -1,0 +1,78 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(2,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(2,52): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(2,81): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,23): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,28): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,30): error CS0021: Cannot apply indexing with [] to an expression of type 'method group'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,43): error CS0443: Syntax error; value expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,44): error CS0443: Syntax error; value expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,45): error CS0443: Syntax error; value expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,46): error CS0443: Syntax error; value expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,49): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,91): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,93): error CS1525: Invalid expression term ']'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(3,94): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,25): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,32): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,40): error CS0117: 'Array' does not contain a definition for 'toList'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,48): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,90): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,92): error CS1525: Invalid expression term ']'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,95): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,103): error CS0117: 'Array' does not contain a definition for 'ofSeq'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,110): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,118): error CS0117: 'Array' does not contain a definition for 'map'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,123): error CS0103: The name 'fun' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,127): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(6,127): error CS0103: The name 'rowStr' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,7): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,7): error CS0103: The name 'fields' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,16): error CS0103: The name 'rowStr' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,24): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,26): error CS0120: An object reference is required for the non-static field, method, or property 'MemoryExtensions.Split<char>(ReadOnlySpan<char>, char)'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,45): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,87): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,89): error CS1525: Invalid expression term ']'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,90): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(7,90): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(9,5): error CS0103: The name 'Name' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(9,12): error CS0103: The name 'fields' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(9,19): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(9,24): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(9,26): error CS1525: Invalid expression term 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(9,32): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(10,5): error CS0103: The name 'Age' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(10,21): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(10,21): error CS0103: The name 'fields' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(10,28): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(10,31): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(11,5): error CS0103: The name 'Email' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(11,13): error CS0103: The name 'fields' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(11,20): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(11,25): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(11,27): error CS1525: Invalid expression term 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(11,33): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(12,5): error CS0103: The name 'Score' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(12,25): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(12,25): error CS0103: The name 'fields' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(12,32): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(12,35): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,1): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,3): error CS1525: Invalid expression term '|'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,4): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,46): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,48): error CS1525: Invalid expression term ']'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,51): error CS1525: Invalid expression term '>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(14,99): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,70): error CS0119: 'JsonSerializerOptions' is a type, which is not valid in the given context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,109): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,109): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,111): error CS0103: The name 'WriteIndented' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,133): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(17,134): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(20,1): error CS0103: The name 'printfn' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(20,9): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl_0e9dj_/solution.csx(20,14): error CS1002: ; expected

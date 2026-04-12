@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5ns6g74j/solution.csx(87,37): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<object>' to 'System.Text.Json.Nodes.JsonNodeOptions?'

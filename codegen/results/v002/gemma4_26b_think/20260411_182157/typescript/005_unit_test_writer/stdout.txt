@@ -1,0 +1,8 @@
+PASS: Quantity below 10 (9 units)
+PASS: Quantity at first threshold (10 units)
+PASS: Quantity just below second threshold (49 units)
+PASS: Quantity at second threshold (50 units)
+PASS: Quantity well above second threshold (100 units)
+PASS: Zero quantity
+
+Test Summary: 6 passed, 0 failed.

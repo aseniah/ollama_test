@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpodlsms51/solution.csx(51,23): error CS0103: The name 'nameProfileLastName' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpodlsms51/solution.csx(76,34): error CS0121: The call is ambiguous between the following methods or properties: 'relProfileLastName(string[])' and 'relProfileLastName(string[])'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpodlsms51/solution.csx(107,8): error CS0111: Type 'Submission#0' already defines a member called 'relProfileLastName' with the same parameter types
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpodlsms51/solution.csx(113,8): error CS0111: Type 'Submission#0' already defines a member called 'relProfileLastName' with the same parameter types
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpodlsms51/solution.csx(173,8): error CS0111: Type 'Submission#0' already defines a member called 'relProfileLastName' with the same parameter types

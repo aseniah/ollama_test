@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:28:11: invalid operation: a <= n (mismatched types int and int64)

@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg4f6rvg/solution.csx(14,6): error CS0411: The type arguments for method 'Enumerable.GroupBy<TSource, TKey>(IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>?)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg4f6rvg/solution.csx(52,5): error CS0102: The type 'Submission#0' already contains a definition for 'wordCounts'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg4f6rvg/solution.csx(64,9): error CS0229: Ambiguity between 'wordCounts' and 'wordCounts'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg4f6rvg/solution.csx(68,19): error CS0229: Ambiguity between 'wordCounts' and 'wordCounts'

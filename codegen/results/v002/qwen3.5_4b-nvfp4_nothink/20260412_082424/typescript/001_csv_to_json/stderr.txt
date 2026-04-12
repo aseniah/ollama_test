@@ -1,0 +1,1 @@
+Usage: tsx script.ts input/data.csv

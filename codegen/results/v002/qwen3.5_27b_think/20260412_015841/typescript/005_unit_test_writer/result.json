@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "ran_clean": true,
+    "has_pass_lines": true,
+    "no_fail_lines": true
+  },
+  "passed": true,
+  "spontaneous_tests": true
+}

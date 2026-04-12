@@ -1,0 +1,7 @@
+# command-line-arguments
+./solution.go:51:16: syntax error: unexpected newline, expected comma, : or ]
+./solution.go:59:2: syntax error: non-declaration statement outside function body
+./solution.go:66:38: method has multiple receivers
+./solution.go:66:43: syntax error: unexpected {, expected (
+./solution.go:67:3: syntax error: unexpected keyword if, expected )
+./solution.go:74:2: syntax error: non-declaration statement outside function body

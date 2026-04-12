@@ -1,0 +1,6 @@
+PASS: Quantity 9 (No Discount)
+PASS: Quantity 10 (First Boundary - 10% Discount)
+PASS: Quantity 49 (Upper Bound of Second Tier - 10% Discount)
+PASS: Quantity 50 (Second Boundary - 25% Discount)
+
+All tests passed!

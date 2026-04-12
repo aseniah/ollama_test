@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:31:5: invalid operation: cannot indirect record["active"] (map index expression of type interface{})
+./solution.go:31:34: invalid operation: cannot indirect record["age"] (map index expression of type interface{})
+./solution.go:61:9: undefined: sort

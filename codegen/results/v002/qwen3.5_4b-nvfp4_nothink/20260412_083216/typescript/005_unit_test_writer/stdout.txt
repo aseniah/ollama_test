@@ -1,0 +1,6 @@
+FAIL: price=10, quantity=undefined (expected: 90, got: NaN)
+FAIL: price=10, quantity=undefined (expected: 90, got: NaN)
+FAIL: price=10, quantity=undefined (expected: 441, got: NaN)
+FAIL: price=10, quantity=undefined (expected: 375, got: NaN)
+
+Results: 0 passed, 4 failed.

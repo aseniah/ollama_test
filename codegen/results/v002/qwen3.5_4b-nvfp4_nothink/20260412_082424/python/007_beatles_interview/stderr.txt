@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2i3kpq5h/solution.py", line 102
+    let's parse Name column: split by space. If 1 part -> F+N, else F+L? 
+       ^
+SyntaxError: unterminated string literal (detected at line 102)

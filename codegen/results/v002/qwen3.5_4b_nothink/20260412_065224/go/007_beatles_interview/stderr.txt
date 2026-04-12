@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:7:2: "strconv" imported and not used
+./solution.go:38:15: diff.Sub undefined (type time.Duration has no field or method Sub)
+./solution.go:139:35: 365.25 (untyped float constant) truncated to int64

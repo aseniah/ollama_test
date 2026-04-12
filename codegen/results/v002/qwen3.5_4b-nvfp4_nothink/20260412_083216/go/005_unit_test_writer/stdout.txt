@@ -1,0 +1,9 @@
+PASS: quantity=9 (expecting: 90 )
+PASS: quantity=10 (expecting: 90 )
+PASS: quantity=49 (expecting: 441 )
+PASS: quantity=50 (expecting: 375 )
+PASS: quantity=5 (expecting: 50 )
+PASS: quantity=30 (expecting: 270 )
+PASS: quantity=60 (expecting: 450 )
+
+All tests completed.

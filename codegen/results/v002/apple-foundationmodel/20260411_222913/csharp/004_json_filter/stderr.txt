@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofb0yg4t/solution.csx(9,40): error CS0246: The type or namespace name 'StringJsonDocument' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpofb0yg4t/solution.csx(12,33): error CS1061: 'JsonDocument' does not contain a definition for 'SelectMany' and no accessible extension method 'SelectMany' accepting a first argument of type 'JsonDocument' could be found (are you missing a using directive or an assembly reference?)

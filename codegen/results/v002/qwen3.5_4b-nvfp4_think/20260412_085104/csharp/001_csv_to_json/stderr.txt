@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpc2gni7qm/solution.csx(25,29): error CS0117: 'Console' does not contain a definition for 'OpenStdOutput'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpc2gni7qm/solution.csx(26,38): error CS0234: The type or namespace name 'Extensions' does not exist in the namespace 'Microsoft' (are you missing an assembly reference?)

@@ -1,0 +1,4 @@
+PASS: quantity=9, price=10.0 (expected: 90.0, got: 90.0)
+PASS: quantity=10, price=10.0 (expected: 90.0, got: 90.0)
+PASS: quantity=49, price=10.0 (expected: 441.0, got: 441.0)
+PASS: quantity=50, price=10.0 (expected: 375.0, got: 375.0)

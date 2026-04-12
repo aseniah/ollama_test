@@ -1,0 +1,8 @@
+# command-line-arguments
+./solution.go:59:6: syntax error: unexpected name tokenize, expected (
+./solution.go:65:3: syntax error: unexpected newline in argument list; possibly missing comma or )
+./solution.go:67:2: syntax error: unexpected keyword var at end of statement
+./solution.go:91:6: syntax error: unexpected name unicode, expected (
+./solution.go:95:6: syntax error: unexpected name main, expected (
+./solution.go:143:6: syntax error: unexpected name tokenize, expected (
+./solution.go:164:6: syntax error: unexpected name unicode, expected (

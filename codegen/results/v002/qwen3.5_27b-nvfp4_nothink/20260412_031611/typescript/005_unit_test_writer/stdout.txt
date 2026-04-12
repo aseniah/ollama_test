@@ -1,0 +1,7 @@
+PASS: Quantity below 10 (no discount)
+PASS: Boundary quantity 10 (9% discount)
+PASS: Quantity just below 50 (9% discount)
+PASS: Boundary quantity 50 (25% discount)
+PASS: Quantity above 50 (25% discount)
+
+Total: 5/5 tests passed.

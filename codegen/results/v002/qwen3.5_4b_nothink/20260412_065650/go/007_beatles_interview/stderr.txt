@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:77:27: syntax error: unexpected newline in composite literal; possibly missing comma or }
+./solution.go:87:27: syntax error: unexpected newline in composite literal; possibly missing comma or }
+./solution.go:97:28: syntax error: unexpected newline in composite literal; possibly missing comma or }
+./solution.go:107:27: syntax error: unexpected newline in composite literal; possibly missing comma or }

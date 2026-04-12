@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:115:2: undefined: lastName
+./solution.go:116:20: undefined: lastName
+./solution.go:139:48: time.Date (value of type func(year int, month time.Month, day int, hour int, min int, sec int, nsec int, loc *time.Location) time.Time) is not a type

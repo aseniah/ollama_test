@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm1f_fbri/solution.csx(76,76): error CS0426: The type name 'Serialize' does not exist in the type 'JsonSerializer'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm1f_fbri/solution.csx(80,41): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<System.Text.Json.Nodes.JsonObject>' to 'System.Text.Json.Nodes.JsonNodeOptions?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm1f_fbri/solution.csx(89,15): error CS0234: The type or namespace name 'Encoder' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm1f_fbri/solution.csx(93,28): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<System.Text.Json.Nodes.JsonObject>' to 'System.Text.Json.Nodes.JsonNodeOptions?'

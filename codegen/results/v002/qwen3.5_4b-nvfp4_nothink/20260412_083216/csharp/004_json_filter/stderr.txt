@@ -1,0 +1,6 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsfyoqkwy/solution.csx(10,45): error CS1503: Argument 1: cannot convert from 'string[]' to 'char[]?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsfyoqkwy/solution.csx(10,60): error CS1012: Too many characters in character literal
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsfyoqkwy/solution.csx(21,47): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsfyoqkwy/solution.csx(22,54): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsfyoqkwy/solution.csx(31,17): error CS1061: 'List<JsonElement>' does not contain a definition for 'sort' and no accessible extension method 'sort' accepting a first argument of type 'List<JsonElement>' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpsfyoqkwy/solution.csx(39,63): error CS1660: Cannot convert lambda expression to type 'JsonSerializerOptions' because it is not a delegate type

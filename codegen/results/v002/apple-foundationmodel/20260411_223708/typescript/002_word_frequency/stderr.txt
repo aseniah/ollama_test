@@ -1,0 +1,13 @@
+An error occurred: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined
+    at makeCallback (node:fs:178:3)
+    at Object.readdir (node:fs:1498:14)
+    at main (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg3i4b01/solution.ts:16:32)
+    at fs (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg3i4b01/solution.ts:52:1)
+    at Object.<anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgg3i4b01/solution.ts:52:6)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Object.transformer (/opt/homebrew/lib/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}

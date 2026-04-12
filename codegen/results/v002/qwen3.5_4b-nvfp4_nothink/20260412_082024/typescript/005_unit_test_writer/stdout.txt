@@ -1,0 +1,4 @@
+PASS: Below threshold: quantity 9
+PASS: At first boundary: quantity 10
+FAIL: Between boundaries: quantity 49 (expected: 44.1, got: 441)
+FAIL: At second boundary: quantity 50 (expected: 37.5, got: 375)

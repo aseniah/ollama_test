@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7lyz2v22/solution.csx(4,20): warning CS7022: The entry point of the program is global code; ignoring 'Main(string[])' entry point.

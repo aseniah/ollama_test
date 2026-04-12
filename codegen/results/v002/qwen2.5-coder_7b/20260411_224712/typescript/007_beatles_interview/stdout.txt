@@ -1,0 +1,94 @@
+[
+  {
+    "FirstName": "John Winston",
+    "LastName": "Lennon",
+    "Birthday": "1940-10-09",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Julia Stanley",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  {
+    "FirstName": "James Paul",
+    "LastName": "McCartney",
+    "Birthday": "1942-06-18",
+    "Age": 83,
+    "Relatives": [
+      {
+        "FirstName": "Mary McCartney",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Mike McGear",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  {
+    "FirstName": "Ringo",
+    "LastName": "Starr",
+    "Birthday": "1940-07-07",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Elsie Gleave",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Marie Maguire",
+        "LastName": "",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  {
+    "FirstName": "George",
+    "LastName": "Harrison",
+    "Birthday": "1943-02-25",
+    "Age": 82,
+    "Relatives": [
+      {
+        "FirstName": "Louise French",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Peter Harrison",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Louise Harrison",
+        "LastName": "",
+        "Relationship": "Brother"
+      }
+    ]
+  }
+]

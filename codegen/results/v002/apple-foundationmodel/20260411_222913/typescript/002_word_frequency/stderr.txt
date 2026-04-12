@@ -1,0 +1,2 @@
+Error: TypeError: wordFrequency.entries(...).sort is not a function
+    at main (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfhd4sd_e/solution.ts:31:8)

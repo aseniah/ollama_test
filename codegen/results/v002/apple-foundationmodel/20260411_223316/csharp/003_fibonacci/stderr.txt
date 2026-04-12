@@ -1,0 +1,16 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(14,9): warning CS0162: Unreachable code detected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(5,5): error CS0103: The name 'var' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(5,9): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(5,9): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(7,12): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(7,17): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(7,36): error CS0103: The name 'limit' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(8,9): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(8,18): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(8,23): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(8,41): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(8,46): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(11,12): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(11,17): error CS0103: The name 'fibs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(14,9): error CS0103: The name 'GetIntArg' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphksobbyy/solution.csx(22,39): error CS1061: 'Func<int, int>' does not contain a definition for 'TakeWhile' and no accessible extension method 'TakeWhile' accepting a first argument of type 'Func<int, int>' could be found (are you missing a using directive or an assembly reference?)

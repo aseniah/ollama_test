@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpayip6_zn/solution.csx(12,53): error CS1061: 'JsonElement' does not contain a definition for 'GetValue' and no accessible extension method 'GetValue' accepting a first argument of type 'JsonElement' could be found (are you missing a using directive or an assembly reference?)

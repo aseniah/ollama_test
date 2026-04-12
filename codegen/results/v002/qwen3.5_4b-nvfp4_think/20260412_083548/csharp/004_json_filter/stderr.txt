@@ -1,0 +1,14 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(10,21): error CS1579: foreach statement cannot operate on variables of type 'JsonNode' because 'JsonNode' does not contain a public instance or extension definition for 'GetEnumerator'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(24,33): error CS1503: Argument 1: cannot convert from 'string[]' to 'System.ReadOnlyMemory<byte>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(25,1): error CS0021: Cannot apply indexing with [] to an expression of type 'JsonDocument'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(29,25): error CS1729: 'JsonDocument' does not contain a constructor that takes 0 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(29,77): error CS1950: The best overloaded Add method 'List<JsonElement>.Add(JsonElement)' for the collection initializer has some invalid arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(29,77): error CS1503: Argument 1: cannot convert from 'System.Text.Json.JsonDocument' to 'System.Text.Json.JsonElement'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(30,9): error CS0021: Cannot apply indexing with [] to an expression of type 'JsonDocument'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(33,43): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonNode' to 'System.ReadOnlyMemory<byte>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(34,13): error CS0021: Cannot apply indexing with [] to an expression of type 'JsonDocument'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(37,9): error CS0021: Cannot apply indexing with [] to an expression of type 'JsonDocument'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(39,32): error CS1729: 'JsonDocument' does not contain a constructor that takes 0 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(39,84): error CS1950: The best overloaded Add method 'List<JsonElement>.Add(JsonElement)' for the collection initializer has some invalid arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(39,84): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonNode' to 'System.Text.Json.JsonElement'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7z20xsb6/solution.csx(40,13): error CS0021: Cannot apply indexing with [] to an expression of type 'JsonDocument'

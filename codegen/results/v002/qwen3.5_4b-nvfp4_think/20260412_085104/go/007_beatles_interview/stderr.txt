@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:35:14: undefined: readAllLines
+./solution.go:56:2: declared and not used: targetDate
+./solution.go:92:5: undefined: age
+./solution.go:94:5: undefined: age
+./solution.go:96:5: undefined: age
+./solution.go:98:40: undefined: age
+./solution.go:104:29: undefined: memberRelatives
+./solution.go:113:29: undefined: memberRelatives
+./solution.go:122:29: undefined: memberRelatives
+./solution.go:131:29: undefined: memberRelatives
+./solution.go:56:2: too many errors

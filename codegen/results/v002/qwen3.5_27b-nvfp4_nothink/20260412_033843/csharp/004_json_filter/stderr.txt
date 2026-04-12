@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqsoktw11/solution.csx(42,33): error CS1503: Argument 1: cannot convert from 'System.Text.Json.JsonElement[]' to 'System.Text.Json.Nodes.JsonNodeOptions?'

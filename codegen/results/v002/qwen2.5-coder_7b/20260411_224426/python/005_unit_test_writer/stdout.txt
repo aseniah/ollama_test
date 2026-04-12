@@ -1,0 +1,4 @@
+PASS: Quantity less than 10 - Expected 90, got 90
+PASS: Quantity equals 10 - Expected 90, got 90.0
+PASS: Quantity between 10 and 49 - Expected 441, got 441.0
+PASS: Quantity equals 50 - Expected 375, got 375.0

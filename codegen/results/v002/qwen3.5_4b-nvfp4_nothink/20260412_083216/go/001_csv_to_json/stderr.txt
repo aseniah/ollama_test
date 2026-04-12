@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:27:2: declared and not used: header
+./solution.go:37:17: undefined: csv.ErrEOF
+./solution.go:73:14: undefined: strconv
+./solution.go:84:14: undefined: strconv

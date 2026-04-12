@@ -1,0 +1,4 @@
+PASS: quantity less than 10
+FAIL: quantity exactly 10 (expected: 100.00, got: 90.00)
+PASS: quantity between 10 and 50
+PASS: quantity exactly 50

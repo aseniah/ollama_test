@@ -1,0 +1,8 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(23,38): error CS0234: The type or namespace name 'JsonArray' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(29,44): error CS0234: The type or namespace name 'JsonObject' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(32,22): error CS0234: The type or namespace name 'JsonNode' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(33,9): error CS0234: The type or namespace name 'JsonNode' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(49,22): error CS0234: The type or namespace name 'JsonNode' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(50,9): error CS0234: The type or namespace name 'JsonNode' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(73,45): error CS1729: 'JsonDocument' does not contain a constructor that takes 0 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp94rxwnzp/solution.csx(74,17): error CS1503: Argument 1: cannot convert from 'System.IO.TextWriter' to 'System.Text.Json.Utf8JsonWriter'

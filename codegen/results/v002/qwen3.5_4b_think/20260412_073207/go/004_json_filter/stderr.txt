@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:35:5: undefined: sort
+./solution.go:40:5: undefined: fmt

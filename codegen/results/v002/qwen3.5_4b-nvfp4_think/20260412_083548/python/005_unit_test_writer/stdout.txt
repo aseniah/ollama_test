@@ -1,0 +1,11 @@
+Test: quantity=9 (boundary no discount)
+PASS: quantity=9 with price=100.0 - no discount applied
+
+Test: quantity=10 (boundary 10-49 discount)
+PASS: quantity=10 with price=100.0 - 10% discount applied
+
+Test: quantity=49 (boundary max for 10% discount)
+PASS: quantity=49 with price=50.0 - 10% discount applied
+
+Test: quantity=50 (boundary >= 50 discount)
+PASS: quantity=50 with price=50.0 - 25% discount applied

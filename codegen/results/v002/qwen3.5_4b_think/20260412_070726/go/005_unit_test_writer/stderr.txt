@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:18:8: undefined: fmt
+./solution.go:19:9: undefined: fmt
+./solution.go:21:9: undefined: fmt
+./solution.go:27:8: undefined: fmt
+./solution.go:28:9: undefined: fmt
+./solution.go:30:9: undefined: fmt
+./solution.go:36:8: undefined: fmt
+./solution.go:37:9: undefined: fmt
+./solution.go:39:9: undefined: fmt
+./solution.go:45:8: undefined: fmt
+./solution.go:45:8: too many errors

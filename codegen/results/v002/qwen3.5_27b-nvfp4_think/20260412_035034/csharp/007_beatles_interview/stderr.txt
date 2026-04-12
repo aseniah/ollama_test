@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpx6wdu05v/solution.csx(75,94): error CS1501: No overload for method 'Join' takes 1 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpx6wdu05v/solution.csx(86,94): error CS1501: No overload for method 'Join' takes 1 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpx6wdu05v/solution.csx(97,96): error CS1501: No overload for method 'Join' takes 1 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpx6wdu05v/solution.csx(108,94): error CS1501: No overload for method 'Join' takes 1 arguments

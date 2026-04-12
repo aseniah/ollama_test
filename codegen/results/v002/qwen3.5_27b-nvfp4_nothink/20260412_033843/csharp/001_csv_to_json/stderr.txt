@@ -1,0 +1,15 @@
+System.Text.Json.JsonReaderException: '+' is invalid after a value. Expected either ',', '}', or ']'. LineNumber: 0 | BytePositionInLine: 11.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeNextToken(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ConsumeNextTokenOrRollback(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, JsonReaderOptions readerOptions, MetadataDb& database, StackRowStack& stack)
+   at System.Text.Json.JsonDocument.ParseUnrented(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, JsonTokenType tokenType, Boolean allowDuplicateProperties)
+   at System.Text.Json.JsonDocument.ParseValue(ReadOnlySpan`1 json, JsonDocumentOptions options)
+   at System.Text.Json.JsonDocument.ParseValue(String json, JsonDocumentOptions options)
+   at System.Text.Json.JsonElement.Parse(String json, JsonDocumentOptions options)
+   at System.Text.Json.Nodes.JsonNode.Parse(String json, Nullable`1 nodeOptions, JsonDocumentOptions documentOptions)
+   at Submission#0.<<Initialize>>d__0.MoveNext() in /private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3jr580i9/solution.csx:line 33
+--- End of stack trace from previous location ---
+   at Dotnet.Script.Core.ScriptRunner.Execute[TReturn](String dllPath, IEnumerable`1 commandLineArgs) in C:\Users\runneradmin\AppData\Local\Temp\tmphjjxd2\Dotnet.Script.Core\ScriptRunner.cs:line 110

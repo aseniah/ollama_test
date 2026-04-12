@@ -1,0 +1,6 @@
+PASS: quantity 9, no discount applied
+PASS: quantity 10, 10%% discount applied
+PASS: quantity 49, 10%% discount applied
+PASS: quantity 50, 25%% discount applied
+
+Results: 4/4 tests passed

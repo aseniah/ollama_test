@@ -1,0 +1,9 @@
+PASS: quantity < 10: no discount
+PASS: quantity = 9 (boundary, no discount)
+PASS: quantity = 10 (boundary, 10% off)
+FAIL: quantity = 49 (boundary, 10% off) (expected: 450.00, got: 441.00)
+PASS: quantity = 50 (boundary, 25% off)
+PASS: large quantity: 25% off
+
+Test Summary: 5 passed, 1 failed
+Some tests failed.

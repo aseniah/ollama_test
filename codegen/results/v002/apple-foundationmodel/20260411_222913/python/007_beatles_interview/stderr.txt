@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqa7fyix1/solution.py", line 39, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqa7fyix1/solution.py", line 32, in main
+    ages = calculate_ages('input/input.csv')
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqa7fyix1/solution.py", line 20, in calculate_ages
+    'LastName': row['LastName'],
+                ~~~^^^^^^^^^^^^
+KeyError: 'LastName'

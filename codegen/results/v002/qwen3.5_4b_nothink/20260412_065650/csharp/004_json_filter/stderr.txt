@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpmy72i2l1/solution.csx(23,22): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonObject' to 'System.Collections.Generic.Dictionary<string, System.Text.Json.Nodes.JsonNode>'

@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:19:9: undefined: fmt
+./solution.go:21:9: undefined: fmt
+./solution.go:25:11: no new variables on left side of :=
+./solution.go:26:14: no new variables on left side of :=
+./solution.go:27:14: no new variables on left side of :=
+./solution.go:28:12: no new variables on left side of :=
+./solution.go:30:9: undefined: fmt
+./solution.go:32:9: undefined: fmt
+./solution.go:36:11: no new variables on left side of :=
+./solution.go:37:14: no new variables on left side of :=
+./solution.go:37:14: too many errors

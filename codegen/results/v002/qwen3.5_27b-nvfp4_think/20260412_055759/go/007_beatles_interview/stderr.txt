@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:150:15: undefined: firstName
+./solution.go:151:15: cannot use _ as value or type

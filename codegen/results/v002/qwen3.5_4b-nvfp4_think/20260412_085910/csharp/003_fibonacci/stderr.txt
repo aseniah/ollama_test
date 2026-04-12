@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp372zjia1/solution.csx(1,19): error CS0234: The type or namespace name 'Args' does not exist in the namespace 'System' (are you missing an assembly reference?)

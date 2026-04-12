@@ -1,0 +1,114 @@
+[
+  {
+    "FirstName": "John",
+    "LastName": "Winston",
+    "Birthday": "10/9/1940",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Alfred Lennon",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Julia Stanley",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "James",
+    "LastName": "Paul",
+    "Birthday": "6/18/1942",
+    "Age": 83,
+    "Relatives": [
+      {
+        "FirstName": "Jim McCartney",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Mary McCartney",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Mike McGear",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "Ringo",
+    "LastName": "Starr",
+    "Birthday": "7/7/1940",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Richard Starkey",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Elsie Gleave",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "Marie Maguire",
+        "LastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "George",
+    "LastName": "Harrison",
+    "Birthday": "2/25/1943",
+    "Age": 82,
+    "Relatives": [
+      {
+        "FirstName": "Harold Harrison",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Louise French",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Peter Harrison",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "Louise Harrison",
+        "LastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  }
+]

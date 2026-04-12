@@ -1,0 +1,3 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_9p4y0r0/solution.csx(7,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_9p4y0r0/solution.csx(14,12): error CS0246: The type or namespace name 'JsonArray' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_9p4y0r0/solution.csx(16,29): error CS0246: The type or namespace name 'JsonArray' could not be found (are you missing a using directive or an assembly reference?)

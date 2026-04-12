@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "valid_json": true,
+    "correct_count": true,
+    "correct_order": true,
+    "bob_excluded": true,
+    "carol_excluded": true
+  },
+  "passed": true
+}

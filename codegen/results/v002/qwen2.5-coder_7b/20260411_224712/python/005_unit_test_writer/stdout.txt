@@ -1,0 +1,4 @@
+PASS: quantity below threshold
+PASS: quantity at lower boundary of discount
+PASS: quantity within discount range
+PASS: quantity at upper boundary of discount

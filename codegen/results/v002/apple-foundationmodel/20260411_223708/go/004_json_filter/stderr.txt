@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:19:12: undefined: json
+./solution.go:30:3: declared and not used: name
+./solution.go:37:13: cannot use strings.FieldsFunc(filtered, func(s string) bool {…}) (value of type []string) as []map[string]interface{} value in assignment
+./solution.go:37:32: cannot use filtered (variable of type []map[string]interface{}) as string value in argument to strings.FieldsFunc
+./solution.go:37:42: cannot use func(s string) bool {…} (value of type func(s string) bool) as func(rune) bool value in argument to strings.FieldsFunc
+./solution.go:38:12: invalid operation: s["active"] (value of type byte) is not an interface
+./solution.go:38:14: cannot convert "active" (untyped string constant) to type int
+./solution.go:39:17: invalid operation: s["age"] (value of type byte) is not an interface
+./solution.go:39:19: cannot convert "age" (untyped string constant) to type int
+./solution.go:56:14: undefined: json
+./solution.go:56:14: too many errors

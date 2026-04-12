@@ -1,0 +1,4 @@
+PASS: Quantity 9 with price 10 gives discount 90
+FAIL: Quantity 10 with price 10 expected 100 but got 90
+PASS: Quantity 49 with price 10 gives discount 441
+PASS: Quantity 50 with price 10 gives discount 375

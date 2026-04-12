@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:81:15: syntax error: unexpected comma, expected )
+./solution.go:243:14: syntax error: unexpected comma, expected )
+./solution.go:319:23: syntax error: unexpected comma, expected )
+./solution.go:352:35: syntax error: unexpected comma, expected )

@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:9:18: undefined: os
+./solution.go:32:43: cannot use []string{…} (value of type []string) as string value in argument to append
+./solution.go:32:58: cannot use count (variable of type int) as string value in array or slice literal

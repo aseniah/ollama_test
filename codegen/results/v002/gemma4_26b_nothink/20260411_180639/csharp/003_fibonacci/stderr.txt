@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa9lsmdws/solution.csx(37,14): warning CS0219: The variable 'current' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa9lsmdws/solution.csx(38,14): warning CS0219: The variable 'next' is assigned but its value is never used

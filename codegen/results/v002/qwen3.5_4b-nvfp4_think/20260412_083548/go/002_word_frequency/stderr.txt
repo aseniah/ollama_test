@@ -1,0 +1,6 @@
+# command-line-arguments
+./solution.go:7:2: "path/filepath" imported and not used
+./solution.go:42:6: continue is not in a loop
+./solution.go:47:54: final index required in 3-index slice
+./solution.go:47:54: invalid operation: 3-index slice of string
+./solution.go:63:6: declared and not used: i

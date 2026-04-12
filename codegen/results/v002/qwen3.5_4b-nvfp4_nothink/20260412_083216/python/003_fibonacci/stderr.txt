@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpoupam5ch/solution.py", line 35, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpoupam5ch/solution.py", line 23, in main
+    next_fib = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+                                        ~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range

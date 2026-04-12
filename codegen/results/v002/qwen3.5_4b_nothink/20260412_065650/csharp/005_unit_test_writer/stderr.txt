@@ -1,0 +1,86 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(12,1): error CS0819: Implicitly-typed variables cannot have multiple declarators
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(12,22): error CS0246: The type or namespace name 'Dict<,>' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(13,13): error CS1525: Invalid expression term '{'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(13,13): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(13,13): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(13,13): error CS1501: No overload for method 'Add' takes 8 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(13,109): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(13,109): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,11): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,22): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,22): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,28): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,28): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,40): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,40): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,43): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,43): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,55): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,55): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,61): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,61): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,76): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,76): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,105): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(14,108): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,11): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,22): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,22): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,28): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,28): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,40): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,40): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,44): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,44): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,56): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,62): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,62): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,77): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,77): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,108): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(15,111): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,11): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,22): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,22): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,28): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,28): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,40): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,40): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,44): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,44): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,56): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,63): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,63): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,78): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,78): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,109): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(16,112): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,11): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,22): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,22): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,28): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,28): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,40): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,40): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,44): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,44): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,56): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,63): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,63): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,78): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,78): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,109): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(17,112): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(18,1): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(22,19): error CS0029: Cannot implicitly convert type 'bool' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(23,15): error CS0029: Cannot implicitly convert type 'string' to 'bool'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(25,12): error CS0029: Cannot implicitly convert type 'string' to 'bool'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(39,80): error CS1061: 'List<string>' does not contain a definition for 'Count' and no accessible extension method 'Count' accepting a first argument of type 'List<string>' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpn0kze3bn/solution.csx(39,86): error CS0246: The type or namespace name 'results' could not be found (are you missing a using directive or an assembly reference?)

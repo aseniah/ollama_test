@@ -1,0 +1,7 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(15,37): error CS0139: No enclosing loop out of which to break or continue
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(51,24): error CS1729: 'JsonDocument' does not contain a constructor that takes 0 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(52,14): error CS1061: 'JsonDocument' does not contain a definition for 'ParseArray' and no accessible extension method 'ParseArray' accepting a first argument of type 'JsonDocument' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(54,20): error CS1729: 'JsonDocument' does not contain a constructor that takes 1 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(54,66): error CS0103: The name 'FormatOption' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(54,100): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdd0b7p3k/solution.csx(54,100): error CS7017: Member definition, statement, or end-of-file expected

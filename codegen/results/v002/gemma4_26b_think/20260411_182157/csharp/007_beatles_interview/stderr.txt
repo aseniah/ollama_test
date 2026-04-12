@@ -1,0 +1,6 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpal51y8i5/solution.csx(45,24): error CS1525: Invalid expression term ''
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpal51y8i5/solution.csx(45,24): error CS1056: Unexpected character '`'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpal51y8i5/solution.csx(45,25): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpal51y8i5/solution.csx(45,35): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpal51y8i5/solution.csx(45,35): error CS1056: Unexpected character '`'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpal51y8i5/solution.csx(45,37): error CS0103: The name 'Trim' does not exist in the current context

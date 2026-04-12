@@ -1,0 +1,4 @@
+PASS: Qty: 9 (No Discount)
+PASS: Qty: 10 (10% Discount Boundary)
+PASS: Qty: 49 (10% Discount Upper Limit)
+PASS: Qty: 50 (25% Discount Boundary)

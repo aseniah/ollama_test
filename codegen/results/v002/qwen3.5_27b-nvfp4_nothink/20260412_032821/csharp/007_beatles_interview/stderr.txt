@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp39sxbxwp/solution.csx(50,36): error CS0426: The type name 'Parse' does not exist in the type 'JsonNode'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp39sxbxwp/solution.csx(57,36): error CS0426: The type name 'Parse' does not exist in the type 'JsonNode'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp39sxbxwp/solution.csx(64,36): error CS0426: The type name 'Parse' does not exist in the type 'JsonNode'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp39sxbxwp/solution.csx(71,36): error CS0426: The type name 'Parse' does not exist in the type 'JsonNode'

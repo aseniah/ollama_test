@@ -1,0 +1,4 @@
+PASS: Boundary check: Quantity 9 (< 10, no discount)
+PASS: Boundary check: Quantity 10 (>= 10, 10% off)
+PASS: Boundary check: Quantity 49 (< 50, 10% off)
+PASS: Boundary check: Quantity 50 (>= 50, 25% off)

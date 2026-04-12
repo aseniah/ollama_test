@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:58:16: assignment mismatch: 1 variable but parseDate returns 3 values

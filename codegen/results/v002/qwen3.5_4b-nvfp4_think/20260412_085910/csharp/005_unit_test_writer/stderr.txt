@@ -1,0 +1,45 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(10,19): error CS0305: Using the generic type 'List<T>' requires 1 type arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(12,17): error CS0305: Using the generic type 'Dictionary<TKey, TValue>' requires 2 type arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(13,17): error CS0305: Using the generic type 'Dictionary<TKey, TValue>' requires 2 type arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(14,17): error CS0305: Using the generic type 'Dictionary<TKey, TValue>' requires 2 type arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(15,17): error CS0305: Using the generic type 'Dictionary<TKey, TValue>' requires 2 type arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(17,18): error CS0305: Using the generic type 'List<T>' requires 1 type arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,5): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,5): error CS0246: The type or namespace name 'each' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,17): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,20): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,27): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,27): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(18,28): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(19,8): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(19,46): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(19,46): error CS1525: Invalid expression term ':'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(19,46): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(19,46): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,9): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,20): error CS0103: The name 'result' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,68): error CS0103: The name 'result' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,112): error CS0103: The name 'result' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,146): error CS8641: 'else' cannot start a statement.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,146): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,146): error CS1525: Invalid expression term 'else'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,146): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(20,146): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(21,9): error CS1525: Invalid expression term ':'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(21,9): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(21,9): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(22,20): error CS0103: The name 'result' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(24,1): error CS0103: The name 'writeLines' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,5): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,5): error CS0246: The type or namespace name 'each' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,15): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,18): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,25): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,25): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(27,26): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(28,8): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(28,31): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(28,31): error CS1525: Invalid expression term ':'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(28,31): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(28,31): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp_0_mneiv/solution.csx(31,1): error CS0103: The name 'writeLine' does not exist in the current context

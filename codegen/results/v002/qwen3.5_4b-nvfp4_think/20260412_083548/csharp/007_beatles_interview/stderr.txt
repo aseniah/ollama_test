@@ -1,0 +1,28 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(10,48): warning CS0168: The variable 'l' is declared but never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(24,23): warning CS0219: The variable 'dayIndex' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(25,53): warning CS0219: The variable 'l' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(42,42): warning CS0219: The variable 'j' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(3,1): error CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(4,1): error CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(5,1): error CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(18,70): error CS0117: 'Enumerable' does not contain a definition for 'Default'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(24,5): error CS0819: Implicitly-typed variables cannot have multiple declarators
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(25,10): error CS0819: Implicitly-typed variables cannot have multiple declarators
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(25,53): error CS0136: A local or parameter named 'l' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(26,99): error CS0103: The name 'DateTimeStyles' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(26,140): error CS0118: 'DateTime' is a type but is used like a variable
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(27,56): error CS0234: The type or namespace name 'DateTimeFormatStyle' does not exist in the namespace 'System' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(30,5): error CS0825: The contextual keyword 'var' may only appear within a local variable declaration or in script code
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(30,11): error CS0128: A local variable or function named 'parts' is already defined in this scope
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(35,33): error CS1503: Argument 2: cannot convert from 'out System.DateTime' to 'out int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(37,77): error CS1011: Empty character literal
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(37,81): error CS0029: Cannot implicitly convert type 'char' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(37,86): error CS0029: Cannot implicitly convert type 'char' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(38,56): error CS1503: Argument 1: cannot convert from 'char' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(40,23): error CS1729: 'JsonDocument' does not contain a constructor that takes 0 arguments
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(40,55): error CS0117: 'JsonDocument' does not contain a definition for 'value'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(41,42): error CS0234: The type or namespace name 'JSONArray' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(42,14): error CS0136: A local or parameter named 'l' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(42,42): error CS0136: A local or parameter named 'j' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(46,9): error CS0825: The contextual keyword 'var' may only appear within a local variable declaration or in script code
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpy4n0vx7i/solution.csx(48,52): error CS0117: 'Enumerable' does not contain a definition for 'Default'

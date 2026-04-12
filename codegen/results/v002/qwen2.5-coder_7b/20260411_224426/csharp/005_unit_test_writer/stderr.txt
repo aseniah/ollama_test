@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpw1mdptto/solution.csx(10,24): warning CS7022: The entry point of the program is global code; ignoring 'DiscountCalculator.Main(string[])' entry point.

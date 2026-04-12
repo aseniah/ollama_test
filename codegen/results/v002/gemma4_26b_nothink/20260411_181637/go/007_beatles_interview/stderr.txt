@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:145:5: declared and not used: rFirst
+./solution.go:145:13: declared and not used: rLast

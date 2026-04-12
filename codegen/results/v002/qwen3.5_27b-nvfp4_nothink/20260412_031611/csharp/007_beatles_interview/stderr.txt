@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8r_kcmzu/solution.csx(109,35): error CS0117: 'JsonArray' does not contain a definition for 'FromObject'

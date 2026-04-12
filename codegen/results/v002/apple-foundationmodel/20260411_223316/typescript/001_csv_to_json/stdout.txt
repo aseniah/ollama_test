@@ -1,0 +1,34 @@
+Promise {
+  '[\n' +
+    '  {\n' +
+    '    "Name": "Alice Johnson",\n' +
+    '    "Age": 34,\n' +
+    '    "Email": "alice@example.com",\n' +
+    '    "Score": 92.5\n' +
+    '  },\n' +
+    '  {\n' +
+    '    "Name": "Bob Smith",\n' +
+    '    "Age": 28,\n' +
+    '    "Email": "bob@example.com",\n' +
+    '    "Score": 78\n' +
+    '  },\n' +
+    '  {\n' +
+    '    "Name": "Carol White",\n' +
+    '    "Age": 45,\n' +
+    '    "Email": "carol@example.com",\n' +
+    '    "Score": 88.3\n' +
+    '  },\n' +
+    '  {\n' +
+    '    "Name": "David Lee",\n' +
+    '    "Age": 31,\n' +
+    '    "Email": "david@example.com",\n' +
+    '    "Score": 95.1\n' +
+    '  },\n' +
+    '  {\n' +
+    '    "Name": "Eva Martinez",\n' +
+    '    "Age": 52,\n' +
+    '    "Email": "eva@example.com",\n' +
+    '    "Score": 71.8\n' +
+    '  }\n' +
+    ']'
+}

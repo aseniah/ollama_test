@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxkytfd1s/solution.py", line 87, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxkytfd1s/solution.py", line 24, in main
+    birth_date = date.fromisoformat(birthday)
+ValueError: Invalid isoformat string: '1940-10-9'

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2binp907/solution.py", line 47, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2binp907/solution.py", line 34, in main
+    data = parse_csv_to_json(csv_file)
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2binp907/solution.py", line 17, in parse_csv_to_json
+    "LastName": row['LastName'],
+                ~~~^^^^^^^^^^^^
+KeyError: 'LastName'

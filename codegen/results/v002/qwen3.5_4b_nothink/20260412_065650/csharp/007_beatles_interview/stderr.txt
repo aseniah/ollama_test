@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpf1kdatlg/solution.csx(63,21): error CS0117: 'JsonNode' does not contain a definition for 'CreateArray'

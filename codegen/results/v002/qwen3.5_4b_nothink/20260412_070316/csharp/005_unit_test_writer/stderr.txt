@@ -1,0 +1,241 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,9): warning CS8500: This takes the address of, gets the size of, or declares a pointer to a managed type ('price')
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,17): warning CS0168: The variable 'quantity' is declared but never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(2,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(2,23): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(2,23): error CS0246: The type or namespace name 'price' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(2,39): error CS1525: Invalid expression term 'if'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(2,39): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(3,8): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(3,22): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(3,22): error CS1023: Embedded statement cannot be a declaration or labeled statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(3,22): error CS0246: The type or namespace name 'then' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(3,26): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(3,26): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(4,9): error CS0103: The name 'price' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(4,25): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(4,25): error CS8641: 'else' cannot start a statement.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(4,25): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(4,25): error CS1525: Invalid expression term 'else'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(4,25): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(5,13): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(5,27): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(5,27): error CS1023: Embedded statement cannot be a declaration or labeled statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(5,27): error CS0246: The type or namespace name 'then' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(5,31): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(5,31): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(6,9): error CS0103: The name 'price' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(6,31): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(6,31): error CS8641: 'else' cannot start a statement.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(6,31): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(6,31): error CS1525: Invalid expression term 'else'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(6,31): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,9): error CS1023: Embedded statement cannot be a declaration or labeled statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,9): error CS0246: The type or namespace name 'price' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,9): error CS0214: Pointers and fixed size buffers may only be used in an unsafe context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,26): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,26): error CS0193: The * or -> operator must be applied to a pointer
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(8,32): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(11,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(11,13): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(12,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(12,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(12,9): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(12,56): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(13,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(13,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(13,9): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(13,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(13,43): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(13,46): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(14,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(14,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(14,9): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(14,33): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(14,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(14,41): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,9): error CS0103: The name 'actual' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,18): error CS0103: The name 'match' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,25): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,35): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,40): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(15,40): error CS0103: The name 'with' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,18): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,18): error CS0103: The name 'when' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,23): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,23): error CS0103: The name 'abs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,27): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,31): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,36): error CS0193: The * or -> operator must be applied to a pointer
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,54): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,65): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(16,65): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,29): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,64): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,64): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,69): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,69): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,71): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(17,71): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(18,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(20,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(20,13): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(21,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(21,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(21,9): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(21,58): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(22,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(22,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(22,9): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(22,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(22,43): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(22,47): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(23,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(23,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(23,9): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(23,33): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(23,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(23,42): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,9): error CS0103: The name 'actual' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,18): error CS0103: The name 'match' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,25): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,35): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,40): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(24,40): error CS0103: The name 'with' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,18): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,18): error CS0103: The name 'when' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,23): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,23): error CS0103: The name 'abs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,27): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,31): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,36): error CS0193: The * or -> operator must be applied to a pointer
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,54): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,65): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(25,65): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,29): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,64): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,64): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,69): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,69): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,71): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(26,71): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(27,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(29,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(29,13): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(30,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(30,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(30,9): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(30,58): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(31,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(31,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(31,9): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(31,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(31,43): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(31,47): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(32,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(32,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(32,9): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(32,33): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(32,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(32,42): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,9): error CS0103: The name 'actual' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,18): error CS0103: The name 'match' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,25): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,35): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,40): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(33,40): error CS0103: The name 'with' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,18): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,18): error CS0103: The name 'when' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,23): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,23): error CS0103: The name 'abs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,27): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,31): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,36): error CS0193: The * or -> operator must be applied to a pointer
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,54): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,65): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(34,65): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,29): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,64): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,64): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,69): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,69): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,71): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(35,71): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(36,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(38,1): error CS0246: The type or namespace name 'let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(38,13): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(39,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(39,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(39,9): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(39,58): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(40,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(40,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(40,9): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(40,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(40,43): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(40,47): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(41,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(41,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(41,9): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(41,33): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(41,38): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(41,42): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,5): error CS0103: The name 'let' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,9): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,9): error CS0103: The name 'actual' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,18): error CS0103: The name 'match' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,25): error CS0103: The name 'expected' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,35): error CS0103: The name 'got' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,40): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(42,40): error CS0103: The name 'with' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,18): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,18): error CS0103: The name 'when' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,23): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,23): error CS0103: The name 'abs' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,27): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,31): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,36): error CS0193: The * or -> operator must be applied to a pointer
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,54): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,65): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(43,65): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,12): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,15): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,29): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,64): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,64): error CS0103: The name 'desc' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,69): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,69): error CS0103: The name 'e' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,71): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(44,71): error CS0103: The name 'g' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(45,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(47,1): error CS0246: The type or namespace name 'run' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(47,5): error CS0102: The type 'Submission#0' already contains a definition for 'test1'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(47,10): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(48,1): error CS0246: The type or namespace name 'run' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(48,5): error CS0102: The type 'Submission#0' already contains a definition for 'test2'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(48,10): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(49,1): error CS0246: The type or namespace name 'run' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(49,5): error CS0102: The type 'Submission#0' already contains a definition for 'test3'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(49,10): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(50,1): error CS0246: The type or namespace name 'run' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(50,5): error CS0102: The type 'Submission#0' already contains a definition for 'test4'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp77t0dw2e/solution.csx(50,10): error CS1002: ; expected

@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:19:7: undefined: strconv
+./solution.go:41:12: undefined: strconv
+./solution.go:49:6: main redeclared in this block
+	./solution.go:8:6: other declaration of main

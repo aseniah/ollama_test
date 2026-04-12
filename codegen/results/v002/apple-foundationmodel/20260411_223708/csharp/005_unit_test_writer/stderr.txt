@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2_047l36/solution.csx(9,21): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2_047l36/solution.csx(5,1): error CS7021: Cannot declare namespace in script code
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2_047l36/solution.csx(21,66): error CS1503: Argument 2: cannot convert from 'double' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2_047l36/solution.csx(22,26): error CS0117: 'Math' does not contain a definition for 'Approximately'

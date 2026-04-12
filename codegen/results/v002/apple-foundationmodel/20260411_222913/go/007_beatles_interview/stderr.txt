@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:28:12: undefined: csv
+./solution.go:28:26: undefined: strings
+./solution.go:38:11: assignment mismatch: 1 variable but time.Parse returns 2 values
+./solution.go:60:16: cannot convert "Relationship" (untyped string constant) to type int
+./solution.go:60:35: invalid operation: relative["Relationship"] == "Father" (mismatched types byte and untyped string)
+./solution.go:61:5: cannot assign to relative["Age"] (neither addressable nor a map index expression)
+./solution.go:61:14: cannot convert "Age" (untyped string constant) to type int
+./solution.go:62:23: cannot convert "Relationship" (untyped string constant) to type int
+./solution.go:62:42: invalid operation: relative["Relationship"] == "Mother" (mismatched types byte and untyped string)
+./solution.go:63:14: cannot convert "Age" (untyped string constant) to type int
+./solution.go:63:14: too many errors

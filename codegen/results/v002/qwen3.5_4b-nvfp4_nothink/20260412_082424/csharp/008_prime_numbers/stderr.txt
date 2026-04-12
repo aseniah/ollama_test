@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpo6h_ce5o/solution.csx(17,9): error CS0029: Cannot implicitly convert type 'int' to 'bool'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpo6h_ce5o/solution.csx(30,9): error CS0029: Cannot implicitly convert type 'int' to 'bool'

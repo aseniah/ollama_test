@@ -1,0 +1,6 @@
+PASS: Quantity 9 (Boundary: No discount)
+PASS: Quantity 10 (Boundary: 10% discount start)
+PASS: Quantity 49 (Boundary: 10% discount end)
+PASS: Quantity 50 (Boundary: 25% discount start)
+PASS: Quantity 100 (Large quantity)
+PASS: Quantity 1 (Single item)

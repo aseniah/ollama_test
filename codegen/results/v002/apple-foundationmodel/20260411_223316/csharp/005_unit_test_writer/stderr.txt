@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpktrmmc76/solution.csx(13,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main()' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpktrmmc76/solution.csx(45,31): error CS0120: An object reference is required for the non-static field, method, or property 'CalculateDiscount(double, int)'

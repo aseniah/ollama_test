@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:86:3: syntax error: unexpected !=, expected expression
+./solution.go:87:3: syntax error: unexpected keyword return, expected {
+./solution.go:88:2: syntax error: unexpected }, expected expression

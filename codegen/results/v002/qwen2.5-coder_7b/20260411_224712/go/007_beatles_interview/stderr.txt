@@ -1,0 +1,12 @@
+# command-line-arguments
+./solution.go:8:2: "strconv" imported and not used
+./solution.go:102:3: declared and not used: died
+./solution.go:110:3: declared and not used: fatherFirstName
+./solution.go:121:3: declared and not used: motherFirstName
+./solution.go:132:3: declared and not used: brotherFirstName
+./solution.go:143:3: declared and not used: sisterFirstName
+./solution.go:177:6: undefined: Father
+./solution.go:178:6: undefined: Mother
+./solution.go:179:6: undefined: Brother
+./solution.go:180:6: undefined: Sister
+./solution.go:8:2: too many errors

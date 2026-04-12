@@ -1,0 +1,174 @@
+[
+  {
+    "FirstName": "George",
+    "LastName": "Harrison",
+    "Birthday": "1943-02-25",
+    "Died": "11/29/2001",
+    "Father": "Harold Harrison",
+    "Mother": "Louise French",
+    "Brother": "Peter Harrison",
+    "Sister": "Louise Harrison",
+    "Age": 82,
+    "Relatives": [
+      {
+        "FirstName": "Harold Harrison",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Louise French",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Peter Harrison",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "Louise Harrison",
+        "LastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  },
+  {
+    "FirstName": "James",
+    "LastName": "Paul",
+    "Birthday": "1942-06-18",
+    "Died": "null",
+    "Father": "Jim McCartney",
+    "Mother": "Mary McCartney",
+    "Brother": "Mike McGear",
+    "Sister": "null",
+    "Age": 83,
+    "Relatives": [
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      },
+      {
+        "FirstName": "Jim McCartney",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Mary McCartney",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "Mike McGear",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  {
+    "FirstName": "John",
+    "LastName": "Winston",
+    "Birthday": "1940-10-09",
+    "Died": "12/8/1980",
+    "Father": "Alfred Lennon",
+    "Mother": "Julia Stanley",
+    "Brother": "null",
+    "Sister": "null",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "Alfred Lennon",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Julia Stanley",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  {
+    "FirstName": "Ringo",
+    "LastName": "Starr",
+    "Birthday": "1940-07-07",
+    "Died": "null",
+    "Father": "Richard Starkey",
+    "Mother": "Elsie Gleave",
+    "Brother": "null",
+    "Sister": "Marie Maguire",
+    "Age": 84,
+    "Relatives": [
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Sister"
+      },
+      {
+        "FirstName": "Richard Starkey",
+        "LastName": "",
+        "Relationship": "Father"
+      },
+      {
+        "FirstName": "Elsie Gleave",
+        "LastName": "",
+        "Relationship": "Mother"
+      },
+      {
+        "FirstName": "null",
+        "LastName": "",
+        "Relationship": "Brother"
+      },
+      {
+        "FirstName": "Marie Maguire",
+        "LastName": "",
+        "Relationship": "Sister"
+      }
+    ]
+  }
+]

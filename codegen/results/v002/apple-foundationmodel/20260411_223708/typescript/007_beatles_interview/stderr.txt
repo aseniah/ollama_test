@@ -1,0 +1,17 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6gdjho5g/solution.ts:11
+        ageComponents--;
+        ^
+
+TypeError: Assignment to constant variable.
+    at calculateAge (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6gdjho5g/solution.ts:11:9)
+    at <anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6gdjho5g/solution.ts:38:18)
+    at Array.forEach (<anonymous>)
+    at main (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6gdjho5g/solution.ts:33:13)
+    at <anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6gdjho5g/solution.ts:66:1)
+    at Object.<anonymous> (/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6gdjho5g/solution.ts:66:6)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Object.transformer (/opt/homebrew/lib/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+
+Node.js v25.9.0

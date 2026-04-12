@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:101:29: multiple-value time.Parse("1/2/2006", birthdayRaw) (value of type (time.Time, error)) in single-value context
+./solution.go:109:38: undefined: birthDate

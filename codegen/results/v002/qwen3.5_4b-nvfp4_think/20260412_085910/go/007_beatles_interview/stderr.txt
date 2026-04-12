@@ -1,0 +1,10 @@
+# command-line-arguments
+./solution.go:36:3: unknown field Arr in struct literal of type bufio.Scanner
+./solution.go:76:19: undefined: PersonRelative
+./solution.go:79:10: r.Name undefined (type map[string]string has no field or method Name)
+./solution.go:79:26: r.Relationship undefined (type map[string]string has no field or method Relationship)
+./solution.go:80:36: undefined: PersonRelative
+./solution.go:81:39: r.Name undefined (type map[string]string has no field or method Name)
+./solution.go:82:39: r.FamilyName undefined (type map[string]string has no field or method FamilyName)
+./solution.go:83:41: r.Relationship undefined (type map[string]string has no field or method Relationship)
+./solution.go:146:18: declared and not used: birthYear

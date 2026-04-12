@@ -1,0 +1,7 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(10,21): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main()' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(6,1): error CS7021: Cannot declare namespace in script code
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(40,85): error CS0103: The name 'CultureInfo' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(41,93): error CS0103: The name 'CultureInfo' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(54,25): error CS1061: 'List<object>' does not contain a definition for 'Select' and no accessible extension method 'Select' accepting a first argument of type 'List<object>' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(61,21): error CS8635: Unexpected character sequence '...'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp78pa2_n9/solution.csx(87,26): error CS0103: The name 'currentDate' does not exist in the current context

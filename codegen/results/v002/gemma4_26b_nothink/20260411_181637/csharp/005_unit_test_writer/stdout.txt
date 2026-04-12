@@ -1,0 +1,8 @@
+PASS: Below threshold (quantity 9)
+PASS: Boundary threshold (quantity 10)
+PASS: Below upper threshold (quantity 49)
+PASS: Upper threshold (quantity 50)
+PASS: Large quantity (quantity 100)
+
+Summary:
+Total: 5, Passed: 5, Failed: 0

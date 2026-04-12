@@ -1,0 +1,4 @@
+PASS: Buy less than 10 items at price 10
+PASS: Buy exactly 10 items at price 10
+FAIL: Buy 49 items at price 10 (boundary) (expected: 44.1, got: 441)
+FAIL: Buy exactly 50 items at price 10 (boundary) (expected: 37.5, got: 375)

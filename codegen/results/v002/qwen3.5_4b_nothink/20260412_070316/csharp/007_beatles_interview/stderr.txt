@@ -1,0 +1,24 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(17,21): error CS1929: 'char' does not contain a definition for 'Split' and the best extension method overload 'MemoryExtensions.Split<char>(ReadOnlySpan<char>, char)' requires a receiver of type 'System.ReadOnlySpan<char>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(21,40): error CS1503: Argument 1: cannot convert from 'char' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(32,31): error CS1503: Argument 1: cannot convert from 'char' to 'string?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(34,27): error CS1929: 'char' does not contain a definition for 'Split' and the best extension method overload 'MemoryExtensions.Split<char>(ReadOnlySpan<char>, char)' requires a receiver of type 'System.ReadOnlySpan<char>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(38,31): error CS1503: Argument 1: cannot convert from 'char' to 'string?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(40,27): error CS1929: 'char' does not contain a definition for 'Split' and the best extension method overload 'MemoryExtensions.Split<char>(ReadOnlySpan<char>, char)' requires a receiver of type 'System.ReadOnlySpan<char>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(44,31): error CS1503: Argument 1: cannot convert from 'char' to 'string?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(46,28): error CS1929: 'char' does not contain a definition for 'Split' and the best extension method overload 'MemoryExtensions.Split<char>(ReadOnlySpan<char>, char)' requires a receiver of type 'System.ReadOnlySpan<char>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(50,31): error CS1503: Argument 1: cannot convert from 'char' to 'string?'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(52,27): error CS1929: 'char' does not contain a definition for 'Split' and the best extension method overload 'MemoryExtensions.Split<char>(ReadOnlySpan<char>, char)' requires a receiver of type 'System.ReadOnlySpan<char>'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,175): error CS0841: Cannot use local variable 'relativeJson' before it is declared
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,194): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,194): error CS0246: The type or namespace name 'where' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,213): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,216): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,216): error CS0118: 'relatives' is a variable but is used like a type
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,225): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(56,225): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(57,193): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(57,193): error CS0103: The name 'where' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(57,199): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(57,212): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(57,242): error CS0023: Operator '.' cannot be applied to operand of type 'void'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj5vi8_if/solution.csx(57,253): error CS1026: ) expected

@@ -1,0 +1,6 @@
+# command-line-arguments
+./solution.go:34:12: no new variables on left side of :=
+./solution.go:34:15: assignment mismatch: 2 variables but strings.Trim returns 1 value
+./solution.go:59:2: undefined: sort
+./solution.go:60:16: undefined: strconv
+./solution.go:61:16: undefined: strconv

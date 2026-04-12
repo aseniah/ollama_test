@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4cgtl8y7/solution.csx(9,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4cgtl8y7/solution.csx(12,13): warning CS0219: The variable 'outputFilePath' is assigned but its value is never used
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4cgtl8y7/solution.csx(15,26): error CS0029: Cannot implicitly convert type 'string[]' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4cgtl8y7/solution.csx(24,21): error CS0103: The name 'Regex' does not exist in the current context

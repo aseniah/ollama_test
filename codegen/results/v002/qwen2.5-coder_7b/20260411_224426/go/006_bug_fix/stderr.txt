@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:7:24: syntax error: unexpected {, expected semicolon or newline
+./solution.go:8:9: syntax error: unexpected keyword if, expected expression

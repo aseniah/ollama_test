@@ -1,0 +1,6 @@
+Error reading file: [Error: ENOENT: no such file or directory, open '/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg1lqoj1k/data.csv'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg1lqoj1k/data.csv'
+}

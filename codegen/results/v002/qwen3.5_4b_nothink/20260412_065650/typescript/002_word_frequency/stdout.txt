@@ -1,0 +1,1 @@
+Usage: ts-node <input/text.txt>

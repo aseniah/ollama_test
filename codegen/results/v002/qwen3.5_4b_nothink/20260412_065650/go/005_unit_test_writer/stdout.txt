@@ -1,0 +1,4 @@
+PASS: price=10.0, quantity=9
+PASS: price=10.0, quantity=10
+PASS: price=10.0, quantity=49
+PASS: price=10.0, quantity=50

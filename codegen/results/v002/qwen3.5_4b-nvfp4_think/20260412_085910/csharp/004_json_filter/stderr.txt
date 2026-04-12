@@ -1,0 +1,27 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(15,30): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(16,26): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(17,30): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(21,21): error CS1503: Argument 1: cannot convert from 'System.Text.Json.JsonElement' to 'System.Text.Json.Nodes.JsonNode'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,45): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,45): error CS0103: The name 'name' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,49): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,53): error CS1003: Syntax error, ',' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,81): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,81): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,81): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,93): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,93): error CS0103: The name 'age' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,96): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,104): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,104): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,106): error CS0103: The name 'active' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,112): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,154): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,154): error CS1513: } expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,166): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,166): error CS0103: The name 'score' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,171): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,178): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(30,179): error CS1010: Newline in constant
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(32,21): error CS0103: The name 'outputItem' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnv_8fay6/solution.csx(33,1): error CS7017: Member definition, statement, or end-of-file expected

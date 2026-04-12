@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp9817khzc/solution.csx(1,1): error CS0006: Metadata file 'System.Collections.Generic' could not be found
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp9817khzc/solution.csx(29,12): error CS1674: 'Regex': type used in a using statement must implement 'System.IDisposable'.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp9817khzc/solution.csx(36,26): error CS1061: 'object' does not contain a definition for 'Value' and no accessible extension method 'Value' accepting a first argument of type 'object' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp9817khzc/solution.csx(48,69): error CS1660: Cannot convert lambda expression to type 'IComparer<int>' because it is not a delegate type

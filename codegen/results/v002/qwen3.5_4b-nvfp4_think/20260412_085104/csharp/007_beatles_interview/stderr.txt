@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa2ug7btm/solution.csx(62,26): error CS0029: Cannot implicitly convert type 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa2ug7btm/solution.csx(88,63): error CS0103: The name 'birthdayYear' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa2ug7btm/solution.csx(94,26): error CS0029: Cannot implicitly convert type 'string' to 'int'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa2ug7btm/solution.csx(102,15): error CS0023: Operator '.' cannot be applied to operand of type 'void'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa2ug7btm/solution.csx(109,19): error CS0103: The name 'JsonSerializer' does not exist in the current context

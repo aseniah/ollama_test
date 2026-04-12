@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:21:24: undefined: bufio.ReadAll

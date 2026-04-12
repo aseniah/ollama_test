@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp56366xz4/solution.csx(7,13): error CS0103: The name 'JsonNode' does not exist in the current context

@@ -1,0 +1,6 @@
+PASS: Test case 1 - Expected: 900.0, got: 900.0
+PASS: Test case 2 - Expected: 900.0, got: 900.0
+PASS: Test case 3 - Expected: 4410.0, got: 4410.0
+PASS: Test case 4 - Expected: 3750.0, got: 3750.0
+PASS: Test case 5 - Expected: 4500.0, got: 4500.0
+PASS: Test case 6 - Expected: 7500.0, got: 7500.0

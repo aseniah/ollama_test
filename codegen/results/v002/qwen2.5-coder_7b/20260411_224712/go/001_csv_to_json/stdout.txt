@@ -1,0 +1,32 @@
+[
+  {
+    "Age": "34",
+    "Email": "alice@example.com",
+    "Name": "Alice Johnson",
+    "Score": "92.5"
+  },
+  {
+    "Age": "28",
+    "Email": "bob@example.com",
+    "Name": "Bob Smith",
+    "Score": "78.0"
+  },
+  {
+    "Age": "45",
+    "Email": "carol@example.com",
+    "Name": "Carol White",
+    "Score": "88.3"
+  },
+  {
+    "Age": "31",
+    "Email": "david@example.com",
+    "Name": "David Lee",
+    "Score": "95.1"
+  },
+  {
+    "Age": "52",
+    "Email": "eva@example.com",
+    "Name": "Eva Martinez",
+    "Score": "71.8"
+  }
+]

@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:8:2: "strconv" imported and not used
+./solution.go:80:52: invalid operation: birthMonth > month (mismatched types time.Month and int)
+./solution.go:80:76: invalid operation: birthMonth == month (mismatched types time.Month and int)
