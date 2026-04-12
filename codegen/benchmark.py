@@ -164,9 +164,10 @@ _LANG_EXTENSIONS: frozenset[str] = frozenset({".py", ".ts", ".go", ".cs", ".csx"
 #               The output must be valid {lang_name} source code that can be run directly. {lang_note}"
 # v1-v2 "B" — natural: "You are a helpful {lang_name} developer. {lang_note}"
 _VARIANT_TEMPLATES = {
-    # v3+ "C" — natural + stdout hint
+    # v3+ "C" — natural + explicit "write a program" + stdout hint
     "C": (
         "You are a helpful {lang_name} developer.\n"
+        "Write a {lang_name} program that solves the task described by the user.\n"
         "Write all output to stdout.\n"
         "{lang_note}"
     ).strip(),
