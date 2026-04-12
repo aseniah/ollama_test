@@ -17,6 +17,10 @@ The C# LANG_NOTE update gives models explicit guidance on CSV and JSON parsing w
 - `001_csv_to_json/verify.py`: `age_is_int` and `score_is_float` now require non-empty output — same vacuous pass pattern as above
 - `004_json_filter/verify.py`: `bob_excluded` and `carol_excluded` now require non-empty output — same vacuous pass pattern as above
 
+### Prompt changes
+
+- `benchmark.py` variant C system prompt: added "Write a {lang_name} program that solves the task described by the user." Tests 001, 002, 004, and 007 use imperative task specs ("Read the file... output...") that weaker models could answer directly rather than generating code. The new line closes that ambiguity for all tests. Applies to both Ollama and Claude runners since both resolve `_VARIANT_TEMPLATES["C"]` from `benchmark.py` at runtime.
+
 ### Harness changes
 
 - `benchmark.py` / `run_claude_test.py`: `verify_error` flag in exception handler corrected to `True` (was `False`)
