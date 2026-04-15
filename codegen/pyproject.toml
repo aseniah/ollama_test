@@ -1,6 +1,7 @@
 [tool.pyright]
 pythonVersion = "3.11"
 useLibraryCodeForTypes = false
+extraPaths = [".."]
 reportUnknownVariableType = "error"
 reportUnknownParameterType = "error"
 reportUnknownMemberType = "error"
