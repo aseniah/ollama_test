@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7vqtjtoi/solution.csx(4,10): error CS1061: 'IList<string>' does not contain a definition for 'Length' and no accessible extension method 'Length' accepting a first argument of type 'IList<string>' could be found (are you missing a using directive or an assembly reference?)

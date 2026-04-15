@@ -1,0 +1,4 @@
+PASS: Quantity < 10 (quantity=9)
+PASS: Quantity >= 10 and < 50 (quantity=10)
+PASS: Quantity >= 10 and < 50 (quantity=49)
+PASS: Quantity >= 50 (quantity=50)

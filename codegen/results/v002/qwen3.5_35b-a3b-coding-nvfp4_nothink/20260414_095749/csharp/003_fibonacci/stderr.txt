@@ -1,0 +1,7 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(10,9): error CS0229: Ambiguity between 'n' and 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(20,18): error CS0229: Ambiguity between 'n' and 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(26,18): error CS0229: Ambiguity between 'n' and 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(41,53): error CS0102: The type 'Submission#0' already contains a definition for 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(41,59): error CS0229: Ambiguity between 'n' and 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(50,14): error CS0229: Ambiguity between 'n' and 'n'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpm4b97r8p/solution.csx(58,20): error CS0229: Ambiguity between 'n' and 'n'

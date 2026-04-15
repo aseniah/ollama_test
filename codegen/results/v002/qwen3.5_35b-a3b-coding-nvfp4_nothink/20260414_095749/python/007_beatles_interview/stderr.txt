@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpd4u2p4hd/solution.py", line 98, in <module>
+    main()
+    ~~~~^^
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpd4u2p4hd/solution.py", line 35, in main
+    age = calculate_age(birthday)
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpd4u2p4hd/solution.py", line 11, in calculate_age
+    birth_date = date(year, month, day)
+ValueError: day 1940 must be in range 1..30 for month 9 in year 10

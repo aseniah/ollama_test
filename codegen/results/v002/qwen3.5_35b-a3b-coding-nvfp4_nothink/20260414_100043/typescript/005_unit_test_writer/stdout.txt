@@ -1,0 +1,5 @@
+PASS: Quantity 9 (below 10 threshold)
+PASS: Quantity 10 (exactly at 10 threshold)
+PASS: Quantity 49 (below 50 threshold)
+PASS: Quantity 50 (exactly at 50 threshold)
+PASS: Quantity 0 (edge case)

@@ -1,0 +1,7 @@
+PASS: No discount for quantity < 10 (Boundary 9)
+PASS: 10% discount for quantity >= 10 (Boundary 10)
+PASS: 10% discount for quantity < 50 (Boundary 49)
+PASS: 25% discount for quantity >= 50 (Boundary 50)
+PASS: High volume discount for quantity > 50
+
+Summary: 5/5 tests passed.

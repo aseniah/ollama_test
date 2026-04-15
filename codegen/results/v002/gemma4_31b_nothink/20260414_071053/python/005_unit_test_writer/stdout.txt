@@ -1,0 +1,6 @@
+PASS: Lower boundary for no discount (9 units)
+PASS: Lower boundary for 10% discount (10 units)
+PASS: Upper boundary for 10% discount (49 units)
+PASS: Lower boundary for 25% discount (50 units)
+PASS: Standard case no discount
+PASS: Large quantity 25% discount

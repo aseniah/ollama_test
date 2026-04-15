@@ -1,0 +1,5 @@
+PASS: Quantity just below the first discount threshold (9)
+PASS: Quantity at the first discount threshold (10)
+PASS: Quantity just below the second discount threshold (49)
+PASS: Quantity at the second discount threshold (50)
+PASS: Large quantity well above thresholds (100)

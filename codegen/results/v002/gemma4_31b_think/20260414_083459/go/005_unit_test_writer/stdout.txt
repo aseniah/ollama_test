@@ -1,0 +1,4 @@
+PASS: Boundary: just below 10 items (no discount)
+PASS: Boundary: exactly 10 items (10% discount)
+PASS: Boundary: just below 50 items (10% discount)
+PASS: Boundary: exactly 50 items (25% discount)

@@ -1,0 +1,4 @@
+PASS: quantity = 9 (no discount)
+PASS: quantity = 10 (9% discount)
+PASS: quantity = 49 (9% discount)
+PASS: quantity = 50 (25% discount)

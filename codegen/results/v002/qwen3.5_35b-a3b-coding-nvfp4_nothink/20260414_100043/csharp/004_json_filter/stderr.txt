@@ -1,0 +1,4 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg9fyyyab/solution.csx(15,22): error CS1061: 'JsonObject' does not contain a definition for 'TryGetValue' and no accessible extension method 'TryGetValue' accepting a first argument of type 'JsonObject' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg9fyyyab/solution.csx(17,22): error CS1061: 'JsonObject' does not contain a definition for 'TryGetValue' and no accessible extension method 'TryGetValue' accepting a first argument of type 'JsonObject' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg9fyyyab/solution.csx(20,20): error CS0165: Use of unassigned local variable 'activeVal'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg9fyyyab/solution.csx(20,50): error CS0165: Use of unassigned local variable 'ageVal'

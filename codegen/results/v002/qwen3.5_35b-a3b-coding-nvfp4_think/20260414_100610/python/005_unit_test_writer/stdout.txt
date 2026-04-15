@@ -1,0 +1,7 @@
+PASS: No discount for quantity < 10
+PASS: 10% discount for quantity = 10
+PASS: 10% discount for quantity = 49
+PASS: 25% discount for quantity = 50
+PASS: No discount for quantity = 5
+PASS: 10% discount for quantity = 25
+PASS: 25% discount for quantity = 100

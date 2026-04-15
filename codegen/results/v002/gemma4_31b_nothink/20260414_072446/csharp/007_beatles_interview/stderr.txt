@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8ed2kba9/solution.csx(70,9): error CS0103: The name 'reatives' does not exist in the current context

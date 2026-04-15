@@ -1,0 +1,6 @@
+PASS: Boundary: Just below 10 (No discount)
+PASS: Boundary: Exactly 10 (10% discount)
+PASS: Boundary: Just below 50 (10% discount)
+PASS: Boundary: Exactly 50 (25% discount)
+PASS: Standard: Small quantity
+PASS: Standard: Large quantity

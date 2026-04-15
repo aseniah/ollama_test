@@ -1,0 +1,4 @@
+PASS: Quantity 9 (below first threshold)
+PASS: Quantity 10 (at first threshold)
+PASS: Quantity 49 (at second threshold)
+PASS: Quantity 50 (at third threshold)

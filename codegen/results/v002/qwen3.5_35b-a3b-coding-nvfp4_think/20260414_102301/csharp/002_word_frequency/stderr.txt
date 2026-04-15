@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxb07ibhx/solution.csx(5,6): error CS1061: 'IEnumerable<char>' does not contain a definition for 'GroupAdjacent' and no accessible extension method 'GroupAdjacent' accepting a first argument of type 'IEnumerable<char>' could be found (are you missing a using directive or an assembly reference?)

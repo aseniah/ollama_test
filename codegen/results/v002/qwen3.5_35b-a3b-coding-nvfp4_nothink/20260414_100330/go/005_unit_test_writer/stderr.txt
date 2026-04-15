@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:25:35: cannot use float64(qty) (value of type float64) as int value in argument to calculateDiscount

@@ -1,0 +1,6 @@
+PASS: Boundary: Just below first discount tier (9)
+PASS: Boundary: Start of 10% discount tier (10)
+PASS: Boundary: Just below second discount tier (49)
+PASS: Boundary: Start of 25% discount tier (50)
+PASS: General: Low quantity
+PASS: General: High quantity

@@ -1,0 +1,10 @@
+Running calculateDiscount tests...
+
+PASS: quantity 9 (no discount)
+PASS: quantity 10 (10% discount)
+PASS: quantity 49 (10% discount)
+PASS: quantity 50 (25% discount)
+PASS: quantity 0 (zero quantity)
+PASS: quantity 100 (25% discount)
+
+Tests completed.
