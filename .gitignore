@@ -1,3 +1,6 @@
+# Local-only files (not tracked remotely)
+_local/
+
 # macOS
 .DS_Store
 
