@@ -1,8 +1,8 @@
 # Code Generation Benchmark — Findings
 
-**Date:** 2026-04-12 to 2026-04-14  
+**Date:** 2026-04-12 to 2026-04-19  
 **Machine:** MacBook Pro M3 Max (48GB unified memory)  
-**Scope:** 15 model configurations, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each)
+**Scope:** 19 model configurations, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each)
 
 ---
 
@@ -18,13 +18,15 @@ Each model generates a solution in response to a task prompt. The solution is ex
 
 **Claude models hit the ceiling:** Opus, Sonnet, and Haiku all achieved 100% score and pass rate — perfect first-shot performance across all 32 test/language cells. All three variants are in a class of their own.
 
-**`gemma4:31b` with thinking is the new local high-water mark:** score 93 / 93% pass — the highest any local model has achieved on this benchmark. More dramatically, it passes the hardest test (007 Beatles interview) **11 out of 12 times** in think mode, where the 26B variant managed 6/12 and most models score zero. The 31B scale crosses a threshold that makes 007 nearly tractable.
+**`gemma4:31b` with thinking is the local high-water mark:** score 93 / 93% pass. It passes the hardest test (007 Beatles interview) **11 out of 12 times** in think mode — no other local model comes close.
 
-**Best local model for interactive use: `qwen3-coder:30b`** at score 85 / 88% pass rate in ~4s. It's a Mixture of Experts model (30B total, ~3.3B active per token) that passes every test except 007. **`qwen3.5:35b-a3b-coding-nvfp4`** is a new strong second: also MoE (~3B active), it runs at ~5s nothink (~82 tok/s) with score 83 / 79% pass — within 2 points of qwen3-coder at essentially the same speed.
+**`qwen3.6:35b` nothink scores 89 in ~11s** — 2 points below gemma4:31b nothink (91) but at less than half the time, and 1 point above `qwen3.5:35b-a3b-coding-nvfp4` think despite running without extended reasoning. It's the highest-scoring local nothink model under ~20s, and a strong daily-driver option on 48GB machines.
 
-**`qwen3.5:35b-a3b-coding-nvfp4` think reaches score 88 in ~12s** — above qwen3.5:27b think (86) by score while being ~9× faster per task. The 2.4× time cost for +5 points makes think mode unusually favorable for this model.
+**Thinking barely helps qwen3.6 models**: `qwen3.6:35b` think gains only +1 point over nothink at 8.2× the time cost. `qwen3.6:35b-a3b-coding-nvfp4` think gains +2 at 14.2× the time. Both are the worst thinking ROI in the benchmark — nothink is unambiguously the right mode for these models.
 
-**Thinking mode helps across the board**, but the value scales with model size. The 4b models gain +16 points for a 5.9× time cost; the 27b gains +9 points for a 3.5× cost. For `gemma4:26b`, thinking adds only +1 point at 4.7× the time — nothink is clearly the right mode for that model. `gemma4:31b` follows the same pattern: +2 points for 3.3× the time, but unlike the 26b, the think mode's 007 performance (11/12) creates a strong case for using it anyway on complex tasks.
+**`qwen3.6:35b-a3b-coding-nvfp4` nothink ties `qwen3-coder:30b`** at score 85, at the same ~5s speed, with a +2 improvement over its qwen3.5 predecessor. The MoE speed advantage continues: both models deliver ~5s interactive responses at score 85.
+
+**Thinking mode helps across the board for qwen3.5 models**, but the value scales with model size. The 4b models gain +16 points for a 5.9× time cost; the 27b gains +9 points for a 3.5× cost. For `gemma4:26b`, thinking adds only +1 point at 4.7× the time — nothink is clearly the right mode for that model. `gemma4:31b` follows the same pattern (+2 at 3.3×), but the think mode's 007 performance (11/12) justifies it for complex tasks.
 
 **nvfp4 quantization is nearly lossless at 27B**: -1 point nothink, -4 think, with a 31% and 5% speed gain respectively. At 4B, the tradeoff deteriorates sharply in think mode (-8 points for 57% faster), though remains tolerable in nothink (-2 points, similar speed).
 
@@ -50,21 +52,25 @@ When score exceeds pass rate, the model is earning partial credit on failures �
 | 1 | `claude-sonnet-4-6` | — | **100** | 100% (32/32) | — |
 | 4 | `gemma4:31b` | think | **93** | 93% (89/96) | ~79s |
 | 5 | `gemma4:31b` | nothink | **91** | 85% (82/96) | ~24s |
-| 6 | `qwen3.5:35b-a3b-coding-nvfp4` | think | **88** | 83% (80/96) | ~12s |
-| 7 | `qwen3.5:27b` | think | **86** | 84% (81/96) | ~106s |
-| 8 | `qwen3-coder:30b` | — | **85** | 88% (84/96) | ~4s |
-| 9 | `qwen3.5:35b-a3b-coding-nvfp4` | nothink | **83** | 79% (76/96) | ~5s |
-| 10 | `qwen3.5:27b-nvfp4` | think | **82** | 86% (83/96) | ~101s |
-| 11 | `gemma4:26b` | think | **80** | 88% (84/96) | ~43s |
-| 12 | `gemma4:26b` | nothink | **79** | 79% (76/96) | ~9s |
-| 13 | `qwen3.5:27b` | nothink | **77** | 80% (77/96) | ~31s |
-| 14 | `qwen3.5:27b-nvfp4` | nothink | **76** | 80% (77/96) | ~21s |
-| 15 | `qwen3.5:4b` | think | **54** | 66% (63/96) | ~45s |
-| 16 | `qwen2.5-coder:7b` | — | **49** | 53% (51/96) | ~5s |
-| 17 | `qwen3.5:4b-nvfp4` | think | **46** | 49% (47/96) | ~19s |
-| 18 | `qwen3.5:4b` | nothink | **38** | 45% (43/96) | ~8s |
-| 19 | `qwen3.5:4b-nvfp4` | nothink | **36** | 41% (39/96) | ~8s |
-| 20 | `apple-foundationmodel` | — | **30** | 34% (33/96) | ~7s |
+| 6 | `qwen3.6:35b` | think | **90** | 82% (79/96) | ~90s |
+| 7 | `qwen3.6:35b` | nothink | **89** | 81% (78/96) | ~11s |
+| 8 | `qwen3.5:35b-a3b-coding-nvfp4` | think | **88** | 83% (80/96) | ~12s |
+| 9 | `qwen3.6:35b-a3b-coding-nvfp4` | think | **87** | 78% (75/96) | ~71s |
+| 10 | `qwen3.5:27b` | think | **86** | 84% (81/96) | ~106s |
+| 11 | `qwen3.6:35b-a3b-coding-nvfp4` | nothink | **85** | 80% (77/96) | ~5s |
+| 11 | `qwen3-coder:30b` | — | **85** | 88% (84/96) | ~4s |
+| 13 | `qwen3.5:35b-a3b-coding-nvfp4` | nothink | **83** | 79% (76/96) | ~5s |
+| 14 | `qwen3.5:27b-nvfp4` | think | **82** | 86% (83/96) | ~101s |
+| 15 | `gemma4:26b` | think | **80** | 88% (84/96) | ~43s |
+| 16 | `gemma4:26b` | nothink | **79** | 79% (76/96) | ~9s |
+| 17 | `qwen3.5:27b` | nothink | **77** | 80% (77/96) | ~31s |
+| 18 | `qwen3.5:27b-nvfp4` | nothink | **76** | 80% (77/96) | ~21s |
+| 19 | `qwen3.5:4b` | think | **54** | 66% (63/96) | ~45s |
+| 20 | `qwen2.5-coder:7b` | — | **49** | 53% (51/96) | ~5s |
+| 21 | `qwen3.5:4b-nvfp4` | think | **46** | 49% (47/96) | ~19s |
+| 22 | `qwen3.5:4b` | nothink | **38** | 45% (43/96) | ~8s |
+| 23 | `qwen3.5:4b-nvfp4` | nothink | **36** | 41% (39/96) | ~8s |
+| 24 | `apple-foundationmodel` | — | **30** | 34% (33/96) | ~7s |
 
 > **Avg time** is average wall clock time per test/language combination from generation start to result. Codegen tasks require 100–500+ output tokens; thinking-mode tasks often exceed 1000 tokens. Claude timing was not instrumented; times will include API round-trip latency and are not comparable to Ollama on-device measurements.
 
@@ -76,17 +82,19 @@ When score exceeds pass rate, the model is earning partial credit on failures �
 
 - **`qwen3-coder:30b`** — MoE: 30B total parameters, ~3.3B active per token. This directly explains its combination of top-tier local score and ~4s average inference time.
 - **`qwen3.5:35b-a3b-coding-nvfp4`** — MoE: 35B total parameters, ~3B active per token ("a3b" = active 3B). Despite having more total parameters than qwen3-coder, it runs at the same ~5s nothink speed for the same reason — only ~3B parameters fire per token. Weight loading still requires memory proportional to total parameters.
+- **`qwen3.6:35b-a3b-coding-nvfp4`** — MoE: same architecture as qwen3.5:35b-a3b (35B total, ~3B active, nvfp4 quantized, code-specialized). The 3.6 generation brings modest score improvement (+2 nothink) at the same ~5s inference speed.
 
 **Code-specialized models:**
 
 - **`qwen2.5-coder:7b`** — Fine-tuned specifically on code corpora. Despite specialization, score 49 / 53% pass rate is the weakest of the larger Ollama models, showing that code-specific training at 7B doesn't compensate for the parameter ceiling on multi-step codegen tasks.
 - **`qwen3-coder:30b`** — Also code-specialized, at 30B MoE scale. The combination works: it's the fastest competitive local model.
-- **`qwen3.5:35b-a3b-coding-nvfp4`** — Code-specialized MoE variant. The nvfp4 quantization compresses the 35B weights for efficient inference on Apple Silicon.
+- **`qwen3.5:35b-a3b-coding-nvfp4`** / **`qwen3.6:35b-a3b-coding-nvfp4`** — Code-specialized MoE variants. The nvfp4 quantization compresses the 35B weights for efficient inference on Apple Silicon.
 
 **General-purpose models evaluated for coding:**
 
 - **`gemma4:26b`** / **`gemma4:31b`** — Google's Gemma 4 family, not code-specialized, yet strong and exceptionally language-balanced. The 31B variant is a dense model (not MoE) that runs slower than the 26B but at significantly higher quality — particularly on 007-level reasoning tasks.
 - **`qwen3.5` family** — General-purpose Qwen 3.5 generation with optional thinking mode.
+- **`qwen3.6:35b`** — Dense 35B model (not MoE) from the Qwen 3.6 generation. General-purpose with optional thinking. Despite being larger than qwen3.5:27b, it runs faster (~11s vs ~31s nothink), suggesting significant architectural or inference efficiency improvements in the 3.6 generation. Score 89 nothink is the highest of any non-gemma4:31b local model.
 
 ---
 
@@ -101,16 +109,19 @@ When score exceeds pass rate, the model is earning partial credit on failures �
 | `qwen3.5:27b-nvfp4` | 76 | 82 | **+6** | ~21s → ~101s (4.8×) |
 | `gemma4:31b` | 91 | 93 | **+2** | ~24s → ~79s (3.3×) |
 | `gemma4:26b` | 79 | 80 | **+1** | ~9s → ~43s (4.7×) |
+| `qwen3.6:35b` | 89 | 90 | **+1** | ~11s → ~90s (8.2×) |
+| `qwen3.6:35b-a3b-coding-nvfp4` | 85 | 87 | **+2** | ~5s → ~71s (14.2×) |
 
 **Key observations:**
 
 - For `qwen3.5:4b`, thinking mode gains 16 points — a tier shift. At 4B parameters, the extra reasoning pass overcomes a significant portion of the base model's limitations.
 - The gain compresses as model size increases. At 27B, thinking adds 9 points for a 3.5× time cost — still meaningful but not transformative.
-- `gemma4:26b` is the exception: thinking adds 1 point at 4.7× the time. Nothink is unambiguously the right mode for that model. `gemma4:31b` shows the same pattern (+2 points at 3.3× cost) — but unlike the 26B, the think mode's 007 performance (11/12 passes vs 5/12 nothink) makes think mode compelling for complex tasks even though the score delta is small.
+- `gemma4:26b` is the exception in the qwen3.5 generation: thinking adds 1 point at 4.7× the time. Nothink is unambiguously the right mode for that model. `gemma4:31b` shows the same pattern (+2 points at 3.3× cost) — but unlike the 26B, the think mode's 007 performance (11/12 passes vs 5/12 nothink) makes think mode compelling for complex tasks even though the score delta is small.
 - `qwen3.5:35b-a3b-coding-nvfp4` is the most time-efficient thinking upgrade in this set: +5 points for 2.4× cost starting from an already fast ~5s baseline. The resulting ~12s think latency is fully interactive.
+- **`qwen3.6` models show the worst thinking ROI in the benchmark.** `qwen3.6:35b` gains only +1 score point at 8.2× the time cost. `qwen3.6:35b-a3b-coding-nvfp4` gains +2 at 14.2× — the most expensive thinking upgrade relative to benefit of any model tested. Both models appear to be largely "thinking-saturated" in nothink mode; extended reasoning adds little that the base inference doesn't already produce. Thinking is not recommended for either qwen3.6 model.
 - For `qwen3.5:4b-nvfp4` think specifically, the speed gain from quantization compresses the time multiplier to 2.4× — the most time-efficient path to a thinking-mode result for a 4B model.
 
-**Recommendation:** Use thinking for `qwen3.5:4b` — the quality gain justifies the wait. Skip thinking for `gemma4:26b`. For `gemma4:31b`, prefer think mode if 007-level tasks appear in your workload; otherwise nothink is fine. For `qwen3.5:35b-a3b`, think mode is cheap enough (~12s) to use routinely. For `qwen3.5:27b`, thinking is practical only for batch or background work.
+**Recommendation:** Use thinking for `qwen3.5:4b` — the quality gain justifies the wait. Skip thinking for `gemma4:26b`, `qwen3.6:35b`, and `qwen3.6:35b-a3b-coding-nvfp4`. For `gemma4:31b`, prefer think mode if 007-level tasks appear in your workload; otherwise nothink is fine. For `qwen3.5:35b-a3b`, think mode is cheap enough (~12s) to use routinely. For `qwen3.5:27b`, thinking is practical only for batch or background work.
 
 ---
 
@@ -159,9 +170,13 @@ Models with thinking variants are split into separate rows. For models without t
 | `claude-haiku-4-5` | — | 100% | 100% | 100% | 100% |
 | `gemma4:31b` | think | **100%** | **100%** | 96% | 75% |
 | `gemma4:31b` | nothink | 92% | 96% | 88% | 67% |
+| `qwen3.6:35b` | think | 88% | 88% | 79% | 75% |
+| `qwen3.6:35b` | nothink | 79% | 88% | 88% | 71% |
 | `qwen3.5:35b-a3b-coding-nvfp4` | think | 88% | 88% | 83% | 75% |
 | `qwen3-coder:30b` | — | 88% | 88% | 88% | 88% |
+| `qwen3.6:35b-a3b-coding-nvfp4` | nothink | 88% | 88% | 83% | 63% |
 | `qwen3.5:35b-a3b-coding-nvfp4` | nothink | 88% | 83% | 83% | 63% |
+| `qwen3.6:35b-a3b-coding-nvfp4` | think | 63%† | 88% | 83% | 79% |
 | `gemma4:26b` | nothink | 83% | 83% | 67% | 83% |
 | `gemma4:26b` | think | 88% | **100%** | 71% | 92% |
 | `qwen3.5:27b` | nothink | 88% | 79% | 83% | 71% |
@@ -175,9 +190,12 @@ Models with thinking variants are split into separate rows. For models without t
 | `qwen3.5:4b-nvfp4` | think | 75% | 58% | 33% | 29% |
 | `apple-foundationmodel` | — | **75%** | 38% | 13% | 13% |
 
+> † Python rate for `qwen3.6:35b-a3b-coding-nvfp4` think is suppressed by 3 timeout failures in Python cells across 3 runs. The underlying Python capability is likely comparable to the nothink variant.
+
 Notable patterns:
 - `gemma4:31b` think achieves **100% in both Python and TypeScript** — matching Claude's perfect mark in those languages. Go (96%) is near-perfect; C# (75%) is the only meaningful weakness.
-- `qwen3-coder:30b` achieves perfectly uniform 88% across all four languages — the most balanced non-Claude model by language.
+- `qwen3-coder:30b` achieves perfectly uniform 88% across all four languages — the most balanced non-Claude model by language. `qwen3.6:35b-a3b-coding-nvfp4` nothink matches this (88% in Python and TypeScript, 83% in Go, 63% in C#).
+- `qwen3.6:35b` nothink shows an unusual pattern: 88% in TypeScript and Go, but only 79% in Python. This is surprising and may reflect a shift in training focus or test-case interaction in the 3.6 generation. Think mode recovers Python to 88% but Go drops to 79%.
 - Thinking mode is especially impactful on **C#** for smaller models: `qwen3.5:4b` jumps from 25% to 58% (+33pp). C# requires very specific `.csx` scripting idioms that smaller models recall more reliably with extended reasoning.
 - `gemma4:26b` think reaches **100% TypeScript** — matched by `gemma4:31b` think, making the Gemma 4 family distinctively strong on TypeScript in think mode.
 - `qwen3.5:27b-nvfp4` nothink has an unusual TypeScript peak (92%) that exceeds its Python rate (88%), and think mode pushes it further to 96%. This appears consistent and may reflect training data distribution in the quantized weights.
@@ -290,13 +308,17 @@ Score (34) is more than 2.5× pass rate (13%), revealing that many models produc
 | `claude-sonnet-4-6` | — | **100** | 4/4 |
 | `gemma4:31b` | think | **92** | 11/12 |
 | `gemma4:31b` | nothink | **83** | 5/12 |
+| `qwen3.6:35b-a3b-coding-nvfp4` | think | **73** | 1/12 |
 | `qwen3.5:27b` | think | **62** | 0/12 |
+| `qwen3.6:35b` | think | **61** | 1/12 |
 | `gemma4:26b` | nothink | **54** | 0/12 |
+| `qwen3.6:35b` | nothink | **52** | 0/12 |
 | `qwen3-coder:30b` | — | **50** | 0/12 |
 | `gemma4:26b` | think | **50** | 6/12 |
 | `qwen3.5:27b-nvfp4` | think | **46** | 3/12 |
 | `qwen3.5:27b` | nothink | **43** | 0/12 |
 | `qwen3.5:27b-nvfp4` | nothink | **42** | 1/12 |
+| `qwen3.6:35b-a3b-coding-nvfp4` | nothink | **42** | 0/12 |
 | `qwen3.5:35b-a3b-coding-nvfp4` | think | **40** | 0/12 |
 | `qwen3.5:35b-a3b-coding-nvfp4` | nothink | **30** | 0/12 |
 | `qwen2.5-coder:7b` | — | **16** | 0/12 |
@@ -310,7 +332,7 @@ Score (34) is more than 2.5× pass rate (13%), revealing that many models produc
 
 The MoE models (`qwen3-coder:30b`, `qwen3.5:35b-a3b`) both score 30–50 but achieve zero full passes — structurally correct output with wrong computed fields. This pattern is consistent: MoE architectures produce near-correct 007 output but not reliably enough to clear all 11 checks simultaneously.
 
-Thinking mode is what unlocks 007 for gemma4 — the 26B nothink scores 54 but earns zero passes; 26B think reaches 50 (lower score from a different failure distribution) but achieves 6/12 full passes. The `qwen3.5:27b` think score (62) is the highest of any model that never fully passes, meaning it produces output with significant field-level correctness without clearing all checks simultaneously. The most common failure for mid-tier models: wrong age calculation for John Lennon and George Harrison specifically, often because models compute current age from birthdate without checking the death date field.
+Thinking mode is what unlocks 007 for gemma4 — the 26B nothink scores 54 but earns zero passes; 26B think reaches 50 (lower score from a different failure distribution) but achieves 6/12 full passes. `qwen3.6:35b-a3b-coding-nvfp4` think (score 73, 1/12 pass) is the first MoE model to achieve a 007 full pass — and its score (73) is the highest of any model that earns 1 or fewer passes, exceeding `qwen3.5:27b` think (62, 0 passes). `qwen3.6:35b` think also achieves 1/12 with score 61. The `qwen3.5:27b` think score (62) remains the highest of any 0-pass model in the qwen3.5 generation, meaning it produces output with significant field-level correctness without clearing all checks simultaneously. The most common failure for mid-tier models: wrong age calculation for John Lennon and George Harrison specifically, often because models compute current age from birthdate without checking the death date field.
 
 | Python | TypeScript | Go | C# |
 |--------|-----------|----|----|
@@ -334,23 +356,33 @@ Clean sweep — all 32 cells passing. A notable result: Haiku is a significantly
 
 ### qwen3-coder:30b — score 85 / pass 88%
 
-**Best local model for interactive use.** MoE architecture (30B total, ~3.3B active) delivers ~73 tok/s and ~4s average per task. All 12 failures are on 007 (Beatles interview) — it passes every other test in every language without exception. On 007, it produces valid JSON with correct structure but fails age calculations (especially John Lennon and George Harrison). Uniquely balanced across languages: 88% in all four. Failure modes are almost entirely logic-based (9 logic, 3 compile), meaning compile errors are rare. Requires ~18–20GB RAM; comfortable on 48GB, tight on 36GB.
+**Fastest competitive local model.** MoE architecture (30B total, ~3.3B active) delivers ~73 tok/s and ~4s average per task. All 12 failures are on 007 (Beatles interview) — it passes every other test in every language without exception. On 007, it produces valid JSON with correct structure but fails age calculations (especially John Lennon and George Harrison). Uniquely balanced across languages: 88% in all four. Failure modes are almost entirely logic-based (9 logic, 3 compile), meaning compile errors are rare. Requires ~18–20GB RAM; comfortable on 48GB, tight on 36GB.
 
 ### gemma4:31b — score 93 think / 91 nothink — pass 93% / 85%
 
-**New local ceiling.** Think mode (score 93 / 93% pass) is the highest any local model has achieved on this benchmark — 7 points above `qwen3.5:27b` think and 8 points above qwen3-coder. The defining result is **007**: 11 out of 12 full passes in think mode (score 92 for that test), compared to gemma4:26b think's 6/12 and every other local model at 3 or fewer. The 31B scale crosses a reasoning threshold the 26B model approached but could not reliably sustain.
+**Local ceiling.** Think mode (score 93 / 93% pass) is the highest any local model achieved on this benchmark — 7 points above `qwen3.5:27b` think and 8 points above qwen3-coder. The defining result is **007**: 11 out of 12 full passes in think mode (score 92 for that test), compared to gemma4:26b think's 6/12 and every other local model at 3 or fewer. The 31B scale crosses a reasoning threshold the 26B model approached but could not reliably sustain.
 
 Nothink mode (score 91 / 85% pass) is also strong, with 5/12 007 passes — more than gemma4:26b think achieved. Language balance in think mode: Python 100%, TypeScript 100%, Go 96%, C# 75%. Go and TypeScript are near-perfect; C# is the remaining gap. Nothink: Python 92%, TypeScript 96%, Go 88%, C# 67%. Failures are concentrated on 003 fibonacci and 008 prime numbers (compile errors in Go/C#), with only one 007 miss in think mode.
 
 The downside is speed: ~18 tok/s dense inference at 31B parameters. Nothink averages ~24s/task; think ~79s. Compare to gemma4:26b nothink at ~9s — the 31B is slower for roughly the same nothink score but wins decisively on 007 and overall pass rate. Requires ~18–20GB RAM. Think mode is the recommended configuration if 007-level multi-step reasoning tasks appear in your workload; the latency (~79s) places it in the batch/background tier for interactive use.
 
+### qwen3.6:35b — score 90 think / 89 nothink — pass 82% / 81%
+
+Score 89 nothink at ~11s trails only `gemma4:31b` nothink (91) among nothink local models — and at less than half the time (11s vs ~24s). Notably, it exceeds `qwen3.5:35b-a3b-coding-nvfp4` think (88) without needing extended reasoning. Despite being a dense 35B model, it runs considerably faster than `qwen3.5:27b` nothink (~31s for a smaller 27B model), suggesting meaningful architectural or inference efficiency improvements in the 3.6 generation.
+
+Think mode (+1 point, 8.2× time cost to ~90s) is the worst thinking ROI in the benchmark. The nothink model is already nearly fully capable; extended reasoning delivers no meaningful lift. Use nothink.
+
+Language balance in nothink: TypeScript 88%, Go 88%, C# 71%, Python 79%. The Python rate is unexpectedly low relative to the overall score — nothink failures concentrate on 004 JSON filter (C# scripting idioms) and 002 word frequency (Python ties). Think mode recovers Python to 88% but Go drops to 79%, an unusual tradeoff. 007 Beatles: 0 full passes nothink (score 52), 1 full pass think (score 61). The nothink 007 score (52) is the highest of any Qwen-family nothink model, above `qwen3-coder:30b` (50) and the qwen3.5 variants. The think-mode 007 score (61) narrowly trails `qwen3.5:27b` think (62) but achieves an outright pass (1/12) that qwen3.5:27b never managed (0/12).
+
+Consistency: 94% nothink, 81% think. High nothink consistency makes it reliable for harness use. Requires ~18–20GB RAM (full 35B dense weights).
+
 ### gemma4:26b — score 80 think / 79 nothink — pass 88% / 79%
 
-Strong competitor at the 26B weight class, and the fastest dense model at this capability tier (~9s nothink, ~43s think). Think mode pushes it to score 80 / 88% pass and enables 007 passes (6/12) — the most of any local model before gemma4:31b was tested. In nothink mode (score 79 / 79%) it remains highly competitive. Language balance differs by mode: nothink sits at 83% across Python, TypeScript, and C# with Go lagging at 67%; think mode pushes TypeScript to 100% and C# to 92% but Go only reaches 71%. Failure modes are well-distributed (18 compile, 3 runtime, 12 logic), with no single language dominating the failure pool. Requires ~14–16GB RAM.
+Strong competitor at the 26B weight class, and the fastest dense model at this capability tier (~9s nothink, ~43s think). Think mode pushes it to score 80 / 88% pass and enables 007 passes (6/12) — the most of any local model except gemma4:31b. In nothink mode (score 79 / 79%) it remains highly competitive. Language balance differs by mode: nothink sits at 83% across Python, TypeScript, and C# with Go lagging at 67%; think mode pushes TypeScript to 100% and C# to 92% but Go only reaches 71%. Failure modes are well-distributed (18 compile, 3 runtime, 12 logic), with no single language dominating the failure pool. Requires ~14–16GB RAM.
 
 ### qwen3.5:35b-a3b-coding-nvfp4 — score 88 think / 83 nothink — pass 83% / 79%
 
-**The speed story of this update.** MoE architecture (35B total, ~3B active per token) delivers ~82 tok/s — the fastest of any model in the benchmark except the 4B nvfp4 variants. Nothink averages ~5s/task, think ~12s. At those latencies, the score results are exceptional: 83 nothink and 88 think comfortably beat all non-gemma4:31b, non-Claude models.
+**Speed leader among non-trivial local models.** MoE architecture (35B total, ~3B active per token) delivers ~82 tok/s — the fastest of any model in the benchmark except the 4B nvfp4 variants. Nothink averages ~5s/task, think ~12s. At those latencies, the score results are exceptional: 83 nothink and 88 think comfortably beat all non-gemma4:31b, non-Claude models.
 
 Think mode is unusually cheap here: +5 score for 2.4× time cost from a fast baseline, producing a ~12s fully-interactive thinking-mode experience. No other model in the benchmark delivers a thinking-mode result this quickly at this quality level.
 
@@ -358,9 +390,21 @@ Language balance in nothink: Python 88%, TypeScript 83%, Go 83%, C# 63%. Think a
 
 Consistency is high: 94% nothink, 91% think — meaning failures are predictable rather than random. Memory footprint: weight loading for a 35B nvfp4 model requires approximately the full quantized weight set (~18–20GB), despite the ~3B active-per-token inference cost.
 
+### qwen3.6:35b-a3b-coding-nvfp4 — score 87 think / 85 nothink — pass 78% / 80%
+
+The MoE successor to `qwen3.5:35b-a3b-coding-nvfp4`. Same architecture: 35B total, ~3B active per token, code-specialized, nvfp4 quantized for Apple Silicon. The inference speed is unchanged at ~5s nothink — MoE speed comes from active parameters, not version.
+
+Score 85 nothink (+2 over qwen3.5:35b-a3b nothink's 83) ties `qwen3-coder:30b` — both at 85, both at ~4–5s. Language balance nothink: Python 88%, TypeScript 88%, Go 83%, C# 63%. C# is the persistent weak point, unchanged from the qwen3.5 generation.
+
+Think mode (+2 over nothink, 14.2× time cost to ~71s) is the worst thinking ROI in the benchmark in absolute time terms — 14× slower for 2 points. Additionally, think mode produced **8 timeouts** across 96 attempts (001 Python, 005 Python/Go, 008 C#, 002 Python, 001 TypeScript), where the extended reasoning chain exceeded the benchmark's timeout threshold. This not only suppresses the measured think score but indicates instability — the model occasionally "runs away" in think mode on certain tasks. The true think score without timeouts may be modestly higher than 87, but the timeout behavior itself is a practical problem. Nothink is the right mode for this model.
+
+007 Beatles think: score 73 (1/12 passes) — the highest 007 score of any MoE or non-gemma4 model, and the first MoE model to achieve a full 007 pass. This is notable; the qwen3.5 generation's a3b scored 40 think with 0 passes. However, the result comes with the timeout caveat above. Nothink 007: score 42, 0 passes — consistent with the qwen3.5 predecessor (score 40).
+
+Consistency: 91% nothink, 78% think. The think consistency decline (from 91% in qwen3.5:35b-a3b think) is driven by timeouts. Requires ~18–20GB RAM.
+
 ### qwen3.5:27b — score 86 think / 77 nothink — pass 84% / 80%
 
-Thinking mode is the story here: +9 score, +4 pass rate, at ~3.5× the time (~31s → ~106s). In thinking mode, it was the highest-scoring local model before gemma4:31b; in nothink mode it's competitive but unremarkable. Failure breakdown in thinking mode: a handful of C# compile/runtime errors and 004 C# runtime failures (JSON node parent conflict), plus 007. Requires ~16GB RAM.
+Thinking mode is the story here: +9 score, +4 pass rate, at ~3.5× the time (~31s → ~106s). In thinking mode it scores 86 — third among local models, behind gemma4:31b and qwen3.6:35b; in nothink mode it's competitive but unremarkable. Failure breakdown in thinking mode: a handful of C# compile/runtime errors and 004 C# runtime failures (JSON node parent conflict), plus 007. Requires ~16GB RAM.
 
 ### qwen3.5:27b-nvfp4 — score 82 think / 76 nothink — pass 86% / 80%
 
@@ -432,11 +476,13 @@ Claude generation times were not instrumented; those rows are omitted from this 
 |-------|------|--------------|-------|-------|-----------|
 | `qwen3-coder:30b` | — | ~4s | ~73 | **85** | 88% |
 | `qwen3.5:35b-a3b-coding-nvfp4` | nothink | ~5s | ~82 | **83** | 79% |
+| `qwen3.6:35b-a3b-coding-nvfp4` | nothink | ~5s | — | **85** | 80% |
 | `qwen2.5-coder:7b` | — | ~5s | ~66 | 49 | 53% |
 | `apple-foundationmodel` | — | ~7s | ~63 | 30 | 34% |
 | `qwen3.5:4b` | nothink | ~8s | ~46 | 38 | 45% |
 | `qwen3.5:4b-nvfp4` | nothink | ~8s | ~83 | 36 | 41% |
 | `gemma4:26b` | nothink | ~9s | ~68 | **79** | 79% |
+| `qwen3.6:35b` | nothink | ~11s | — | **89** | 81% |
 | `qwen3.5:35b-a3b-coding-nvfp4` | think | ~12s | ~81 | **88** | 83% |
 | `qwen3.5:4b-nvfp4` | think | ~19s | ~84 | 46 | 49% |
 | `qwen3.5:27b-nvfp4` | nothink | ~21s | ~20 | 76 | 80% |
@@ -444,15 +490,21 @@ Claude generation times were not instrumented; those rows are omitted from this 
 | `qwen3.5:27b` | nothink | ~31s | ~13 | 77 | 80% |
 | `gemma4:26b` | think | ~43s | ~69 | 80 | 88% |
 | `qwen3.5:4b` | think | ~45s | ~47 | 54 | 66% |
+| `qwen3.6:35b-a3b-coding-nvfp4` | think | ~71s | — | **87** | 78% |
 | `gemma4:31b` | think | ~79s | ~18 | **93** | 93% |
+| `qwen3.6:35b` | think | ~90s | — | **90** | 82% |
 | `qwen3.5:27b-nvfp4` | think | ~101s | ~20 | 82 | 86% |
 | `qwen3.5:27b` | think | ~106s | ~13 | **86** | 84% |
 
+> tok/s not instrumented for qwen3.6 models in this run.
+
 The speed/quality leaders at the interactive tier:
-- **`qwen3-coder:30b`** — score 85 in 4s. Still the fastest competitive local model.
-- **`qwen3.5:35b-a3b-coding-nvfp4` nothink** — score 83 in ~5s. Nearly identical speed to qwen3-coder, 2 points lower score, and think mode is available at only ~12s for score 88.
-- **`gemma4:26b` nothink** — score 79 in ~9s. Best fit for 16GB machines where the MoE models are weight-loading concerns.
-- **`qwen3.5:35b-a3b-coding-nvfp4` think** — score 88 in ~12s. The fastest way to a score-88 thinking-mode result by a wide margin; fully interactive.
+- **`qwen3-coder:30b`** — score 85 in 4s. The fastest competitive local model.
+- **`qwen3.6:35b-a3b-coding-nvfp4` nothink** — score 85 in ~5s. Ties qwen3-coder on score at essentially the same speed; +2 over its qwen3.5 predecessor.
+- **`qwen3.5:35b-a3b-coding-nvfp4` nothink** — score 83 in ~5s. The right choice when you want the fast thinking-mode path (~12s, score 88) — qwen3.6:35b-a3b think at ~71s is not an interactive option.
+- **`qwen3.6:35b` nothink** — score 89 in ~11s. The highest score of any local nothink model. An 11s latency is easily interactive for most workflows, and the quality gain over qwen3-coder (+4 points) is substantial.
+- **`gemma4:26b` nothink** — score 79 in ~9s. Best fit for 36GB machines where the 35B models are tight on memory.
+- **`qwen3.5:35b-a3b-coding-nvfp4` think** — score 88 in ~12s. The fastest thinking-mode option; qwen3.6:35b-a3b think is not recommended due to timeout instability and poor ROI.
 
 The qwen3.5:4b-nvfp4 models are notably fast (~83–84 tok/s) due to MLX memory bandwidth — faster token generation than anything else in this table, but the quality floor at 4B limits their usefulness.
 
@@ -464,27 +516,31 @@ The qwen3.5:4b-nvfp4 models are notably fast (~83–84 tok/s) due to MLX memory 
 
 These models run without an extended reasoning pass and are suited to interactive sessions where per-turn latency matters.
 
-1. **`qwen3-coder:30b`** — score 85, pass 88%, ~4s/task, ~18–20GB RAM. Fastest competitive local model, perfectly language-balanced, 100% run consistency. The default choice for 48GB machines.
+1. **`qwen3.6:35b` nothink** — score 89, pass 81%, ~11s/task, ~18–20GB RAM. The highest-scoring nothink local model in the benchmark. At ~11s it's slower than the MoE options but well within interactive range, and 4 points above them. Strong for 48GB machines where quality is the priority.
 
-2. **`qwen3.5:35b-a3b-coding-nvfp4` nothink** — score 83, pass 79%, ~5s/task, ~18–20GB RAM. MoE architecture delivers near-qwen3-coder speed at 2 points lower score, with the option to switch into think mode (~12s, score 88) for harder tasks. Strong fit for 48GB machines where you want a single model that handles both interactive and thinking-mode use.
+2. **`qwen3.6:35b-a3b-coding-nvfp4` nothink** — score 85, pass 80%, ~5s/task, ~18–20GB RAM. Ties `qwen3-coder:30b` on score at essentially the same speed. Best when you want maximum speed without sacrificing quality. Note: thinking mode for this model is not recommended (poor ROI, timeout instability).
 
-3. **`gemma4:26b` nothink** — score 79, pass 79%, ~9s/task, ~14–16GB RAM. Most language-balanced model at this tier (TypeScript 83%, C# 83%, Python 83%, Go 67%). Best fit for 36GB machines where qwen3-coder and the 35b-a3b are tight on memory.
+3. **`qwen3-coder:30b`** — score 85, pass 88%, ~4s/task, ~18–20GB RAM. The fastest competitive local model at 100% run consistency. The pass rate edge (88% vs 80%) and perfect consistency make it the safer choice when reliability matters more than score.
+
+**36GB machines:** `gemma4:26b` nothink (score 79, ~9s, ~14–16GB) — the qwen3.6 and MoE models require 18–20GB. `qwen3.5:27b-nvfp4` nothink (score 76, ~21s, ~14–16GB) is the next step up if speed is less critical.
 
 ### Top 3 — Thinking (quality-first use)
 
 These models use extended reasoning and produce meaningfully better results at the cost of higher per-turn latency. Best suited for complex tasks, longer sessions, or agentic harness use where latency per turn is less critical.
 
-1. **`gemma4:31b` think** — score 93, pass 93%, ~79s/task, ~18–20GB RAM. The new local ceiling. 11/12 on 007 (Beatles interview) — the only local model to approach Claude's perfect 4/4 on that test. Think mode is 97% consistent across runs. The best thinking-mode choice when quality is the priority and latency is acceptable.
+1. **`gemma4:31b` think** — score 93, pass 93%, ~79s/task, ~18–20GB RAM. The local ceiling. 11/12 on 007 (Beatles interview) — the only local model to approach Claude's perfect 4/4 on that test. Think mode is 97% consistent across runs. The best thinking-mode choice when quality is the priority and latency is acceptable.
 
-2. **`qwen3.5:35b-a3b-coding-nvfp4` think** — score 88, pass 83%, ~12s/task, ~18–20GB RAM. The most time-efficient thinking-mode model in the benchmark. Score 88 at ~12s/task is unmatched — fully interactive for most workflows. 91% consistent. First choice when you want thinking mode without batch latency.
+2. **`qwen3.5:35b-a3b-coding-nvfp4` think** — score 88, pass 83%, ~12s/task, ~18–20GB RAM. The most time-efficient thinking-mode model in the benchmark. Score 88 at ~12s/task is unmatched — fully interactive for most workflows. 91% consistent. First choice when you want thinking mode without batch latency. (Prefer qwen3.5 over qwen3.6 for the a3b thinking mode — qwen3.6:35b-a3b think shows timeout instability.)
 
-3. **`qwen3.5:27b` think** — score 86, pass 84%, ~106s/task, ~16–18GB RAM. Previously the highest-scoring local model; now third in think mode, but still the best option for 36GB machines where the 31B dense model won't fit. 100% run consistency makes it ideal for background/batch agentic use.
+3. **`qwen3.5:27b` think** — score 86, pass 84%, ~106s/task, ~16–18GB RAM. Best option for 36GB machines where the 31B dense model won't fit. 100% run consistency makes it ideal for background/batch agentic use.
 
 ### Quick reference by machine
 
 | Machine | Recommendation | Notes |
 |---------|---------------|-------|
-| 48GB (M3 Max) | `qwen3.5:35b-a3b-coding-nvfp4` | Score 83 nothink (~5s), score 88 think (~12s) — one model for both modes; add qwen3-coder:30b for 100% consistency |
+| 48GB (M3 Max, quality) | `qwen3.6:35b` nothink | Score 89 at ~11s; best nothink quality |
+| 48GB (M3 Max, speed) | `qwen3.6:35b-a3b-coding-nvfp4` nothink | Score 85 at ~5s; ties qwen3-coder, +2 over qwen3.5 predecessor |
+| 48GB (M3 Max, thinking) | `qwen3.5:35b-a3b-coding-nvfp4` think | Score 88 at ~12s — the only interactive thinking-mode option |
 | 48GB (M3 Max, quality-first) | `gemma4:31b` think | Score 93, 11/12 on 007; ~79s/task |
 | 36GB (M3 Pro) | `gemma4:26b` nothink | ~14–16GB, score 79 at ~9s; qwen3.5:27b-nvfp4 for thinking-mode fallback |
 | 16GB (M3 Air) | `qwen3.5:4b` think | Score 54 with ~45s latency; usable for Python/TypeScript |
@@ -492,7 +548,7 @@ These models use extended reasoning and produce meaningfully better results at t
 
 ### Cloud vs. local gap
 
-All three Claude models score 100 — a clean benchmark sweep at every level of difficulty. The gap to the best local models is narrowing: `gemma4:31b` think reaches score 93 / 93% pass, and passes 007 (Beatles interview) 11 out of 12 times — approaching Claude's perfect 4/4. For routine tasks (001–006, 008), the top local models hit 88–96%+ pass rates and are fully competitive. The remaining gap is concentrated on 007-level reasoning: only gemma4:31b in think mode meaningfully closes it, and even then the pass rate (92%) trails Claude's 100%. For Python- or TypeScript-heavy work with well-defined tasks, the best local models are viable daily-driver alternatives. For tasks requiring the specific combination of ambiguity tolerance, multi-file schema inference, and precise date arithmetic that 007 exercises, Claude remains the reliable choice.
+All three Claude models score 100 — a clean benchmark sweep at every level of difficulty. The gap to the best local models continues narrowing: `qwen3.6:35b` nothink reaches score 89 — the highest of any local model in nothink mode — and `gemma4:31b` think reaches 93. For routine tasks (001–006, 008), the top local models hit 88–96%+ pass rates and are fully competitive. The remaining gap is concentrated on 007-level reasoning: only gemma4:31b in think mode meaningfully closes it (11/12 passes, pass rate 92% vs Claude's 100%). `qwen3.6:35b` think (1/12 pass) and `qwen3.6:35b-a3b-coding-nvfp4` think (1/12 pass) show the qwen3.6 generation is improving on 007, but not yet at a level comparable to gemma4:31b. For Python- or TypeScript-heavy work with well-defined tasks, the best local models are viable daily-driver alternatives. For tasks requiring the combination of ambiguity tolerance, multi-file schema inference, and precise date arithmetic that 007 exercises, Claude remains the reliable choice.
 
 ---
 
@@ -522,6 +578,8 @@ Not all models support structured tool calling (function calling). Support is re
 | `claude-sonnet-4-6` | ✓ | 100 | — | (1 run) | — | cloud |
 | `claude-haiku-4-5` | ✓ | 100 | — | (1 run) | — | cloud |
 | `gemma4:31b` | ✓ | 91 | ~24s | 84% | ✓ (93, 97% consistent) | ~18–20GB |
+| `qwen3.6:35b` | ✓ | 89 | ~11s | **94%** | ✓ (90, 81% consistent)† | ~18–20GB |
+| `qwen3.6:35b-a3b-coding-nvfp4` | ✓ | 85 | ~5s | 91% | ✓ (87, 78% consistent)‡ | ~18–20GB |
 | `qwen3.5:35b-a3b-coding-nvfp4` | ✓ | 83 | ~5s | 94% | ✓ (88, 91% consistent) | ~18–20GB |
 | `qwen3-coder:30b` | ✓ | 85 | ~4s | **100%** | — | ~18–20GB |
 | `qwen3.5:27b` | ✓ | 77 | ~31s | 81% | ✓ (86, 100% consistent) | ~16–18GB |
@@ -530,9 +588,11 @@ Not all models support structured tool calling (function calling). Support is re
 | `qwen2.5-coder:7b` | ✓ | 49 | ~5s | 81% | — | ~5GB |
 | `qwen3.5:4b` | ✓ | 38 | ~8s | 66% | ✓ (54, 59% consistent) | ~3–4GB |
 | `qwen3.5:4b-nvfp4` | ✓ | 36 | ~8s | 59% | ✓ (46, 72% consistent) | ~3GB |
-| `apple-foundationmodel` | ✗ | 30 | ~7s | 81% | — | ~4GB† |
+| `apple-foundationmodel` | ✗ | 30 | ~7s | 81% | — | ~4GB§ |
 
-> † Apple FoundationModel runs on the Neural Engine with near-zero GPU/CPU load. The ~4GB figure is approximate; actual memory impact is significantly lower than equivalent Ollama models.  
+> † `qwen3.6:35b` think: 81% consistent but +1 score over nothink — thinking not recommended for harness use.  
+> ‡ `qwen3.6:35b-a3b-coding-nvfp4` think: 78% consistent and had 8 timeouts across 96 attempts; not recommended for harness use.  
+> § Apple FoundationModel runs on the Neural Engine with near-zero GPU/CPU load. The ~4GB figure is approximate; actual memory impact is significantly lower than equivalent Ollama models.  
 > Thinking mode columns show score and consistency for think mode specifically. Nothink speed is the baseline for interactive harness use.
 
 ### Considerations for harness use beyond this benchmark
@@ -547,11 +607,11 @@ Not all models support structured tool calling (function calling). Support is re
 
 Best for interactive sessions where per-turn latency matters. The harness's ability to iterate on compile errors reduces the importance of first-shot perfection.
 
-1. **`qwen3-coder:30b`** — Score 85, 100% consistent, ~4s/turn. Perfect consistency is especially valuable in a harness: when something fails, you can trust it's the task or environment, not random model variation. First choice for 48GB machines where you want zero ambiguity about whether a failure is a model or environment issue.
+1. **`qwen3.6:35b` nothink** — Score 89, 94% consistent, ~11s/turn. Highest nothink score in the benchmark. The 11s latency is interactive for most session use cases, and the quality advantage (+4 over qwen3-coder) means fewer harness iterations needed to close failures.
 
-2. **`qwen3.5:35b-a3b-coding-nvfp4` nothink** — Score 83, 94% consistent, ~5s/turn. Nearly as fast as qwen3-coder, 94% consistent (2 inconsistent cells), and thinking mode is available at ~12s for harder tasks. The most versatile option on 48GB machines: one model covering both interactive and thinking-mode workloads.
+2. **`qwen3-coder:30b`** — Score 85, 100% consistent, ~4s/turn. Perfect consistency is especially valuable in a harness: when something fails, you can trust it's the task or environment, not random model variation. Best when speed and predictability matter more than raw score.
 
-3. **`gemma4:26b` nothink** — Score 79, 88% consistent, ~9s/turn. Best option for 36GB machines. Nothink consistency (88%) is meaningfully higher than think (75%), making nothink the right mode for interactive harness use. Natively supports 128K context — no RoPE scaling required for long sessions.
+3. **`qwen3.6:35b-a3b-coding-nvfp4` nothink** — Score 85, 91% consistent, ~5s/turn. Ties qwen3-coder on score at nearly the same speed; the +2 improvement over `qwen3.5:35b-a3b` is meaningful. Note: do not use think mode in a harness — timeout instability at ~71s/turn with 78% consistency is worse than nothink for iterative sessions.
 
 ### Top 3 models to evaluate in an agentic harness — thinking
 
@@ -561,7 +621,7 @@ Best for background or batch sessions, complex multi-file tasks, or cases where 
 
 2. **`gemma4:31b` think** — Score 93, 97% consistent, ~79s/turn. The highest-scoring local model and the only one to pass 007 outright (11/12). 97% consistency is the best of any local model in think mode — nearly every task reliably passes or reliably fails. Best for batch/background agentic tasks where quality is the priority.
 
-3. **`qwen3.5:27b` think** — Score 86, 100% consistent, ~106s/turn. Previously the highest-scoring local model and perfectly consistent — every task either reliably passes or reliably fails, ideal for debugging harness behavior. The 106s/turn is the tradeoff. Best thinking-mode option for 36GB machines where gemma4:31b won't fit.
+3. **`qwen3.5:27b` think** — Score 86, 100% consistent, ~106s/turn. Perfectly consistent — every task either reliably passes or reliably fails, ideal for debugging harness behavior. The 106s/turn is the tradeoff. Best thinking-mode option for 36GB machines where gemma4:31b won't fit.
 
 All models listed support tool calling and score well enough that harness iteration would plausibly close the remaining gap on compile-error failures. None have been validated in an actual agentic harness — these are candidates for follow-on testing, not confirmed replacements.
 
@@ -573,6 +633,8 @@ Ollama's default `num_ctx` (2048–4096) is far too small for agentic sessions w
 |-------|----------------|-------|
 | `qwen3-coder:30b` | 131072 (128K) | MoE KV cache is efficient; ~4–8GB at 128K |
 | `qwen3.5:35b-a3b-coding-nvfp4` | 131072 (128K) | MoE KV cache; similar efficiency to qwen3-coder |
+| `qwen3.6:35b-a3b-coding-nvfp4` | 131072 (128K) | MoE KV cache; same as qwen3.5:35b-a3b |
+| `qwen3.6:35b` | 65536 (64K) | Dense 35B; 128K workable on 48GB but monitor memory |
 | `gemma4:31b` | 131072 (128K) | Dense model natively trained at 128K |
 | `gemma4:26b` | 131072 (128K) | Natively trained at 128K — no quality degradation |
 | `qwen3.5:27b-nvfp4` | 65536 (64K) | Dense attention; 128K workable but monitor memory |
@@ -583,4 +645,4 @@ FROM qwen3-coder:30b
 PARAMETER num_ctx 131072
 ```
 
-`gemma4` models and the MoE models (`qwen3-coder:30b`, `qwen3.5:35b-a3b`) are the most confident 128K recommendations: gemma4 because both variants were trained at that length; MoE models because their sparse activation keeps per-token KV cache proportional to active parameters (~3B), not total parameters. Extending qwen3.5 dense models beyond their 32K training window uses RoPE scaling and may degrade quality on very long contexts.
+`gemma4` models and the MoE models (`qwen3-coder:30b`, `qwen3.5:35b-a3b`, `qwen3.6:35b-a3b`) are the most confident 128K recommendations: gemma4 because both variants were trained at that length; MoE models because their sparse activation keeps per-token KV cache proportional to active parameters (~3B), not total parameters. The `qwen3.6:35b` dense model can run at 128K on 48GB but will leave less headroom — 64K is safer. Extending qwen3.5 dense models beyond their 32K training window uses RoPE scaling and may degrade quality on very long contexts.
