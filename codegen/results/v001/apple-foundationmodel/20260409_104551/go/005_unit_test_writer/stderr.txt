@@ -1,3 +1,0 @@
-# command-line-arguments
-./solution.go:48:13: undefined: fmt
-./solution.go:50:13: undefined: fmt

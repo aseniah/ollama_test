@@ -1,2 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjmyb3y__/solution.csx(10,21): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjmyb3y__/solution.csx(6,1): error CS7021: Cannot declare namespace in script code

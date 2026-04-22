@@ -1,2 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp17n_h9i5/solution.csx(14,68): error CS1061: 'JsonNode' does not contain a definition for 'GetInt32' and no accessible extension method 'GetInt32' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp17n_h9i5/solution.csx(21,8): error CS0246: The type or namespace name 'JsonWriter' could not be found (are you missing a using directive or an assembly reference?)

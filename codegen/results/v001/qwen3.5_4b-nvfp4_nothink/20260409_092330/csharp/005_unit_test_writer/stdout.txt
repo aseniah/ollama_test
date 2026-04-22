@@ -1,6 +1,0 @@
-FAIL: Quantity 9 (discount applies): (expected: 90, got: 9)
-PASS: Quantity 10 (tier boundary):
-PASS: Quantity 49 (tier boundary):
-PASS: Quantity 50 (bulk discount):
-
-Results: 3/4 tests passed.

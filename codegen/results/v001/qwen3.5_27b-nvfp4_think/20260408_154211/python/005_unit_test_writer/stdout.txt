@@ -1,4 +1,0 @@
-PASS: Quantity boundary (< 10): No discount
-PASS: Quantity boundary (>= 10): 10% discount
-PASS: Quantity boundary (< 50): 10% discount
-PASS: Quantity boundary (>= 50): 25% discount

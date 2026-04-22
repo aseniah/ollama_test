@@ -1,4 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppj8biwqa/solution.csx(11,5): error CS0103: The name 'JsonConvert' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppj8biwqa/solution.csx(18,69): error CS0103: The name 'CultureInfo' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppj8biwqa/solution.csx(18,99): error CS0103: The name 'DateTimeStyles' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppj8biwqa/solution.csx(22,16): error CS0019: Operator '-' cannot be applied to operands of type 'int' and 'bool'

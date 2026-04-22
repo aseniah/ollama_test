@@ -1,1 +1,0 @@
-[{"id":"John Winston Lennon","name":"10/9/1940","email":"12/8/1980","birthDate":"Alfred Lennon"},{"id":"James Paul McCartney","name":"6/18/1942","email":"null","birthDate":"Jim McCartney"},{"id":"Ringo Starr","name":"7/7/1940","email":"null","birthDate":"Richard Starkey"},{"id":"George Harrison","name":"2/25/1943","email":"11/29/2001","birthDate":"Harold Harrison"}]

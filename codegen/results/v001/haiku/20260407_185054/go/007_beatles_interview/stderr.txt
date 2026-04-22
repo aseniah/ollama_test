@@ -1,2 +1,0 @@
-# command-line-arguments
-./solution.go:4:2: "bufio" imported and not used

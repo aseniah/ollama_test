@@ -1,5 +1,0 @@
-System.FormatException: String '12/8/1980' was not recognized as a valid DateTime.
-   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
-   at Submission#0.<<Initialize>>d__0.MoveNext() in /private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmppe1j7497/solution.csx:line 18
---- End of stack trace from previous location ---
-   at Dotnet.Script.Core.ScriptRunner.Execute[TReturn](String dllPath, IEnumerable`1 commandLineArgs) in C:\Users\runneradmin\AppData\Local\Temp\tmphjjxd2\Dotnet.Script.Core\ScriptRunner.cs:line 110

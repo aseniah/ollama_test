@@ -1,3 +1,0 @@
-# command-line-arguments
-./solution.go:7:2: "io" imported and not used
-./solution.go:11:2: "strings" imported and not used

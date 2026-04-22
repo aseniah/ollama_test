@@ -1,1 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpb7qje8kk/solution.csx(31,16): error CS1660: Cannot convert lambda expression to type 'IEqualityComparer<string>' because it is not a delegate type

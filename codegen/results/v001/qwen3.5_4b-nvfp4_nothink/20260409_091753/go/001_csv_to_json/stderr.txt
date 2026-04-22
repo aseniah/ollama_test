@@ -1,5 +1,0 @@
-# command-line-arguments
-./solution.go:18:18: os.Open undefined (type string has no field or method Open)
-./solution.go:28:6: assignment mismatch: 1 variable but reader.Read returns 2 values
-./solution.go:47:16: undefined: strconv
-./solution.go:69:12: undefined: strconv

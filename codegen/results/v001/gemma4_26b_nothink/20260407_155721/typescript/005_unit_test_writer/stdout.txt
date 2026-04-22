@@ -1,8 +1,0 @@
-PASS: Boundary: Quantity 9 (No discount)
-PASS: Boundary: Quantity 10 (Start of 10% discount)
-PASS: Boundary: Quantity 49 (End of 10% discount)
-PASS: Boundary: Quantity 50 (Start of 25% discount)
-PASS: Standard case: High quantity (25% discount)
-
---- Test Summary ---
-Total: 5 | Passed: 5 | Failed: 0

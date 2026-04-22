@@ -1,8 +1,0 @@
-Running calculateDiscount tests...
------------------------------------
-PASS: Boundary condition: quantity 9 (no discount)
-PASS: Boundary condition: quantity 10 (10% discount starts)
-PASS: Boundary condition: quantity 49 (still 10% discount)
-PASS: Boundary condition: quantity 50 (25% discount starts)
------------------------------------
-All tests completed.

@@ -1,6 +1,0 @@
-# command-line-arguments
-./solution.go:27:28: too many arguments in call to reader.Read
-	have ([]string)
-	want ()
-./solution.go:44:20: undefined: strconv
-./solution.go:46:22: undefined: strconv

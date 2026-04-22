@@ -1,7 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(30,44): error CS8121: An expression of type 'JsonNode' cannot be handled by a pattern of type 'JsonElement'.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(38,34): error CS1061: 'JsonValue' does not contain a definition for 'GetInt32' and no accessible extension method 'GetInt32' accepting a first argument of type 'JsonValue' could be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(40,33): error CS8121: An expression of type 'JsonNode' cannot be handled by a pattern of type 'JsonElement'.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(45,39): error CS0165: Use of unassigned local variable 'age'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(47,37): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonObject' to 'System.Text.Json.JsonElement'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(57,48): error CS0023: Operator '?' cannot be applied to operand of type 'JsonProperty'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpzg_giz8w/solution.csx(64,73): error CS0023: Operator '?' cannot be applied to operand of type 'JsonProperty'

@@ -8,8 +8,8 @@ Benchmark local and cloud AI model backends for code generation quality across m
 
 - `benchmark.py` — main test runner (Ollama + optional apfel)
 - `run_claude_test.py` — Claude API test runner (Sonnet, Haiku, Opus via subagents)
-- `findings/FINDINGS_v{NNN}.md` — human-readable analysis and conclusions
-- `findings/findings_instructions.md` — guide for generating versioned findings reports
+- `results/FINDINGS_v{NNN}.md` — human-readable analysis and conclusions
+- `results/findings_instructions.md` — guide for generating versioned findings reports
 - `results/v{NNN}/{model}/results.jsonl` — results per model; `NNN` = `PROMPT_VERSION` in `benchmark.py`
 - `results/v{NNN}/{model}/{timestamp}/{lang}/{test}/` — per-run artifacts (solution, stdout, stderr)
 

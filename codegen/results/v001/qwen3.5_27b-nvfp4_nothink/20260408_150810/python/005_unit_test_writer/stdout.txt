@@ -1,4 +1,0 @@
-PASS: Quantity 9 (boundary below discount threshold)
-PASS: Quantity 10 (start of 10% discount)
-PASS: Quantity 49 (end of 10% discount)
-PASS: Quantity 50 (start of 25% discount)

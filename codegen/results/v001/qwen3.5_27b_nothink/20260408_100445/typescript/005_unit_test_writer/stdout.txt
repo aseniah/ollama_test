@@ -1,6 +1,0 @@
-PASS: Quantity 9 (below 10, no discount)
-PASS: Quantity 10 (boundary, 10% discount)
-PASS: Quantity 49 (below 50, 10% discount)
-PASS: Quantity 50 (boundary, 25% discount)
-
-Total: 4 passed, 0 failed

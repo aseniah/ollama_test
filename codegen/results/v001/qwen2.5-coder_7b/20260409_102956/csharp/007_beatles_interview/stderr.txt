@@ -1,2 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7x_w52zc/solution.csx(15,21): error CS0246: The type or namespace name 'JsonArray' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp7x_w52zc/solution.csx(34,20): error CS0103: The name 'JsonNode' does not exist in the current context

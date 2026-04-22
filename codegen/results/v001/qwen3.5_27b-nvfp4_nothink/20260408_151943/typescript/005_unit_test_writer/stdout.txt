@@ -1,5 +1,0 @@
-PASS: Quantity below 10 (no discount)
-PASS: Boundary condition: Quantity exactly 10 (10% discount)
-PASS: Quantity between 10 and 50 (boundary below 50)
-PASS: Boundary condition: Quantity exactly 50 (25% discount)
-PASS: Quantity above 50

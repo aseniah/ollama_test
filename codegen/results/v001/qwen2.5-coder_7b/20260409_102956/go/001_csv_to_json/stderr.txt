@@ -1,3 +1,0 @@
-# command-line-arguments
-./solution.go:57:10: undefined: strconv
-./solution.go:62:10: undefined: strconv

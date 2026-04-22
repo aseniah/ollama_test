@@ -1,1 +1,0 @@
-for i in range(n):  # Bug: should be range(1, n + 1)

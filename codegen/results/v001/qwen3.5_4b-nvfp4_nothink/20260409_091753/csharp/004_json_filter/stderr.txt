@@ -1,4 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp321kpvj5/solution.csx(26,61): error CS0117: 'JsonNode' does not contain a definition for 'CreateObject'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp321kpvj5/solution.csx(28,11): error CS1002: ; expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp321kpvj5/solution.csx(28,11): error CS0103: The name 'writer' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp321kpvj5/solution.csx(29,1): error CS0103: The name 'writer' does not exist in the current context

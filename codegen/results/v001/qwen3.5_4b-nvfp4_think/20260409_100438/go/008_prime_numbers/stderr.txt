@@ -1,2 +1,0 @@
-# command-line-arguments
-./solution.go:5:2: "math" imported and not used

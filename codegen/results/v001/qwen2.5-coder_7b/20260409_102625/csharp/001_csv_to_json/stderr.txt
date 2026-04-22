@@ -1,3 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg2on8e7e/solution.csx(29,16): error CS0103: The name 'JsonSerializer' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg2on8e7e/solution.csx(29,45): error CS0246: The type or namespace name 'JsonArray' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpg2on8e7e/solution.csx(29,66): error CS0246: The type or namespace name 'JsonSerializerOptions' could not be found (are you missing a using directive or an assembly reference?)

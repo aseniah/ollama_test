@@ -1,7 +1,0 @@
-PASS: Single item purchase at $10
-PASS: Boundary 9 items at $100 (discount tier 1)
-PASS: Boundary 10 items at $100 (first discount tier applies)
-PASS: Boundary 49 items at $200 (last discount tier 1)
-PASS: Boundary 50 items at $200 (second discount tier applies)
-
-5/5 tests passed.

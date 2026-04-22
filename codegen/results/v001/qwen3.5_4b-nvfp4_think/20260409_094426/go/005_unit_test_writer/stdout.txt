@@ -1,5 +1,0 @@
-Testing discount calculation logic...
-PASS: quantity=9 (below 10 threshold)
-PASS: quantity=10 (boundary >= 10, < 50)
-PASS: quantity=49 (boundary < 50)
-PASS: quantity=50 (>= 50 threshold)

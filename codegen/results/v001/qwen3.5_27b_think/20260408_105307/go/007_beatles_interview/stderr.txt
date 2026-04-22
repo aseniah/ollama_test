@@ -1,4 +1,0 @@
-# command-line-arguments
-./solution.go:7:2: "io" imported and not used
-./solution.go:9:2: "strconv" imported and not used
-./solution.go:100:24: cannot use time.Parse(format, dateStr) (value of interface type error) as bool value in assignment

@@ -1,4 +1,0 @@
-PASS: quantity < 10
-FAIL: quantity = 10 (expected: 100, got: 90)
-PASS: 10 < quantity < 50
-PASS: quantity >= 50

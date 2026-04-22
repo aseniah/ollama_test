@@ -1,9 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(27,6): error CS0246: The type or namespace name 'JsonNode' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(27,35): error CS0246: The type or namespace name 'JsonNode' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(40,19): error CS0246: The type or namespace name 'JsonObject' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(46,71): error CS1002: ; expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(46,71): error CS1513: } expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(46,73): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(48,83): error CS1002: ; expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(48,83): error CS1513: } expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpghea285j/solution.csx(48,85): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement

@@ -43,7 +43,7 @@ python3 benchmark.py 3            # 3 runs, results averaged at end
 python3 benchmark.py --apple      # include Apple on-device model
 ```
 
-Results are written to `results/v001/{model}/results.jsonl`.
+Results are written to `results/v002/{model}/results.jsonl`.
 
 ## Running — Claude API models
 
@@ -52,6 +52,10 @@ This benchmark uses [Claude Code](https://claude.ai/code) as the orchestrator. E
 > Run the Claude codegen benchmark for [sonnet/haiku/opus]. Follow the orchestration instructions in `CLAUDE.md` exactly.
 
 Results are written to `results/v002/{model}/results.jsonl` (e.g. `results/v002/opus/results.jsonl`).
+
+## Latest findings
+
+See [`results/FINDINGS_v002.md`](results/FINDINGS_v002.md) for the full v2 analysis and model rankings.
 
 > **Note on timing:** Generation time (`ms`) is not captured for Claude API runs — it is stored as `null` in results. Claude API latency includes network round-trips and subagent overhead, making it incomparable to Ollama on-device inference times. Pass/fail and partial scores are the primary signals for Claude API comparisons.
 
@@ -70,6 +74,6 @@ Results are analyzed via targeted `jq` queries against the per-model JSONL files
 | `tests/NNN_name/grading/verify.py` | Correctness verifier for each test |
 | `results/v{NNN}/{model}/results.jsonl` | Per-model benchmark results (Ollama + Claude) |
 | `results/v{NNN}/{model}/{timestamp}/` | Per-run artifacts (solution, stdout, stderr) |
-| `findings/FINDINGS_v{NNN}.md` | Human-readable analysis and conclusions |
-| `findings/findings_instructions.md` | Guide for generating versioned findings reports |
+| `results/FINDINGS_v{NNN}.md` | Human-readable analysis and conclusions |
+| `results/findings_instructions.md` | Guide for generating versioned findings reports |
 | `CHANGELOG.md` | History of prompt and verifier changes by version |

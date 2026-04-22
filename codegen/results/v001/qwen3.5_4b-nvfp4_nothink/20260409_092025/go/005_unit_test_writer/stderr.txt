@@ -1,4 +1,0 @@
-# command-line-arguments
-./solution.go:36:9: declared and not used: passed
-./solution.go:36:19: assignment mismatch: 1 variable but 2 values
-./solution.go:42:29: undefined: format

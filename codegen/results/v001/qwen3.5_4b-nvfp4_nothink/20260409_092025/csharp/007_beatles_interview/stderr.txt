@@ -1,7 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(16,5): warning CS0184: The given expression is never of the provided ('JsonObject') type
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(59,17): warning CS0219: The variable 'name' is assigned but its value is never used
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(17,26): error CS0030: Cannot convert type 'System.Text.Json.JsonElement' to 'System.Text.Json.Nodes.JsonObject'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(59,15): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(60,15): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(76,19): error CS1061: 'List<string>' does not contain a definition for 'Length' and no accessible extension method 'Length' accepting a first argument of type 'List<string>' could be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmptgn34pii/solution.csx(174,29): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.Dictionary<string, string>' to 'System.Text.Json.JsonElement'

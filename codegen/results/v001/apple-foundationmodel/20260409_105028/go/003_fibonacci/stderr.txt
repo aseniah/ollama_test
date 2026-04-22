@@ -1,2 +1,0 @@
-# command-line-arguments
-./solution.go:18:4: syntax error: unexpected comma, expected expression

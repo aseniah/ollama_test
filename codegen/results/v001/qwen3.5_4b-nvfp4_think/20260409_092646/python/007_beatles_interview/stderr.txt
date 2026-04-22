@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp2z2uxjtx/solution.py", line 44
-    except FileNotFoundError:
-    ^^^^^^
-SyntaxError: invalid syntax

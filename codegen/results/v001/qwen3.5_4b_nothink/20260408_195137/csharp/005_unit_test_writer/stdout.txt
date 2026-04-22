@@ -1,6 +1,0 @@
-PASS: Price 10.0, Quantity 9
-PASS: Price 10.0, Quantity 10
-PASS: Price 10.0, Quantity 49
-PASS: Price 10.0, Quantity 50
-
-Total tests: 4, Passed: 4, Failed: 0

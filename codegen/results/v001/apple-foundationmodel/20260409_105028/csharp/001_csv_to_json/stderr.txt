@@ -1,4 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjobto5_4/solution.csx(8,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main()' entry point.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjobto5_4/solution.csx(10,13): error CS0120: An object reference is required for the non-static field, method, or property 'CommandLineScriptGlobals.Args'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjobto5_4/solution.csx(16,127): error CS0120: An object reference is required for the non-static field, method, or property 'CommandLineScriptGlobals.Args'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjobto5_4/solution.csx(20,20): error CS1674: 'JsonSerializerOptions': type used in a using statement must implement 'System.IDisposable'.

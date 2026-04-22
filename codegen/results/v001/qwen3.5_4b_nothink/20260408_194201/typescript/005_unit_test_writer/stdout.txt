@@ -1,5 +1,0 @@
-PASS: No discount for quantity 9
-PASS: 90% discount for quantity 10
-PASS: 90% discount for quantity 49
-PASS: 75% discount for quantity 50
-PASS: No discount for high price and quantity 5

@@ -1,4 +1,0 @@
-# command-line-arguments
-./solution.go:28:12: reader.CheckFieldCount undefined (type *csv.Reader has no field or method CheckFieldCount)
-./solution.go:74:14: undefined: strconv
-./solution.go:82:14: undefined: strconv

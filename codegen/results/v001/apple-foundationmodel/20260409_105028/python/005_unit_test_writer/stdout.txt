@@ -1,4 +1,0 @@
-PASS: Test case - expected: 900.0, got: 900.0
-FAIL: Test case - expected: 1000.0, got: 900.0
-FAIL: Test case - expected: 4900.0, got: 4410.0
-FAIL: Test case - expected: 5000.0, got: 3750.0

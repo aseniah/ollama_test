@@ -1,9 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,50): error CS8086: A '}' character must be escaped (by doubling) in an interpolated string.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,54): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,59): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,69): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,76): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,79): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,92): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,96): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjke610tv/solution.csx(34,103): error CS1003: Syntax error, ',' expected

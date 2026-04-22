@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpq3h2x68s/solution.py", line 1
-    python fibonacci.py 10
-           ^^^^^^^^^
-SyntaxError: invalid syntax

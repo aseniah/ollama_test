@@ -1,1 +1,0 @@
-python fibonacci.py 10

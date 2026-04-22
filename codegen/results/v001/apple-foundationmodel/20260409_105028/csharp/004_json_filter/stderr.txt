@@ -1,8 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(8,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main()' entry point.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(4,24): error CS0234: The type or namespace name 'Linq' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(15,9): error CS0246: The type or namespace name 'JArray' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(15,28): error CS0103: The name 'JArray' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(18,9): error CS0246: The type or namespace name 'JArray' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(21,9): error CS0246: The type or namespace name 'JArray' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(24,27): error CS0103: The name 'JsonConvert' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprier0lhj/solution.csx(24,67): error CS0103: The name 'Formatting' does not exist in the current context

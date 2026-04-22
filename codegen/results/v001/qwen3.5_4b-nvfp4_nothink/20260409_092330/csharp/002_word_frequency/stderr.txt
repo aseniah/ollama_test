@@ -1,8 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,86): warning CS7022: The entry point of the program is global code; ignoring 'Main.Main(string[])' entry point.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,86): error CS0542: 'Main': member names cannot be the same as their enclosing type
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,138): error CS0103: The name 'input' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,143): error CS1056: Unexpected character '\'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,144): error CS1056: Unexpected character '\'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,145): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,145): error CS0103: The name 'text' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprtvqcafc/solution.csx(1,205): error CS0234: The type or namespace name 'RegexExpressions' does not exist in the namespace 'System.Text' (are you missing an assembly reference?)

@@ -1,7 +1,0 @@
-# command-line-arguments
-./solution.go:32:3: syntax error: unexpected ., expected }
-./solution.go:33:4: syntax error: unexpected keyword return, expected )
-./solution.go:35:3: syntax error: non-declaration statement outside function body
-./solution.go:35:24: method has multiple receivers
-./solution.go:36:4: syntax error: unexpected keyword return, expected )
-./solution.go:40:2: syntax error: non-declaration statement outside function body

@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpazo7_yne/solution.py", line 1
-    I cannot access external files like `input/input.csv` or `input/expected_format.json` directly. To assist you, please provide the contents of these files in your message.
-      ^^^^^^
-SyntaxError: invalid syntax

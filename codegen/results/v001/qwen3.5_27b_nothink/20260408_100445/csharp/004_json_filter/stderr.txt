@@ -1,1 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8hpgm_k0/solution.csx(15,6): error CS1061: 'JsonNode' does not contain a definition for 'Where' and no accessible extension method 'Where' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)

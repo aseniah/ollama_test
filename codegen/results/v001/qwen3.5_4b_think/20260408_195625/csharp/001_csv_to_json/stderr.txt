@@ -1,3 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqu6v9q9h/solution.csx(16,13): error CS0029: Cannot implicitly convert type 'System.Collections.Generic.List<string>' to 'string[]'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqu6v9q9h/solution.csx(40,19): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonObject' to 'System.Text.Json.JsonElement'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpqu6v9q9h/solution.csx(44,19): error CS0103: The name 'JsonArrayToString' does not exist in the current context

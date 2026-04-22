@@ -1,6 +1,0 @@
-PASS: quantity 5 (less than 10) should have no discount
-PASS: quantity 10 (boundary case) should have 10% discount
-PASS: quantity 49 (boundary case) should have 10% discount
-PASS: quantity 50 (boundary case) should have 25% discount
-PASS: quantity 25 (middle range) should have 10% discount
-PASS: quantity 75 (above 50) should have 25% discount

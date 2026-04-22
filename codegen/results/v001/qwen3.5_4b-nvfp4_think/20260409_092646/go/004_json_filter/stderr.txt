@@ -1,2 +1,0 @@
-# command-line-arguments
-./solution.go:34:30: record.Age undefined (type Record has no field or method Age)

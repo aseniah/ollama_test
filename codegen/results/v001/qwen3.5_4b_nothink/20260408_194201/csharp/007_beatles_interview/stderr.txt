@@ -1,4 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphtlg2msz/solution.csx(24,34): error CS1501: No overload for method 'GetValue' takes 1 arguments
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphtlg2msz/solution.csx(27,18): error CS0030: Cannot convert type 'System.Text.Json.JsonElement' to 'string'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphtlg2msz/solution.csx(52,108): error CS0117: 'DateTimeStyles' does not contain a definition for 'IgnoreExtraDigits'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphtlg2msz/solution.csx(70,17): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonObject' to 'System.Text.Json.JsonElement'

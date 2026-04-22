@@ -1,6 +1,0 @@
-PASS: Quantity 9 (No discount boundary)
-PASS: Quantity 10 (10% discount boundary)
-PASS: Quantity 49 (10% discount boundary)
-PASS: Quantity 50 (25% discount boundary)
-PASS: Large quantity (25% discount check)
-PASS: Single item (No discount check)

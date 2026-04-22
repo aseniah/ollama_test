@@ -1,4 +1,0 @@
-PASS: Quantity 9 (No discount)
-PASS: Quantity 10 (Start of 10% discount tier)
-PASS: Quantity 49 (End of 10% discount tier)
-PASS: Quantity 50 (Start of 25% discount tier)

@@ -1,2 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4j7qj6mg/solution.csx(10,5): error CS0019: Operator '==' cannot be applied to operands of type 'JsonNode' and 'bool'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4j7qj6mg/solution.csx(11,5): error CS0019: Operator '>=' cannot be applied to operands of type 'JsonNode' and 'int'

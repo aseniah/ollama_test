@@ -1,2 +1,0 @@
-# command-line-arguments
-./solution.go:14:15: undefined: os.Atoi

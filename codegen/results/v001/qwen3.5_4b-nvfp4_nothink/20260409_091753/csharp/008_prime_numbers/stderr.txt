@@ -1,3 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp08_6ocb_/solution.csx(4,1): error CS0131: The left-hand side of an assignment must be a variable, property or indexer
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp08_6ocb_/solution.csx(8,5): error CS0103: The name 'limit' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp08_6ocb_/solution.csx(13,22): error CS0103: The name 'limit' does not exist in the current context

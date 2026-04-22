@@ -1,3 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp06otu23d/solution.csx(22,16): error CS0246: The type or namespace name 'ObjectReader' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp06otu23d/solution.csx(30,29): error CS0117: 'JsonDocument' does not contain a definition for 'CreateArray'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp06otu23d/solution.csx(39,30): error CS0246: The type or namespace name 'OutputFormatter' could not be found (are you missing a using directive or an assembly reference?)

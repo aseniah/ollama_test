@@ -1,7 +1,0 @@
-PASS: Single item (boundary below 10)
-PASS: Just under threshold for 10% discount (quantity 9)
-FAIL: At threshold for 10% discount (quantity 10) (expected: 18, got: 16.2)
-FAIL: Just under threshold for 25% discount (quantity 49) (expected: 46.68, got: 79.38000000000001)
-FAIL: At threshold for 25% discount (quantity 50) (expected: 36, got: 67.5)
-
-Results: 2/5 tests passed.

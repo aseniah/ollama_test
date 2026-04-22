@@ -1,3 +1,0 @@
-# command-line-arguments
-./solution.go:7:2: "log" imported and not used
-./solution.go:35:34: undefined: allRes

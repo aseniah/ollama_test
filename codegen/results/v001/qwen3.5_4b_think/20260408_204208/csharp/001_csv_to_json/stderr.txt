@@ -1,4 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvo3llb_v/solution.csx(16,11): error CS1002: ; expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvo3llb_v/solution.csx(16,11): error CS0103: The name 'sr' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvo3llb_v/solution.csx(17,18): error CS0246: The type or namespace name 'CsvReader' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvo3llb_v/solution.csx(17,28): error CS0103: The name 'sr' does not exist in the current context

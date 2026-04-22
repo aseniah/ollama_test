@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpo1vtadqc/solution.py", line 15
-    ```
-    ^
-SyntaxError: invalid syntax

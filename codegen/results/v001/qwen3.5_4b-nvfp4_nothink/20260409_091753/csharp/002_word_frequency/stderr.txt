@@ -1,4 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmplttd_7lh/solution.csx(17,22): error CS1503: Argument 1: cannot convert from 'string' to 'char'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmplttd_7lh/solution.csx(18,27): error CS1503: Argument 1: cannot convert from 'string' to 'char'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmplttd_7lh/solution.csx(23,69): error CS0103: The name '_' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmplttd_7lh/solution.csx(23,72): error CS0103: The name '_' does not exist in the current context

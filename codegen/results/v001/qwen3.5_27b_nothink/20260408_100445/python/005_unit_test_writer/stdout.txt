@@ -1,5 +1,0 @@
-PASS: quantity 9: no discount
-PASS: quantity 10: 10% off (boundary)
-PASS: quantity 49: 10% off (boundary)
-PASS: quantity 50: 25% off (boundary)
-PASS: quantity 60: 25% off

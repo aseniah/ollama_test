@@ -1,1 +1,0 @@
-[{"name":"Alice Johnson","Age":34,"email":"alice@example.com","Score":92.5},{"name":"Bob Smith","Age":28,"email":"bob@example.com","Score":78},{"name":"Carol White","Age":45,"email":"carol@example.com","Score":88.3},{"name":"David Lee","Age":31,"email":"david@example.com","Score":95.1},{"name":"Eva Martinez","Age":52,"email":"eva@example.com","Score":71.8}]

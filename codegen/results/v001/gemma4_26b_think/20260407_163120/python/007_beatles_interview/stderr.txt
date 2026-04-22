@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpbhcc56_s/solution.py", line 32
-    with open(json_ref_path, 'r', encoding='='utf-8') as f:
-                                                   ^
-SyntaxError: unterminated string literal (detected at line 32)

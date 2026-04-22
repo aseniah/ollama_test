@@ -1,7 +1,0 @@
-# command-line-arguments
-./solution.go:20:27: multiple-value strconv.Atoi(birthdate[:4]) (value of type (int, error)) in single-value context
-./solution.go:20:62: use of untyped nil in assignment
-./solution.go:46:2: declared and not used: outputFile
-./solution.go:55:12: undefined: csv
-./solution.go:71:3: declared and not used: age
-./solution.go:77:8: assignment mismatch: 1 variable but json.Marshal returns 2 values

@@ -1,4 +1,0 @@
-PASS: Price 10, Quantity 9
-FAIL: Price 10, Quantity 10 (expected: 100, got: 90)
-PASS: Price 10, Quantity 49
-PASS: Price 10, Quantity 50

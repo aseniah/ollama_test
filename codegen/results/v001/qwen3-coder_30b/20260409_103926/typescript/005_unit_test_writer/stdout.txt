@@ -1,9 +1,0 @@
-PASS: quantity 5 (less than 10)
-PASS: quantity 9 (boundary condition)
-PASS: quantity 10 (boundary condition)
-PASS: quantity 49 (boundary condition)
-PASS: quantity 50 (boundary condition)
-PASS: quantity 25 (between 10 and 49)
-PASS: quantity 75 (greater than 50)
-
-Test Results: 7/7 tests passed

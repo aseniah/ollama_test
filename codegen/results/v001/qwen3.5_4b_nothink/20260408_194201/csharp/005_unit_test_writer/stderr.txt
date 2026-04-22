@@ -1,3 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpew0k3vrq/solution.csx(8,148): error CS1039: Unterminated string literal
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpew0k3vrq/solution.csx(8,149): error CS1003: Syntax error, ',' expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpew0k3vrq/solution.csx(10,57): error CS1026: ) expected

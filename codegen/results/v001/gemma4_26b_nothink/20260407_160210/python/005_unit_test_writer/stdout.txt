@@ -1,7 +1,0 @@
-PASS: Boundary: quantity 9 (No discount)
-PASS: Boundary: quantity 10 (10% discount)
-PASS: Boundary: quantity 49 (10% discount)
-PASS: Boundary: quantity 50 (25% discount)
-PASS: Bulk: quantity 100 (25% discount)
-
-Test Summary: 5 passed, 0 failed.

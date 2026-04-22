@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpp6i1u1rs/solution.py", line 1, in <module>
-    FizzBuzz
-NameError: name 'FizzBuzz' is not defined

@@ -1,4 +1,0 @@
-PASS: No discount for quantity 9. Expected: 900.0, Got: 900.0
-PASS: 10% discount for quantity 10. Expected: 900.0, Got: 900.0
-PASS: 10% discount for quantity 49. Expected: 4410.0, Got: 4410.0
-PASS: 25% discount for quantity 50. Expected: 3750.0, Got: 3750.0

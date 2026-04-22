@@ -1,5 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp943w1ac0/solution.csx(8,6): error CS0411: The type arguments for method 'Enumerable.SelectMany<TSource, TCollection, TResult>(IEnumerable<TSource>, Func<TSource, int, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp943w1ac0/solution.csx(19,29): error CS0103: The name 'w' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp943w1ac0/solution.csx(33,20): error CS0103: The name 'charCategory' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp943w1ac0/solution.csx(33,55): error CS0103: The name 'charCategory' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp943w1ac0/solution.csx(52,93): error CS1026: ) expected

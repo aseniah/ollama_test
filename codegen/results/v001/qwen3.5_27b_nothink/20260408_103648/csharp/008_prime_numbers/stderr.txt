@@ -1,4 +1,0 @@
-warn: Dotnet.Script.Core.Commands.ExecuteScriptCommand[0]
-      The script /private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphm33ovy_/solution.csx is not cacheable. For caching and optimal performance, ensure that the script only contains NuGet references with pinned/exact versions.
-warn: Dotnet.Script.DependencyModel.Context.CachedRestorer[0]
-      Unable to cache /Users/alexhaines/Library/Caches/dotnet-script/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphm33ovy_/net10.0/script.csproj. For caching and optimal performance, ensure that the script(s) references Nuget packages with a pinned version.

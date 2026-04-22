@@ -1,5 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3ubwsimz/solution.csx(5,5): error CS0103: The name 'N' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3ubwsimz/solution.csx(10,20): error CS0103: The name 'N' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3ubwsimz/solution.csx(18,20): error CS0103: The name 'N' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3ubwsimz/solution.csx(18,36): error CS0103: The name 'N' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp3ubwsimz/solution.csx(28,20): error CS0103: The name 'N' does not exist in the current context

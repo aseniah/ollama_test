@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8lyffvcq/solution.py", line 1
-    Reading file...
-            ^^^^
-SyntaxError: invalid syntax

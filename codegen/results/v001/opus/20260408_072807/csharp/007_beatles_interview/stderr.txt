@@ -1,5 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5thcux1m/solution.csx(60,29): error CS0029: Cannot implicitly convert type 'string' to 'int'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5thcux1m/solution.csx(76,17): error CS1503: Argument 1: cannot convert from 'int' to 'string'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5thcux1m/solution.csx(77,17): error CS1503: Argument 1: cannot convert from 'int' to 'string'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5thcux1m/solution.csx(78,17): error CS1503: Argument 1: cannot convert from 'int' to 'string'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp5thcux1m/solution.csx(79,17): error CS1503: Argument 1: cannot convert from 'int' to 'string'

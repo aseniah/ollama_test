@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpk1axq5tz/solution.py", line 33, in <module>
-    birth_date = date(int(row['birth_date'][0:4]), int(row['birth_date'][5:7]), int(row['birth_date'][8:]))
-                          ~~~^^^^^^^^^^^^^^
-KeyError: 'birth_date'

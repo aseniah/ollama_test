@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp8u313s4n/solution.py", line 2
-    Alice,1990-05-15
-               ^
-SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers

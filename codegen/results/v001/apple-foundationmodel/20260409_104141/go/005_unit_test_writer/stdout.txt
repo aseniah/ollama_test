@@ -1,4 +1,0 @@
-PASS: Quantity 9
-FAIL: Quantity 10 (expected: 200.00, got: 180.00)
-FAIL: Quantity 49 (expected: 110.25, got: 661.50)
-FAIL: Quantity 50 (expected: 1250.00, got: 937.50)

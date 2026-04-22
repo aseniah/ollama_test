@@ -1,3 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp4tucd55m/solution.py", line 1
-    for i in range(n):  # Bug: should be range(1, n + 1)
-IndentationError: expected an indented block after 'for' statement on line 1

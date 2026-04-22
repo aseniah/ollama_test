@@ -1,6 +1,0 @@
-# command-line-arguments
-./solution.go:5:2: "io" imported and not used
-./solution.go:7:2: "unicode/utf8" imported and not used
-./solution.go:14:15: undefined: os
-./solution.go:22:21: undefined: strings.NewScanner
-./solution.go:27:3: declared and not used: lowerWord

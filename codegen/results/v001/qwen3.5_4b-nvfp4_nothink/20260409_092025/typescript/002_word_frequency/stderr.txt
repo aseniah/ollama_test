@@ -1,1 +1,0 @@
-Usage: node script.js <filename>

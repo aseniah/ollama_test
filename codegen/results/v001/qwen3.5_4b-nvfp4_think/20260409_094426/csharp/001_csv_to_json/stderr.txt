@@ -1,1 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpr8i65g1g/solution.csx(15,22): error CS1955: Non-invocable member 'string.Empty' cannot be used like a method.

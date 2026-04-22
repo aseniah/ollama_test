@@ -1,9 +1,0 @@
-# command-line-arguments
-./solution.go:6:2: "io" imported and not used
-./solution.go:9:2: "strings" imported and not used
-./solution.go:32:12: undefined: csv
-./solution.go:60:17: undefined: json.SetIndent
-./solution.go:60:39: not enough arguments in call to json.Indent
-	have (string)
-	want (*bytes.Buffer, []byte, string, string)
-./solution.go:64:12: assignment mismatch: 1 variable but json.Marshal returns 2 values

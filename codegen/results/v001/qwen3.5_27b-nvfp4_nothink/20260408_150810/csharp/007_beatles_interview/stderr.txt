@@ -1,5 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjkvjxwwy/solution.csx(24,20): error CS0019: Operator '??' cannot be applied to operands of type 'int' and 'int'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjkvjxwwy/solution.csx(25,19): error CS0019: Operator '??' cannot be applied to operands of type 'int' and 'int'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjkvjxwwy/solution.csx(26,14): error CS0019: Operator '??' cannot be applied to operands of type 'int' and 'int'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjkvjxwwy/solution.csx(27,20): error CS0019: Operator '??' cannot be applied to operands of type 'int' and 'int'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjkvjxwwy/solution.csx(64,41): error CS1061: 'JsonObject' does not contain a definition for 'Properties' and no accessible extension method 'Properties' accepting a first argument of type 'JsonObject' could be found (are you missing a using directive or an assembly reference?)

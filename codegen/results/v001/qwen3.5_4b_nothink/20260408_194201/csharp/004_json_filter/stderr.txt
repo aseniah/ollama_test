@@ -1,6 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxacr87fe/solution.csx(12,31): error CS0266: Cannot implicitly convert type 'bool' to 'System.Text.Json.Nodes.JsonValue'. An explicit conversion exists (are you missing a cast?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxacr87fe/solution.csx(12,31): error CS9135: A constant value of type 'JsonValue' is expected
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxacr87fe/solution.csx(15,32): error CS1061: 'JsonValue' does not contain a definition for 'ValueToString' and no accessible extension method 'ValueToString' accepting a first argument of type 'JsonValue' could be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxacr87fe/solution.csx(18,22): error CS1503: Argument 1: cannot convert from 'System.Text.Json.Nodes.JsonNode' to 'System.Text.Json.JsonElement'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxacr87fe/solution.csx(22,42): error CS1503: Argument 1: cannot convert from 'string' to 'int'
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxacr87fe/solution.csx(22,65): error CS1503: Argument 1: cannot convert from 'string' to 'int'

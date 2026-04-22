@@ -1,4 +1,0 @@
-PASS: Quantity 9 (no discount)
-PASS: Quantity 10 (90% of full price)
-PASS: Quantity 49 (90% of full price)
-FAIL: Quantity 50 (75% of full price) (expected: 1875, got: 375)

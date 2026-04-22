@@ -1,1 +1,0 @@
-[{"Name":"Alice","Age":25,"Email":"alice@example.com","Score":85.5},{"Name":"Bob","Age":30,"Email":"bob@example.com","Score":92.0},{"Name":"Charlie","Age":35,"Email":"charlie@example.com","Score":78.5}]

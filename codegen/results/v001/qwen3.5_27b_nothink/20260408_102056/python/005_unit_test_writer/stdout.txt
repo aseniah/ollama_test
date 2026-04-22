@@ -1,5 +1,0 @@
-PASS: Quantity 9 (below discount threshold): no discount
-PASS: Quantity 10 (lower boundary of 10% discount): 10% off
-PASS: Quantity 49 (upper boundary of 10% discount): 10% off
-PASS: Quantity 50 (lower boundary of 25% discount): 25% off
-PASS: Quantity 100 (high quantity): 25% off

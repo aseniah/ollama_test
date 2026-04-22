@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvocikm46/solution.py", line 9, in <module>
-    "Name": row["name"],
-            ~~~^^^^^^^^
-KeyError: 'name'

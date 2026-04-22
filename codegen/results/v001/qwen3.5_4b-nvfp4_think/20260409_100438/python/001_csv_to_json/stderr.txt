@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpglzehyvv/solution.py", line 9
-    return
-    ^^^^^^
-SyntaxError: 'return' outside function

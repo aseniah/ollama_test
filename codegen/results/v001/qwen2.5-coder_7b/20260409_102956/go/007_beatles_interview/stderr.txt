@@ -1,5 +1,0 @@
-# command-line-arguments
-./solution.go:7:2: "strconv" imported and not used
-./solution.go:8:2: "strings" imported and not used
-./solution.go:66:13: people[i].Age undefined (type Person has no field or method Age)
-./solution.go:70:19: undefined: json

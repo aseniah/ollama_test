@@ -1,5 +1,0 @@
-Running tests for calculate_discount function...
-PASS: Quantity below discount threshold (9 items)
-PASS: Lower boundary of first discount tier (10 items)
-PASS: Upper boundary of first discount tier (49 items)
-PASS: Lower boundary of highest discount tier (50 items)

@@ -1,4 +1,0 @@
-PASS: Quantity 9 (no discount)
-PASS: Quantity 10 (10% off)
-FAIL: Quantity 49 (10% off) (expected: 87.10, got: 441.00)
-FAIL: Quantity 50 (25% off) (expected: 75.00, got: 375.00)

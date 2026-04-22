@@ -1,4 +1,0 @@
-PASS: quantity 9 (Full Price)
-PASS: quantity 10 (90% Discount)
-PASS: quantity 49 (90% Discount)
-PASS: quantity 50 (75% Discount)

@@ -1,2 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpuruf6hf5/solution.csx(10,12): warning CS0219: The variable 'jsonPath' is assigned but its value is never used
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpuruf6hf5/solution.csx(7,5): error CS0161: 'main()': not all code paths return a value

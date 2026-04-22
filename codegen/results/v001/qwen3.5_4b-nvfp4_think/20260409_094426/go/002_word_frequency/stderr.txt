@@ -1,2 +1,0 @@
-# command-line-arguments
-./solution.go:26:24: undefined: regexp.FindAllString

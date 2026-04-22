@@ -1,9 +1,0 @@
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(8,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(4,24): error CS0234: The type or namespace name 'Linq' does not exist in the namespace 'System.Text.Json' (are you missing an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(13,9): error CS0246: The type or namespace name 'JObject' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(13,24): error CS0103: The name 'JObject' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(15,9): error CS0246: The type or namespace name 'JArray' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(17,13): error CS0246: The type or namespace name 'JObject' could not be found (are you missing a using directive or an assembly reference?)
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(17,32): error CS0103: The name 'JObject' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(20,24): error CS0103: The name 'JObject' does not exist in the current context
-/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpfg69ok6h/solution.csx(25,9): error CS0103: The name 'JArray' does not exist in the current context

@@ -1,4 +1,0 @@
-  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp17qymr1z/solution.py", line 4
-    - i=0: 0%15=0 → "FizzBuzz" (should be "0")
-                  ^
-SyntaxError: invalid character '→' (U+2192)

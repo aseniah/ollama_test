@@ -1,9 +1,0 @@
-Running Discount Calculation Tests...
-
-PASS: Boundary: quantity 9 (No discount)
-PASS: Boundary: quantity 10 (10% discount starts)
-PASS: Boundary: quantity 49 (10% discount applies)
-PASS: Boundary: quantity 50 (25% discount starts)
-PASS: Normal case: quantity 100 (25% discount applies)
-
-Test Summary: 5 passed, 0 failed.
