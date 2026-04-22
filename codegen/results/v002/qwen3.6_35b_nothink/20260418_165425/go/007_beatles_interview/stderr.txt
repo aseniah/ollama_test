@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:62:3: declared and not used: diedStr

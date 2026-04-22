@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpz1uz1sch/solution.csx(34,78): error CS1061: 'KeyValuePair<string, int>' does not contain a definition for 'Count' and no accessible extension method 'Count' accepting a first argument of type 'KeyValuePair<string, int>' could be found (are you missing a using directive or an assembly reference?)

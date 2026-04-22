@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpif7xzqzw/solution.csx(9,56): error CS1503: Argument 5: cannot convert from 'System.StringSplitOptions' to 'char'

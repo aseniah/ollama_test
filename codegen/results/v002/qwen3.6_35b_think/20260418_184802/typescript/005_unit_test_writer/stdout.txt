@@ -1,0 +1,6 @@
+PASS: Calculate full price for quantity 5
+PASS: Calculate full price for quantity 9 (boundary)
+PASS: Calculate 10% discount for quantity 10 (boundary)
+PASS: Calculate 10% discount for quantity 49 (boundary)
+PASS: Calculate 25% discount for quantity 50 (boundary)
+PASS: Calculate 25% discount for quantity 100

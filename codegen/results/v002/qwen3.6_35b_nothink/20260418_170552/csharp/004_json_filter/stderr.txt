@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpjr2bvaij/solution.csx(42,25): error CS1061: 'JsonObject' does not contain a definition for 'Clone' and no accessible extension method 'Clone' accepting a first argument of type 'JsonObject' could be found (are you missing a using directive or an assembly reference?)

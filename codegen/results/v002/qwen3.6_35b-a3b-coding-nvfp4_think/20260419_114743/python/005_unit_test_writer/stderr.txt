@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp73b60md7/solution.py", line 9
+    if quantity < 10:
+                     ^
+IndentationError: unindent does not match any outer indentation level

@@ -1,0 +1,5 @@
+PASS: Quantity 9
+PASS: Quantity 10
+PASS: Quantity 49
+PASS: Quantity 50
+FAIL: Quantity 25 (mid-tier test) (expected: 225, got: 112.5)

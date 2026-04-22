@@ -1,0 +1,6 @@
+PASS: Quantity 9 (below 10, no discount)
+PASS: Quantity 10 (first discount tier, 10% off)
+PASS: Quantity 49 (second discount tier, 10% off)
+PASS: Quantity 50 (third discount tier, 25% off)
+PASS: Quantity 100 (above 50, 25% off)
+PASS: Quantity 0 (edge case, zero quantity)

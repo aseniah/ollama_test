@@ -1,0 +1,3 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa17tj5c1/solution.csx(10,9): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa17tj5c1/solution.csx(17,22): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa17tj5c1/solution.csx(19,19): error CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.

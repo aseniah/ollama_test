@@ -1,0 +1,4 @@
+PASSESS: quantity 9 has no discount
+PASSED: quantity 10 has 10% discount
+PASSED: quantity 49 has 10% discount
+PASSED: quantity 50 has 25% discount

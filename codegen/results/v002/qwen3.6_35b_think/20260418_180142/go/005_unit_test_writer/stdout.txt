@@ -1,0 +1,4 @@
+PASS: Quantity 9 (boundary < 10)
+PASS: Quantity 10 (boundary >= 10)
+PASS: Quantity 49 (boundary < 50)
+PASS: Quantity 50 (boundary >= 50)

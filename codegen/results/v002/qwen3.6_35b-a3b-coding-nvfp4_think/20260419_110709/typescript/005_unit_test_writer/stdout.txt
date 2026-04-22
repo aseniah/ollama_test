@@ -1,0 +1,4 @@
+PASS: Quantity 9 (Single Tier)
+PASS: Quantity 10 (Ten Percent Discount)
+PASS: Quantity 49 (Ten Percent Discount)
+PASS: Quantity 50 (Twenty Five Percent Discount)

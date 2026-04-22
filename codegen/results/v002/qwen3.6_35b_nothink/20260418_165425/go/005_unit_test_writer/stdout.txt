@@ -1,0 +1,6 @@
+PASS: Bulk discount for quantity 9 (less than 10)
+PASS: Bulk discount for quantity 10 (first threshold)
+PASS: Bulk discount for quantity 49 (just before second threshold)
+PASS: Bulk discount for quantity 50 (second threshold)
+
+All tests passed!
