@@ -24,17 +24,18 @@ import time
 import types
 from pathlib import Path
 
+import settings as settings_mod
+
 PROMPT_VERSION = 2
 
-# Maps friendly name → model ID.
-# friendly name: used for results dir (results/{name}{PROMPT_VERSION:03d}/) and artifact paths
-# model ID:      recorded in results.jsonl
-# Comment out models you don't want to run.
-MODELS: dict[str, str] = {
-    # "opus":   "claude-opus-4-6",
-    # "sonnet": "claude-sonnet-4-6",
-    "haiku":  "claude-haiku-4-5-20251001",
-}
+BASE_DIR = Path(__file__).parent
+
+
+def _anthropic_models() -> dict[str, str]:
+    """alias -> model_id, from settings.toml anthropic_models (enabled only)."""
+    s = settings_mod.load_settings(BASE_DIR / "settings.toml")
+    return {a["alias"]: a["model_id"] for a in s.anthropic_models()}
+
 
 LANG_EXT: dict[str, str] = {
     "python":     ".py",
@@ -52,8 +53,6 @@ TEST_ARGS: dict[str, list[str]] = {
     "003_fibonacci":     ["100"],
     "008_prime_numbers": ["50"],
 }
-
-BASE_DIR = Path(__file__).parent
 
 
 def _detect_csharp_env() -> dict[str, str] | None:
@@ -166,24 +165,28 @@ def main() -> None:
     parser.add_argument("test_id", help="Test directory name (e.g. 001_csv_to_json)")
     parser.add_argument("code_file", help="Path to the generated solution file")
     parser.add_argument("run_id", help="Run ID (e.g. 20260407_140352)")
-    parser.add_argument("--model", default="sonnet", help="Friendly model name: opus, sonnet, haiku (default: sonnet)")
-    parser.add_argument("--results-dir", dest="results_dir", default=None, help="Results root directory (default: results/v{PROMPT_VERSION:03d}/)")
+    parser.add_argument("--model", default=None,
+                        help="Anthropic alias (haiku/sonnet/opus) or full model id; "
+                             "default: first enabled alias in settings.toml")
+    parser.add_argument("--results-dir", dest="results_dir", default=None, help="Results root directory (default: results/v{PROMPT_VERSION:03d}/anthropic/)")
     args = parser.parse_args()
 
     # Accept either a friendly alias ("haiku") or a full model ID.
     # If a full model ID is passed, reverse-look up the alias so the results
     # directory uses the short name consistently.
-    _reverse = {v: k for k, v in MODELS.items()}
-    if args.model in MODELS:
-        friendly, model = args.model, MODELS[args.model]
-    elif args.model in _reverse:
-        friendly, model = _reverse[args.model], args.model
+    models = _anthropic_models()
+    reverse = {v: k for k, v in models.items()}
+    requested = args.model or next(iter(models), "haiku")
+    if requested in models:
+        friendly, model = requested, models[requested]
+    elif requested in reverse:
+        friendly, model = reverse[requested], requested
     else:
-        friendly, model = args.model, args.model  # unknown model — use as-is
+        friendly, model = requested, requested  # unknown model — use as-is
     results_dir = (
         Path(args.results_dir)
         if args.results_dir
-        else BASE_DIR / "results" / f"v{PROMPT_VERSION:03d}"
+        else BASE_DIR / "results" / f"v{PROMPT_VERSION:03d}" / "anthropic"
     )
 
     language = args.language
@@ -229,6 +232,7 @@ def main() -> None:
         "prompt_variant": "C",
         "model":          model,
         "model_options":  {},
+        "harness":        "anthropic",
         "thinking":       None,
         "response_raw":   code,
         "code_extracted": False,
