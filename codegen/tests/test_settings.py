@@ -13,13 +13,6 @@ def _write(text: str) -> Path:
 
 
 MINIMAL = """
-models = [
-  { name = "m:1", think = false, enabled = true },
-  { name = "m:2", think = true,  enabled = true, infer_timeout = 300 },
-  { name = "m:3", think = false, enabled = false },
-  { name = "m:4", think = false, enabled = true, lmstudio_model = "m-4-lms" },
-]
-
 anthropic_models = [
   { alias = "haiku",  model_id = "claude-haiku-x", enabled = true },
   { alias = "sonnet", model_id = "claude-sonnet-x", enabled = false },
@@ -27,9 +20,24 @@ anthropic_models = [
 
 [harness]
 default = "ollama"
-ollama   = { base_url = "http://localhost:11434" }
-lmstudio = { base_url = "http://localhost:1234" }
-apple    = { base_url = "http://localhost:11435", autostart = true }
+
+[harness.ollama]
+base_url = "http://localhost:11434"
+models = [
+  { name = "o:1", think = false, enabled = true },
+  { name = "o:2", think = true,  enabled = true, infer_timeout = 300 },
+  { name = "o:3", think = false, enabled = false },
+]
+
+[harness.lmstudio]
+base_url = "http://localhost:1234"
+models = [
+  { name = "lms-1", think = false, enabled = true },
+]
+
+[harness.apple]
+base_url = "http://localhost:11435"
+autostart = true
 
 [defaults]
 infer_timeout = 120
@@ -54,32 +62,23 @@ class LoadTests(unittest.TestCase):
     def test_languages(self) -> None:
         self.assertEqual(self.s.languages(), ["python", "go"])
 
-    def test_local_models_enabled_only(self) -> None:
-        names = [m["name"] for m in self.s.local_models()]
-        self.assertEqual(names, ["m:1", "m:2", "m:4"])
+    def test_local_models_per_harness(self) -> None:
+        self.assertEqual([m["name"] for m in self.s.local_models("ollama")], ["o:1", "o:2"])
+        self.assertEqual([m["name"] for m in self.s.local_models("lmstudio")], ["lms-1"])
 
     def test_local_models_defaults_applied(self) -> None:
-        m1 = self.s.local_models()[0]
+        m1 = self.s.local_models("ollama")[0]
         self.assertEqual(m1["infer_timeout"], 120)
         self.assertEqual(m1["exec_timeout"], 60)
         self.assertEqual(m1["options"], {"think": False})
 
     def test_local_models_per_model_override(self) -> None:
-        m2 = self.s.local_models()[1]
+        m2 = self.s.local_models("ollama")[1]
         self.assertEqual(m2["infer_timeout"], 300)
         self.assertEqual(m2["options"], {"think": True})
 
-    def test_lmstudio_model_defaults_to_name(self) -> None:
-        m1 = self.s.local_models()[0]
-        self.assertEqual(m1["lmstudio_model"], "m:1")
-
-    def test_lmstudio_model_override(self) -> None:
-        m4 = self.s.local_models()[2]
-        self.assertEqual(m4["lmstudio_model"], "m-4-lms")
-
     def test_anthropic_models_enabled_only(self) -> None:
-        aliases = [a["alias"] for a in self.s.anthropic_models()]
-        self.assertEqual(aliases, ["haiku"])
+        self.assertEqual([a["alias"] for a in self.s.anthropic_models()], ["haiku"])
 
     def test_anthropic_default_alias(self) -> None:
         self.assertEqual(self.s.anthropic_default_alias(), "haiku")
@@ -95,17 +94,20 @@ class ValidationTests(unittest.TestCase):
             settings.load_settings(_write("this is = not valid toml ["))
 
     def test_unknown_default_harness(self) -> None:
-        bad = MINIMAL.replace('default = "ollama"', 'default = "bogus"')
+        bad = MINIMAL.replace('default = "ollama"', 'default = "apple"')
         with self.assertRaises(settings.SettingsError):
             settings.load_settings(_write(bad))
 
     def test_harness_without_base_url(self) -> None:
-        bad = MINIMAL.replace('ollama   = { base_url = "http://localhost:11434" }', 'ollama   = { }')
+        bad = MINIMAL.replace('base_url = "http://localhost:11434"\n', "")
         with self.assertRaises(settings.SettingsError):
             settings.load_settings(_write(bad))
 
-    def test_no_enabled_models(self) -> None:
-        bad = MINIMAL.replace("enabled = true", "enabled = false")
+    def test_no_enabled_models_for_default_harness(self) -> None:
+        bad = MINIMAL.replace('{ name = "o:1", think = false, enabled = true }',
+                              '{ name = "o:1", think = false, enabled = false }')
+        bad = bad.replace('{ name = "o:2", think = true,  enabled = true, infer_timeout = 300 }',
+                          '{ name = "o:2", think = true,  enabled = false, infer_timeout = 300 }')
         with self.assertRaises(settings.SettingsError):
             settings.load_settings(_write(bad))
 

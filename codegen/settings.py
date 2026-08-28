@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, TypedDict, cast
 
 _HARNESSES = ("ollama", "lmstudio", "apple")
+_LOCAL_HARNESSES = ("ollama", "lmstudio")
 
 _Table = dict[str, Any]
 
@@ -20,7 +21,6 @@ class ModelEntry(TypedDict):
     options: dict[str, Any]
     infer_timeout: int
     exec_timeout: int
-    lmstudio_model: str
 
 
 class AnthropicEntry(TypedDict):
@@ -36,22 +36,25 @@ class Settings:
     def __init__(self, raw: _Table) -> None:
         self._raw = raw
 
+    def _harness(self, name: str) -> _Table:
+        return cast(_Table, self._raw["harness"][name])
+
     def default_harness(self) -> str:
         return str(self._raw["harness"]["default"])
 
     def harness_base_url(self, name: str) -> str:
-        return str(self._raw["harness"][name]["base_url"])
+        return str(self._harness(name)["base_url"])
 
     def apple_autostart(self) -> bool:
-        return bool(cast(_Table, self._raw["harness"]["apple"]).get("autostart", True))
+        return bool(self._harness("apple").get("autostart", True))
 
     def languages(self) -> list[str]:
         return [str(x) for x in cast("list[Any]", self._raw["defaults"]["languages"])]
 
-    def local_models(self) -> list[ModelEntry]:
+    def local_models(self, harness: str) -> list[ModelEntry]:
         d = cast(_Table, self._raw["defaults"])
         out: list[ModelEntry] = []
-        for m in _rows(self._raw, "models"):
+        for m in _rows(self._harness(harness), "models"):
             if not m.get("enabled", False):
                 continue
             out.append(ModelEntry(
@@ -59,7 +62,6 @@ class Settings:
                 options={"think": bool(m.get("think", False))},
                 infer_timeout=int(m.get("infer_timeout", d["infer_timeout"])),
                 exec_timeout=int(m.get("exec_timeout", d["exec_timeout"])),
-                lmstudio_model=str(m.get("lmstudio_model", m["name"])),
             ))
         return out
 
@@ -82,14 +84,24 @@ def _validate(raw: _Table) -> None:
     if "default" not in harness:
         raise SettingsError("settings.toml: missing [harness].default")
     default = harness["default"]
-    if default not in _HARNESSES:
+    if default not in _LOCAL_HARNESSES:
         raise SettingsError(
-            f"settings.toml: [harness].default = {default!r} is not one of {_HARNESSES}"
+            f"settings.toml: [harness].default = {default!r} is not one of {_LOCAL_HARNESSES}"
         )
     for h in _HARNESSES:
         entry = harness.get(h)
         if not isinstance(entry, dict) or "base_url" not in entry:
-            raise SettingsError(f"settings.toml: [harness].{h} needs a base_url")
+            raise SettingsError(f"settings.toml: [harness.{h}] needs a base_url")
+    for h in _LOCAL_HARNESSES:
+        models = cast(_Table, harness[h]).get("models")
+        if not isinstance(models, list):
+            raise SettingsError(f"settings.toml: [harness.{h}] needs a models list")
+    default_models = cast("list[Any]", cast(_Table, harness[default])["models"])
+    if not any(cast(_Table, m).get("enabled", False) for m in default_models):
+        raise SettingsError(
+            f"settings.toml: no enabled models for the default harness [{default}] — "
+            "set enabled = true on at least one, or change [harness].default"
+        )
     defaults = cast(_Table, raw.get("defaults", {}))
     if not defaults:
         raise SettingsError("settings.toml: missing [defaults]")
@@ -99,13 +111,6 @@ def _validate(raw: _Table) -> None:
     for key in ("infer_timeout", "exec_timeout"):
         if key not in defaults:
             raise SettingsError(f"settings.toml: [defaults].{key} is required")
-    models = raw.get("models")
-    if not isinstance(models, list) or not models:
-        raise SettingsError("settings.toml: `models` must be a non-empty list")
-    if not any(cast(_Table, m).get("enabled", False) for m in cast("list[Any]", models)):
-        raise SettingsError(
-            "settings.toml: no enabled models — set enabled = true on at least one"
-        )
 
 
 def load_settings(path: Path = Path("settings.toml")) -> Settings:

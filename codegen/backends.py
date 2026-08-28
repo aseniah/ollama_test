@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+import subprocess
 import sys
 import time
 import urllib.error
@@ -33,6 +35,7 @@ class Backend(Protocol):
     def start(self) -> None: ...
     def stop(self) -> None: ...
     def warmup(self, messages: list[dict[str, str]]) -> None: ...
+    def unload(self, model: str) -> None: ...
     def generate(
         self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
     ) -> GenResult: ...
@@ -84,6 +87,16 @@ class OllamaBackend:
     def warmup(self, messages: list[dict[str, str]]) -> None:
         return None
 
+    def unload(self, model: str) -> None:
+        try:
+            self._post(
+                f"{self._base}/api/chat",
+                {"model": model, "messages": [], "keep_alive": 0},
+                15,
+            )
+        except BackendError:
+            pass
+
     def generate(
         self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
     ) -> GenResult:
@@ -119,6 +132,19 @@ class LMStudioBackend:
 
     def warmup(self, messages: list[dict[str, str]]) -> None:
         return None
+
+    def unload(self, model: str) -> None:
+        """Best-effort: `lms unload <model>`. Falls back to LM Studio's own
+        JIT auto-evict if the CLI is missing or the id does not match."""
+        lms = shutil.which("lms") or str(Path.home() / ".lmstudio" / "bin" / "lms")
+        if not Path(lms).exists():
+            return
+        try:
+            subprocess.run(
+                [lms, "unload", model], capture_output=True, timeout=30, check=False
+            )
+        except (OSError, subprocess.SubprocessError):
+            pass
 
     def generate(
         self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
@@ -167,6 +193,9 @@ class AppleBackend:
 
     def warmup(self, messages: list[dict[str, str]]) -> None:
         apfel_backend.warmup(messages)
+
+    def unload(self, model: str) -> None:
+        return None
 
     def generate(
         self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str

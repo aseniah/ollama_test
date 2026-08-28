@@ -258,10 +258,6 @@ def preload(model: str, messages: list[dict[str, str]], options: dict[str, Any],
     }, timeout=infer_timeout)
 
 
-def unload(model: str) -> None:
-    print(_c(f"  unloading {model}...", _CYAN), flush=True)
-    ollama_post("/api/chat", {"model": model, "messages": [], "keep_alive": 0}, timeout=15)
-
 
 # ---------------------------------------------------------------------------
 # Runtime detection
@@ -697,11 +693,15 @@ def main() -> None:
         print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
 
+    local_models = cfg.local_models(harness_name)
+    if not local_models:
+        print(f"ERROR: no enabled models for harness '{harness_name}' in settings.toml", file=sys.stderr)
+        sys.exit(1)
+
     queue: list[tuple[backends.Backend, str, ModelConfig]] = []
-    for m in cfg.local_models():
-        model_name = m["lmstudio_model"] if harness_name == "lmstudio" else m["name"]
+    for m in local_models:
         queue.append((local_backend, harness_name, ModelConfig(
-            name=model_name, options=m["options"],
+            name=m["name"], options=m["options"],
             infer_timeout=m["infer_timeout"], exec_timeout=m["exec_timeout"],
         )))
 
@@ -816,11 +816,10 @@ def main() -> None:
                 failed_n = len(run_records) - passed_n
                 print(f"  Score: {_c(f'✅ {passed_n}', _GREEN)}  {_c(f'❌ {failed_n}', _RED)}  ({passed_n}/{len(run_records)})")
 
-            if harness == "ollama":
-                try:
-                    unload(model)
-                except Exception as e:
-                    print(_c(f"  WARNING: failed to unload: {e}", _YELLOW), file=sys.stderr)
+            try:
+                backend.unload(model)
+            except Exception as e:
+                print(_c(f"  WARNING: failed to unload: {e}", _YELLOW), file=sys.stderr)
 
     finally:
         local_backend.stop()

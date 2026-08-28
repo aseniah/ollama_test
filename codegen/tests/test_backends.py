@@ -67,12 +67,11 @@ class FactoryTests(unittest.TestCase):
         return settings.Settings({
             "harness": {
                 "default": "ollama",
-                "ollama": {"base_url": "http://o:11434"},
-                "lmstudio": {"base_url": "http://l:1234"},
+                "ollama": {"base_url": "http://o:11434", "models": [{"name": "m", "enabled": True}]},
+                "lmstudio": {"base_url": "http://l:1234", "models": []},
                 "apple": {"base_url": "http://a:11435"},
             },
             "defaults": {"languages": ["python"], "infer_timeout": 120, "exec_timeout": 60},
-            "models": [{"name": "m", "enabled": True}],
         })
 
     def test_build_local_backend_names(self) -> None:
@@ -81,6 +80,20 @@ class FactoryTests(unittest.TestCase):
         self.assertIsInstance(backends.build_local_backend("lmstudio", s), backends.LMStudioBackend)
         with self.assertRaises(backends.BackendError):
             backends.build_local_backend("apple", s)
+
+
+class UnloadTests(unittest.TestCase):
+    def test_ollama_unload_posts_keep_alive_zero(self) -> None:
+        http = _FakeHTTP({})
+        backends.OllamaBackend("http://x:11434", _post=http).unload("m:1")
+        assert http.last_payload is not None
+        self.assertEqual(http.last_payload["keep_alive"], 0)
+        self.assertEqual(http.last_payload["model"], "m:1")
+
+    def test_ollama_unload_swallows_backend_error(self) -> None:
+        def boom(url: str, payload: dict[str, Any], timeout: int) -> dict[str, Any]:
+            raise backends.BackendError("down")
+        backends.OllamaBackend("http://x:11434", _post=boom).unload("m:1")  # no raise
 
 
 if __name__ == "__main__":

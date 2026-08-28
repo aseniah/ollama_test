@@ -1,12 +1,24 @@
 # codegen benchmark configuration.
 # Edit this file to change which models run and which local harness they run against.
 #
-# `models` / `anthropic_models` are declared first because bare TOML keys must
-# precede any [table] header.
+# `anthropic_models` is declared first because bare TOML keys must precede any
+# [table] header.
 
-# Local models. Run against whichever harness --harness selects (default: ollama).
+# Anthropic models for run_claude_test.py (harness = "anthropic").
+anthropic_models = [
+  { alias = "haiku",  model_id = "claude-haiku-4-5-20251001", enabled = true },
+  { alias = "sonnet", model_id = "claude-sonnet-5",           enabled = false },
+  { alias = "opus",   model_id = "claude-opus-5",             enabled = false },
+]
+
+[harness]
+default = "ollama"
+
+# Ollama models are identified by their `ollama pull` tag.
 # `enabled = false` keeps a model in the file but out of the run.
-# `lmstudio_model` overrides the identifier sent to LM Studio when it differs from `name`.
+# `think = true/false` picks the mode; `infer_timeout` overrides [defaults] per model.
+[harness.ollama]
+base_url = "http://localhost:11434"
 models = [
   { name = "qwen3.8:27b",                  think = false, enabled = true },
   { name = "qwen3.8:27b",                  think = true,  enabled = true,  infer_timeout = 300 },
@@ -32,20 +44,22 @@ models = [
   { name = "qwen3.5:4b-nvfp4",             think = true,  enabled = false, infer_timeout = 300 },
 ]
 
-# Anthropic models for run_claude_test.py (harness = "anthropic").
-anthropic_models = [
-  { alias = "haiku",  model_id = "claude-haiku-4-5-20251001", enabled = true },
-  { alias = "sonnet", model_id = "claude-sonnet-5",           enabled = false },
-  { alias = "opus",   model_id = "claude-opus-5",             enabled = false },
+# LM Studio models are identified by the id LM Studio's server reports at
+# GET /v1/models (usually the lowercased model key, e.g. "qwen3.8-27b-mlx-4bit").
+# This list is independent of the Ollama list — the same weights have different
+# ids and quantizations across the two runtimes, so results are kept separate.
+[harness.lmstudio]
+base_url = "http://localhost:1234"
+models = [
+  { name = "qwen3.8-27b-mlx-4bit", think = false, enabled = true },
+  { name = "qwen3.8-27b-mlx-4bit", think = true,  enabled = true, infer_timeout = 300 },
 ]
 
-[harness]
-default = "ollama"
-ollama   = { base_url = "http://localhost:11434" }
-lmstudio = { base_url = "http://localhost:1234" }
-apple    = { base_url = "http://localhost:11435", autostart = true }
+[harness.apple]
+base_url = "http://localhost:11435"
+autostart = true
 
 [defaults]
-infer_timeout = 120   # seconds; per-model override allowed above
-exec_timeout  = 60    # seconds; per-model override allowed above
+infer_timeout = 120   # seconds; per-model override allowed in each harness's models list
+exec_timeout  = 60    # seconds; per-model override allowed in each harness's models list
 languages = ["python", "typescript", "go", "csharp"]

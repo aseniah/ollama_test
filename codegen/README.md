@@ -39,10 +39,12 @@ Each test runs against all four languages: **Python, TypeScript, Go, C#**.
 
 `settings.toml` controls everything about a run:
 
-- `models = [...]` — the model list. Set `enabled = true` on the ones you want; the rest stay in the file. `think = true/false` picks the mode; `infer_timeout` / `exec_timeout` override `[defaults]` per model. `lmstudio_model` overrides the identifier sent to LM Studio when it differs from the Ollama tag.
-- `[harness]` — `default` harness plus each harness's `base_url` (and `apple.autostart`).
+- `[harness.ollama].models` / `[harness.lmstudio].models` — a model list **per harness** (Ollama tags and LM Studio model ids differ, so results stay separate). Set `enabled = true` on the ones you want; the rest stay in the file. `think = true/false` picks the mode; `infer_timeout` / `exec_timeout` override `[defaults]` per model. LM Studio ids are whatever `GET http://localhost:1234/v1/models` reports (usually the lowercased key, e.g. `qwen3.8-27b-mlx-4bit`).
+- `[harness]` — `default` local harness (`ollama` or `lmstudio`); each `[harness.*]` block has a `base_url` (and `apple.autostart`).
 - `[defaults]` — `infer_timeout`, `exec_timeout`, `languages`.
 - `anthropic_models = [...]` — Claude aliases → model ids for `run_claude_test.py`.
+
+Between models the previous one is unloaded to free memory (Ollama `keep_alive: 0`, LM Studio `lms unload`). For LM Studio also enable **Auto-Evict** (or a short JIT TTL) in its settings as a backstop.
 
 ## Running — local models
 

@@ -17,9 +17,15 @@ Benchmark local and cloud AI model backends for code generation quality across m
 - `results/v{NNN}/{harness}/{model}/results.jsonl` — results per harness+model; `NNN` = `PROMPT_VERSION`
 - `results/v{NNN}/{harness}/{model}/{timestamp}/{lang}/{test}/` — per-run artifacts (solution, stdout, stderr)
 
-The model list lives in `settings.toml` (`models = [...]`). Set `enabled = true` on the
-models you want in a run; the rest stay in the file. The benchmark goal is evaluating models
-for local AI coding assistant use.
+Model lists live in `settings.toml`, one per local harness (`[harness.ollama].models`,
+`[harness.lmstudio].models`) — Ollama tags and LM Studio model ids differ, so the lists are
+independent and their results stay separate. Set `enabled = true` on the models you want in a
+run; the rest stay in the file. The benchmark goal is evaluating models for local AI coding
+assistant use.
+
+Between models the benchmark unloads the previous one to free memory: Ollama via
+`keep_alive: 0`, LM Studio via `lms unload` (falls back to LM Studio's JIT auto-evict if the
+`lms` CLI is unavailable or the id does not match).
 
 ## Running
 
