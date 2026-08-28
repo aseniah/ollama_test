@@ -1,0 +1,7 @@
+PASS: quantity 9 (below 10, no discount)
+PASS: quantity 10 (10% discount)
+PASS: quantity 49 (10% discount)
+PASS: quantity 50 (25% discount)
+PASS: quantity 0 (below 10, no discount)
+PASS: quantity 100 (25% discount)
+All tests passed!

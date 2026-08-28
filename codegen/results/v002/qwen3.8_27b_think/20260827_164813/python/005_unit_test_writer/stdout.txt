@@ -1,0 +1,6 @@
+PASS: quantity 9 (below discount threshold)
+PASS: quantity 10 (boundary: start of 10% discount)
+PASS: quantity 49 (boundary: end of 10% discount)
+PASS: quantity 50 (boundary: start of 25% discount)
+PASS: quantity 1 (minimum, no discount)
+PASS: quantity 100 (well above 25% discount threshold)

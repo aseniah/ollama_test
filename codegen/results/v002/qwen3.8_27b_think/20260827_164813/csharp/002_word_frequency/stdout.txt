@@ -1,0 +1,43 @@
+the: 11
+of: 10
+was: 10
+it: 6
+age: 2
+all: 2
+before: 2
+direct: 2
+epoch: 2
+going: 2
+had: 2
+season: 2
+we: 2
+were: 2
+belief: 1
+best: 1
+darkness
+it: 1
+despair
+we: 1
+everything: 1
+foolishness
+it: 1
+heaven: 1
+hope: 1
+incredulity
+it: 1
+light: 1
+nothing: 1
+other: 1
+spring: 1
+times: 1
+times
+it: 1
+to: 1
+us: 1
+us
+we: 1
+way
+: 1
+winter: 1
+wisdom: 1
+worst: 1

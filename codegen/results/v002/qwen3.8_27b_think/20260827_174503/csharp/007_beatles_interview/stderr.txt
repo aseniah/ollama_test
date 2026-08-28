@@ -1,0 +1,8 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(10,17): error CS0029: Cannot implicitly convert type 'string[]' to 'string'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(11,29): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(12,33): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(13,29): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(14,31): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(15,31): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(16,32): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpa4jsyy5i/solution.csx(17,31): error CS1503: Argument 1: cannot convert from 'string' to 'System.Array'

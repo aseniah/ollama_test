@@ -1,0 +1,3 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6sp192k5/solution.csx(119,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6sp192k5/solution.csx(119,11): error CS0103: The name 'serializer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp6sp192k5/solution.csx(124,48): error CS0103: The name 'serializer' does not exist in the current context

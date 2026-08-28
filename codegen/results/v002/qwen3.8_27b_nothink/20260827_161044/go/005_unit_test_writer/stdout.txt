@@ -1,0 +1,7 @@
+PASS: price=10, quantity=9
+PASS: price=10, quantity=10
+PASS: price=10, quantity=49
+PASS: price=10, quantity=50
+PASS: price=5, quantity=1
+PASS: price=20, quantity=25
+PASS: price=15, quantity=100

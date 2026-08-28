@@ -1,0 +1,4 @@
+# command-line-arguments
+./solution.go:38:9: too many return values
+	have (time.Time, error)
+	want (time.Time)

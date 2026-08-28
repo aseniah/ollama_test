@@ -1,0 +1,16 @@
+const N = parseInt(process.argv[2], 10);
+
+if (isNaN(N) || N < 1) {
+    process.exit(0);
+}
+
+let a = 1;
+let b = 1;
+console.log(a);
+
+while (b <= N) {
+    console.log(b);
+    const next = a + b;
+    a = b;
+    b = next;
+}

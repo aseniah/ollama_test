@@ -1,0 +1,7 @@
+PASS: quantity 9 (below threshold, no discount)
+PASS: quantity 10 (threshold, 10% off)
+PASS: quantity 49 (upper threshold for 10% off)
+PASS: quantity 50 (threshold for 25% off)
+PASS: quantity 5 with price 20 (no discount)
+PASS: quantity 25 with price 20 (10% off)
+PASS: quantity 100 with price 20 (25% off)

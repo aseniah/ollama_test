@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpea23cojs/solution.csx(11,6): error CS1061: 'JsonNode' does not contain a definition for 'Select' and no accessible extension method 'Select' accepting a first argument of type 'JsonNode' could be found (are you missing a using directive or an assembly reference?)

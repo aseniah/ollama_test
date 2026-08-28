@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdaoecy9p/solution.csx(9,29): error CS1061: 'string' does not contain a definition for 'ReadAllLinesSafe' and no accessible extension method 'ReadAllLinesSafe' accepting a first argument of type 'string' could be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdaoecy9p/solution.csx(88,28): error CS1109: Extension methods must be defined in a top level static class; StringExt is a nested class
