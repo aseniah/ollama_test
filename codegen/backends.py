@@ -34,7 +34,9 @@ class Backend(Protocol):
 
     def start(self) -> None: ...
     def stop(self) -> None: ...
-    def warmup(self, messages: list[dict[str, str]]) -> None: ...
+    def warmup(
+        self, messages: list[dict[str, str]], options: dict[str, Any], model: str, timeout: int
+    ) -> None: ...
     def unload(self, model: str) -> None: ...
     def generate(
         self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
@@ -94,8 +96,23 @@ class OllamaBackend:
     def stop(self) -> None:
         return None
 
-    def warmup(self, messages: list[dict[str, str]]) -> None:
-        return None
+    def warmup(
+        self, messages: list[dict[str, str]], options: dict[str, Any], model: str, timeout: int
+    ) -> None:
+        print(f"  ollama: loading {model}...", flush=True)
+        # pin the model in memory for the whole run
+        self._post(
+            f"{self._base}/api/chat",
+            {"model": model, "messages": [], "keep_alive": -1},
+            60,
+        )
+        # one warm inference (skip thinking — no need to burn tokens on warmup)
+        warm: dict[str, Any] = {**options, "think": False} if options.get("think") is True else dict(options)
+        self._post(
+            f"{self._base}/api/chat",
+            {"model": model, "messages": messages, "stream": False, **warm},
+            timeout,
+        )
 
     def unload(self, model: str) -> None:
         try:
@@ -176,8 +193,20 @@ class LMStudioBackend:
             pass
         self._started = False
 
-    def warmup(self, messages: list[dict[str, str]]) -> None:
-        return None
+    def warmup(
+        self, messages: list[dict[str, str]], options: dict[str, Any], model: str, timeout: int
+    ) -> None:
+        # Force the JIT load now so the first test's timing is not skewed.
+        print(f"  lmstudio: loading {model}...", flush=True)
+        passthrough = {k: v for k, v in options.items() if k != "think"}
+        try:
+            self._post(
+                f"{self._base}/v1/chat/completions",
+                {"model": model, "messages": messages, "stream": False, **passthrough},
+                timeout,
+            )
+        except BackendError as e:
+            print(f"    lmstudio warmup failed (continuing): {e}", flush=True)
 
     def unload(self, model: str) -> None:
         """Best-effort: `lms unload <model>`. Falls back to LM Studio's own
@@ -237,7 +266,9 @@ class AppleBackend:
             apfel_backend.teardown(self._proc)
             self._proc = None
 
-    def warmup(self, messages: list[dict[str, str]]) -> None:
+    def warmup(
+        self, messages: list[dict[str, str]], options: dict[str, Any], model: str, timeout: int
+    ) -> None:
         apfel_backend.warmup(messages)
 
     def unload(self, model: str) -> None:

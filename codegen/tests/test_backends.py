@@ -82,6 +82,31 @@ class FactoryTests(unittest.TestCase):
             backends.build_local_backend("apple", s)
 
 
+class WarmupTests(unittest.TestCase):
+    def test_ollama_warmup_pins_and_warms(self) -> None:
+        calls: list[dict[str, Any]] = []
+
+        def rec(url: str, payload: dict[str, Any], timeout: int) -> dict[str, Any]:
+            calls.append(payload)
+            return {"message": {"content": "ok"}}
+
+        backends.OllamaBackend("http://x:11434", _post=rec).warmup(
+            [{"role": "user", "content": "hi"}], {"think": True}, "m:1", 120
+        )
+        self.assertEqual(calls[0]["keep_alive"], -1)          # pinned
+        self.assertEqual(calls[1]["model"], "m:1")
+        self.assertFalse(calls[1]["think"])                   # thinking dropped for warmup
+
+    def test_lmstudio_warmup_hits_v1(self) -> None:
+        http = _FakeHTTP({"choices": [{"message": {"content": "ok"}}]})
+        backends.LMStudioBackend("http://x:1234", _post=http).warmup(
+            [{"role": "user", "content": "hi"}], {"think": True}, "m:1", 120
+        )
+        self.assertEqual(http.last_url, "http://x:1234/v1/chat/completions")
+        assert http.last_payload is not None
+        self.assertNotIn("think", http.last_payload)
+
+
 class UnloadTests(unittest.TestCase):
     def test_ollama_unload_posts_keep_alive_zero(self) -> None:
         http = _FakeHTTP({})

@@ -25,10 +25,8 @@ import sys
 import tempfile
 import time
 import types
-import urllib.error
-import urllib.request
 from pathlib import Path
-from typing import Any, NotRequired, TypedDict, cast
+from typing import Any, NotRequired, TypedDict
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 import apfel_backend
@@ -58,7 +56,6 @@ def _c(text: str, code: str) -> str:
     return f"{code}{text}{_RESET}" if _COLOR else text
 
 
-OLLAMA_BASE = "http://localhost:11434"
 RESULTS_DIR = Path("results")
 
 PROMPT_VERSION = 2
@@ -212,50 +209,6 @@ def load_tests(tests_dir: Path) -> list[TestCase]:
 
 
 _test_cases: list[TestCase] = []  # populated in main()
-
-
-# ---------------------------------------------------------------------------
-# API
-# ---------------------------------------------------------------------------
-
-def ollama_post(path: str, payload: dict[str, Any], timeout: int = 120) -> dict[str, Any]:
-    data = json.dumps(payload).encode()
-    req = urllib.request.Request(
-        f"{OLLAMA_BASE}{path}",
-        data=data,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return cast(dict[str, Any], json.loads(resp.read()))
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(_http_error_message(e)) from e
-
-
-def _http_error_message(e: urllib.error.HTTPError) -> str:
-    try:
-        body = cast(dict[str, Any], json.loads(e.read().decode(errors="replace")))
-        err = body.get("error", "")
-        if isinstance(err, dict):
-            err_dict = cast(dict[str, Any], err)
-            return f"HTTP {e.code}: {str(err_dict.get('message') or err_dict)}"
-        return f"HTTP {e.code}: {str(err) or e.reason}"
-    except Exception:
-        return f"HTTP {e.code}: {e.reason}"
-
-
-def preload(model: str, messages: list[dict[str, str]], options: dict[str, Any], infer_timeout: int = INFER_TIMEOUT) -> None:
-    print(_c(f"  preloading {model}...", _CYAN), flush=True)
-    ollama_post("/api/chat", {"model": model, "messages": [], "keep_alive": -1}, timeout=60)
-    print(_c(f"  warming up {model}...", _CYAN), flush=True)
-    warmup_options: dict[str, Any] = {**options, "think": False} if options.get("think") is True else options
-    ollama_post("/api/chat", {
-        "model": model,
-        "messages": messages,
-        "stream": False,
-        **warmup_options,
-    }, timeout=infer_timeout)
 
 
 
@@ -735,11 +688,10 @@ def main() -> None:
             print(sep)
 
             try:
-                if harness == "ollama":
-                    preload(model, warmup_messages, model_cfg["options"],
-                            model_cfg.get("infer_timeout", INFER_TIMEOUT))
-                else:
-                    backend.warmup(warmup_messages)
+                backend.warmup(
+                    warmup_messages, model_cfg["options"], model,
+                    model_cfg.get("infer_timeout", INFER_TIMEOUT),
+                )
             except Exception as e:
                 print(f"  ERROR warming up: {e}", file=sys.stderr)
                 continue
