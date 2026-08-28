@@ -8,9 +8,11 @@ See `CLAUDE.md` for jq query patterns to extract data from the results JSONL fil
 
 ## Before You Start
 
-1. **Identify the target version.** Results live in `results/v{NNN}/`. List the subdirectories
-   to see which models were run: `ls results/v002/` (or whichever version). Note which models
-   have results and how many runs each has.
+1. **Identify the target version.** Results live in `results/v{NNN}/{harness}/{model}/`. List
+   the subdirectories to see which harnesses and models were run: `ls results/v002/*/` (or
+   whichever version). Note which harnesses ran (`ollama`, `lmstudio`, `apple`, `anthropic`),
+   which models have results, how many runs each has, and whether any model ran under more
+   than one harness.
 
 2. **Name the output file** `FINDINGS_V{NNN}.md` to match the results version.
 
@@ -77,6 +79,12 @@ Table: Model | Standard score | Quantized score | Score delta | Speed delta.
 Name the quantization format and explain what it means for the hardware. Discuss the tradeoff
 at different model sizes — degradation is typically worse at smaller scales.
 
+### Harness Comparison (Ollama vs LM Studio) *(if a model ran under both)*
+For each model run under both harnesses: score parity (should be near-equal — a large gap is a
+harness bug, not a model finding), speed delta, and tok/s delta. Note that tok/s is sourced
+differently per harness (Ollama `eval_duration`, LM Studio `stats.tokens_per_second` or
+wall-clock fallback, Apple wall-clock) and is not perfectly comparable.
+
 ### Language Breakdown
 Table: Language | Pass Rate | Notes. Then a per-model language breakdown table.
 Explain the structural reasons languages underperform — Go's strict compiler surfacing missing
@@ -115,8 +123,9 @@ Separate section. Cover:
 - Verdict: where it's viable, where it isn't
 
 ### Speed vs. Quality
-Table of all timed models: Model | Mode | Avg time/task | tok/s | Score | Pass Rate.
-Highlight the best score-per-second options. Note any timing caveats.
+Table of all timed models: Model | Harness | Mode | Avg time/task | tok/s | Score | Pass Rate.
+tok/s is required for every row. Highlight the best score-per-second options. Note timing
+caveats, including that tok/s is measured differently per harness (see Harness Comparison).
 
 ### Summary and Recommendations
 - Top 3 local models with one-line rationale each

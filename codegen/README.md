@@ -29,29 +29,39 @@ Each test runs against all four languages: **Python, TypeScript, Go, C#**.
 - Go: [go.dev/dl](https://go.dev/dl/)
 - C#: `dotnet tool install -g dotnet-script`
 
-**Ollama** must be running for local model benchmarks: `ollama serve`
+**A local harness** must be running for local model benchmarks:
+- **Ollama** (default): `ollama serve`
+- **LM Studio** (`--harness lmstudio`): start the LM Studio server (Developer tab → Start Server, default port 1234) and load the model you want to test. There is no autostart — the benchmark errors if the server is unreachable.
 
 **Apple on-device model** (`--apple` flag) requires [apfel](https://github.com/Arthur-Ficial/apfel) and macOS 26+.
 
-## Running — Ollama models
+## Configuration
 
-Edit the `MODELS` list near the top of `benchmark.py` to control which models run (several larger models are commented out). Then:
+`settings.toml` controls everything about a run:
+
+- `models = [...]` — the model list. Set `enabled = true` on the ones you want; the rest stay in the file. `think = true/false` picks the mode; `infer_timeout` / `exec_timeout` override `[defaults]` per model. `lmstudio_model` overrides the identifier sent to LM Studio when it differs from the Ollama tag.
+- `[harness]` — `default` harness plus each harness's `base_url` (and `apple.autostart`).
+- `[defaults]` — `infer_timeout`, `exec_timeout`, `languages`.
+- `anthropic_models = [...]` — Claude aliases → model ids for `run_claude_test.py`.
+
+## Running — local models
 
 ```sh
-python3 benchmark.py              # single run
-python3 benchmark.py 3            # 3 runs, results averaged at end
-python3 benchmark.py --apple      # include Apple on-device model
+python3 benchmark.py                      # enabled models, default harness (ollama)
+python3 benchmark.py 3                     # 3 runs, results averaged at end
+python3 benchmark.py --harness lmstudio    # same models against LM Studio
+python3 benchmark.py --apple               # also run the Apple on-device model
 ```
 
-Results are written to `results/v002/{model}/results.jsonl`.
+Results are written to `results/v002/{harness}/{model}/results.jsonl`.
 
 ## Running — Claude API models
 
-This benchmark uses [Claude Code](https://claude.ai/code) as the orchestrator. Edit the `MODELS` dict in `run_claude_test.py` to uncomment the Claude models you want to test, then start a Claude Code session and say:
+This benchmark uses [Claude Code](https://claude.ai/code) as the orchestrator. Set `enabled = true` on the Claude aliases in `settings.toml` (`anthropic_models`), then start a Claude Code session and say:
 
 > Run the Claude codegen benchmark for [sonnet/haiku/opus]. Follow the orchestration instructions in `CLAUDE.md` exactly.
 
-Results are written to `results/v002/{model}/results.jsonl` (e.g. `results/v002/opus/results.jsonl`).
+Results are written to `results/v002/anthropic/{alias}/results.jsonl` (e.g. `results/v002/anthropic/opus/results.jsonl`).
 
 ## Latest findings
 
@@ -61,19 +71,24 @@ See [`results/FINDINGS_v002.md`](results/FINDINGS_v002.md) for the full v2 analy
 
 ## Reviewing results
 
-Results are analyzed via targeted `jq` queries against the per-model JSONL files. See `CLAUDE.md` for query examples and failure category definitions.
+Results are analyzed via targeted `jq` queries against the per-harness+model JSONL files (note the two-level `results/v{NNN}/*/*/results.jsonl` glob). See `CLAUDE.md` for query examples and failure category definitions.
 
 ## Files
 
 | Path | Description |
 |---|---|
-| `benchmark.py` | Main Ollama test runner |
+| `settings.toml` | Model list, harness config, timeouts, languages |
+| `settings.py` | Loader/validator for `settings.toml` |
+| `backends.py` | Ollama / LM Studio / Apple inference backends |
+| `benchmark.py` | Main local test runner |
 | `run_claude_test.py` | Claude API test helper — executes and verifies generated code |
+| `migrate_results.py` | One-time migration of old result dirs into the harness layout |
 | `tests/NNN_name/test/prompt.md` | Task prompt for each test |
 | `tests/NNN_name/test/input/` | Input files for tests that need them |
 | `tests/NNN_name/grading/verify.py` | Correctness verifier for each test |
-| `results/v{NNN}/{model}/results.jsonl` | Per-model benchmark results (Ollama + Claude) |
-| `results/v{NNN}/{model}/{timestamp}/` | Per-run artifacts (solution, stdout, stderr) |
+| `tests/test_*.py` | Unit tests (`python3 -m unittest discover -s tests -t . -p 'test_*.py'`) |
+| `results/v{NNN}/{harness}/{model}/results.jsonl` | Per-harness+model benchmark results |
+| `results/v{NNN}/{harness}/{model}/{timestamp}/` | Per-run artifacts (solution, stdout, stderr) |
 | `results/FINDINGS_v{NNN}.md` | Human-readable analysis and conclusions |
 | `results/findings_instructions.md` | Guide for generating versioned findings reports |
 | `CHANGELOG.md` | History of prompt and verifier changes by version |

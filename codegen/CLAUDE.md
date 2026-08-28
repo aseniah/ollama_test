@@ -6,27 +6,37 @@ Benchmark local and cloud AI model backends for code generation quality across m
 
 ## Structure
 
-- `benchmark.py` — main test runner (Ollama + optional apfel)
-- `run_claude_test.py` — Claude API test runner (Sonnet, Haiku, Opus via subagents)
+- `settings.toml` — model list, harness config, timeouts, languages. Edit this to change a run.
+- `settings.py` — loader/validator for `settings.toml`
+- `backends.py` — `OllamaBackend`, `LMStudioBackend`, `AppleBackend`
+- `benchmark.py` — main test runner (Ollama / LM Studio / apfel)
+- `run_claude_test.py` — Claude API test runner (harness = `anthropic`, via subagents)
+- `migrate_results.py` — one-time migration of old `results/v{NNN}/{model}/` dirs into the harness layout
 - `results/FINDINGS_v{NNN}.md` — human-readable analysis and conclusions
 - `results/findings_instructions.md` — guide for generating versioned findings reports
-- `results/v{NNN}/{model}/results.jsonl` — results per model; `NNN` = `PROMPT_VERSION` in `benchmark.py`
-- `results/v{NNN}/{model}/{timestamp}/{lang}/{test}/` — per-run artifacts (solution, stdout, stderr)
+- `results/v{NNN}/{harness}/{model}/results.jsonl` — results per harness+model; `NNN` = `PROMPT_VERSION`
+- `results/v{NNN}/{harness}/{model}/{timestamp}/{lang}/{test}/` — per-run artifacts (solution, stdout, stderr)
 
-The active model list is `MODELS` near the top of `benchmark.py`. Several larger models
-(`qwen3-coder:30b`, `deepseek-r1:32b`, etc.) are present but commented out — uncomment to
-include in a run. The benchmark goal is evaluating models for local AI coding assistant use.
+The model list lives in `settings.toml` (`models = [...]`). Set `enabled = true` on the
+models you want in a run; the rest stay in the file. The benchmark goal is evaluating models
+for local AI coding assistant use.
 
 ## Running
 
+Model list, harness, and timeouts live in `settings.toml`. Pick a local harness with
+`--harness` (default: `[harness].default`).
+
 ```sh
-python3 benchmark.py              # Ollama models only
-python3 benchmark.py --apple      # Include Apple on-device model (requires apfel, macOS 26+)
-python3 benchmark.py 3 --apple    # 3 runs
+python3 benchmark.py                      # enabled models, default harness (ollama)
+python3 benchmark.py 3                     # 3 runs
+python3 benchmark.py --harness lmstudio    # same models against LM Studio
+python3 benchmark.py --apple               # also run the Apple on-device model
 ```
 
-Ollama must be running. With `--apple`, apfel is started automatically on port 11435 and
-stopped when the run completes (unless it was already running).
+Ollama or LM Studio must be running (the benchmark errors if the selected harness is
+unreachable). With `--apple`, apfel is started automatically on port 11435 and stopped when
+the run completes (unless it was already running). LM Studio has no autostart — start its
+server and load the model first.
 
 ## Running Claude Tests (sonnet / haiku / opus)
 
@@ -70,24 +80,36 @@ The subagent receives the fully-resolved system prompt and user prompt as string
 
 ## Analyzing Results
 
-Results are per-model JSONL files. Use targeted jq queries — don't load all records at once.
+Results are per-harness+model JSONL files at `results/v{NNN}/{harness}/{model}/results.jsonl`.
+Every record carries a `harness` field (`ollama` / `lmstudio` / `apple` / `anthropic`). Use
+targeted jq queries — don't load all records at once. Note the two-level glob (`*/*`).
 
 ```sh
-# Pass rate per model across a version
-jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v001/*/results.jsonl
+# Pass rate per model across a version (all harnesses)
+jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v002/*/*/results.jsonl
+
+# One harness only
+jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v002/ollama/*/results.jsonl
+
+# Same model, ollama vs lmstudio
+jq -s 'group_by(.harness) | map({harness: .[0].harness, passed: map(select(.passed))|length, total: length})' \
+  results/v002/ollama/qwen3.8_27b_nothink/results.jsonl results/v002/lmstudio/qwen3.8_27b_nothink/results.jsonl
 
 # Compare thinking vs non-thinking for a specific model
 jq -s 'group_by(.thinking) | map({thinking: .[0].thinking, passed: map(select(.passed))|length, total: length})' \
-  results/v001/qwen3.5_4b_think/results.jsonl results/v001/qwen3.5_4b_nothink/results.jsonl
+  results/v002/ollama/qwen3.5_4b_think/results.jsonl results/v002/ollama/qwen3.5_4b_nothink/results.jsonl
 
 # Pass rate by language across all models
-jq -s 'group_by(.language) | map({language: .[0].language, passed: map(select(.passed))|length, total: length})' results/v001/*/results.jsonl
+jq -s 'group_by(.language) | map({language: .[0].language, passed: map(select(.passed))|length, total: length})' results/v002/*/*/results.jsonl
+
+# Mean tok/s per model
+jq -s 'group_by(.model + (.thinking|tostring)) | map({model: .[0].model, thinking: .[0].thinking, tok_per_sec: (map(.tok_per_sec) | add / length)})' results/v002/*/*/results.jsonl
 
 # Failures for one model with stderr snippet
-jq 'select(.passed == false) | {test, language, stderr: .stderr[:120]}' results/v001/sonnet/results.jsonl
+jq 'select(.passed == false) | {test, language, stderr: .stderr[:120]}' results/v002/anthropic/haiku/results.jsonl
 
 # Partial scores (checks passed / total) per model
-jq -s 'group_by(.model) | map({model: .[0].model, checks_passed: map(.checks | to_entries | map(select(.value)) | length) | add, checks_total: map(.checks | length) | add})' results/v001/*/results.jsonl
+jq -s 'group_by(.model) | map({model: .[0].model, checks_passed: map(.checks | to_entries | map(select(.value)) | length) | add, checks_total: map(.checks | length) | add})' results/v002/*/*/results.jsonl
 ```
 
 ### Failure categories
