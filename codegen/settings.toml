@@ -73,3 +73,15 @@ infer_timeout = 120   # seconds; per-model override allowed in each harness's mo
 exec_timeout  = 60    # seconds; per-model override allowed in each harness's models list
 max_tokens    = 4096  # generation cap (Ollama num_predict / OpenAI max_tokens); stops runaway output
 languages = ["python", "typescript", "go", "csharp"]
+
+# Decoding parameters sent identically to every harness, so a model behaves the
+# same under Ollama and LM Studio and only the *model* is being compared. These
+# are qwen3.8:27b's own Ollama defaults (`ollama show qwen3.8:27b`), so Ollama
+# runs are unchanged. Adjust for a different model family, or delete this section
+# to let each harness fall back to its own per-model defaults.
+[sampling]
+temperature    = 1
+top_k          = 20
+top_p          = 0.95
+min_p          = 0
+repeat_penalty = 1

@@ -653,10 +653,11 @@ def main() -> None:
         print(f"ERROR: no enabled models for harness '{harness_name}' in settings.toml", file=sys.stderr)
         sys.exit(1)
 
+    sampling = cfg.sampling()
     queue: list[tuple[backends.Backend, str, ModelConfig]] = []
     for m in local_models:
         queue.append((local_backend, harness_name, ModelConfig(
-            name=m["name"], options=m["options"],
+            name=m["name"], options={**m["options"], **sampling},
             infer_timeout=m["infer_timeout"], exec_timeout=m["exec_timeout"],
             max_tokens=m["max_tokens"],
         )))

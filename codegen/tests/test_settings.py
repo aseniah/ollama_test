@@ -43,6 +43,10 @@ autostart = true
 infer_timeout = 120
 exec_timeout  = 60
 languages = ["python", "go"]
+
+[sampling]
+temperature = 1
+top_k = 20
 """
 
 
@@ -83,6 +87,14 @@ class LoadTests(unittest.TestCase):
 
     def test_anthropic_default_alias(self) -> None:
         self.assertEqual(self.s.anthropic_default_alias(), "haiku")
+
+    def test_sampling(self) -> None:
+        self.assertEqual(self.s.sampling(), {"temperature": 1, "top_k": 20})
+
+    def test_sampling_absent_is_empty(self) -> None:
+        no_sampling = MINIMAL.split("[sampling]")[0]
+        s = settings.load_settings(_write(no_sampling))
+        self.assertEqual(s.sampling(), {})
 
 
 class ValidationTests(unittest.TestCase):

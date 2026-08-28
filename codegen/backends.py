@@ -110,11 +110,11 @@ class OllamaBackend:
             {"model": model, "messages": [], "keep_alive": -1},
             60,
         )
-        # one warm inference (skip thinking — no need to burn tokens on warmup)
-        warm: dict[str, Any] = {**options, "think": False} if options.get("think") is True else dict(options)
+        # one short warm inference (no thinking, capped — just warms the caches)
         self._post(
             f"{self._base}/api/chat",
-            {"model": model, "messages": messages, "stream": False, **warm},
+            {"model": model, "messages": messages, "stream": False,
+             "think": False, "options": {"num_predict": 16}},
             timeout,
         )
 
@@ -132,11 +132,15 @@ class OllamaBackend:
         self, messages: list[dict[str, str]], options: dict[str, Any],
         timeout: int, model: str, max_tokens: int
     ) -> GenResult:
-        payload: dict[str, Any] = {
-            "model": model, "messages": messages, "stream": False, **options,
-        }
+        # `think` is a top-level Ollama field; sampling params go under `options`.
+        payload: dict[str, Any] = {"model": model, "messages": messages, "stream": False}
+        if "think" in options:
+            payload["think"] = options["think"]
+        opts: dict[str, Any] = {k: v for k, v in options.items() if k != "think"}
         if max_tokens:
-            payload["options"] = {"num_predict": max_tokens}
+            opts["num_predict"] = max_tokens
+        if opts:
+            payload["options"] = opts
         start = time.monotonic()
         data = self._post(f"{self._base}/api/chat", payload, timeout)
         ms = int((time.monotonic() - start) * 1000)

@@ -48,6 +48,20 @@ class OllamaBackendTests(unittest.TestCase):
         self.assertFalse(http.last_payload["think"])
         self.assertEqual(http.last_payload["options"], {"num_predict": 4096})
 
+    def test_generate_nests_sampling_under_options(self) -> None:
+        http = _FakeHTTP(OLLAMA_BODY)
+        b = backends.OllamaBackend("http://x:11434", _post=http)
+        b.generate(
+            [{"role": "user", "content": "hi"}],
+            {"think": False, "temperature": 1, "top_k": 20}, 120, "m:1", 4096,
+        )
+        assert http.last_payload is not None
+        self.assertEqual(
+            http.last_payload["options"],
+            {"temperature": 1, "top_k": 20, "num_predict": 4096},
+        )
+        self.assertNotIn("temperature", http.last_payload)  # not top-level
+
 
 class LMStudioBackendTests(unittest.TestCase):
     def test_generate_prefers_v0_stats(self) -> None:

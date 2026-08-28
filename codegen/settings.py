@@ -52,6 +52,10 @@ class Settings:
     def languages(self) -> list[str]:
         return [str(x) for x in cast("list[Any]", self._raw["defaults"]["languages"])]
 
+    def sampling(self) -> dict[str, Any]:
+        """Decoding params sent to every harness (empty if no [sampling] section)."""
+        return dict(cast(_Table, self._raw.get("sampling", {})))
+
     def local_models(self, harness: str) -> list[ModelEntry]:
         d = cast(_Table, self._raw["defaults"])
         out: list[ModelEntry] = []
