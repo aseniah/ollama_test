@@ -555,6 +555,7 @@ def run_one(
     ms = int(result["ms"])
     eval_count = int(result["eval_count"])
     tok_per_sec = float(result["tok_per_sec"])
+    reasoning_tokens = int(result.get("reasoning_tokens", 0))
 
     code, code_extracted = extract_code(response_raw)
 
@@ -604,6 +605,8 @@ def run_one(
         "checks":          verify_result.get("checks", {}),
         "passed":          verify_result.get("passed", False),
     }
+    if reasoning_tokens:
+        record["reasoning_tokens"] = reasoning_tokens
     if "spontaneous_tests" in verify_result:
         record["spontaneous_tests"] = verify_result["spontaneous_tests"]
 

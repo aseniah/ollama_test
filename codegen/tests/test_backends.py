@@ -76,6 +76,20 @@ class LMStudioBackendTests(unittest.TestCase):
         self.assertEqual(http.last_payload["model"], "m:1")
         self.assertNotIn("think", http.last_payload)  # not an OpenAI-compat param
         self.assertEqual(http.last_payload["max_tokens"], 4096)
+        self.assertEqual(http.last_payload["chat_template_kwargs"], {"enable_thinking": True})
+        self.assertEqual(http.last_payload["reasoning_effort"], "medium")
+
+    def test_generate_maps_nothink_to_reasoning_off(self) -> None:
+        http = _FakeHTTP({
+            "choices": [{"message": {"content": "x"}}],
+            "usage": {"completion_tokens": 10, "completion_tokens_details": {"reasoning_tokens": 3}},
+        })
+        b = backends.LMStudioBackend("http://x:1234", _post=http)
+        r = b.generate([{"role": "user", "content": "hi"}], {"think": False}, 120, "m:1", 4096)
+        assert http.last_payload is not None
+        self.assertEqual(http.last_payload["chat_template_kwargs"], {"enable_thinking": False})
+        self.assertEqual(http.last_payload["reasoning_effort"], "none")
+        self.assertEqual(r["reasoning_tokens"], 3)
 
 
 class FactoryTests(unittest.TestCase):

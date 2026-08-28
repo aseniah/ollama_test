@@ -239,13 +239,17 @@ class LMStudioBackend:
         self, messages: list[dict[str, str]], options: dict[str, Any],
         timeout: int, model: str, max_tokens: int
     ) -> GenResult:
-        # `think` is an Ollama-only option; drop it. Pass anything else through.
-        passthrough = {k: v for k, v in options.items() if k != "think"}
+        # `think` maps to LM Studio's reasoning controls; sampling params pass through.
+        sampling = {k: v for k, v in options.items() if k != "think"}
         payload: dict[str, Any] = {
-            "model": model, "messages": messages, "stream": False, **passthrough,
+            "model": model, "messages": messages, "stream": False, **sampling,
         }
         if max_tokens:
             payload["max_tokens"] = max_tokens
+        if "think" in options:
+            enabled = bool(options["think"])
+            payload["chat_template_kwargs"] = {"enable_thinking": enabled}
+            payload["reasoning_effort"] = "medium" if enabled else "none"
         start = time.monotonic()
         try:
             data = self._post(f"{self._base}/api/v0/chat/completions", payload, timeout)
@@ -257,15 +261,20 @@ class LMStudioBackend:
         choices = cast("list[dict[str, Any]]", data["choices"])
         content = str(cast("dict[str, Any]", choices[0]["message"])["content"]).strip()
         usage = cast("dict[str, Any]", data.get("usage") or {})
+        details = cast("dict[str, Any]", usage.get("completion_tokens_details") or {})
         eval_count = int(
             stats.get("predicted_tokens_count") or usage.get("completion_tokens") or 0
         )
+        reasoning = int(details.get("reasoning_tokens") or 0)
         tps = stats.get("tokens_per_second")
         if tps:
             tok_per_sec = round(float(tps), 1)
         else:
             tok_per_sec = round(eval_count / (ms / 1000), 1) if ms else 0.0
-        return _result(content, ms, eval_count, tok_per_sec)
+        r = _result(content, ms, eval_count, tok_per_sec)
+        if reasoning:
+            r["reasoning_tokens"] = reasoning
+        return r
 
 
 class AppleBackend:
