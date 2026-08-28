@@ -707,7 +707,7 @@ def main() -> None:
 
     apple_backend_obj: backends.AppleBackend | None = None
     if args.apple:
-        apple_backend_obj = backends.AppleBackend(autostart=cfg.apple_autostart())
+        apple_backend_obj = backends.AppleBackend(autostart=cfg.harness_autostart("apple"))
         try:
             apple_backend_obj.start()
         except Exception as e:

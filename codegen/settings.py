@@ -45,8 +45,8 @@ class Settings:
     def harness_base_url(self, name: str) -> str:
         return str(self._harness(name)["base_url"])
 
-    def apple_autostart(self) -> bool:
-        return bool(self._harness("apple").get("autostart", True))
+    def harness_autostart(self, name: str) -> bool:
+        return bool(self._harness(name).get("autostart", False))
 
     def languages(self) -> list[str]:
         return [str(x) for x in cast("list[Any]", self._raw["defaults"]["languages"])]

@@ -39,10 +39,12 @@ python3 benchmark.py --harness lmstudio    # same models against LM Studio
 python3 benchmark.py --apple               # also run the Apple on-device model
 ```
 
-Ollama or LM Studio must be running (the benchmark errors if the selected harness is
-unreachable). With `--apple`, apfel is started automatically on port 11435 and stopped when
-the run completes (unless it was already running). LM Studio has no autostart — start its
-server and load the model first.
+Ollama must be running. LM Studio and apfel are started automatically when their harness is
+selected and `autostart = true` (the default in `settings.toml`) — via `lms server start` and
+apfel respectively — and stopped at the end, unless they were already running. Set
+`autostart = false` under `[harness.lmstudio]` to require a manually-started server instead.
+The `lms` CLI (bundled with LM Studio) must be on PATH or at `~/.lmstudio/bin/lms` for LM
+Studio autostart.
 
 ## Running Claude Tests (sonnet / haiku / opus)
 

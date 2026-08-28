@@ -31,7 +31,7 @@ Each test runs against all four languages: **Python, TypeScript, Go, C#**.
 
 **A local harness** must be running for local model benchmarks:
 - **Ollama** (default): `ollama serve`
-- **LM Studio** (`--harness lmstudio`): start the LM Studio server (Developer tab → Start Server, default port 1234) and load the model you want to test. There is no autostart — the benchmark errors if the server is unreachable.
+- **LM Studio** (`--harness lmstudio`): with `autostart = true` (default) the benchmark runs `lms server start` itself and `lms server stop` at the end. The `lms` CLI (bundled with LM Studio) must be on PATH or at `~/.lmstudio/bin/lms`. The models you list must already be downloaded in LM Studio.
 
 **Apple on-device model** (`--apple` flag) requires [apfel](https://github.com/Arthur-Ficial/apfel) and macOS 26+.
 
@@ -40,7 +40,7 @@ Each test runs against all four languages: **Python, TypeScript, Go, C#**.
 `settings.toml` controls everything about a run:
 
 - `[harness.ollama].models` / `[harness.lmstudio].models` — a model list **per harness** (Ollama tags and LM Studio model ids differ, so results stay separate). Set `enabled = true` on the ones you want; the rest stay in the file. `think = true/false` picks the mode; `infer_timeout` / `exec_timeout` override `[defaults]` per model. LM Studio ids are whatever `GET http://localhost:1234/v1/models` reports (usually the lowercased key, e.g. `qwen3.8-27b-mlx-4bit`).
-- `[harness]` — `default` local harness (`ollama` or `lmstudio`); each `[harness.*]` block has a `base_url` (and `apple.autostart`).
+- `[harness]` — `default` local harness (`ollama` or `lmstudio`); each `[harness.*]` block has a `base_url`. `[harness.lmstudio]` and `[harness.apple]` take `autostart = true/false`.
 - `[defaults]` — `infer_timeout`, `exec_timeout`, `languages`.
 - `anthropic_models = [...]` — Claude aliases → model ids for `run_claude_test.py`.
 

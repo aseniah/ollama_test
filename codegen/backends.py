@@ -68,6 +68,16 @@ def _http_get_ok(url: str, timeout: int = 3) -> bool:
         return False
 
 
+def _lms_path() -> str | None:
+    lms = shutil.which("lms") or str(Path.home() / ".lmstudio" / "bin" / "lms")
+    return lms if Path(lms).exists() else None
+
+
+def _port_of(base_url: str) -> str | None:
+    tail = base_url.rsplit(":", 1)[-1].split("/", 1)[0]
+    return tail if tail.isdigit() else None
+
+
 class OllamaBackend:
     name = "ollama"
 
@@ -116,19 +126,55 @@ class OllamaBackend:
 class LMStudioBackend:
     name = "lmstudio"
 
-    def __init__(self, base_url: str, _post: PostFn = _http_post) -> None:
+    def __init__(self, base_url: str, autostart: bool = False, _post: PostFn = _http_post) -> None:
         self._base = base_url.rstrip("/")
+        self._autostart = autostart
         self._post = _post
+        self._started = False
+
+    def _models_url(self) -> str:
+        return f"{self._base}/v1/models"
 
     def start(self) -> None:
-        if not _http_get_ok(f"{self._base}/v1/models"):
+        if _http_get_ok(self._models_url()):
+            return
+        if not self._autostart:
             raise BackendError(
-                f"LM Studio not reachable at {self._base} — "
-                "start the LM Studio server and load a model"
+                f"LM Studio not reachable at {self._base} — start the LM Studio server "
+                "(or set autostart = true under [harness.lmstudio] in settings.toml)"
             )
+        lms = _lms_path()
+        if lms is None:
+            raise BackendError(
+                f"LM Studio not reachable at {self._base} and the `lms` CLI was not found "
+                "for autostart — start the server manually"
+            )
+        cmd = [lms, "server", "start"]
+        port = _port_of(self._base)
+        if port:
+            cmd += ["--port", port]
+        print("  lmstudio: starting server via `lms server start`...", flush=True)
+        subprocess.run(cmd, capture_output=True, timeout=60, check=False)
+        for _ in range(20):
+            time.sleep(0.5)
+            if _http_get_ok(self._models_url(), timeout=2):
+                self._started = True
+                print("  lmstudio: server ready", flush=True)
+                return
+        raise BackendError(f"LM Studio server did not become ready at {self._base} within 10s")
 
     def stop(self) -> None:
-        return None
+        if not self._started:
+            return
+        lms = _lms_path()
+        if lms is None:
+            return
+        print("  lmstudio: stopping server...", flush=True)
+        try:
+            subprocess.run([lms, "server", "stop"], capture_output=True, timeout=30, check=False)
+        except (OSError, subprocess.SubprocessError):
+            pass
+        self._started = False
 
     def warmup(self, messages: list[dict[str, str]]) -> None:
         return None
@@ -136,8 +182,8 @@ class LMStudioBackend:
     def unload(self, model: str) -> None:
         """Best-effort: `lms unload <model>`. Falls back to LM Studio's own
         JIT auto-evict if the CLI is missing or the id does not match."""
-        lms = shutil.which("lms") or str(Path.home() / ".lmstudio" / "bin" / "lms")
-        if not Path(lms).exists():
+        lms = _lms_path()
+        if lms is None:
             return
         try:
             subprocess.run(
@@ -213,5 +259,7 @@ def build_local_backend(name: str, s: settings.Settings) -> Backend:
     if name == "ollama":
         return OllamaBackend(s.harness_base_url("ollama"))
     if name == "lmstudio":
-        return LMStudioBackend(s.harness_base_url("lmstudio"))
+        return LMStudioBackend(
+            s.harness_base_url("lmstudio"), autostart=s.harness_autostart("lmstudio")
+        )
     raise BackendError(f"{name!r} is not a local harness (expected 'ollama' or 'lmstudio')")

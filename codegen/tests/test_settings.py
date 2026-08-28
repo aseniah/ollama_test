@@ -56,8 +56,9 @@ class LoadTests(unittest.TestCase):
     def test_harness_base_url(self) -> None:
         self.assertEqual(self.s.harness_base_url("lmstudio"), "http://localhost:1234")
 
-    def test_apple_autostart(self) -> None:
-        self.assertTrue(self.s.apple_autostart())
+    def test_harness_autostart(self) -> None:
+        self.assertTrue(self.s.harness_autostart("apple"))
+        self.assertFalse(self.s.harness_autostart("ollama"))
 
     def test_languages(self) -> None:
         self.assertEqual(self.s.languages(), ["python", "go"])
