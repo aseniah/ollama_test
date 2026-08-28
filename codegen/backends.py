@@ -20,6 +20,9 @@ import settings  # noqa: E402
 
 PostFn = Callable[[str, dict[str, Any], int], dict[str, Any]]
 
+# Indirection so tests can stub CLI calls without spawning `lms`.
+_run = subprocess.run
+
 
 class GenResult(dict[str, Any]):
     """Return shape of Backend.generate: response, ms, eval_count, tok_per_sec."""
@@ -39,7 +42,8 @@ class Backend(Protocol):
     ) -> None: ...
     def unload(self, model: str) -> None: ...
     def generate(
-        self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
+        self, messages: list[dict[str, str]], options: dict[str, Any],
+        timeout: int, model: str, max_tokens: int
     ) -> GenResult: ...
 
 
@@ -125,11 +129,14 @@ class OllamaBackend:
             pass
 
     def generate(
-        self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
+        self, messages: list[dict[str, str]], options: dict[str, Any],
+        timeout: int, model: str, max_tokens: int
     ) -> GenResult:
         payload: dict[str, Any] = {
             "model": model, "messages": messages, "stream": False, **options,
         }
+        if max_tokens:
+            payload["options"] = {"num_predict": max_tokens}
         start = time.monotonic()
         data = self._post(f"{self._base}/api/chat", payload, timeout)
         ms = int((time.monotonic() - start) * 1000)
@@ -171,7 +178,7 @@ class LMStudioBackend:
         if port:
             cmd += ["--port", port]
         print("  lmstudio: starting server via `lms server start`...", flush=True)
-        subprocess.run(cmd, capture_output=True, timeout=60, check=False)
+        _run(cmd, capture_output=True, timeout=60, check=False)
         for _ in range(20):
             time.sleep(0.5)
             if _http_get_ok(self._models_url(), timeout=2):
@@ -188,7 +195,7 @@ class LMStudioBackend:
             return
         print("  lmstudio: stopping server...", flush=True)
         try:
-            subprocess.run([lms, "server", "stop"], capture_output=True, timeout=30, check=False)
+            _run([lms, "server", "stop"], capture_output=True, timeout=30, check=False)
         except (OSError, subprocess.SubprocessError):
             pass
         self._started = False
@@ -196,17 +203,20 @@ class LMStudioBackend:
     def warmup(
         self, messages: list[dict[str, str]], options: dict[str, Any], model: str, timeout: int
     ) -> None:
-        # Force the JIT load now so the first test's timing is not skewed.
+        # Load via the CLI (blocks until resident, no HTTP timeout), then a tiny
+        # capped ping so the first real test's timing is not skewed by the load.
         print(f"  lmstudio: loading {model}...", flush=True)
-        passthrough = {k: v for k, v in options.items() if k != "think"}
-        try:
-            self._post(
-                f"{self._base}/v1/chat/completions",
-                {"model": model, "messages": messages, "stream": False, **passthrough},
-                timeout,
+        lms = _lms_path()
+        if lms is not None:
+            r = _run(
+                [lms, "load", model, "-y"], capture_output=True, text=True, timeout=900, check=False
             )
+            if r.returncode != 0:
+                print(f"    lms load failed ({r.stderr.strip()[:200]}); relying on JIT", flush=True)
+        try:
+            self.generate(messages, options, min(timeout, 60), model, 16)
         except BackendError as e:
-            print(f"    lmstudio warmup failed (continuing): {e}", flush=True)
+            print(f"    lmstudio warmup ping failed (continuing): {e}", flush=True)
 
     def unload(self, model: str) -> None:
         """Best-effort: `lms unload <model>`. Falls back to LM Studio's own
@@ -215,20 +225,23 @@ class LMStudioBackend:
         if lms is None:
             return
         try:
-            subprocess.run(
+            _run(
                 [lms, "unload", model], capture_output=True, timeout=30, check=False
             )
         except (OSError, subprocess.SubprocessError):
             pass
 
     def generate(
-        self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
+        self, messages: list[dict[str, str]], options: dict[str, Any],
+        timeout: int, model: str, max_tokens: int
     ) -> GenResult:
         # `think` is an Ollama-only option; drop it. Pass anything else through.
         passthrough = {k: v for k, v in options.items() if k != "think"}
         payload: dict[str, Any] = {
             "model": model, "messages": messages, "stream": False, **passthrough,
         }
+        if max_tokens:
+            payload["max_tokens"] = max_tokens
         start = time.monotonic()
         try:
             data = self._post(f"{self._base}/api/v0/chat/completions", payload, timeout)
@@ -275,7 +288,8 @@ class AppleBackend:
         return None
 
     def generate(
-        self, messages: list[dict[str, str]], options: dict[str, Any], timeout: int, model: str
+        self, messages: list[dict[str, str]], options: dict[str, Any],
+        timeout: int, model: str, max_tokens: int
     ) -> GenResult:
         r: dict[str, Any] = apfel_backend.run_prompt(messages, "", "")
         return _result(

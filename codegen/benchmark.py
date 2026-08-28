@@ -77,6 +77,7 @@ class ModelConfig(TypedDict):
     backend: NotRequired[str]
     exec_timeout: NotRequired[int]   # seconds; overrides EXEC_TIMEOUT for code execution
     infer_timeout: NotRequired[int]  # seconds; overrides INFER_TIMEOUT for API inference call
+    max_tokens: NotRequired[int]     # generation cap; 0 = uncapped
 
 
 class PromptVariant(TypedDict):
@@ -547,8 +548,9 @@ def run_one(
     model = model_cfg["name"]
     options = model_cfg["options"]
     infer_timeout = model_cfg.get("infer_timeout", INFER_TIMEOUT)
+    max_tokens = model_cfg.get("max_tokens", 0)
 
-    result = backend.generate(messages, options, infer_timeout, model)
+    result = backend.generate(messages, options, infer_timeout, model, max_tokens)
     response_raw = str(result["response"])
     ms = int(result["ms"])
     eval_count = int(result["eval_count"])
@@ -656,6 +658,7 @@ def main() -> None:
         queue.append((local_backend, harness_name, ModelConfig(
             name=m["name"], options=m["options"],
             infer_timeout=m["infer_timeout"], exec_timeout=m["exec_timeout"],
+            max_tokens=m["max_tokens"],
         )))
 
     apple_backend_obj: backends.AppleBackend | None = None

@@ -51,13 +51,17 @@ models = [
 # ids and quantizations across the two runtimes, so results are kept separate.
 # autostart: run `lms server start` if the server is not already up, and
 # `lms server stop` at the end (only if we started it). Needs the `lms` CLI.
+# LM Studio applies its own generation defaults and chat template, which can
+# make some models much more verbose than the same weights under Ollama —
+# hence the longer infer_timeout here. max_tokens (see [defaults]) caps
+# true runaway output.
 [harness.lmstudio]
 base_url = "http://localhost:1234"
 autostart = true
 models = [
-  { name = "qwen3.8-27b-mlx",      think = false, enabled = true },
-  { name = "qwen3.8-27b-mlx",      think = true,  enabled = true, infer_timeout = 300 },
-  { name = "qwen/qwen3-coder-30b", think = false, enabled = true },
+  { name = "qwen3.8-27b-mlx",      think = false, enabled = true,  infer_timeout = 300 },
+  { name = "qwen3.8-27b-mlx",      think = true,  enabled = true,  infer_timeout = 600 },
+  { name = "qwen/qwen3-coder-30b", think = false, enabled = false, infer_timeout = 300 },
 ]
 
 [harness.apple]
@@ -67,4 +71,5 @@ autostart = true
 [defaults]
 infer_timeout = 120   # seconds; per-model override allowed in each harness's models list
 exec_timeout  = 60    # seconds; per-model override allowed in each harness's models list
+max_tokens    = 4096  # generation cap (Ollama num_predict / OpenAI max_tokens); stops runaway output
 languages = ["python", "typescript", "go", "csharp"]

@@ -36,7 +36,7 @@ class OllamaBackendTests(unittest.TestCase):
     def test_generate_shape_and_timing(self) -> None:
         http = _FakeHTTP(OLLAMA_BODY)
         b = backends.OllamaBackend("http://x:11434", _post=http)
-        r = b.generate([{"role": "user", "content": "hi"}], {"think": False}, 120, "m:1")
+        r = b.generate([{"role": "user", "content": "hi"}], {"think": False}, 120, "m:1", 4096)
         self.assertEqual(r["response"], "print('x')")  # stripped
         self.assertEqual(r["eval_count"], 40)
         self.assertEqual(r["tok_per_sec"], 20.0)
@@ -46,13 +46,14 @@ class OllamaBackendTests(unittest.TestCase):
         self.assertEqual(http.last_payload["model"], "m:1")
         self.assertFalse(http.last_payload["stream"])
         self.assertFalse(http.last_payload["think"])
+        self.assertEqual(http.last_payload["options"], {"num_predict": 4096})
 
 
 class LMStudioBackendTests(unittest.TestCase):
     def test_generate_prefers_v0_stats(self) -> None:
         http = _FakeHTTP(LMSTUDIO_V0_BODY)
         b = backends.LMStudioBackend("http://x:1234", _post=http)
-        r = b.generate([{"role": "user", "content": "hi"}], {"think": True}, 120, "m:1")
+        r = b.generate([{"role": "user", "content": "hi"}], {"think": True}, 120, "m:1", 4096)
         self.assertEqual(r["response"], "print('x')")
         self.assertEqual(r["tok_per_sec"], 33.3)
         self.assertEqual(r["eval_count"], 50)
@@ -60,6 +61,7 @@ class LMStudioBackendTests(unittest.TestCase):
         assert http.last_payload is not None
         self.assertEqual(http.last_payload["model"], "m:1")
         self.assertNotIn("think", http.last_payload)  # not an OpenAI-compat param
+        self.assertEqual(http.last_payload["max_tokens"], 4096)
 
 
 class FactoryTests(unittest.TestCase):
@@ -97,14 +99,30 @@ class WarmupTests(unittest.TestCase):
         self.assertEqual(calls[1]["model"], "m:1")
         self.assertFalse(calls[1]["think"])                   # thinking dropped for warmup
 
-    def test_lmstudio_warmup_hits_v1(self) -> None:
-        http = _FakeHTTP({"choices": [{"message": {"content": "ok"}}]})
-        backends.LMStudioBackend("http://x:1234", _post=http).warmup(
-            [{"role": "user", "content": "hi"}], {"think": True}, "m:1", 120
-        )
-        self.assertEqual(http.last_url, "http://x:1234/v1/chat/completions")
+    def test_lmstudio_warmup_loads_then_pings_capped(self) -> None:
+        cmds: list[list[str]] = []
+
+        class _R:
+            returncode = 0
+            stderr = ""
+
+        def fake_run(cmd: list[str], **_: object) -> _R:
+            cmds.append(cmd)
+            return _R()
+
+        orig = backends._run
+        backends._run = fake_run  # type: ignore[assignment]
+        try:
+            http = _FakeHTTP({"choices": [{"message": {"content": "ok"}}], "usage": {}})
+            backends.LMStudioBackend("http://x:1234", _post=http).warmup(
+                [{"role": "user", "content": "hi"}], {"think": True}, "m:1", 120
+            )
+        finally:
+            backends._run = orig  # type: ignore[assignment]
+
+        self.assertTrue(any("load" in c and "m:1" in c for c in cmds))  # lms load m:1
         assert http.last_payload is not None
-        self.assertNotIn("think", http.last_payload)
+        self.assertEqual(http.last_payload["max_tokens"], 16)          # tiny warmup ping
 
 
 class UnloadTests(unittest.TestCase):

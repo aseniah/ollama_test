@@ -21,6 +21,7 @@ class ModelEntry(TypedDict):
     options: dict[str, Any]
     infer_timeout: int
     exec_timeout: int
+    max_tokens: int
 
 
 class AnthropicEntry(TypedDict):
@@ -62,6 +63,7 @@ class Settings:
                 options={"think": bool(m.get("think", False))},
                 infer_timeout=int(m.get("infer_timeout", d["infer_timeout"])),
                 exec_timeout=int(m.get("exec_timeout", d["exec_timeout"])),
+                max_tokens=int(m.get("max_tokens", d.get("max_tokens", 4096))),
             ))
         return out
 

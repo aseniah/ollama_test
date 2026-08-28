@@ -79,8 +79,10 @@ No install. Generation is orchestrated by a [Claude Code](https://claude.ai/code
 
 - `[harness.ollama].models` / `[harness.lmstudio].models` — a model list **per harness** (Ollama tags and LM Studio ids differ, and the same weights have different quantizations across the two, so results are kept separate). Set `enabled = true` on the ones you want; the rest stay in the file. `think = true/false` picks the mode; `infer_timeout` / `exec_timeout` override `[defaults]` per model.
 - `[harness]` — `default` local harness (`ollama` or `lmstudio`); each `[harness.*]` block has a `base_url`. `[harness.lmstudio]` and `[harness.apple]` take `autostart = true/false`.
-- `[defaults]` — `infer_timeout`, `exec_timeout`, `languages`.
+- `[defaults]` — `infer_timeout`, `exec_timeout`, `max_tokens` (generation cap → Ollama `num_predict` / OpenAI `max_tokens`), `languages`. Any of these can be overridden per model.
 - `anthropic_models` — Claude alias → model id, for `run_claude_test.py`.
+
+> **LM Studio verbosity:** LM Studio applies its own generation defaults and chat template, so a model can be several times more verbose there than the same weights under Ollama (e.g. ~2000 tokens vs ~400 for a simple task). The LM Studio model entries use a longer `infer_timeout` for this reason; `max_tokens` caps genuine runaway output.
 
 Each model is warmed up (loaded) before its first test, then unloaded before the next model to free memory (Ollama `keep_alive`, LM Studio `lms unload`, with LM Studio's Auto-Evict as a backstop).
 
