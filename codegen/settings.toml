@@ -61,7 +61,7 @@ autostart = true
 models = [
   { name = "qwen3.8-27b-mlx",      think = false, enabled = true,  infer_timeout = 300 },
   { name = "qwen3.8-27b-mlx",      think = true,  enabled = true,  infer_timeout = 600 },
-  { name = "qwen/qwen3-coder-30b", think = false, enabled = false, infer_timeout = 300 },
+  { name = "qwen/qwen3-coder-30b", think = false, enabled = true,  infer_timeout = 300 },
 ]
 
 [harness.apple]

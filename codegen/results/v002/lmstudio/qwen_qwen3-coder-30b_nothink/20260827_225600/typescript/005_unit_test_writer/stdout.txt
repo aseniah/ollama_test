@@ -1,0 +1,5 @@
+PASS: quantity 9 (below threshold)
+PASS: quantity 10 (first threshold)
+PASS: quantity 49 (below second threshold)
+PASS: quantity 50 (second threshold)
+PASS: quantity 100 (above second threshold)
