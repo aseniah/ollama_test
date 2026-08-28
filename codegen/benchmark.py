@@ -33,6 +33,9 @@ from typing import Any, NotRequired, TypedDict, cast
 sys.path.insert(0, str(Path(__file__).parent.parent))
 import apfel_backend
 
+import backends
+import settings as settings_mod
+
 # ---------------------------------------------------------------------------
 # Terminal colors
 # ---------------------------------------------------------------------------
@@ -93,34 +96,9 @@ class TestCase(TypedDict):
     test_args: NotRequired[list[str]]  # extra CLI args passed to the generated program
 
 
-# ---------------------------------------------------------------------------
-# Models
-# ---------------------------------------------------------------------------
-
-MODELS: list[ModelConfig] = [
-    # {"name": "gemma4:26b",                   "options": {"think": False}},
-    # {"name": "gemma4:26b",                   "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "gemma4:31b",                   "options": {"think": False}},
-    # {"name": "gemma4:31b",                   "options": {"think": True},  "infer_timeout": 300},
-    {"name": "qwen3.8:27b",                  "options": {"think": False}},
-    {"name": "qwen3.8:27b",                  "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.6:35b",                  "options": {"think": False}},
-    # {"name": "qwen3.6:35b",                  "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.6:35b-a3b-coding-nvfp4", "options": {"think": False}},
-    # {"name": "qwen3.6:35b-a3b-coding-nvfp4", "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.5:35b-a3b-coding-nvfp4", "options": {"think": False}},
-    # {"name": "qwen3.5:35b-a3b-coding-nvfp4", "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.5:27b",                  "options": {"think": False}},
-    # {"name": "qwen3.5:27b",                  "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.5:27b-nvfp4",            "options": {"think": False}},
-    # {"name": "qwen3.5:27b-nvfp4",            "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.5:4b",                   "options": {"think": False}},
-    # {"name": "qwen3.5:4b",                   "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen3.5:4b-nvfp4",             "options": {"think": False}},
-    # {"name": "qwen3.5:4b-nvfp4",             "options": {"think": True},  "infer_timeout": 300},
-    # {"name": "qwen2.5-coder:7b",             "options": {}},
-    # {"name": "qwen3-coder:30b",              "options": {}},
-]
+# Models, harnesses, timeouts, and languages are configured in settings.toml
+# (loaded in main() via settings_mod.load_settings). Each enabled model becomes
+# a ModelConfig at runtime.
 
 # ---------------------------------------------------------------------------
 # Language config
@@ -528,14 +506,14 @@ def write_artifacts(
 # Output
 # ---------------------------------------------------------------------------
 
-def results_file(model_safe: str) -> Path:
-    path = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / model_safe / "results.jsonl"
+def results_file(harness: str, model_safe: str) -> Path:
+    path = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / harness / model_safe / "results.jsonl"
     path.parent.mkdir(parents=True, exist_ok=True)
     return path
 
 
-def append_results(records: list[dict[str, Any]], model_safe: str) -> None:
-    with open(results_file(model_safe), "a") as f:
+def append_results(records: list[dict[str, Any]], harness: str, model_safe: str) -> None:
+    with open(results_file(harness, model_safe), "a") as f:
         for r in records:
             f.write(json.dumps(r) + "\n")
 
@@ -585,12 +563,28 @@ def print_tables(records: list[dict[str, Any]]) -> None:
                 row += cell.rjust(col_w)
             print(row)
 
+        model_recs = [
+            r for r in records
+            if r["model"] == model and r["thinking"] == thinking
+        ]
+        gen_ms = [
+            r["ms"] for r in model_recs
+            if isinstance(r.get("ms"), (int, float)) and r["ms"]
+        ]
+        toks = [r["tok_per_sec"] for r in model_recs if r.get("tok_per_sec")]
+        if gen_ms:
+            mean_s = sum(gen_ms) / len(gen_ms) / 1000
+            mean_tok = sum(toks) / len(toks) if toks else 0.0
+            print(f"{'':<20}mean ~{mean_s:.1f}s/task · {mean_tok:.0f} tok/s")
+
 
 # ---------------------------------------------------------------------------
 # Inference
 # ---------------------------------------------------------------------------
 
 def run_one(
+    backend: backends.Backend,
+    harness: str,
     model_cfg: ModelConfig,
     variant: PromptVariant,
     test: TestCase,
@@ -601,31 +595,15 @@ def run_one(
     language = variant["language"]
     messages = build_messages(variant, test, language)
 
-    is_apfel = model_cfg.get("backend") == "apfel"
     model = model_cfg["name"]
     options = model_cfg["options"]
+    infer_timeout = model_cfg.get("infer_timeout", INFER_TIMEOUT)
 
-    if is_apfel:
-        apfel_result = apfel_backend.run_prompt(messages, run_id, timestamp)
-        response_raw = apfel_result["response"]
-        ms = apfel_result.get("ms", 0)
-        eval_count = apfel_result.get("eval_count", 0)
-        tok_per_sec = apfel_result.get("tok_per_sec", 0.0)
-    else:
-        payload: dict[str, Any] = {
-            "model": model,
-            "messages": messages,
-            "stream": False,
-            **options,
-        }
-        infer_timeout = model_cfg.get("infer_timeout", INFER_TIMEOUT)
-        start = time.monotonic()
-        data = ollama_post("/api/chat", payload, timeout=infer_timeout)
-        ms = int((time.monotonic() - start) * 1000)
-        response_raw = data["message"]["content"].strip()
-        eval_count = data.get("eval_count", 0)
-        eval_dur_ns = data.get("eval_duration", 1)
-        tok_per_sec = round(eval_count / (eval_dur_ns / 1e9), 1) if eval_dur_ns else 0.0
+    result = backend.generate(messages, options, infer_timeout, model)
+    response_raw = str(result["response"])
+    ms = int(result["ms"])
+    eval_count = int(result["eval_count"])
+    tok_per_sec = float(result["tok_per_sec"])
 
     code, code_extracted = extract_code(response_raw)
 
@@ -659,6 +637,7 @@ def run_one(
         "prompt_variant":  variant["id"],
         "model":           model,
         "model_options":   options,
+        "harness":         harness,
         "thinking":        options.get("think", None),
         "response_raw":    response_raw,
         "code_extracted":  code_extracted,
@@ -687,8 +666,20 @@ def run_one(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Code Generation Benchmark")
     parser.add_argument("runs", nargs="?", type=int, default=1, help="number of times to run (default: 1)")
-    parser.add_argument("--apple", action="store_true", help="include Apple on-device model via apfel (port 11435)")
+    parser.add_argument("--harness", choices=["ollama", "lmstudio"], default=None,
+                        help="local inference harness (default: [harness].default in settings.toml)")
+    parser.add_argument("--apple", action="store_true", help="also run the Apple on-device model via apfel")
     args = parser.parse_args()
+
+    try:
+        cfg = settings_mod.load_settings(Path("settings.toml"))
+    except settings_mod.SettingsError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    languages = cfg.languages()
+    global PROMPT_VARIANTS
+    PROMPT_VARIANTS = [v for v in PROMPT_VARIANTS if v["language"] in languages]
 
     global _test_cases
     _test_cases = load_tests(Path("tests"))
@@ -696,16 +687,36 @@ def main() -> None:
         print("ERROR: no tests found in tests/", file=sys.stderr)
         sys.exit(1)
 
-    check_runtimes(LANGUAGES)
+    check_runtimes(languages)
 
-    apfel_proc = None
+    harness_name = args.harness or cfg.default_harness()
+    try:
+        local_backend = backends.build_local_backend(harness_name, cfg)
+        local_backend.start()
+    except backends.BackendError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    queue: list[tuple[backends.Backend, str, ModelConfig]] = []
+    for m in cfg.local_models():
+        model_name = m["lmstudio_model"] if harness_name == "lmstudio" else m["name"]
+        queue.append((local_backend, harness_name, ModelConfig(
+            name=model_name, options=m["options"],
+            infer_timeout=m["infer_timeout"], exec_timeout=m["exec_timeout"],
+        )))
+
+    apple_backend_obj: backends.AppleBackend | None = None
     if args.apple:
-        MODELS.append(cast(ModelConfig, apfel_backend.APPLE_MODEL_CONFIG))
+        apple_backend_obj = backends.AppleBackend(autostart=cfg.apple_autostart())
         try:
-            apfel_proc = apfel_backend.ensure_running()
+            apple_backend_obj.start()
         except Exception as e:
             print(f"ERROR: could not start apfel: {e}", file=sys.stderr)
             sys.exit(1)
+        queue.append((apple_backend_obj, "apple", ModelConfig(
+            name=apfel_backend.MODEL_NAME, options={},
+            infer_timeout=INFER_TIMEOUT, exec_timeout=EXEC_TIMEOUT,
+        )))
 
     warmup_messages = build_messages(
         PROMPT_VARIANTS[0],
@@ -716,26 +727,22 @@ def main() -> None:
     all_records: list[dict[str, Any]] = []
 
     try:
-        for model_cfg in MODELS:
+        for backend, harness, model_cfg in queue:
             model = model_cfg["name"]
-            is_apfel = model_cfg.get("backend") == "apfel"
             sep = _c('=' * 60, _CYAN)
             print(f"\n{sep}")
-            print(f"Model: {model}  options={model_cfg['options']}")
+            print(f"Model: {model}  harness={harness}  options={model_cfg['options']}")
             print(sep)
 
-            if is_apfel:
-                try:
-                    apfel_backend.warmup(warmup_messages)
-                except Exception as e:
-                    print(f"  ERROR warming up: {e}", file=sys.stderr)
-                    continue
-            else:
-                try:
-                    preload(model, warmup_messages, model_cfg["options"], model_cfg.get("infer_timeout", INFER_TIMEOUT))
-                except Exception as e:
-                    print(f"  ERROR preloading: {e}", file=sys.stderr)
-                    continue
+            try:
+                if harness == "ollama":
+                    preload(model, warmup_messages, model_cfg["options"],
+                            model_cfg.get("infer_timeout", INFER_TIMEOUT))
+                else:
+                    backend.warmup(warmup_messages)
+            except Exception as e:
+                print(f"  ERROR warming up: {e}", file=sys.stderr)
+                continue
 
             think = model_cfg["options"].get("think")
             think_suffix = " think" if think is True else " nothink" if think is False else ""
@@ -756,7 +763,7 @@ def main() -> None:
                 run_ctx = f"  run {run_num}/{args.runs}" if args.runs > 1 else ""
                 run_id = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                 timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
-                artifact_base = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / model_safe / run_id
+                artifact_base = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / harness / model_safe / run_id
                 run_records: list[dict[str, Any]] = []
 
                 total = len(PROMPT_VARIANTS) * len(_test_cases)
@@ -774,7 +781,7 @@ def main() -> None:
                         )
                         record: dict[str, Any]
                         try:
-                            record = run_one(model_cfg, variant, test, run_id, timestamp, artifact_base)
+                            record = run_one(backend, harness, model_cfg, variant, test, run_id, timestamp, artifact_base)
                         except Exception as e:
                             print(f"    ERROR: {e}", file=sys.stderr)
                             record = {
@@ -783,6 +790,7 @@ def main() -> None:
                                 "test": test["id"], "language": lang,
                                 "prompt_variant": variant["id"],
                                 "model": model, "model_options": model_cfg["options"],
+                                "harness": harness,
                                 "thinking": model_cfg["options"].get("think", None),
                                 "response_raw": f"ERROR: {e}", "code_extracted": False,
                                 "code": "", "ms": 0, "eval_count": 0, "tok_per_sec": 0,
@@ -794,25 +802,30 @@ def main() -> None:
                             status_str = _c("✅ PASS", _GREEN)
                         else:
                             status_str = _c("❌ FAIL", _RED)
-                        print(f"    {status_str}  exit={record.get('exit_code')}  {record['ms']}ms gen  {record.get('run_ms', 0)}ms run", flush=True)
+                        print(
+                            f"    {status_str}  exit={record.get('exit_code')}  {record['ms']}ms gen  "
+                            f"{record.get('run_ms', 0)}ms run  {record.get('tok_per_sec', 0)} tok/s",
+                            flush=True,
+                        )
                         run_records.append(record)
 
                 all_records.extend(run_records)
-                append_results(run_records, model_safe)
-                print(f"\n  Appended {len(run_records)} records to {results_file(model_safe)}")
+                append_results(run_records, harness, model_safe)
+                print(f"\n  Appended {len(run_records)} records to {results_file(harness, model_safe)}")
                 passed_n = sum(1 for r in run_records if r.get("passed"))
                 failed_n = len(run_records) - passed_n
                 print(f"  Score: {_c(f'✅ {passed_n}', _GREEN)}  {_c(f'❌ {failed_n}', _RED)}  ({passed_n}/{len(run_records)})")
 
-            if not is_apfel:
+            if harness == "ollama":
                 try:
                     unload(model)
                 except Exception as e:
                     print(_c(f"  WARNING: failed to unload: {e}", _YELLOW), file=sys.stderr)
 
     finally:
-        if apfel_proc is not None:
-            apfel_backend.teardown(apfel_proc)
+        local_backend.stop()
+        if apple_backend_obj is not None:
+            apple_backend_obj.stop()
 
     print_tables(all_records)
 
