@@ -12,7 +12,8 @@ anthropic_models = [
 ]
 
 [harness]
-default = "ollama"
+# default = "ollama"
+default = "lmstudio"
 
 # Ollama models are identified by their `ollama pull` tag.
 # `enabled = false` keeps a model in the file but out of the run.
@@ -20,8 +21,8 @@ default = "ollama"
 [harness.ollama]
 base_url = "http://localhost:11434"
 models = [
-  { name = "qwen3.8:27b",                  think = false, enabled = true },
-  { name = "qwen3.8:27b",                  think = true,  enabled = true,  infer_timeout = 300 },
+  { name = "qwen3.8:27b",                  think = false, enabled = false },
+  { name = "qwen3.8:27b",                  think = true,  enabled = false,  infer_timeout = 300 },
   { name = "qwen3-coder:30b",              think = false, enabled = false },
   { name = "qwen2.5-coder:7b",             think = false, enabled = false },
   { name = "gemma4:26b",                   think = false, enabled = false },
@@ -58,11 +59,8 @@ models = [
 base_url = "http://localhost:1234"
 autostart = true
 models = [
-  # qwen3.8-27b-mlx does extended reasoning that LM Studio's API can't reliably
-  # disable, so it is not comparable to Ollama's qwen3.8:27b nothink — leave off
-  # unless comparing against Ollama's *think* variant.
-  { name = "qwen3.8-27b-mlx",      think = false, enabled = false, infer_timeout = 300 },
-  { name = "qwen3.8-27b-mlx",      think = true,  enabled = false, infer_timeout = 600 },
+  { name = "qwen3.8-27b-mlx",      think = false, enabled = true,  infer_timeout = 300 },
+  { name = "qwen3.8-27b-mlx",      think = true,  enabled = true,  infer_timeout = 600 },
   { name = "qwen/qwen3-coder-30b", think = false, enabled = true,  infer_timeout = 300 },
 ]
 
