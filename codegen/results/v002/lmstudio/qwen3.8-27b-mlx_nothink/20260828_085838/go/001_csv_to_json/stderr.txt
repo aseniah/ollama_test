@@ -1,0 +1,3 @@
+# command-line-arguments
+./solution.go:18:23: string not terminated
+./solution.go:18:34: syntax error: unexpected EOF in argument list; possibly missing comma or )

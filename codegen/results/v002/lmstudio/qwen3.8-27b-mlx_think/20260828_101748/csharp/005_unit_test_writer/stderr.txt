@@ -1,0 +1,11 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(1,1): error CS1056: Unexpected character '`'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(1,2): error CS1056: Unexpected character '`'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(1,3): error CS1056: Unexpected character '`'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(1,4): error CS0103: The name 'csharp' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(1,10): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(2,1): error CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(3,1): error CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(25,65): error CS0103: The name 'CultureInfo' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(25,116): error CS0103: The name 'CultureInfo' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(33,1): error CS7036: There is no argument given that corresponds to the required parameter 'quantity' of 'Check(double, int, double, string)'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmph_k_113_/solution.csx(33,9): error CS1026: ) expected

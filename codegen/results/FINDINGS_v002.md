@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-12 to 2026-04-19  
 **Machine:** MacBook Pro M3 Max (48GB unified memory)  
-**Scope:** 26 model configurations, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each)
+**Scope:** 26 model configurations on the Ollama harness, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each). Two models also run on LM Studio — see Harness Comparison.
 
 ---
 
@@ -147,6 +147,42 @@ The nvfp4 format is an **MLX-native quantization** for Apple Silicon's unified m
 **At 4B nothink**, nvfp4 costs 4 points at essentially the same speed — not compelling.
 
 **At 4B think**, nvfp4 is 58% faster with a 13-point score drop. That is a steep exchange — at a standard-weights base of 68, the quantized 55 falls back into "weak" territory.
+
+---
+
+## Harness Comparison: Ollama vs LM Studio
+
+Two models were run under LM Studio (MLX builds) as well as Ollama (GGUF), to check whether the harness itself moves the numbers. Decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) were sent identically to both.
+
+### `qwen3-coder:30b` — harness-neutral
+
+| Metric | Ollama (GGUF, 3 runs) | LM Studio (MLX 4bit, 2 runs) |
+|---|---|---|
+| Score | 94 | 92 |
+| Pass rate | 88% (84/96) | 86% (55/64) |
+| Avg time/task | ~4.0s | ~3.6s |
+| tok/s | ~81 | ~95 |
+| Avg output tokens | 294 | 304 |
+| Failure profile | 007 only | 004 C# ×1, 007 |
+
+The 2-point score gap is within run-to-run noise (LM Studio has one fewer run). Same tests pass, same tests fail. MLX generates tokens ~15% faster on this M3 Max. **For a non-thinking model, the harness makes no meaningful difference** — you are comparing the model.
+
+### `qwen3.8:27b` MLX — not a valid comparison
+
+LM Studio's MLX inference engine does **not** honor `enable_thinking` for this build (the model's chat template implements it correctly; the engine never passes it through). So `qwen3.8-27b-mlx` reasons ~3,200 tokens per cell **regardless of mode** — vs Ollama's ~370 (nothink) / ~885 (think).
+
+The consequence is a token-budget cascade: 21 of 32 cells hit the 4,096-token `max_tokens` cap while still inside the reasoning block, leaving 19 cells with **empty or truncated code**. The resulting scores measure that truncation, not the model:
+
+| | Ollama nothink | Ollama think | LM Studio MLX nothink | LM Studio MLX think |
+|---|---|---|---|---|
+| Score | 91 | 90 | **33** | **41** |
+| Pass rate | 84% | 90% | 31% | 38% |
+| Avg time/task | ~23s | ~54s | ~148s | ~152s |
+| Reasoning tokens/cell | 0 | 0 | ~3,220 | ~3,300 |
+
+`qwen3.8-27b-mlx` is **excluded from the rankings** — its numbers are an artifact of LM Studio's MLX engine, not a property of the model. A GGUF build of the same model in LM Studio (llama.cpp engine) would honor the thinking toggle.
+
+**Takeaway:** LM Studio is a faithful harness for models that either have no thinking mode or run through its llama.cpp path. Its MLX path currently cannot disable reasoning, so any thinking-capable MLX model there is effectively thinking-only — and if reasoning is verbose enough to exhaust `max_tokens`, the run is invalid.
 
 ---
 

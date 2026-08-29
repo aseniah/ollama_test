@@ -1,4 +1,0 @@
-PASS: quantity 9
-PASS: quantity 10
-PASS: quantity 49
-PASS: quantity 50
