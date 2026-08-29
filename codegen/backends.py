@@ -136,7 +136,8 @@ class OllamaBackend:
         payload: dict[str, Any] = {"model": model, "messages": messages, "stream": False}
         if "think" in options:
             payload["think"] = options["think"]
-        opts: dict[str, Any] = {k: v for k, v in options.items() if k != "think"}
+        _skip = ("think", "nothink_prefix")  # nothink_prefix is LM Studio-only
+        opts: dict[str, Any] = {k: v for k, v in options.items() if k not in _skip}
         if max_tokens:
             opts["num_predict"] = max_tokens
         if opts:
@@ -155,12 +156,10 @@ class LMStudioBackend:
     name = "lmstudio"
 
     def __init__(
-        self, base_url: str, autostart: bool = False, nothink_prefix: str = "",
-        _post: PostFn = _http_post,
+        self, base_url: str, autostart: bool = False, _post: PostFn = _http_post,
     ) -> None:
         self._base = base_url.rstrip("/")
         self._autostart = autostart
-        self._nothink_prefix = nothink_prefix
         self._post = _post
         self._started = False
 
@@ -244,7 +243,8 @@ class LMStudioBackend:
         timeout: int, model: str, max_tokens: int
     ) -> GenResult:
         # `think` maps to LM Studio's reasoning controls; sampling params pass through.
-        sampling = {k: v for k, v in options.items() if k != "think"}
+        nothink_prefix = str(options.get("nothink_prefix", ""))
+        sampling = {k: v for k, v in options.items() if k not in ("think", "nothink_prefix")}
         payload: dict[str, Any] = {
             "model": model, "messages": list(messages), "stream": False, **sampling,
         }
@@ -257,10 +257,10 @@ class LMStudioBackend:
             # Trailing assistant message = response prefix. An empty
             # <think></think> makes the model continue past it, so it skips
             # reasoning even when LM Studio ignores enable_thinking (its MLX
-            # engine does — see [harness.lmstudio].nothink_prefix in settings).
-            if not enabled and self._nothink_prefix:
+            # engine does — see the model's nothink_prefix in settings.toml).
+            if not enabled and nothink_prefix:
                 payload["messages"].append(
-                    {"role": "assistant", "content": self._nothink_prefix}
+                    {"role": "assistant", "content": nothink_prefix}
                 )
         start = time.monotonic()
         try:
@@ -332,6 +332,5 @@ def build_local_backend(name: str, s: settings.Settings) -> Backend:
         return LMStudioBackend(
             s.harness_base_url("lmstudio"),
             autostart=s.harness_autostart("lmstudio"),
-            nothink_prefix=s.lmstudio_nothink_prefix(),
         )
     raise BackendError(f"{name!r} is not a local harness (expected 'ollama' or 'lmstudio')")

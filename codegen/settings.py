@@ -22,6 +22,7 @@ class ModelEntry(TypedDict):
     infer_timeout: int
     exec_timeout: int
     max_tokens: int
+    nothink_prefix: str
 
 
 class AnthropicEntry(TypedDict):
@@ -49,9 +50,6 @@ class Settings:
     def harness_autostart(self, name: str) -> bool:
         return bool(self._harness(name).get("autostart", False))
 
-    def lmstudio_nothink_prefix(self) -> str:
-        return str(self._harness("lmstudio").get("nothink_prefix", ""))
-
     def languages(self) -> list[str]:
         return [str(x) for x in cast("list[Any]", self._raw["defaults"]["languages"])]
 
@@ -71,6 +69,7 @@ class Settings:
                 infer_timeout=int(m.get("infer_timeout", d["infer_timeout"])),
                 exec_timeout=int(m.get("exec_timeout", d["exec_timeout"])),
                 max_tokens=int(m.get("max_tokens", d.get("max_tokens", 4096))),
+                nothink_prefix=str(m.get("nothink_prefix", "")),
             ))
         return out
 

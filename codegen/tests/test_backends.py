@@ -95,16 +95,19 @@ class LMStudioBackendTests(unittest.TestCase):
 
     def test_nothink_prefix_appends_assistant_prefill(self) -> None:
         http = _FakeHTTP({"choices": [{"message": {"content": "x"}}], "usage": {}})
-        b = backends.LMStudioBackend("http://x:1234", nothink_prefix="<think>\n\n</think>\n\n", _post=http)
-        b.generate([{"role": "user", "content": "hi"}], {"think": False}, 120, "m:1", 4096)
+        b = backends.LMStudioBackend("http://x:1234", _post=http)
+        opts: dict[str, Any] = {"think": False, "nothink_prefix": "<think>\n\n</think>\n\n"}
+        b.generate([{"role": "user", "content": "hi"}], opts, 120, "m:1", 4096)
         assert http.last_payload is not None
         self.assertEqual(http.last_payload["messages"][-1],
                          {"role": "assistant", "content": "<think>\n\n</think>\n\n"})
+        self.assertNotIn("nothink_prefix", http.last_payload)  # not sent as a param
 
     def test_nothink_prefix_not_applied_when_thinking(self) -> None:
         http = _FakeHTTP({"choices": [{"message": {"content": "x"}}], "usage": {}})
-        b = backends.LMStudioBackend("http://x:1234", nothink_prefix="<think>\n\n</think>\n\n", _post=http)
-        b.generate([{"role": "user", "content": "hi"}], {"think": True}, 120, "m:1", 4096)
+        b = backends.LMStudioBackend("http://x:1234", _post=http)
+        opts: dict[str, Any] = {"think": True, "nothink_prefix": "<think>\n\n</think>\n\n"}
+        b.generate([{"role": "user", "content": "hi"}], opts, 120, "m:1", 4096)
         assert http.last_payload is not None
         self.assertEqual(len(http.last_payload["messages"]), 1)
         self.assertEqual(http.last_payload["messages"][0]["role"], "user")

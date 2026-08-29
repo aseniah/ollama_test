@@ -78,6 +78,7 @@ class ModelConfig(TypedDict):
     exec_timeout: NotRequired[int]   # seconds; overrides EXEC_TIMEOUT for code execution
     infer_timeout: NotRequired[int]  # seconds; overrides INFER_TIMEOUT for API inference call
     max_tokens: NotRequired[int]     # generation cap; 0 = uncapped
+    nothink_prefix: NotRequired[str]  # LM Studio: assistant response prefix for think=false
 
 
 class PromptVariant(TypedDict):
@@ -546,7 +547,10 @@ def run_one(
     messages = build_messages(variant, test, language)
 
     model = model_cfg["name"]
-    options = model_cfg["options"]
+    options = dict(model_cfg["options"])
+    _np = model_cfg.get("nothink_prefix", "")
+    if _np:
+        options["nothink_prefix"] = _np
     infer_timeout = model_cfg.get("infer_timeout", INFER_TIMEOUT)
     max_tokens = model_cfg.get("max_tokens", 0)
 
@@ -662,7 +666,7 @@ def main() -> None:
         queue.append((local_backend, harness_name, ModelConfig(
             name=m["name"], options={**m["options"], **sampling},
             infer_timeout=m["infer_timeout"], exec_timeout=m["exec_timeout"],
-            max_tokens=m["max_tokens"],
+            max_tokens=m["max_tokens"], nothink_prefix=m["nothink_prefix"],
         )))
 
     apple_backend_obj: backends.AppleBackend | None = None
@@ -694,9 +698,13 @@ def main() -> None:
             print(f"Model: {model}  harness={harness}  options={model_cfg['options']}")
             print(sep)
 
+            warmup_opts = dict(model_cfg["options"])
+            _wnp = model_cfg.get("nothink_prefix", "")
+            if _wnp:
+                warmup_opts["nothink_prefix"] = _wnp
             try:
                 backend.warmup(
-                    warmup_messages, model_cfg["options"], model,
+                    warmup_messages, warmup_opts, model,
                     model_cfg.get("infer_timeout", INFER_TIMEOUT),
                 )
             except Exception as e:
