@@ -90,6 +90,24 @@ class LMStudioBackendTests(unittest.TestCase):
         self.assertEqual(http.last_payload["chat_template_kwargs"], {"enable_thinking": False})
         self.assertEqual(http.last_payload["reasoning_effort"], "none")
         self.assertEqual(r["reasoning_tokens"], 3)
+        # no prefix configured -> messages unchanged
+        self.assertEqual(len(http.last_payload["messages"]), 1)
+
+    def test_nothink_prefix_appends_assistant_prefill(self) -> None:
+        http = _FakeHTTP({"choices": [{"message": {"content": "x"}}], "usage": {}})
+        b = backends.LMStudioBackend("http://x:1234", nothink_prefix="<think>\n\n</think>\n\n", _post=http)
+        b.generate([{"role": "user", "content": "hi"}], {"think": False}, 120, "m:1", 4096)
+        assert http.last_payload is not None
+        self.assertEqual(http.last_payload["messages"][-1],
+                         {"role": "assistant", "content": "<think>\n\n</think>\n\n"})
+
+    def test_nothink_prefix_not_applied_when_thinking(self) -> None:
+        http = _FakeHTTP({"choices": [{"message": {"content": "x"}}], "usage": {}})
+        b = backends.LMStudioBackend("http://x:1234", nothink_prefix="<think>\n\n</think>\n\n", _post=http)
+        b.generate([{"role": "user", "content": "hi"}], {"think": True}, 120, "m:1", 4096)
+        assert http.last_payload is not None
+        self.assertEqual(len(http.last_payload["messages"]), 1)
+        self.assertEqual(http.last_payload["messages"][0]["role"], "user")
 
 
 class FactoryTests(unittest.TestCase):

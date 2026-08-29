@@ -82,7 +82,7 @@ No install. Generation is orchestrated by a [Claude Code](https://claude.ai/code
 - `[defaults]` — `infer_timeout`, `exec_timeout`, `max_tokens` (generation cap → Ollama `num_predict` / OpenAI `max_tokens`), `languages`. Any of these can be overridden per model.
 - `anthropic_models` — Claude alias → model id, for `run_claude_test.py`.
 
-> **LM Studio verbosity:** LM Studio applies its own generation defaults and chat template, so a model can be several times more verbose there than the same weights under Ollama (e.g. ~2000 tokens vs ~400 for a simple task). The LM Studio model entries use a longer `infer_timeout` for this reason; `max_tokens` caps genuine runaway output.
+> **LM Studio verbosity / thinking:** LM Studio applies its own generation defaults, and its MLX engine ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8 (LM Studio bug #1559/#1870/#1933, unfixed as of 0.4.22) — so a `think = false` model reasons anyway. The `[harness.lmstudio].nothink_prefix` setting works around this by appending an empty `<think></think>` as a response prefix. When you upgrade LM Studio, set it to `""` and check whether `reasoning_tokens` is ~0 without it. `max_tokens` (in `[defaults]`) still caps genuine runaway output.
 
 Each model is warmed up (loaded) before its first test, then unloaded before the next model to free memory (Ollama `keep_alive`, LM Studio `lms unload`, with LM Studio's Auto-Evict as a backstop).
 

@@ -154,9 +154,13 @@ class OllamaBackend:
 class LMStudioBackend:
     name = "lmstudio"
 
-    def __init__(self, base_url: str, autostart: bool = False, _post: PostFn = _http_post) -> None:
+    def __init__(
+        self, base_url: str, autostart: bool = False, nothink_prefix: str = "",
+        _post: PostFn = _http_post,
+    ) -> None:
         self._base = base_url.rstrip("/")
         self._autostart = autostart
+        self._nothink_prefix = nothink_prefix
         self._post = _post
         self._started = False
 
@@ -242,7 +246,7 @@ class LMStudioBackend:
         # `think` maps to LM Studio's reasoning controls; sampling params pass through.
         sampling = {k: v for k, v in options.items() if k != "think"}
         payload: dict[str, Any] = {
-            "model": model, "messages": messages, "stream": False, **sampling,
+            "model": model, "messages": list(messages), "stream": False, **sampling,
         }
         if max_tokens:
             payload["max_tokens"] = max_tokens
@@ -250,6 +254,14 @@ class LMStudioBackend:
             enabled = bool(options["think"])
             payload["chat_template_kwargs"] = {"enable_thinking": enabled}
             payload["reasoning_effort"] = "medium" if enabled else "none"
+            # Trailing assistant message = response prefix. An empty
+            # <think></think> makes the model continue past it, so it skips
+            # reasoning even when LM Studio ignores enable_thinking (its MLX
+            # engine does — see [harness.lmstudio].nothink_prefix in settings).
+            if not enabled and self._nothink_prefix:
+                payload["messages"].append(
+                    {"role": "assistant", "content": self._nothink_prefix}
+                )
         start = time.monotonic()
         try:
             data = self._post(f"{self._base}/api/v0/chat/completions", payload, timeout)
@@ -318,6 +330,8 @@ def build_local_backend(name: str, s: settings.Settings) -> Backend:
         return OllamaBackend(s.harness_base_url("ollama"))
     if name == "lmstudio":
         return LMStudioBackend(
-            s.harness_base_url("lmstudio"), autostart=s.harness_autostart("lmstudio")
+            s.harness_base_url("lmstudio"),
+            autostart=s.harness_autostart("lmstudio"),
+            nothink_prefix=s.lmstudio_nothink_prefix(),
         )
     raise BackendError(f"{name!r} is not a local harness (expected 'ollama' or 'lmstudio')")

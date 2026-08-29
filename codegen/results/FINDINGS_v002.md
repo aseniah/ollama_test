@@ -180,9 +180,11 @@ The consequence is a token-budget cascade: 21 of 32 cells hit the 4,096-token `m
 | Avg time/task | ~23s | ~54s | ~148s | ~152s |
 | Reasoning tokens/cell | 0 | 0 | ~3,220 | ~3,300 |
 
-`qwen3.8-27b-mlx` is **excluded from the rankings** — its numbers are an artifact of LM Studio's MLX engine, not a property of the model. A GGUF build of the same model in LM Studio (llama.cpp engine) would honor the thinking toggle.
+The `qwen3.8-27b-mlx` numbers above are **excluded from the rankings** — they predate the workaround below and measure LM Studio's engine bug, not the model.
 
-**Takeaway:** LM Studio is a faithful harness for models that either have no thinking mode or run through its llama.cpp path. Its MLX path currently cannot disable reasoning, so any thinking-capable MLX model there is effectively thinking-only — and if reasoning is verbose enough to exhaust `max_tokens`, the run is invalid.
+**Workaround (in the harness since the LM Studio bug is unfixed as of 0.4.22):** on a `think = false` LM Studio run, the benchmark appends `<think>\n\n</think>\n\n` as a trailing assistant message. LM Studio treats it as a response prefix, so the model continues past the empty think block instead of reasoning. With this, `qwen3.8-27b-mlx` nothink drops from ~148s / ~3,200 reasoning tokens per cell to **~6s / 0** — faster than Ollama's ~23s. The affected `qwen3.8-27b-mlx` rows should be re-run with the workaround for a valid comparison.
+
+**Takeaway:** LM Studio is a faithful harness for models with no thinking mode or on its llama.cpp path. Its MLX path cannot disable reasoning via the API, but the response-prefix workaround sidesteps it for Qwen-family `<think>` models.
 
 ---
 

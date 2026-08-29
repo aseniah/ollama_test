@@ -49,6 +49,9 @@ class Settings:
     def harness_autostart(self, name: str) -> bool:
         return bool(self._harness(name).get("autostart", False))
 
+    def lmstudio_nothink_prefix(self) -> str:
+        return str(self._harness("lmstudio").get("nothink_prefix", ""))
+
     def languages(self) -> list[str]:
         return [str(x) for x in cast("list[Any]", self._raw["defaults"]["languages"])]
 

@@ -55,9 +55,21 @@ models = [
 # make some models much more verbose than the same weights under Ollama —
 # hence the longer infer_timeout here. max_tokens (see [defaults]) caps
 # true runaway output.
+#
+# nothink_prefix: WORKAROUND for a LM Studio bug — its MLX engine ignores
+# `enable_thinking: false` for Qwen 3.5/3.6/3.8, so a `think = false` model
+# reasons anyway (LM Studio bug tracker #1559, #1870, #1933). Confirmed broken
+# on LM Studio 0.4.22 / mlx-llm 1.11.0 (2026-08). When set, a `think = false`
+# run appends this string as a trailing assistant message; LM Studio treats it
+# as a response prefix so the model continues *after* the (empty) think block.
+# The value below is the Qwen `<think></think>` skip token.
+# >>> When you upgrade LM Studio: set this to "" and run one `think = false`
+#     cell — if `reasoning_tokens` in the result is ~0, the bug is fixed and
+#     you can delete this line.
 [harness.lmstudio]
 base_url = "http://localhost:1234"
 autostart = true
+nothink_prefix = "<think>\n\n</think>\n\n"
 models = [
   { name = "qwen3.8-27b-mlx",      think = false, enabled = true,  infer_timeout = 300 },
   { name = "qwen3.8-27b-mlx",      think = true,  enabled = true,  infer_timeout = 600 },
