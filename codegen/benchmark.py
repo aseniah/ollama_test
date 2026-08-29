@@ -714,7 +714,7 @@ def main() -> None:
             think = model_cfg["options"].get("think")
             think_suffix = " think" if think is True else " nothink" if think is False else ""
             model_label = f"{model}{think_suffix}"
-            model_safe = model.replace(":", "_").replace("/", "_")
+            model_safe = model.replace(":", "_").replace("/", "_").replace("@", "-")
             if think is True:
                 model_safe += "_think"
             elif think is False:

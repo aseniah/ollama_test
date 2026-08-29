@@ -59,17 +59,21 @@ class Settings:
 
     def local_models(self, harness: str) -> list[ModelEntry]:
         d = cast(_Table, self._raw["defaults"])
+        h = self._harness(harness)
+        harness_prefix = str(h.get("nothink_prefix", ""))
         out: list[ModelEntry] = []
-        for m in _rows(self._harness(harness), "models"):
+        for m in _rows(h, "models"):
             if not m.get("enabled", False):
                 continue
+            # per-model nothink_prefix overrides the harness default; "" disables it
+            prefix = str(m["nothink_prefix"]) if "nothink_prefix" in m else harness_prefix
             out.append(ModelEntry(
                 name=str(m["name"]),
                 options={"think": bool(m.get("think", False))},
                 infer_timeout=int(m.get("infer_timeout", d["infer_timeout"])),
                 exec_timeout=int(m.get("exec_timeout", d["exec_timeout"])),
                 max_tokens=int(m.get("max_tokens", d.get("max_tokens", 4096))),
-                nothink_prefix=str(m.get("nothink_prefix", "")),
+                nothink_prefix=prefix,
             ))
         return out
 

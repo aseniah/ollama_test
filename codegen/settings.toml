@@ -56,32 +56,33 @@ models = [
 # hence the longer infer_timeout here. max_tokens (see [defaults]) caps
 # true runaway output.
 #
-# nothink_prefix (per-model): WORKAROUND for a LM Studio bug — its MLX engine
-# ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8, so a `think = false`
-# model reasons anyway (LM Studio bug tracker #1559, #1870, #1933). Confirmed
-# broken on LM Studio 0.4.22 / mlx-llm 1.11.0 (2026-08). When set on a model,
-# a `think = false` run appends this string as a trailing assistant message;
-# LM Studio treats it as a response prefix so the model continues *after* the
-# (empty) think block. The value is the Qwen `<think></think>` skip token.
-# Only needed for MLX Qwen builds — GGUF (llama.cpp) and non-thinking models
-# (e.g. qwen3-coder) honor enable_thinking natively, so leave it off there.
-# >>> When you upgrade LM Studio: drop nothink_prefix from a Qwen MLX entry and
-#     run one `think = false` cell — if `reasoning_tokens` is ~0, the bug is
-#     fixed and you can remove it everywhere.
+# nothink_prefix: WORKAROUND for a LM Studio bug — its MLX engine ignores
+# `enable_thinking: false` for Qwen 3.5/3.6/3.8, so a `think = false` model
+# reasons anyway (LM Studio bug tracker #1559, #1870, #1933). Confirmed broken
+# on LM Studio 0.4.22 / mlx-llm 1.11.0 (2026-08). On a `think = false` run this
+# string is appended as a trailing assistant message; LM Studio treats it as a
+# response prefix so the model continues *after* the (empty) think block. The
+# value is the Qwen `<think></think>` skip token — harmless for GGUF builds
+# that honor enable_thinking natively, but it BREAKS models with no <think>
+# mechanism (e.g. qwen3-coder emits an empty response), so those set
+# `nothink_prefix = ""` on their own entry to opt out.
+# >>> When you upgrade LM Studio: set this to "" and run one `think = false`
+#     cell — if `reasoning_tokens` is ~0, the bug is fixed and you can delete it.
 [harness.lmstudio]
 base_url = "http://localhost:1234"
 autostart = true
+nothink_prefix = "<think>\n\n</think>\n\n"
 models = [
-  # --- MLX vs GGUF comparison for qwen3.8:27b (all think = false) ---
-  # NOTE: verify these ids against `lms ls` after download — LM Studio's
-  # reported id for a model can differ from the repo name.
-  { name = "qwen3.8-27b-mlx",       think = false, enabled = true, infer_timeout = 300, nothink_prefix = "<think>\n\n</think>\n\n" },   # MLX 4bit
-  { name = "qwen3.8-27b-mlx-8bit",  think = false, enabled = true, infer_timeout = 300, nothink_prefix = "<think>\n\n</think>\n\n" },   # MLX 8bit (near-lossless MLX)
-  { name = "qwen3.8-27b",           think = false, enabled = true, infer_timeout = 300 },                                             # GGUF Q4_K_M — same quant as Ollama; isolates harness vs quant
+  # --- MLX 4bit vs MLX 8bit vs GGUF Q4_K_M for qwen3.8:27b (all think = false) ---
+  # LM Studio groups these three quants under one model; the @variant suffix
+  # selects which. Compare against Ollama's qwen3.8:27b (GGUF Q4_K_M).
+  { name = "qwen/qwen3.8-27b@4bit",   think = false, enabled = true, infer_timeout = 300 },   # MLX 4bit
+  { name = "qwen/qwen3.8-27b@8bit",   think = false, enabled = true, infer_timeout = 300 },   # MLX 8bit (near-lossless MLX)
+  { name = "qwen/qwen3.8-27b@q4_k_m", think = false, enabled = true, infer_timeout = 300 },   # GGUF Q4_K_M — isolates harness vs quant
   # think mode: this MLX build reasons ~3300 tokens/cell, so max_tokens is
   # raised here to leave room for the actual solution on top of the reasoning.
-  { name = "qwen3.8-27b-mlx",       think = true,  enabled = false, infer_timeout = 600, max_tokens = 8192 },
-  { name = "qwen/qwen3-coder-30b",  think = false, enabled = false, infer_timeout = 300 },
+  { name = "qwen/qwen3.8-27b@4bit",   think = true,  enabled = false, infer_timeout = 600, max_tokens = 8192 },
+  { name = "qwen/qwen3-coder-30b",    think = false, enabled = false, infer_timeout = 300, nothink_prefix = "" },  # no <think> mechanism
 ]
 
 [harness.apple]

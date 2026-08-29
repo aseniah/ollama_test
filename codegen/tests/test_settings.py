@@ -31,8 +31,11 @@ models = [
 
 [harness.lmstudio]
 base_url = "http://localhost:1234"
+nothink_prefix = "PFX"
 models = [
   { name = "lms-1", think = false, enabled = true },
+  { name = "lms-2", think = false, enabled = true, nothink_prefix = "" },
+  { name = "lms-3", think = false, enabled = true, nothink_prefix = "OWN" },
 ]
 
 [harness.apple]
@@ -69,7 +72,14 @@ class LoadTests(unittest.TestCase):
 
     def test_local_models_per_harness(self) -> None:
         self.assertEqual([m["name"] for m in self.s.local_models("ollama")], ["o:1", "o:2"])
-        self.assertEqual([m["name"] for m in self.s.local_models("lmstudio")], ["lms-1"])
+        self.assertEqual([m["name"] for m in self.s.local_models("lmstudio")], ["lms-1", "lms-2", "lms-3"])
+
+    def test_nothink_prefix_default_and_override(self) -> None:
+        lms = {m["name"]: m["nothink_prefix"] for m in self.s.local_models("lmstudio")}
+        self.assertEqual(lms["lms-1"], "PFX")  # harness default
+        self.assertEqual(lms["lms-2"], "")     # explicit opt-out
+        self.assertEqual(lms["lms-3"], "OWN")  # per-model override
+        self.assertEqual(self.s.local_models("ollama")[0]["nothink_prefix"], "")  # no default
 
     def test_local_models_defaults_applied(self) -> None:
         m1 = self.s.local_models("ollama")[0]

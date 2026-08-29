@@ -148,29 +148,13 @@ class WarmupTests(unittest.TestCase):
         self.assertEqual(calls[1]["model"], "m:1")
         self.assertFalse(calls[1]["think"])                   # thinking dropped for warmup
 
-    def test_lmstudio_warmup_loads_then_pings_capped(self) -> None:
-        cmds: list[list[str]] = []
-
-        class _R:
-            returncode = 0
-            stderr = ""
-
-        def fake_run(cmd: list[str], **_: object) -> _R:
-            cmds.append(cmd)
-            return _R()
-
-        orig = backends._run
-        backends._run = fake_run  # type: ignore[assignment]
-        try:
-            http = _FakeHTTP({"choices": [{"message": {"content": "ok"}}], "usage": {}})
-            backends.LMStudioBackend("http://x:1234", _post=http).warmup(
-                [{"role": "user", "content": "hi"}], {"think": True}, "m:1", 120
-            )
-        finally:
-            backends._run = orig  # type: ignore[assignment]
-
-        self.assertTrue(any("load" in c and "m:1" in c for c in cmds))  # lms load m:1
+    def test_lmstudio_warmup_is_one_capped_request(self) -> None:
+        http = _FakeHTTP({"choices": [{"message": {"content": "ok"}}], "usage": {}})
+        backends.LMStudioBackend("http://x:1234", _post=http).warmup(
+            [{"role": "user", "content": "hi"}], {"think": True}, "m:1", 120
+        )
         assert http.last_payload is not None
+        self.assertEqual(http.last_payload["model"], "m:1")
         self.assertEqual(http.last_payload["max_tokens"], 16)          # tiny warmup ping
 
 

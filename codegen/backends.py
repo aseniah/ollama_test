@@ -210,20 +210,13 @@ class LMStudioBackend:
     def warmup(
         self, messages: list[dict[str, str]], options: dict[str, Any], model: str, timeout: int
     ) -> None:
-        # Load via the CLI (blocks until resident, no HTTP timeout), then a tiny
-        # capped ping so the first real test's timing is not skewed by the load.
-        print(f"  lmstudio: loading {model}...", flush=True)
-        lms = _lms_path()
-        if lms is not None:
-            r = _run(
-                [lms, "load", model, "-y"], capture_output=True, text=True, timeout=900, check=False
-            )
-            if r.returncode != 0:
-                print(f"    lms load failed ({r.stderr.strip()[:200]}); relying on JIT", flush=True)
+        # One tiny capped request — JIT-loads the model so the first real test
+        # cell's timing is not skewed by the load.
+        print(f"  lmstudio: warming up {model}...", flush=True)
         try:
-            self.generate(messages, options, min(timeout, 60), model, 16)
+            self.generate(messages, options, min(timeout, 120), model, 16)
         except BackendError as e:
-            print(f"    lmstudio warmup ping failed (continuing): {e}", flush=True)
+            print(f"    lmstudio warmup failed (continuing): {e}", flush=True)
 
     def unload(self, model: str) -> None:
         """Best-effort: `lms unload <model>`. Falls back to LM Studio's own
