@@ -1,4 +1,0 @@
-PASS: quantity 9 gets no discount
-PASS: quantity 10 gets 10% discount
-PASS: quantity 49 gets 10% discount
-PASS: quantity 50 gets 25% discount

@@ -1,8 +1,0 @@
-{
-  "checks": {
-    "correct_sequence": true,
-    "first_line_is_1": true,
-    "last_line_is_fizzbuzz": true
-  },
-  "passed": true
-}
