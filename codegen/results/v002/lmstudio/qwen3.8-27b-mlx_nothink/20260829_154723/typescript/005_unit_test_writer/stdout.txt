@@ -1,0 +1,6 @@
+PASS: quantity below discount threshold (quantity 9)
+PASS: quantity at first discount threshold (quantity 10)
+PASS: quantity just below second discount threshold (quantity 49)
+PASS: quantity at second discount threshold (quantity 50)
+PASS: quantity well above second discount threshold (quantity 100)
+PASS: quantity zero (no purchase)

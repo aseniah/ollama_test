@@ -74,8 +74,8 @@ models = [
   { name = "qwen3.8-27b-mlx",      think = false, enabled = true,  infer_timeout = 300 },
   # think mode: this MLX build reasons ~3300 tokens/cell, so max_tokens is
   # raised here to leave room for the actual solution on top of the reasoning.
-  { name = "qwen3.8-27b-mlx",      think = true,  enabled = true,  infer_timeout = 600, max_tokens = 8192 },
-  { name = "qwen/qwen3-coder-30b", think = false, enabled = true,  infer_timeout = 300 },
+  { name = "qwen3.8-27b-mlx",      think = true,  enabled = false,  infer_timeout = 600, max_tokens = 8192 },
+  { name = "qwen/qwen3-coder-30b", think = false, enabled = false, infer_timeout = 300 },
 ]
 
 [harness.apple]

@@ -152,39 +152,45 @@ The nvfp4 format is an **MLX-native quantization** for Apple Silicon's unified m
 
 ## Harness Comparison: Ollama vs LM Studio
 
-Two models were run under LM Studio (MLX builds) as well as Ollama (GGUF), to check whether the harness itself moves the numbers. Decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) were sent identically to both.
+Two models were run under LM Studio (MLX 4bit builds) as well as Ollama (GGUF Q4_K_M), with identical decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) sent to both.
 
-### `qwen3-coder:30b` — harness-neutral
+### `qwen3-coder:30b`
 
-| Metric | Ollama (GGUF, 3 runs) | LM Studio (MLX 4bit, 2 runs) |
+| Metric | Ollama GGUF (3 runs) | LM Studio MLX (2 runs) |
 |---|---|---|
 | Score | 94 | 92 |
 | Pass rate | 88% (84/96) | 86% (55/64) |
 | Avg time/task | ~4.0s | ~3.6s |
 | tok/s | ~81 | ~95 |
 | Avg output tokens | 294 | 304 |
-| Failure profile | 007 only | 004 C# ×1, 007 |
+| Failures | 007 only | 004 C# ×1, 007 |
 
-The 2-point score gap is within run-to-run noise (LM Studio has one fewer run). Same tests pass, same tests fail. MLX generates tokens ~15% faster on this M3 Max. **For a non-thinking model, the harness makes no meaningful difference** — you are comparing the model.
+### `qwen3.8:27b` nothink
 
-### `qwen3.8:27b` MLX — not a valid comparison
+| Metric | Ollama GGUF (3 runs) | LM Studio MLX (1 run) |
+|---|---|---|
+| Score | 91 | 86 |
+| Pass rate | 84% (81/96) | 81% (26/32) |
+| Avg time/task | ~23s | ~19s |
+| tok/s | ~18 | ~23 |
+| Avg output tokens | 368 | 382 |
+| Failures | 002, 004 C#, 006, 007 | 002 Go, 003 TS, 004 C#, 007 |
 
-LM Studio's MLX inference engine does **not** honor `enable_thinking` for this build (the model's chat template implements it correctly; the engine never passes it through). So `qwen3.8-27b-mlx` reasons ~3,200 tokens per cell **regardless of mode** — vs Ollama's ~370 (nothink) / ~885 (think).
+### What this shows
 
-The consequence is a token-budget cascade: 21 of 32 cells hit the 4,096-token `max_tokens` cap while still inside the reasoning block, leaving 19 cells with **empty or truncated code**. The resulting scores measure that truncation, not the model:
+- **MLX is faster** — both models generate tokens ~15–25% faster on this M3 Max and finish sooner.
+- **MLX 4bit costs ~2–5 score points** vs GGUF Q4_K_M — a small, consistent quantization tax (`qwen3-coder` −2, `qwen3.8` −5; some of the qwen3.8 gap is n=1 vs n=3 noise). Failure profiles stay close: same hard tests, plus a couple of extra low-level slips under MLX (`qwen3.8` drops 002 Go on a missing `fmt` import and 003 TS on output format).
+- No evidence the harness changes *what* the model produces — only quant fidelity and speed.
 
-| | Ollama nothink | Ollama think | LM Studio MLX nothink | LM Studio MLX think |
-|---|---|---|---|---|
-| Score | 91 | 90 | **33** | **41** |
-| Pass rate | 84% | 90% | 31% | 38% |
-| Avg time/task | ~23s | ~54s | ~148s | ~152s |
-| Reasoning tokens/cell | 0 | 0 | ~3,220 | ~3,300 |
+### The LM Studio thinking bug (worked around)
 
-The `qwen3.8-27b-mlx` numbers above are **excluded from the rankings** — they predate the workaround below and measure LM Studio's engine bug, not the model.
+LM Studio's MLX engine ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8 (LM Studio bug tracker #1559 / #1870 / #1933, unfixed as of 0.4.22 / mlx-llm 1.11.0). Left alone, `qwen3.8-27b-mlx` with `think = false` reasoned ~3,200 tokens per cell, hit the `max_tokens` cap in 21 of 32 cells, and truncated the code — scoring **33** instead of 86.
 
-**Workaround (in the harness since the LM Studio bug is unfixed as of 0.4.22):** on a `think = false` LM Studio run, the benchmark appends `<think>\n\n</think>\n\n` as a trailing assistant message. LM Studio treats it as a response prefix, so the model continues past the empty think block instead of reasoning. With this, `qwen3.8-27b-mlx` nothink drops from ~148s / ~3,200 reasoning tokens per cell to **~6s / 0** — faster than Ollama's ~23s. The affected `qwen3.8-27b-mlx` rows should be re-run with the workaround for a valid comparison.
+The benchmark works around it: on a `think = false` LM Studio run it appends `<think>\n\n</think>\n\n` as a trailing assistant message, which LM Studio treats as a response prefix, so the model resumes *after* an empty think block. This took `qwen3.8-27b-mlx` nothink from ~148s / ~3,200 reasoning tokens to ~19s / 0 — the nothink row above uses this workaround. (`qwen3.8-27b-mlx` **think** mode has not been re-run; it needs a larger `max_tokens` since the model reasons ~3,300 tokens legitimately.)
 
-**Takeaway:** LM Studio is a faithful harness for models with no thinking mode or on its llama.cpp path. Its MLX path cannot disable reasoning via the API, but the response-prefix workaround sidesteps it for Qwen-family `<think>` models.
+### Takeaway
+
+LM Studio is a faithful benchmark harness. Its MLX path is faster than GGUF at a small quantization-quality cost, and the one real gotcha — MLX ignoring the thinking toggle for Qwen — is handled by a response-prefix trick in the backend.
 
 ---
 

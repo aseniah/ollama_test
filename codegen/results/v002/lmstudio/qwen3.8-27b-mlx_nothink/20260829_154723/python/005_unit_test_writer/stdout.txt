@@ -1,0 +1,8 @@
+PASS: quantity 9 (below 10, no discount)
+PASS: quantity 10 (boundary, 10% off)
+PASS: quantity 49 (upper 10-49, 10% off)
+PASS: quantity 50 (boundary, 25% off)
+PASS: quantity 1 (no discount)
+PASS: quantity 50 with price 10 (25% off)
+PASS: quantity 25 with price 2.5 (10% off)
+PASS: price 0 with quantity 100 (free)
