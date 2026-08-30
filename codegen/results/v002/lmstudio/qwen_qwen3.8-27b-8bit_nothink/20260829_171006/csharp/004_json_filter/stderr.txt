@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj7ltdr9s/solution.csx(12,22): error CS1579: foreach statement cannot operate on variables of type 'JsonNode' because 'JsonNode' does not contain a public instance or extension definition for 'GetEnumerator'

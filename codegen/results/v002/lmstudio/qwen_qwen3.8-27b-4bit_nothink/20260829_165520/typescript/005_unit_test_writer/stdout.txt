@@ -1,0 +1,10 @@
+Running tests...
+
+PASS: quantity 9 (below discount threshold)
+PASS: quantity 10 (at 10% discount threshold)
+PASS: quantity 49 (just below 25% discount threshold)
+PASS: quantity 50 (at 25% discount threshold)
+PASS: quantity 1 (minimal purchase, no discount)
+PASS: quantity 25 (middle of 10% discount range)
+
+6 passed, 0 failed, 6 total.

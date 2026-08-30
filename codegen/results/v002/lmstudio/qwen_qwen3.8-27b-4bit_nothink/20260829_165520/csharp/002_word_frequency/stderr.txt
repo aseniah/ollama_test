@@ -1,0 +1,127 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,1): error CS0246: The type or namespace name 'It' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,8): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,17): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,17): error CS0246: The type or namespace name 'of' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,27): error CS1044: Cannot use more than one type in a for, using, fixed, or declaration statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,30): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,30): error CS0246: The type or namespace name 'was' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,38): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,38): error CS0246: The type or namespace name 'worst' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,47): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,52): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(1,52): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,1): error CS0246: The type or namespace name 'it' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,4): error CS0102: The type 'Submission#0' already contains a definition for 'was'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,8): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,16): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,16): error CS0246: The type or namespace name 'of' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,27): error CS1044: Cannot use more than one type in a for, using, fixed, or declaration statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,27): error CS0102: The type 'Submission#0' already contains a definition for 'it'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,30): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,30): error CS0246: The type or namespace name 'was' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,34): error CS0102: The type 'Submission#0' already contains a definition for 'the'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,38): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,38): error CS0246: The type or namespace name 'age' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,42): error CS0102: The type 'Submission#0' already contains a definition for 'of'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,45): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,45): error CS0103: The name 'foolishness' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(2,56): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,1): error CS0246: The type or namespace name 'it' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,4): error CS0102: The type 'Submission#0' already contains a definition for 'was'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,8): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,18): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,18): error CS0246: The type or namespace name 'of' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,29): error CS1044: Cannot use more than one type in a for, using, fixed, or declaration statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,29): error CS0102: The type 'Submission#0' already contains a definition for 'it'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,32): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,32): error CS0246: The type or namespace name 'was' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,36): error CS0102: The type 'Submission#0' already contains a definition for 'the'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,40): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,40): error CS0246: The type or namespace name 'epoch' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,46): error CS0102: The type 'Submission#0' already contains a definition for 'of'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,49): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,49): error CS0103: The name 'incredulity' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,60): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(3,60): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,1): error CS0246: The type or namespace name 'it' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,4): error CS0102: The type 'Submission#0' already contains a definition for 'was'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,8): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,19): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,19): error CS0246: The type or namespace name 'of' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,29): error CS1044: Cannot use more than one type in a for, using, fixed, or declaration statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,29): error CS0102: The type 'Submission#0' already contains a definition for 'it'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,32): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,32): error CS0246: The type or namespace name 'was' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,36): error CS0102: The type 'Submission#0' already contains a definition for 'the'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,40): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,40): error CS0246: The type or namespace name 'season' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,47): error CS0102: The type 'Submission#0' already contains a definition for 'of'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,50): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,50): error CS0103: The name 'Darkness' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,58): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(4,58): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,1): error CS0246: The type or namespace name 'it' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,4): error CS0102: The type 'Submission#0' already contains a definition for 'was'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,8): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,19): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,19): error CS0246: The type or namespace name 'of' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,28): error CS1044: Cannot use more than one type in a for, using, fixed, or declaration statement
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,28): error CS0102: The type 'Submission#0' already contains a definition for 'it'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,31): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,31): error CS0246: The type or namespace name 'was' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,35): error CS0102: The type 'Submission#0' already contains a definition for 'the'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,39): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,39): error CS0246: The type or namespace name 'winter' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,46): error CS0102: The type 'Submission#0' already contains a definition for 'of'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,49): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,49): error CS0103: The name 'despair' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(5,56): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,1): error CS0246: The type or namespace name 'we' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,8): error CS0246: The type or namespace name 'everything' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,26): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,26): error CS0103: The name 'us' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,28): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,28): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,30): error CS0246: The type or namespace name 'we' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,33): error CS0102: The type 'Submission#0' already contains a definition for 'had'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,37): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,37): error CS0246: The type or namespace name 'nothing' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,45): error CS0102: The type 'Submission#0' already contains a definition for 'before'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,52): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,52): error CS0103: The name 'us' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,54): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(6,54): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,1): error CS0246: The type or namespace name 'we' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,9): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,9): error CS0246: The type or namespace name 'all' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,19): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,19): error CS0246: The type or namespace name 'direct' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,29): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,29): error CS0103: The name 'Heaven' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,35): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,35): error CS7017: Member definition, statement, or end-of-file expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,37): error CS0246: The type or namespace name 'we' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,40): error CS0102: The type 'Submission#0' already contains a definition for 'were'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,45): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,45): error CS0246: The type or namespace name 'all' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,49): error CS0102: The type 'Submission#0' already contains a definition for 'going'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,55): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,55): error CS0246: The type or namespace name 'direct' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,62): error CS0102: The type 'Submission#0' already contains a definition for 'the'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,66): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,66): error CS0246: The type or namespace name 'other' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,72): error CS0246: The type or namespace name 'way' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,76): error CS1001: Identifier expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,76): error CS1003: Syntax error, '(' expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,76): error CS1026: ) expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,76): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,76): error CS0541: '()': explicit interface declaration can only be declared in a class, record, struct or interface
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpagx_mnoq/solution.csx(7,76): error CS0501: '()' must declare a body because it is not marked abstract, extern, or partial

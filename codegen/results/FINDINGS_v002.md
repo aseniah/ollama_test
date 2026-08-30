@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-12 to 2026-04-19  
 **Machine:** MacBook Pro M3 Max (48GB unified memory)  
-**Scope:** 26 model configurations on the Ollama harness, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each). Two models also run on LM Studio — see Harness Comparison.
+**Scope:** 26 model configurations on the Ollama harness, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each). Two models also run on LM Studio, with `qwen3.8:27b` across three builds (GGUF, MLX 4-bit, MLX 8-bit) — see Harness Comparison.
 
 ---
 
@@ -29,6 +29,8 @@ Each model generates a solution in response to a task prompt. The solution is ex
 **`qwen3.6:35b` nothink (score 89) at ~11s** is the best sub-15s dense option — 4 points below qwen3.8:27b nothink but at less than half the time.
 
 **nvfp4 quantization is lossless at 27B nothink**: ±0 points for 32% faster generation. At 27B think the speed gain nearly vanishes (−2 points, 5% faster); at 4B think it costs 13 points for 58% faster.
+
+**Ollama and LM Studio are equivalent harnesses.** Running `qwen3.8:27b` on both at the same GGUF Q4_K_M quantization shows no quality difference beyond single-run noise. MLX 4-bit matches GGUF quality and generates ~25% faster; MLX 8-bit is ~2× slower on this bandwidth-bound M3 Max for no quality gain.
 
 **Apple's FoundationModel scores 39 / 34% pass rate** — low, and weak on everything except Python, but it runs with essentially no thermal signature: no fan noise, no visible GPU load, unlike every Ollama model.
 
@@ -152,11 +154,11 @@ The nvfp4 format is an **MLX-native quantization** for Apple Silicon's unified m
 
 ## Harness Comparison: Ollama vs LM Studio
 
-Two models were run under LM Studio (MLX 4bit builds) as well as Ollama (GGUF Q4_K_M), with identical decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) sent to both.
+`qwen3-coder:30b` ran on both harnesses. `qwen3.8:27b` nothink ran on Ollama plus **three** LM Studio builds — GGUF Q4_K_M, MLX 4-bit, MLX 8-bit — which separates the harness effect from the quantization effect. Identical decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) were sent to every run.
 
 ### `qwen3-coder:30b`
 
-| Metric | Ollama GGUF (3 runs) | LM Studio MLX (2 runs) |
+| Metric | Ollama GGUF (3 runs) | LM Studio MLX 4bit (2 runs) |
 |---|---|---|
 | Score | 94 | 92 |
 | Pass rate | 88% (84/96) | 86% (55/64) |
@@ -165,32 +167,49 @@ Two models were run under LM Studio (MLX 4bit builds) as well as Ollama (GGUF Q4
 | Avg output tokens | 294 | 304 |
 | Failures | 007 only | 004 C# ×1, 007 |
 
-### `qwen3.8:27b` nothink
+### `qwen3.8:27b` nothink — same model, four builds
 
-| Metric | Ollama GGUF (3 runs) | LM Studio MLX (1 run) |
-|---|---|---|
-| Score | 91 | 86 |
-| Pass rate | 84% (81/96) | 81% (26/32) |
-| Avg time/task | ~23s | ~19s |
-| tok/s | ~18 | ~23 |
-| Avg output tokens | 368 | 382 |
-| Failures | 002, 004 C#, 006, 007 | 002 Go, 003 TS, 004 C#, 007 |
+| | Ollama GGUF | LM Studio GGUF | LM Studio MLX 4bit | LM Studio MLX 8bit |
+|---|---|---|---|---|
+| Quant | Q4_K_M | Q4_K_M | MLX 4-bit | MLX 8-bit |
+| Runs | 3 | 1 | 2 | 1 |
+| Score | 91 | 84 | 87 | 81 |
+| Pass rate | 84% (81/96) | 78% (25/32) | 81% (52/64) | 78% (25/32) |
+| Avg time/task | ~23s | ~23s | ~23s | ~38s |
+| tok/s | ~18 | ~20 | ~23 | ~13 |
+| Avg output tokens | 368 | 426 | 471 | 467 |
 
-### What this shows
+### Harness effect: none detectable
 
-- **MLX is faster** — both models generate tokens ~15–25% faster on this M3 Max and finish sooner.
-- **MLX 4bit costs ~2–5 score points** vs GGUF Q4_K_M — a small, consistent quantization tax (`qwen3-coder` −2, `qwen3.8` −5; some of the qwen3.8 gap is n=1 vs n=3 noise). Failure profiles stay close: same hard tests, plus a couple of extra low-level slips under MLX (`qwen3.8` drops 002 Go on a missing `fmt` import and 003 TS on output format).
-- No evidence the harness changes *what* the model produces — only quant fidelity and speed.
+The clean test is **Ollama GGUF vs LM Studio GGUF** — same quantization, different harness. Scores land 91 (3 runs) vs 84 (1 run), and that gap is sampling noise, not a harness effect:
+
+- Ollama's three individual runs scored 93 / 89 / 89 — a 4-point spread on identical weights.
+- The two MLX 4bit runs scored 88 and 86 and failed **disjoint** sets of cells.
+- Across the 28 non-007 cells, Ollama GGUF and LM Studio GGUF agree on 25 and differ on 3 (002 Go, 003 C#, 005 Python), with no consistent direction — each is a lone single-run model slip (a broken word-count loop, a wrong Fibonacci branch, a leftover markdown fence in the code).
+- 007 alone swings ±5 points at n=1.
+
+One LM Studio artifact looks genuinely harness-related: on 005 Python the model's response kept its markdown code fence and the extractor missed it. Isolated, not systematic.
+
+The trustworthy n=1 signals are **tok/s and latency**, and they are consistent: LM Studio's GGUF path runs ~10% faster tok/s than Ollama's at the same wall-clock (tok/s is measured differently per harness — Ollama `eval_duration`, LM Studio `stats.tokens_per_second` — so treat it as approximate).
+
+### Extrapolating to MLX
+
+Because the harness does not move quality, the differences among the LM Studio rows are **pure quantization + runtime**:
+
+- **MLX 4-bit ≈ GGUF Q4_K_M on quality.** 87 vs 84–91 — inside the noise band. The earlier "MLX costs ~5 score points" reading was an n=1-vs-n=3 artifact; a second MLX run erased it. MLX 4-bit generates ~25% faster (~23 vs ~18 tok/s) at equal latency.
+- **MLX 8-bit is a poor trade on Apple Silicon.** Its raw score (81, n=1) is *not* a quality result — it lost two whole cells to non-quality failures: 001 TypeScript stalled out (0 tokens in 300s, a load/eviction hang, not slow decoding — the same model wrote the Python/Go/C# versions of that test in 13–37s) and 004 Python emitted `<tool_call>` template markup instead of code. Add those back and it lands at ~87, level with 4-bit — as expected, since 8-bit quantization is near-lossless and should never trail 4-bit on logic. What 8-bit *does* cost is speed: **tok/s halves to ~13** (8-bit weights double memory-bandwidth traffic and the M3 Max is bandwidth-bound), pushing latency to ~38s/task, and the ~29 GB footprint (vs ~15 GB at 4-bit) raises memory pressure and load-stall risk — which is the likely cause of that timeout.
+
+Bottom line: for a 27–30B Qwen on this hardware, **MLX 4-bit, MLX 8-bit, and GGUF Q4_K_M are all equivalent on quality** — pick MLX 4-bit for the ~25% token-rate edge over GGUF; MLX 8-bit only buys you a bigger, slower, stall-prone model for no measurable accuracy gain.
 
 ### The LM Studio thinking bug (worked around)
 
-LM Studio's MLX engine ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8 (LM Studio bug tracker #1559 / #1870 / #1933, unfixed as of 0.4.22 / mlx-llm 1.11.0). Left alone, `qwen3.8-27b-mlx` with `think = false` reasoned ~3,200 tokens per cell, hit the `max_tokens` cap in 21 of 32 cells, and truncated the code — scoring **33** instead of 86.
+LM Studio's MLX engine ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8 (LM Studio bug tracker #1559 / #1870 / #1933, unfixed as of 0.4.22 / mlx-llm 1.11.0). Left alone, `qwen3.8:27b` MLX with `think = false` reasoned ~3,200 tokens per cell, hit the `max_tokens` cap in 21 of 32 cells, and truncated the code — scoring **33** instead of ~87. The GGUF builds (Ollama and LM Studio both) honor the toggle correctly; only the MLX path is affected.
 
-The benchmark works around it: on a `think = false` LM Studio run it appends `<think>\n\n</think>\n\n` as a trailing assistant message, which LM Studio treats as a response prefix, so the model resumes *after* an empty think block. This took `qwen3.8-27b-mlx` nothink from ~148s / ~3,200 reasoning tokens to ~19s / 0 — the nothink row above uses this workaround. (`qwen3.8-27b-mlx` **think** mode has not been re-run; it needs a larger `max_tokens` since the model reasons ~3,300 tokens legitimately.)
+The benchmark works around it: on a `think = false` LM Studio run it appends `<think>\n\n</think>\n\n` as a trailing assistant message, which LM Studio treats as a response prefix, so the model resumes *after* an empty think block. This took `qwen3.8:27b` MLX nothink from ~148s / ~3,200 reasoning tokens to ~19s / 0 — every MLX row above uses this workaround. (MLX **think** mode has not been re-run; it needs a larger `max_tokens` since the model then reasons ~3,300 tokens legitimately.)
 
 ### Takeaway
 
-LM Studio is a faithful benchmark harness. Its MLX path is faster than GGUF at a small quantization-quality cost, and the one real gotcha — MLX ignoring the thinking toggle for Qwen — is handled by a response-prefix trick in the backend.
+LM Studio is a faithful benchmark harness — at the same quantization it produces no measurable quality difference versus Ollama. Its MLX 4-bit path is ~25% faster than GGUF at equal quality; MLX 8-bit is slower with no quality benefit on bandwidth-bound Apple Silicon. The one real gotcha — MLX ignoring the thinking toggle for Qwen — is handled by a response-prefix trick in the backend.
 
 ---
 

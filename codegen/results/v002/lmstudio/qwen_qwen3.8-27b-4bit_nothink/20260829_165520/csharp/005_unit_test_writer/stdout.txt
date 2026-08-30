@@ -1,0 +1,8 @@
+PASS: quantity=9 is below the 10 threshold, no discount applied
+PASS: quantity=10 enters the 10-49 range, 10% discount applied
+PASS: quantity=49 is at the top of the 10-49 range, 10% discount applied
+PASS: quantity=50 enters the >=50 range, 25% discount applied
+PASS: quantity=1 with fractional price, no discount
+PASS: quantity=75 with non-round price, 25% discount applied
+
+All tests passed.

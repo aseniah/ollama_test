@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpuqsocn1n/solution.py", line 1
+    ```python
+    ^
+SyntaxError: invalid syntax
