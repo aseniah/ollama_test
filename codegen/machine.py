@@ -88,6 +88,23 @@ def _semver(text: str) -> str | None:
     return m.group(0) if m else None
 
 
+def _lmstudio_version() -> str | None:
+    """LM Studio's `lms` CLI reports only a git commit, not a version — read the
+    app bundle's CFBundleShortVersionString instead (e.g. "0.4.22")."""
+    candidates = [
+        Path("/Applications/LM Studio.app/Contents/Info.plist"),
+        Path.home() / "Applications/LM Studio.app/Contents/Info.plist",
+    ]
+    for plist in candidates:
+        if not plist.is_file():
+            continue
+        raw = _run(["plutil", "-extract", "CFBundleShortVersionString", "raw", "-o", "-", str(plist)])
+        found = _semver(raw)
+        if found:
+            return found
+    return _semver(_run(["lms", "--version"]))
+
+
 def _mac_hardware() -> dict[str, Any]:
     raw = _run(["system_profiler", "SPHardwareDataType", "-json"])
     try:
@@ -120,7 +137,7 @@ def detect() -> MachineSpec:
         python=platform.python_version(),
         hostname=socket.gethostname(),
         ollama_version=_semver(_run(["ollama", "--version"])),
-        lms_version=_semver(_run(["lms", "version"])) or _semver(_run(["lms", "--version"])),
+        lms_version=_lmstudio_version(),
     )
 
 

@@ -1,7 +1,7 @@
 slug = "m3-max-48gb"
 fingerprint = "8804dab31ebf"
 label = "MacBook Pro (Apple M3 Max, 48 GB)"
-registered_at = "2026-08-30T01:36:29+00:00"
+registered_at = "2026-08-30T01:49:21+00:00"
 
 [specs]
 chip = "Apple M3 Max"
@@ -17,3 +17,4 @@ os_build = "25G83"
 python = "3.14.7"
 hostname = "Alexs-Max3Book.local"
 ollama_version = "0.33.1"
+lms_version = "0.4.22"
