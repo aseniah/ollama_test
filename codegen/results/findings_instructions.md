@@ -8,11 +8,12 @@ See `CLAUDE.md` for jq query patterns to extract data from the results JSONL fil
 
 ## Before You Start
 
-1. **Identify the target version.** Results live in `results/v{NNN}/{harness}/{model}/`. List
-   the subdirectories to see which harnesses and models were run: `ls results/v002/*/` (or
-   whichever version). Note which harnesses ran (`ollama`, `lmstudio`, `apple`, `anthropic`),
-   which models have results, how many runs each has, and whether any model ran under more
-   than one harness.
+1. **Identify the target version.** Results live in
+   `results/v{NNN}/{machine}/{harness}/{model}/`. List the subdirectories to see what ran:
+   `ls results/v002/*/*/` (or whichever version). Note which **machines** ran (slugs, plus
+   `api` for Claude — see `machines/*.toml` for specs), which harnesses (`ollama`, `lmstudio`,
+   `apple`, `anthropic`), which models have results, how many runs each has, and whether any
+   model ran under more than one machine or harness.
 
 2. **Name the output file** `FINDINGS_V{NNN}.md` to match the results version.
 
@@ -48,8 +49,10 @@ a low score / low pass rate means mostly broken output.
 ## Report Structure
 
 ### Introduction
-Brief description of the benchmark: what it tests, how it works, machine used, scope (N models,
-N tests × 4 languages, N runs each — note if any models ran fewer times).
+Brief description of the benchmark: what it tests, how it works, the machine(s) used (name each
+by slug with its chip/RAM from `machines/*.toml`), scope (N models, N tests × 4 languages, N
+runs each — note if any models ran fewer times). If more than one machine ran, say which is the
+reference for the headline numbers.
 
 ### TL;DR
 5–8 bullets covering the headline results. Lead each bullet with score as primary metric.
@@ -79,11 +82,18 @@ Table: Model | Standard score | Quantized score | Score delta | Speed delta.
 Name the quantization format and explain what it means for the hardware. Discuss the tradeoff
 at different model sizes — degradation is typically worse at smaller scales.
 
-### Harness Comparison (Ollama vs LM Studio) *(if a model ran under both)*
+### Harness Comparison (Ollama vs LM Studio) *(if a model ran under both, on one machine)*
 For each model run under both harnesses: score parity (should be near-equal — a large gap is a
 harness bug, not a model finding), speed delta, and tok/s delta. Note that tok/s is sourced
 differently per harness (Ollama `eval_duration`, LM Studio `stats.tokens_per_second` or
 wall-clock fallback, Apple wall-clock) and is not perfectly comparable.
+
+### Machine Comparison *(if a model+harness ran on more than one machine)*
+For each model run on multiple machines: **score parity** (should be near-equal — same weights,
+same decode params; a gap is a bug or a run-count artifact, same framing as the harness
+comparison) and the **speed delta** (avg time/task and tok/s — this is the real per-machine
+signal). Keep the headline Overall Rankings on one reference machine and put the cross-machine
+speed spread here.
 
 ### Language Breakdown
 Table: Language | Pass Rate | Notes. Then a per-model language breakdown table.
@@ -124,8 +134,10 @@ Separate section. Cover:
 
 ### Speed vs. Quality
 Table of all timed models: Model | Harness | Mode | Avg time/task | tok/s | Score | Pass Rate.
-tok/s is required for every row. Highlight the best score-per-second options. Note timing
-caveats, including that tok/s is measured differently per harness (see Harness Comparison).
+tok/s is required for every row. If more than one machine ran, add a Machine column (or build
+one table per machine) — time and tok/s are machine-bound and not comparable across machines.
+Highlight the best score-per-second options. Note timing caveats, including that tok/s is
+measured differently per harness (see Harness Comparison).
 
 ### Summary and Recommendations
 - Top 3 local models with one-line rationale each

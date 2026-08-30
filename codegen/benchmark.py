@@ -32,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import apfel_backend
 
 import backends
+import machine as machine_mod
 import settings as settings_mod
 
 # ---------------------------------------------------------------------------
@@ -59,6 +60,8 @@ def _c(text: str, code: str) -> str:
 RESULTS_DIR = Path("results")
 
 PROMPT_VERSION = 2
+
+MACHINE = ""  # host machine slug, resolved in main() via machine.resolve()
 
 EXEC_TIMEOUT = 60    # seconds; can be overridden per model via exec_timeout in ModelConfig
 INFER_TIMEOUT = 120  # seconds; can be overridden per model via infer_timeout in ModelConfig
@@ -458,7 +461,7 @@ def write_artifacts(
 # ---------------------------------------------------------------------------
 
 def results_file(harness: str, model_safe: str) -> Path:
-    path = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / harness / model_safe / "results.jsonl"
+    path = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / MACHINE / harness / model_safe / "results.jsonl"
     path.parent.mkdir(parents=True, exist_ok=True)
     return path
 
@@ -594,6 +597,7 @@ def run_one(
         "model":           model,
         "model_options":   options,
         "harness":         harness,
+        "machine":         MACHINE,
         "thinking":        options.get("think", None),
         "response_raw":    response_raw,
         "code_extracted":  code_extracted,
@@ -627,6 +631,9 @@ def main() -> None:
     parser.add_argument("--harness", choices=["ollama", "lmstudio"], default=None,
                         help="local inference harness (default: [harness].default in settings.toml)")
     parser.add_argument("--apple", action="store_true", help="also run the Apple on-device model via apfel")
+    parser.add_argument("--machine", metavar="SLUG", default=None,
+                        help="host machine slug (registers this machine if new; "
+                             "default: prompt, or match against machines/*.toml)")
     args = parser.parse_args()
 
     try:
@@ -634,6 +641,15 @@ def main() -> None:
     except settings_mod.SettingsError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
+
+    global MACHINE
+    try:
+        MACHINE = machine_mod.resolve(register_slug=args.machine)
+    except machine_mod.MachineError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        sys.exit(1)
+    _machine_spec = machine_mod.detect()
+    print(f"Machine: {MACHINE}  ({_machine_spec['chip']}, {_machine_spec['memory_gb']} GB)")
 
     languages = cfg.languages()
     global PROMPT_VARIANTS
@@ -730,7 +746,13 @@ def main() -> None:
                 run_ctx = f"  run {run_num}/{args.runs}" if args.runs > 1 else ""
                 run_id = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                 timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
-                artifact_base = RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / harness / model_safe / run_id
+                artifact_base = (
+                    RESULTS_DIR / f"v{PROMPT_VERSION:03d}" / MACHINE / harness / model_safe / run_id
+                )
+                artifact_base.mkdir(parents=True, exist_ok=True)
+                (artifact_base / "meta.json").write_text(
+                    json.dumps(machine_mod.snapshot(MACHINE, _machine_spec), indent=2)
+                )
                 run_records: list[dict[str, Any]] = []
 
                 total = len(PROMPT_VARIANTS) * len(_test_cases)
@@ -757,7 +779,7 @@ def main() -> None:
                                 "test": test["id"], "language": lang,
                                 "prompt_variant": variant["id"],
                                 "model": model, "model_options": model_cfg["options"],
-                                "harness": harness,
+                                "harness": harness, "machine": MACHINE,
                                 "thinking": model_cfg["options"].get("think", None),
                                 "response_raw": f"ERROR: {e}", "code_extracted": False,
                                 "code": "", "ms": 0, "eval_count": 0, "tok_per_sec": 0,

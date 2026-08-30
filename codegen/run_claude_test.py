@@ -168,7 +168,7 @@ def main() -> None:
     parser.add_argument("--model", default=None,
                         help="Anthropic alias (haiku/sonnet/opus) or full model id; "
                              "default: first enabled alias in settings.toml")
-    parser.add_argument("--results-dir", dest="results_dir", default=None, help="Results root directory (default: results/v{PROMPT_VERSION:03d}/anthropic/)")
+    parser.add_argument("--results-dir", dest="results_dir", default=None, help="Results root directory (default: results/v{PROMPT_VERSION:03d}/api/anthropic/)")
     args = parser.parse_args()
 
     # Accept either a friendly alias ("haiku") or a full model ID.
@@ -183,10 +183,12 @@ def main() -> None:
         friendly, model = reverse[requested], requested
     else:
         friendly, model = requested, requested  # unknown model — use as-is
+    # Claude runs via the API — hardware-independent, so they live under the
+    # "api" pseudo-machine to keep results/v{NNN}/<machine>/<harness>/ uniform.
     results_dir = (
         Path(args.results_dir)
         if args.results_dir
-        else BASE_DIR / "results" / f"v{PROMPT_VERSION:03d}" / "anthropic"
+        else BASE_DIR / "results" / f"v{PROMPT_VERSION:03d}" / "api" / "anthropic"
     )
 
     language = args.language
@@ -233,6 +235,7 @@ def main() -> None:
         "model":          model,
         "model_options":  {},
         "harness":        "anthropic",
+        "machine":        "api",
         "thinking":       None,
         "response_raw":   code,
         "code_extracted": False,

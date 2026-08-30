@@ -11,11 +11,17 @@ Benchmark local and cloud AI model backends for code generation quality across m
 - `backends.py` — `OllamaBackend`, `LMStudioBackend`, `AppleBackend`
 - `benchmark.py` — main test runner (Ollama / LM Studio / apfel)
 - `run_claude_test.py` — Claude API test runner (harness = `anthropic`, via subagents)
+- `machine.py` — detects the host (chip/cores/RAM), maps it to a slug via `machines/<slug>.toml`
+- `machines/<slug>.toml` — committed registry, one per known benchmark host
 - `migrate_results.py` — one-time migration of old `results/v{NNN}/{model}/` dirs into the harness layout
+- `migrate_results_machine.py` — one-time migration of `results/v{NNN}/{harness}/` into the machine layout
 - `results/FINDINGS_v{NNN}.md` — human-readable analysis and conclusions
 - `results/findings_instructions.md` — guide for generating versioned findings reports
-- `results/v{NNN}/{harness}/{model}/results.jsonl` — results per harness+model; `NNN` = `PROMPT_VERSION`
-- `results/v{NNN}/{harness}/{model}/{timestamp}/{lang}/{test}/` — per-run artifacts (solution, stdout, stderr)
+- `results/v{NNN}/{machine}/{harness}/{model}/results.jsonl` — results per machine+harness+model; `NNN` = `PROMPT_VERSION`
+- `results/v{NNN}/{machine}/{harness}/{model}/{timestamp}/` — per-run: `meta.json` (machine snapshot) + `{lang}/{test}/` artifacts (solution, stdout, stderr)
+
+Claude API results are hardware-independent — they live under the `api` pseudo-machine
+(`results/v{NNN}/api/anthropic/{model}/`).
 
 Model lists live in `settings.toml`, one per local harness (`[harness.ollama].models`,
 `[harness.lmstudio].models`) — Ollama tags and LM Studio model ids differ, so the lists are
@@ -45,6 +51,17 @@ apfel respectively — and stopped at the end, unless they were already running.
 `autostart = false` under `[harness.lmstudio]` to require a manually-started server instead.
 The `lms` CLI (bundled with LM Studio) must be on PATH or at `~/.lmstudio/bin/lms` for LM
 Studio autostart.
+
+### Machine identity
+
+`benchmark.py` resolves the host machine first thing. Results are hardware-bound (token
+rates, latency), so they are stored per machine under `results/v{NNN}/{machine}/`. On a known
+host (fingerprint matches a `machines/*.toml`) it prints `Machine: <slug>` and continues. On a
+new host it prompts for a slug and writes `machines/<slug>.toml`; pass `--machine <slug>` to
+skip the prompt (required in non-interactive contexts). `python3 machine.py` prints the
+detected specs and resolved slug; `python3 machine.py --register <slug>` registers without a
+run. The fingerprint is derived from hardware class only (model id, chip, cores, RAM) so OS
+and toolchain updates don't orphan a machine.
 
 ## Running Claude Tests (sonnet / haiku / opus)
 
@@ -88,36 +105,42 @@ The subagent receives the fully-resolved system prompt and user prompt as string
 
 ## Analyzing Results
 
-Results are per-harness+model JSONL files at `results/v{NNN}/{harness}/{model}/results.jsonl`.
-Every record carries a `harness` field (`ollama` / `lmstudio` / `apple` / `anthropic`). Use
-targeted jq queries — don't load all records at once. Note the two-level glob (`*/*`).
+Results are per-machine+harness+model JSONL files at
+`results/v{NNN}/{machine}/{harness}/{model}/results.jsonl`. Every record carries a `machine`
+field (a slug, or `api` for Claude) and a `harness` field (`ollama` / `lmstudio` / `apple` /
+`anthropic`). Use targeted jq queries — don't load all records at once. Note the three-level
+glob (`*/*/*`): machine, harness, model.
 
 ```sh
-# Pass rate per model across a version (all harnesses)
-jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v002/*/*/results.jsonl
+# Pass rate per model across a version (all machines + harnesses)
+jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v002/*/*/*/results.jsonl
 
-# One harness only
-jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v002/ollama/*/results.jsonl
+# One machine + harness only
+jq -s 'group_by(.model) | map({model: .[0].model, passed: map(select(.passed))|length, total: length})' results/v002/m3-max-48gb/ollama/*/results.jsonl
 
-# Same model, ollama vs lmstudio
+# Same model, ollama vs lmstudio (one machine)
 jq -s 'group_by(.harness) | map({harness: .[0].harness, passed: map(select(.passed))|length, total: length})' \
-  results/v002/ollama/qwen3.8_27b_nothink/results.jsonl results/v002/lmstudio/qwen3.8_27b_nothink/results.jsonl
+  results/v002/m3-max-48gb/ollama/qwen3.8_27b_nothink/results.jsonl results/v002/m3-max-48gb/lmstudio/qwen3.8_27b_nothink/results.jsonl
+
+# Same model + harness across machines (score should match; tok/s will not)
+jq -s 'group_by(.machine) | map({machine: .[0].machine, tok_per_sec: (map(.tok_per_sec)|add/length), passed: map(select(.passed))|length, total: length})' \
+  results/v002/*/ollama/qwen3-coder_30b/results.jsonl
 
 # Compare thinking vs non-thinking for a specific model
 jq -s 'group_by(.thinking) | map({thinking: .[0].thinking, passed: map(select(.passed))|length, total: length})' \
-  results/v002/ollama/qwen3.5_4b_think/results.jsonl results/v002/ollama/qwen3.5_4b_nothink/results.jsonl
+  results/v002/m3-max-48gb/ollama/qwen3.5_4b_think/results.jsonl results/v002/m3-max-48gb/ollama/qwen3.5_4b_nothink/results.jsonl
 
 # Pass rate by language across all models
-jq -s 'group_by(.language) | map({language: .[0].language, passed: map(select(.passed))|length, total: length})' results/v002/*/*/results.jsonl
+jq -s 'group_by(.language) | map({language: .[0].language, passed: map(select(.passed))|length, total: length})' results/v002/*/*/*/results.jsonl
 
 # Mean tok/s per model
-jq -s 'group_by(.model + (.thinking|tostring)) | map({model: .[0].model, thinking: .[0].thinking, tok_per_sec: (map(.tok_per_sec) | add / length)})' results/v002/*/*/results.jsonl
+jq -s 'group_by(.model + (.thinking|tostring)) | map({model: .[0].model, thinking: .[0].thinking, tok_per_sec: (map(.tok_per_sec) | add / length)})' results/v002/*/*/*/results.jsonl
 
 # Failures for one model with stderr snippet
-jq 'select(.passed == false) | {test, language, stderr: .stderr[:120]}' results/v002/anthropic/haiku/results.jsonl
+jq 'select(.passed == false) | {test, language, stderr: .stderr[:120]}' results/v002/api/anthropic/haiku/results.jsonl
 
 # Partial scores (checks passed / total) per model
-jq -s 'group_by(.model) | map({model: .[0].model, checks_passed: map(.checks | to_entries | map(select(.value)) | length) | add, checks_total: map(.checks | length) | add})' results/v002/*/*/results.jsonl
+jq -s 'group_by(.model) | map({model: .[0].model, checks_passed: map(.checks | to_entries | map(select(.value)) | length) | add, checks_total: map(.checks | length) | add})' results/v002/*/*/*/results.jsonl
 ```
 
 ### Failure categories
