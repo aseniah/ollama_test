@@ -17,7 +17,8 @@ class SettingsError(Exception):
 
 
 class ModelEntry(TypedDict):
-    name: str
+    alias: str       # how we label the model (results, dir names, findings)
+    model_id: str    # what we send to the harness (defaults to alias)
     options: dict[str, Any]
     infer_timeout: int
     exec_timeout: int
@@ -67,8 +68,10 @@ class Settings:
                 continue
             # per-model nothink_prefix overrides the harness default; "" disables it
             prefix = str(m["nothink_prefix"]) if "nothink_prefix" in m else harness_prefix
+            alias = str(m["alias"])
             out.append(ModelEntry(
-                name=str(m["name"]),
+                alias=alias,
+                model_id=str(m.get("model_id", alias)),
                 options={"think": bool(m.get("think", False))},
                 infer_timeout=int(m.get("infer_timeout", d["infer_timeout"])),
                 exec_timeout=int(m.get("exec_timeout", d["exec_timeout"])),
@@ -108,6 +111,19 @@ def _validate(raw: _Table) -> None:
         models = cast(_Table, harness[h]).get("models")
         if not isinstance(models, list):
             raise SettingsError(f"settings.toml: [harness.{h}] needs a models list")
+        seen: set[str] = set()
+        for m in cast("list[Any]", models):
+            row = cast(_Table, m)
+            if "alias" not in row:
+                raise SettingsError(f"settings.toml: [harness.{h}] model missing 'alias': {row}")
+            alias = str(row["alias"])
+            key = f"{alias}|{bool(row.get('think', False))}"
+            if key in seen:
+                raise SettingsError(
+                    f"settings.toml: [harness.{h}] duplicate alias {alias!r} "
+                    f"(think={row.get('think', False)}) — aliases must be unique per mode"
+                )
+            seen.add(key)
     default_models = cast("list[Any]", cast(_Table, harness[default])["models"])
     if not any(cast(_Table, m).get("enabled", False) for m in default_models):
         raise SettingsError(

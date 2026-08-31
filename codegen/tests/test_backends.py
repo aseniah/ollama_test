@@ -118,7 +118,7 @@ class FactoryTests(unittest.TestCase):
         return settings.Settings({
             "harness": {
                 "default": "ollama",
-                "ollama": {"base_url": "http://o:11434", "models": [{"name": "m", "enabled": True}]},
+                "ollama": {"base_url": "http://o:11434", "models": [{"alias": "m", "enabled": True}]},
                 "lmstudio": {"base_url": "http://l:1234", "models": []},
                 "apple": {"base_url": "http://a:11435"},
             },

@@ -75,7 +75,8 @@ _csharp_env: dict[str, str] | None = None
 # ---------------------------------------------------------------------------
 
 class ModelConfig(TypedDict):
-    name: str
+    name: str                        # alias — how the model is labelled in results and dir names
+    model_id: NotRequired[str]       # what is sent to the harness (defaults to name)
     options: dict[str, Any]
     backend: NotRequired[str]
     exec_timeout: NotRequired[int]   # seconds; overrides EXEC_TIMEOUT for code execution
@@ -549,7 +550,8 @@ def run_one(
     language = variant["language"]
     messages = build_messages(variant, test, language)
 
-    model = model_cfg["name"]
+    model = model_cfg["name"]                              # alias — labels the result
+    model_id = model_cfg.get("model_id", model)            # what the harness is asked for
     options = dict(model_cfg["options"])
     _np = model_cfg.get("nothink_prefix", "")
     if _np:
@@ -557,7 +559,7 @@ def run_one(
     infer_timeout = model_cfg.get("infer_timeout", INFER_TIMEOUT)
     max_tokens = model_cfg.get("max_tokens", 0)
 
-    result = backend.generate(messages, options, infer_timeout, model, max_tokens)
+    result = backend.generate(messages, options, infer_timeout, model_id, max_tokens)
     response_raw = str(result["response"])
     ms = int(result["ms"])
     eval_count = int(result["eval_count"])
@@ -595,6 +597,7 @@ def run_one(
         "language":        language,
         "prompt_variant":  variant["id"],
         "model":           model,
+        "model_id":        model_id,
         "model_options":   options,
         "harness":         harness,
         "machine":         MACHINE,
@@ -680,7 +683,8 @@ def main() -> None:
     queue: list[tuple[backends.Backend, str, ModelConfig]] = []
     for m in local_models:
         queue.append((local_backend, harness_name, ModelConfig(
-            name=m["name"], options={**m["options"], **sampling},
+            name=m["alias"], model_id=m["model_id"],
+            options={**m["options"], **sampling},
             infer_timeout=m["infer_timeout"], exec_timeout=m["exec_timeout"],
             max_tokens=m["max_tokens"], nothink_prefix=m["nothink_prefix"],
         )))
@@ -709,9 +713,11 @@ def main() -> None:
     try:
         for backend, harness, model_cfg in queue:
             model = model_cfg["name"]
+            model_id = model_cfg.get("model_id", model)
             sep = _c('=' * 60, _CYAN)
             print(f"\n{sep}")
-            print(f"Model: {model}  harness={harness}  options={model_cfg['options']}")
+            id_note = f"  ({model_id})" if model_id != model else ""
+            print(f"Model: {model}{id_note}  harness={harness}  options={model_cfg['options']}")
             print(sep)
 
             warmup_opts = dict(model_cfg["options"])
@@ -720,7 +726,7 @@ def main() -> None:
                 warmup_opts["nothink_prefix"] = _wnp
             try:
                 backend.warmup(
-                    warmup_messages, warmup_opts, model,
+                    warmup_messages, warmup_opts, model_id,
                     model_cfg.get("infer_timeout", INFER_TIMEOUT),
                 )
             except Exception as e:
@@ -778,7 +784,8 @@ def main() -> None:
                                 "prompt_v": PROMPT_VERSION,
                                 "test": test["id"], "language": lang,
                                 "prompt_variant": variant["id"],
-                                "model": model, "model_options": model_cfg["options"],
+                                "model": model, "model_id": model_id,
+                                "model_options": model_cfg["options"],
                                 "harness": harness, "machine": MACHINE,
                                 "thinking": model_cfg["options"].get("think", None),
                                 "response_raw": f"ERROR: {e}", "code_extracted": False,
@@ -806,7 +813,7 @@ def main() -> None:
                 print(f"  Score: {_c(f'✅ {passed_n}', _GREEN)}  {_c(f'❌ {failed_n}', _RED)}  ({passed_n}/{len(run_records)})")
 
             try:
-                backend.unload(model)
+                backend.unload(model_id)
             except Exception as e:
                 print(_c(f"  WARNING: failed to unload: {e}", _YELLOW), file=sys.stderr)
 

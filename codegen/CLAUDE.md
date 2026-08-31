@@ -17,15 +17,21 @@ Benchmark local and cloud AI model backends for code generation quality across m
 - `migrate_results_machine.py` — one-time migration of `results/v{NNN}/{harness}/` into the machine layout
 - `results/FINDINGS_v{NNN}.md` — human-readable analysis and conclusions
 - `results/findings_instructions.md` — guide for generating versioned findings reports
-- `results/v{NNN}/{machine}/{harness}/{model}/results.jsonl` — results per machine+harness+model; `NNN` = `PROMPT_VERSION`
-- `results/v{NNN}/{machine}/{harness}/{model}/{timestamp}/` — per-run: `meta.json` (machine snapshot) + `{lang}/{test}/` artifacts (solution, stdout, stderr)
+- `results/v{NNN}/{machine}/{harness}/{alias}/results.jsonl` — results per machine+harness+model; `NNN` = `PROMPT_VERSION`
+- `results/v{NNN}/{machine}/{harness}/{alias}/{timestamp}/` — per-run: `meta.json` (machine snapshot) + `{lang}/{test}/` artifacts (solution, stdout, stderr)
 
 Claude API results are hardware-independent — they live under the `api` pseudo-machine
-(`results/v{NNN}/api/anthropic/{model}/`).
+(`results/v{NNN}/api/anthropic/{alias}/`).
+
+Every model entry has an `alias` (our label — drives the result dir name and the `model`
+field) and a `model_id` (what's sent to the harness; defaults to `alias`). For Ollama they're
+equal; for LM Studio the alias is runtime-explicit (`qwen3.8-27b-mlx-4bit`) and `model_id` is
+LM Studio's own id (`qwen/qwen3.8-27b@4bit`). Records carry both.
 
 Model lists live in `settings.toml`, one per local harness (`[harness.ollama].models`,
-`[harness.lmstudio].models`) — Ollama tags and LM Studio model ids differ, so the lists are
-independent and their results stay separate. Set `enabled = true` on the models you want in a
+`[harness.lmstudio].models`) — Ollama tags and LM Studio model ids differ (and the same
+weights carry different quantizations across the two), so the lists are independent and their
+results stay separate. Set `enabled = true` on the models you want in a
 run; the rest stay in the file. The benchmark goal is evaluating models for local AI coding
 assistant use.
 
@@ -106,10 +112,11 @@ The subagent receives the fully-resolved system prompt and user prompt as string
 ## Analyzing Results
 
 Results are per-machine+harness+model JSONL files at
-`results/v{NNN}/{machine}/{harness}/{model}/results.jsonl`. Every record carries a `machine`
-field (a slug, or `api` for Claude) and a `harness` field (`ollama` / `lmstudio` / `apple` /
-`anthropic`). Use targeted jq queries — don't load all records at once. Note the three-level
-glob (`*/*/*`): machine, harness, model.
+`results/v{NNN}/{machine}/{harness}/{alias}/results.jsonl`. Every record carries `machine`
+(a slug, or `api` for Claude), `harness` (`ollama` / `lmstudio` / `apple` / `anthropic`),
+`model` (the alias — group on this), and `model_id` (the raw id sent to the harness). Use
+targeted jq queries — don't load all records at once. Note the three-level glob (`*/*/*`):
+machine, harness, alias.
 
 ```sh
 # Pass rate per model across a version (all machines + harnesses)

@@ -15,38 +15,46 @@ anthropic_models = [
 # default = "ollama"
 default = "lmstudio"
 
-# Ollama models are identified by their `ollama pull` tag.
-# `enabled = false` keeps a model in the file but out of the run.
-# `think = true/false` picks the mode; `infer_timeout` overrides [defaults] per model.
+# Each model entry:
+#   alias      how the model is labelled in results, dir names, and findings (required)
+#   model_id   what is sent to the harness (optional; defaults to alias)
+#   think      true/false picks the mode
+#   enabled    false keeps a model in the file but out of the run
+#   infer_timeout / exec_timeout / max_tokens / nothink_prefix — override [defaults] per model
+#
+# For Ollama the `ollama pull` tag is already a fine label, so alias == the tag
+# and model_id is omitted.
 [harness.ollama]
 base_url = "http://localhost:11434"
 models = [
-  { name = "qwen3.8:27b",                  think = false, enabled = false },
-  { name = "qwen3.8:27b",                  think = true,  enabled = false,  infer_timeout = 300 },
-  { name = "qwen3-coder:30b",              think = false, enabled = false },
-  { name = "qwen2.5-coder:7b",             think = false, enabled = false },
-  { name = "gemma4:26b",                   think = false, enabled = false },
-  { name = "gemma4:26b",                   think = true,  enabled = false, infer_timeout = 300 },
-  { name = "gemma4:31b",                   think = false, enabled = false },
-  { name = "gemma4:31b",                   think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.6:35b",                  think = false, enabled = false },
-  { name = "qwen3.6:35b",                  think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.6:35b-a3b-coding-nvfp4", think = false, enabled = false },
-  { name = "qwen3.6:35b-a3b-coding-nvfp4", think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.5:35b-a3b-coding-nvfp4", think = false, enabled = false },
-  { name = "qwen3.5:35b-a3b-coding-nvfp4", think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.5:27b",                  think = false, enabled = false },
-  { name = "qwen3.5:27b",                  think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.5:27b-nvfp4",            think = false, enabled = false },
-  { name = "qwen3.5:27b-nvfp4",            think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.5:4b",                   think = false, enabled = false },
-  { name = "qwen3.5:4b",                   think = true,  enabled = false, infer_timeout = 300 },
-  { name = "qwen3.5:4b-nvfp4",             think = false, enabled = false },
-  { name = "qwen3.5:4b-nvfp4",             think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.8:27b",                  think = false, enabled = false },
+  { alias = "qwen3.8:27b",                  think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3-coder:30b",              think = false, enabled = false },
+  { alias = "qwen2.5-coder:7b",             think = false, enabled = false },
+  { alias = "gemma4:26b",                   think = false, enabled = false },
+  { alias = "gemma4:26b",                   think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "gemma4:31b",                   think = false, enabled = false },
+  { alias = "gemma4:31b",                   think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.6:35b",                  think = false, enabled = false },
+  { alias = "qwen3.6:35b",                  think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.6:35b-a3b-coding-nvfp4", think = false, enabled = false },
+  { alias = "qwen3.6:35b-a3b-coding-nvfp4", think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.5:35b-a3b-coding-nvfp4", think = false, enabled = false },
+  { alias = "qwen3.5:35b-a3b-coding-nvfp4", think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.5:27b",                  think = false, enabled = false },
+  { alias = "qwen3.5:27b",                  think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.5:27b-nvfp4",            think = false, enabled = false },
+  { alias = "qwen3.5:27b-nvfp4",            think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.5:4b",                   think = false, enabled = false },
+  { alias = "qwen3.5:4b",                   think = true,  enabled = false, infer_timeout = 300 },
+  { alias = "qwen3.5:4b-nvfp4",             think = false, enabled = false },
+  { alias = "qwen3.5:4b-nvfp4",             think = true,  enabled = false, infer_timeout = 300 },
 ]
 
-# LM Studio models are identified by the id LM Studio's server reports at
-# GET /v1/models (usually the lowercased model key, e.g. "qwen3.8-27b-mlx-4bit").
+# LM Studio: `model_id` is the id LM Studio's server reports at GET /v1/models
+# (the model key, plus an `@variant` suffix to pick a quant — `@q4_k_m` etc. are
+# GGUF, `@4bit`/`@8bit` are MLX). `alias` is our own runtime-explicit label, so
+# the runtime is visible in results and dir names without decoding the id.
 # This list is independent of the Ollama list — the same weights have different
 # ids and quantizations across the two runtimes, so results are kept separate.
 # autostart: run `lms server start` if the server is not already up, and
@@ -73,16 +81,16 @@ base_url = "http://localhost:1234"
 autostart = true
 nothink_prefix = "<think>\n\n</think>\n\n"
 models = [
-  # --- MLX 4bit vs MLX 8bit vs GGUF Q4_K_M for qwen3.8:27b (all think = false) ---
-  # LM Studio groups these three quants under one model; the @variant suffix
-  # selects which. Compare against Ollama's qwen3.8:27b (GGUF Q4_K_M).
-  { name = "qwen/qwen3.8-27b@4bit",   think = false, enabled = true, infer_timeout = 300 },   # MLX 4bit
-  { name = "qwen/qwen3.8-27b@8bit",   think = false, enabled = true, infer_timeout = 300 },   # MLX 8bit (near-lossless MLX)
-  { name = "qwen/qwen3.8-27b@q4_k_m", think = false, enabled = true, infer_timeout = 300 },   # GGUF Q4_K_M — isolates harness vs quant
-  # think mode: this MLX build reasons ~3300 tokens/cell, so max_tokens is
-  # raised here to leave room for the actual solution on top of the reasoning.
-  { name = "qwen/qwen3.8-27b@4bit",   think = true,  enabled = false, infer_timeout = 600, max_tokens = 8192 },
-  { name = "qwen/qwen3-coder-30b",    think = false, enabled = false, infer_timeout = 300, nothink_prefix = "" },  # no <think> mechanism
+  # qwen3.8:27b — same weights, three quants. Compare against Ollama's qwen3.8:27b.
+  # GGUF honors enable_thinking natively (the bug is MLX-only), so it opts out of
+  # the nothink_prefix hack; the MLX nothink entry needs it.
+  { alias = "qwen3.8-27b-gguf-q4km", model_id = "qwen/qwen3.8-27b@q4_k_m", think = false, enabled = true,  infer_timeout = 300, nothink_prefix = "" },
+  { alias = "qwen3.8-27b-mlx-4bit",  model_id = "qwen/qwen3.8-27b@4bit",   think = false, enabled = false, infer_timeout = 300 },                      # nothink needs the hack; done, n=5
+  { alias = "qwen3-coder-30b-mlx",   model_id = "qwen/qwen3-coder-30b",    think = false, enabled = false, infer_timeout = 300, nothink_prefix = "" },  # no <think> mechanism; done, n=5
+  # { alias = "qwen3.8-27b-mlx-8bit", model_id = "qwen/qwen3.8-27b@8bit",   think = false, enabled = false, infer_timeout = 300 },                      # ~2x slower for no quality gain; see FINDINGS
+  # think mode reasons ~3300 tokens/cell, so max_tokens is raised to leave room
+  # for the solution on top of the reasoning. Slowest + flakiest — runs last.
+  { alias = "qwen3.8-27b-mlx-4bit",  model_id = "qwen/qwen3.8-27b@4bit",   think = true,  enabled = false, infer_timeout = 600, max_tokens = 8192 },    # done, n=3, score 94
 ]
 
 [harness.apple]

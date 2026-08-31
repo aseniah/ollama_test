@@ -9,11 +9,12 @@ See `CLAUDE.md` for jq query patterns to extract data from the results JSONL fil
 ## Before You Start
 
 1. **Identify the target version.** Results live in
-   `results/v{NNN}/{machine}/{harness}/{model}/`. List the subdirectories to see what ran:
+   `results/v{NNN}/{machine}/{harness}/{alias}/`. List the subdirectories to see what ran:
    `ls results/v002/*/*/` (or whichever version). Note which **machines** ran (slugs, plus
    `api` for Claude — see `machines/*.toml` for specs), which harnesses (`ollama`, `lmstudio`,
    `apple`, `anthropic`), which models have results, how many runs each has, and whether any
-   model ran under more than one machine or harness.
+   model ran under more than one machine or harness. Each record's `model` is the alias (a
+   short label like `qwen3.8-27b-mlx-4bit`); `model_id` is the raw id sent to the harness.
 
 2. **Name the output file** `FINDINGS_V{NNN}.md` to match the results version.
 
