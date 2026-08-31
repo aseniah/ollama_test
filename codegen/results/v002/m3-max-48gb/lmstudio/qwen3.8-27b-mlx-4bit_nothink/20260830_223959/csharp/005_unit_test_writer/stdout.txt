@@ -1,0 +1,8 @@
+PASS: Quantity 9 (below 10, no discount)
+PASS: Quantity 10 (boundary 10, 10% discount)
+PASS: Quantity 49 (below 50, 10% discount)
+PASS: Quantity 50 (boundary 50, 25% discount)
+PASS: Quantity 100 (above 50, 25% discount)
+PASS: Price 0 (edge case: zero price)
+PASS: Non-integer price (basic calculation)
+All tests passed.

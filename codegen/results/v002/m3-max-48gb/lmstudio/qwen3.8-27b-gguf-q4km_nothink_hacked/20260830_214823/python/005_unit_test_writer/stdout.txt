@@ -1,0 +1,7 @@
+PASS: quantity 9 (boundary below 10)
+PASS: quantity 10 (boundary at 10)
+PASS: quantity 49 (boundary below 50)
+PASS: quantity 50 (boundary at 50)
+PASS: small quantity no discount
+PASS: medium quantity 10% off
+PASS: large quantity 25% off

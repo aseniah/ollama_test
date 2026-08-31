@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphauy11a3/solution.csx(41,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphauy11a3/solution.csx(41,11): error CS0103: The name 'writer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphauy11a3/solution.csx(42,1): error CS0103: The name 'writer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphauy11a3/solution.csx(43,1): error CS0103: The name 'writer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmphauy11a3/solution.csx(44,1): error CS0103: The name 'writer' does not exist in the current context

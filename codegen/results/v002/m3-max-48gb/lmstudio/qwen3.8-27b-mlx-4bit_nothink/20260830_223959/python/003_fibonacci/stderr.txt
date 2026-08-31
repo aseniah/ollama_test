@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpgz5h5d95/solution.py", line 5
+    2. Print all Fibonacci numbers ≤ N, one per line
+                                   ^
+SyntaxError: invalid character '≤' (U+2264)

@@ -1,0 +1,5 @@
+PASS: quantity 9 should have no discount (boundary below 10)
+PASS: quantity 10 should have 10% discount (boundary at 10)
+PASS: quantity 49 should have 10% discount (boundary below 50)
+PASS: quantity 50 should have 25% discount (boundary at 50)
+PASS: quantity 1 should have no discount

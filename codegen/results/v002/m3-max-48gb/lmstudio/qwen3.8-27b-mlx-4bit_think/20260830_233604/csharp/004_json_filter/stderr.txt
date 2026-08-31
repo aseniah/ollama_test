@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpt7wj_fgs/solution.csx(5,17): error CS0266: Cannot implicitly convert type 'System.Text.Json.Nodes.JsonNode' to 'System.Text.Json.Nodes.JsonArray'. An explicit conversion exists (are you missing a cast?)

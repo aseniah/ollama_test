@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmp005b19kf/solution.csx(48,26): error CS1061: 'List<JsonObject>' does not contain a definition for 'ToJsonString' and no accessible extension method 'ToJsonString' accepting a first argument of type 'List<JsonObject>' could be found (are you missing a using directive or an assembly reference?)

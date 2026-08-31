@@ -1,0 +1,6 @@
+PASS: quantity 5 (less than 10) - no discount
+PASS: quantity 10 (boundary case) - 10% off
+PASS: quantity 49 (boundary case) - 10% off
+PASS: quantity 50 (boundary case) - 25% off
+PASS: quantity 3 (less than 10) - no discount with higher price
+PASS: quantity 60 (more than 50) - 25% off

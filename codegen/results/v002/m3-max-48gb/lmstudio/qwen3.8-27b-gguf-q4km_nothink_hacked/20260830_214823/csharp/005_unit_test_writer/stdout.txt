@@ -1,0 +1,9 @@
+PASS: quantity 5, price 10.0 (no discount)
+PASS: quantity 9, price 10.0 (boundary, no discount)
+PASS: quantity 10, price 10.0 (boundary, 10% discount)
+PASS: quantity 25, price 10.0 (10% discount)
+PASS: quantity 49, price 10.0 (boundary, 10% discount)
+PASS: quantity 50, price 10.0 (boundary, 25% discount)
+PASS: quantity 100, price 10.0 (25% discount)
+
+Results: 7/7 tests passed

@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpiky_7xvj/solution.csx(12,17): warning CS7022: The entry point of the program is global code; ignoring 'Program.Main()' entry point.

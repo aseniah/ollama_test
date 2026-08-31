@@ -1,0 +1,8 @@
+PASS: quantity 9 (below threshold, no discount)
+PASS: quantity 10 (just reaches 10%, discount)
+PASS: quantity 49 (just below 25%, discount)
+PASS: quantity 50 (reaches 25%, discount)
+PASS: quantity 1 (minimum)
+PASS: quantity 100 (well above 50)
+
+All tests passed.

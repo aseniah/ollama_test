@@ -1,0 +1,4 @@
+  File "/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmprbldvbdn/solution.py", line 1
+    <tool_call>
+    ^
+SyntaxError: invalid syntax

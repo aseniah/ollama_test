@@ -1,0 +1,5 @@
+# command-line-arguments
+./solution.go:46:7: wordCount redeclared in this block
+	./solution.go:20:2: other declaration of wordCount
+./solution.go:50:18: wordCount (local variable) is not a type
+./solution.go:52:25: wordCount (local variable) is not a type

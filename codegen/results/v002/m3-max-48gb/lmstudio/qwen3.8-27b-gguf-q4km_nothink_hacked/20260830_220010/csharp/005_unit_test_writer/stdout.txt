@@ -1,0 +1,7 @@
+PASS: quantity=9 (below first threshold)
+PASS: quantity=10 (boundary: enters 10% discount)
+PASS: quantity=49 (boundary: still 10% discount)
+PASS: quantity=50 (boundary: enters 25% discount)
+PASS: quantity=100 (above all thresholds)
+
+Total: 5 | Passed: 5 | Failed: 0

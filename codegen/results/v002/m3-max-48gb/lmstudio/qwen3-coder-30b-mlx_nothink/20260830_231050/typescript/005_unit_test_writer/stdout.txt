@@ -1,0 +1,5 @@
+PASS: quantity 9 (less than 10)
+PASS: quantity 10 (first discount tier)
+PASS: quantity 49 (less than 50)
+PASS: quantity 50 (second discount tier)
+PASS: quantity 100 (third discount tier)

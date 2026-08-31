@@ -1,0 +1,7 @@
+PASS: quantity=9 (no discount)
+PASS: quantity=10 (10% off boundary)
+PASS: quantity=49 (10% off upper boundary)
+PASS: quantity=50 (25% off boundary)
+PASS: quantity=25, price=5 (10% off)
+PASS: quantity=100, price=100 (25% off)
+PASS: quantity=0 (no discount)

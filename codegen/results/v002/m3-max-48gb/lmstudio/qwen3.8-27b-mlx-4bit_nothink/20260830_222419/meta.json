@@ -1,0 +1,21 @@
+{
+  "slug": "m3-max-48gb",
+  "fingerprint": "8804dab31ebf",
+  "captured_at": "2026-08-31T05:24:19+00:00",
+  "specs": {
+    "chip": "Apple M3 Max",
+    "model_identifier": "Mac15,9",
+    "model_name": "MacBook Pro",
+    "cpu_cores": 16,
+    "cpu_cores_performance": 12,
+    "cpu_cores_efficiency": 4,
+    "memory_gb": 48,
+    "arch": "arm64",
+    "os": "26.6.2",
+    "os_build": "25G83",
+    "python": "3.14.7",
+    "hostname": "Alexs-Max3Book.local",
+    "ollama_version": "0.33.1",
+    "lms_version": "0.4.22"
+  }
+}

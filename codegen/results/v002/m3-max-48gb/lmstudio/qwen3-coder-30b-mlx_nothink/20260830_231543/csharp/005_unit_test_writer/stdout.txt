@@ -1,0 +1,5 @@
+PASS: quantity 5 (less than 10)
+PASS: quantity 9 (boundary case, less than 10)
+PASS: quantity 10 (boundary case, 10-49 discount)
+PASS: quantity 49 (boundary case, 10-49 discount)
+PASS: quantity 50 (boundary case, 50+ discount)

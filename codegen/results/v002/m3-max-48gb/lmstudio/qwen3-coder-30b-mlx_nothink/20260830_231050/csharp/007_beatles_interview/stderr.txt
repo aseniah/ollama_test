@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpnj1xvvhh/solution.csx(87,27): error CS1061: 'List<JsonNode>' does not contain a definition for 'ToJsonString' and no accessible extension method 'ToJsonString' accepting a first argument of type 'List<JsonNode>' could be found (are you missing a using directive or an assembly reference?)
