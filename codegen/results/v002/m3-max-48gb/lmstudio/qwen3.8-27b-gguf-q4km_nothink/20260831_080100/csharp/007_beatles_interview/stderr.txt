@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpv3enikl_/solution.csx(62,13): error CS0019: Operator '<' cannot be applied to operands of type '(int, int)' and '(int, int)'
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpv3enikl_/solution.csx(70,13): error CS0019: Operator '<' cannot be applied to operands of type '(int, int)' and '(int, int)'

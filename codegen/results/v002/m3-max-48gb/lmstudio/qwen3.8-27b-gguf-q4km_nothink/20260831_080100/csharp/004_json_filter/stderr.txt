@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpl068ievw/solution.csx(10,16): error CS1929: 'JsonNode' does not contain a definition for 'Cast' and the best extension method overload 'AsyncEnumerable.Cast<JsonObject>(IAsyncEnumerable<object?>)' requires a receiver of type 'System.Collections.Generic.IAsyncEnumerable<object?>'

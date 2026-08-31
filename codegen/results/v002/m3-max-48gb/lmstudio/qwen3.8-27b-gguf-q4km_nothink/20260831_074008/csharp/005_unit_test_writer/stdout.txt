@@ -1,0 +1,5 @@
+PASS: quantity 9 (below 10 threshold)
+PASS: quantity 10 (boundary: 10-49 threshold)
+PASS: quantity 49 (boundary: just below 50)
+PASS: quantity 50 (boundary: 50+ threshold)
+PASS: price 25.5, quantity 15 (10-49 range)

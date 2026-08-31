@@ -1,0 +1,5 @@
+PASS: quantity 9 (no discount) - price=10, qty=9, total=90.0
+PASS: quantity 10 (10% off) - price=10, qty=10, total=90.0
+PASS: quantity 49 (10% off) - price=10, qty=49, total=441.0
+PASS: quantity 50 (25% off) - price=10, qty=50, total=375.0
+PASS: quantity 100 (25% off) - price=5, qty=100, total=375.0

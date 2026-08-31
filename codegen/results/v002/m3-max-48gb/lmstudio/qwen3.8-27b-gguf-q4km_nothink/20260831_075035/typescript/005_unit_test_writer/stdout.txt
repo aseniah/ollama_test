@@ -1,0 +1,6 @@
+PASS: Quantity below 10 (9 units) - no discount
+PASS: Quantity at 10 (boundary) - 10% discount
+PASS: Quantity at 49 (boundary) - 10% discount
+PASS: Quantity at 50 (boundary) - 25% discount
+
+All tests passed!

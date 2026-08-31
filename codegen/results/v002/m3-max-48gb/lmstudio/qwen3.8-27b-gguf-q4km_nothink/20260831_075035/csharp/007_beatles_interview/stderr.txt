@@ -1,0 +1,2 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxx73rjip/solution.csx(57,25): error CS0246: The type or namespace name 'ArrayNode' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpxx73rjip/solution.csx(91,21): error CS0246: The type or namespace name 'ArrayNode' could not be found (are you missing a using directive or an assembly reference?)

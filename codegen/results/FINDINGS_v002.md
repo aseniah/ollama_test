@@ -30,7 +30,7 @@ Each model generates a solution in response to a task prompt. The solution is ex
 
 **nvfp4 quantization is lossless at 27B nothink**: ±0 points for 32% faster generation. At 27B think the speed gain nearly vanishes (−2 points, 5% faster); at 4B think it costs 13 points for 58% faster.
 
-**The LM Studio nothink workaround costs ~8 points.** With multi-run data, every `think=false` LM Studio config (all need the `<think></think>` prefix hack for the MLX thinking bug) scores 82–84 vs Ollama's native 91. Run **think mode** on LM Studio instead: `qwen3.8:27b` MLX hits **94 / 93% pass**, the benchmark's best result. `qwen3-coder:30b` takes a genuine ~6-point MLX-4bit hit — use GGUF for it.
+**On LM Studio, run Qwen in think mode.** The `<think></think>` nothink workaround (needed for LM Studio's MLX thinking bug) costs ~4 points — GGUF nothink goes 84 → 88 with it removed, and MLX nothink can't remove it, so it sits at 82. MLX **think** mode sidesteps the whole problem: **94 / 93% pass**, the benchmark's best `qwen3.8:27b`. A small ~3-point LM-Studio-vs-Ollama residual remains at matched quant (88 vs 91). `qwen3-coder:30b` takes a genuine ~6-point MLX-4bit hit — use GGUF for it.
 
 **Apple's FoundationModel scores 39 / 34% pass rate** — low, and weak on everything except Python, but it runs with essentially no thermal signature: no fan noise, no visible GPU load, unlike every Ollama model.
 
@@ -162,24 +162,27 @@ The nvfp4 format is an **MLX-native quantization** for Apple Silicon's unified m
 |---|---|---|---|---|---|---|---|
 | Ollama | GGUF Q4_K_M | nothink | — (native) | 3 | 91 | 84% | ~18 |
 | Ollama | GGUF Q4_K_M | think | — | 3 | 90 | 89% | ~17 |
+| LM Studio | GGUF Q4_K_M | nothink | **no** | 3 | 88 | 83% | ~20 |
 | LM Studio | GGUF Q4_K_M | nothink | yes | 4 | 84 | 78% | ~20 |
-| LM Studio | MLX 4-bit | nothink | yes | 5 | 82 | 78% | ~23 |
-| LM Studio | MLX 8-bit | nothink | yes | 1 | 81 | 78% | ~13 |
+| LM Studio | MLX 4-bit | nothink | yes (forced) | 5 | 82 | 78% | ~23 |
+| LM Studio | MLX 8-bit | nothink | yes (forced) | 1 | 81 | 78% | ~13 |
 | LM Studio | MLX 4-bit | **think** | — | 3 | **94** | **93%** | ~23 |
 
-### The nothink workaround costs ~8 points — not the harness, not the quant
+### The nothink workaround costs ~4 points; a smaller harness residual remains
 
-Once the runs pile up the pattern is stark: **every config that uses the `<think></think>` prefix workaround scores 81–84 / 78% pass; every config that doesn't — Ollama's native `think=false`, or MLX `think=true` — scores 90–94 / 84–93% pass.** Neither harness nor quantization tracks the score. The workaround does.
+Dropping the `<think></think>` prefix hack from the GGUF run (it honors `think=false` natively and never needed it) moved the score **84 → 88** and pass rate **78% → 83%**, with 0 reasoning tokens in every cell. So the workaround does hurt — about 4 points — confirming the direction, though less than the ~8 the earlier n=1 rows suggested.
 
-LM Studio's MLX engine ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8 (bug tracker #1559 / #1870 / #1933, unfixed on 0.4.22 / mlx-llm 1.11.0), so a `think=false` MLX run reasons ~3,200 tokens/cell, blows the token cap, and truncates. The benchmark's fix appends `<think>\n\n</think>\n\n` as a trailing assistant message; LM Studio treats it as a response prefix and the model resumes after an empty think block — 0 reasoning tokens, fast. But prefilling that block and forcing continuation from it evidently disrupts generation: hacked-nothink output runs ~40% longer than the GGUF-native equivalent (eval_count ~556 vs ~401) and ~8 score points worse.
+The hack exists because LM Studio's MLX engine ignores `enable_thinking: false` for Qwen 3.5/3.6/3.8 (bug tracker #1559 / #1870 / #1933, unfixed on 0.4.22 / mlx-llm 1.11.0): left alone, a `think=false` MLX run reasons ~3,200 tokens/cell, blows the token cap, and truncates. Appending `<think>\n\n</think>\n\n` as a trailing assistant message makes LM Studio treat it as a response prefix and the model resumes after an empty block — but prefilling that block and forcing continuation from it bloats and degrades the output (hacked output runs ~40% longer: eval_count ~556 vs ~401).
 
-The GGUF builds honor `think=false` natively and never needed the hack — but the benchmark applied it anyway (harness default), and LM Studio GGUF nothink lands at 84, in the same depressed band. **One isolation run is still outstanding: LM Studio `@q4_k_m` with `nothink_prefix = ""`.** If it recovers to ~90, the hack is fully confirmed as the cause and the harness itself is neutral.
+**MLX nothink cannot drop the hack** — the bug is unavoidable there — so it eats the full ~4-point tax and lands at 82.
+
+A **~3-point residual** still separates LM Studio GGUF no-hack (88) from Ollama GGUF (91) at the same quant. Per-run the ranges barely overlap (LM Studio 89 / 89 / 86, Ollama 93 / 89 / 89), so it is probably a small real difference — LM Studio's community Q4_K_M build vs Ollama's, or LM Studio's chat-template handling — sitting near the benchmark's noise floor. It is not the harness "getting the model wrong"; it is a minor fidelity gap, an order of magnitude smaller than picking the wrong mode.
 
 ### Thinking is the answer for Qwen on LM Studio
 
-MLX 4-bit **think** mode sidesteps the bug entirely — real reasoning, no hack — and scores **94 / 93% pass** at ~23 tok/s: the best `qwen3.8:27b` result anywhere in the benchmark, above Ollama's own think (90) and nothink (91). The `max_tokens = 8192` bump for the reasoning volume held — no truncation — and the run-to-run spread (94 / 91 / 97) is far tighter than the hacked-nothink runs (76–88).
+MLX 4-bit **think** mode sidesteps both the bug and the hack — real reasoning, no prefill — and scores **94 / 93% pass** at ~23 tok/s: the best `qwen3.8:27b` result anywhere in the benchmark, above Ollama's own think (90) and nothink (91). The `max_tokens = 8192` bump for the reasoning volume held — no truncation — and the run-to-run spread (94 / 91 / 97) is far tighter than the nothink runs (86–89 no-hack, 76–88 hacked).
 
-This *looks* like "thinking helps far more on LM Studio (+12) than on Ollama (±0)" — but that is the hack talking. The model's real level is ~90–94 across every harness and quant; only hacked-nothink underperforms. If you run Qwen 3.x on LM Studio, **use think mode** and skip the workaround.
+The model's real level is ~88–94 across every harness and quant; only hacked / bug-forced nothink underperforms. If you run Qwen 3.x on LM Studio, **use think mode**.
 
 ### `qwen3-coder:30b` — a real MLX quant cost
 
@@ -202,11 +205,11 @@ The ~5-hour unattended batch showed zero drift: tok/s held to ±2% across every 
 
 ### Takeaway
 
-- **The nothink workaround, not the harness, is the score story.** Hacked `think=false` on LM Studio costs ~8 points regardless of quant.
-- **For Qwen 3.x on LM Studio, run think mode** — `qwen3.8:27b` MLX hits 94 / 93%, no workaround, best in the benchmark.
+- **The nothink workaround costs ~4 points** (GGUF 84 → 88 with it removed). MLX nothink can't remove it — the thinking bug forces it — so MLX nothink stays depressed at 82.
+- **A ~3-point LM-Studio-vs-Ollama residual** remains at the same quant, no-hack (88 vs 91) — likely the GGUF build or chat template, near the noise floor. The harness is close to neutral, not exactly.
+- **For Qwen 3.x on LM Studio, run think mode** — `qwen3.8:27b` MLX hits 94 / 93%, sidesteps bug and hack, best in the benchmark.
 - **qwen3-coder:30b: use GGUF.** MLX 4-bit costs a real ~6 points and think mode isn't an option (no reasoning path).
 - **MLX 8-bit: skip it** on bandwidth-bound Apple Silicon.
-- Still open: LM Studio `@q4_k_m` nothink with `nothink_prefix = ""`, to confirm the harness is neutral once the hack is removed.
 
 ---
 

@@ -1,0 +1,2 @@
+# command-line-arguments
+./solution.go:154:15: cannot use time.Now().Year() - time.Now().Year() + 1940 (value of type int) as string value in struct literal

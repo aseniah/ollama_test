@@ -1,0 +1,8 @@
+PASS: quantity 9 (below first tier)
+PASS: quantity 10 (first tier boundary)
+PASS: quantity 49 (second tier boundary)
+PASS: quantity 50 (third tier boundary)
+PASS: quantity 1 (single item)
+PASS: quantity 25 (middle of second tier)
+PASS: quantity 100 (third tier)
+All tests passed!
