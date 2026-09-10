@@ -1,0 +1,4 @@
+PASS: Quantity just below the first threshold (9)
+PASS: Quantity exactly at the first threshold (10)
+PASS: Quantity just below the second threshold (49)
+PASS: Quantity exactly at the second threshold (50)

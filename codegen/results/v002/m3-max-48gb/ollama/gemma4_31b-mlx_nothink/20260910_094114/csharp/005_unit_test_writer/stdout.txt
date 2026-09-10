@@ -1,0 +1,4 @@
+PASS: Below 10 units (9)
+PASS: Boundary 10 units (10% discount start)
+PASS: Below 50 units (49)
+PASS: Boundary 50 units (25% discount start)

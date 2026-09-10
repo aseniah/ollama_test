@@ -1,0 +1,5 @@
+PASS: No discount (quantity < 10)
+PASS: 10% discount start (quantity == 10)
+PASS: 10% discount end (quantity == 49)
+PASS: 25% discount start (quantity == 50)
+PASS: 25% discount high volume (quantity > 50)

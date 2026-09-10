@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "valid_format": true,
+    "top_word": true,
+    "it_count": true,
+    "of_count": true,
+    "ties_sorted": true
+  },
+  "passed": true
+}

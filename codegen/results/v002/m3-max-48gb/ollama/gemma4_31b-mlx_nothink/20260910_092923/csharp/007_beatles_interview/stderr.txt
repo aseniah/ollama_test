@@ -1,0 +1,1 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpvqfcgnt7/solution.csx(74,13): error CS0103: The name 'relyName' does not exist in the current context

@@ -1,0 +1,5 @@
+PASS: Quantity below 10 (9 items)
+PASS: Quantity exactly 10 (Lower boundary for 10%)
+PASS: Quantity below 50 (49 items)
+PASS: Quantity exactly 50 (Lower boundary for 25%)
+PASS: Quantity well above 50 (100 items)

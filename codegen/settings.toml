@@ -35,14 +35,21 @@ models = [
   # the ~3x speedup is NOT a clean MLX measurement — see FINDINGS_v002 Harness
   # Comparison. `think: false` IS honored here (no LM Studio bug). n=3 done:
   # nothink 85 (nvfp4 cost, -6), think 91 (parity, ~17s/task — best Ollama config).
-  { alias = "qwen3.8:27b-mlx",              think = false, enabled = true },
-  { alias = "qwen3.8:27b-mlx",              think = true,  enabled = true, infer_timeout = 600, max_tokens = 8192 },
+  { alias = "qwen3.8:27b-mlx",              think = false, enabled = false },
+  { alias = "qwen3.8:27b-mlx",              think = true,  enabled = false, infer_timeout = 600, max_tokens = 8192 },
   { alias = "qwen3-coder:30b",              think = false, enabled = false },
   { alias = "qwen2.5-coder:7b",             think = false, enabled = false },
   { alias = "gemma4:26b",                   think = false, enabled = false },
   { alias = "gemma4:26b",                   think = true,  enabled = false, infer_timeout = 300 },
   { alias = "gemma4:31b",                   think = false, enabled = false },
   { alias = "gemma4:31b",                   think = true,  enabled = false, infer_timeout = 300 },
+  # `-mlx` is an nvfp4 build on Ollama's MLX runner; Gemma 4 has MTP heads so
+  # speculative decoding runs by default (same engine+quant+decode confound as
+  # qwen3.8:27b-mlx). n=3 done: nvfp4 near-lossless here (nothink 91->90, think
+  # 93->93), MTP cuts think ~79s->~34s and nothink ~24s->~11s. think = 12/12 on
+  # 007 (only local config to fully clear it). Best all-rounder outside qwen3-coder.
+  { alias = "gemma4:31b-mlx",               think = false, enabled = false },
+  { alias = "gemma4:31b-mlx",               think = true,  enabled = false, infer_timeout = 600, max_tokens = 8192 },
   { alias = "qwen3.6:35b",                  think = false, enabled = false },
   { alias = "qwen3.6:35b",                  think = true,  enabled = false, infer_timeout = 300 },
   { alias = "qwen3.6:35b-a3b-coding-nvfp4", think = false, enabled = false },

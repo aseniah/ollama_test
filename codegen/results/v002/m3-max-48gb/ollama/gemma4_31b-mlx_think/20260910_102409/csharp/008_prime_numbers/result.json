@@ -1,0 +1,8 @@
+{
+  "checks": {
+    "correct_sequence": false,
+    "one_excluded": false,
+    "no_composite": false
+  },
+  "passed": false
+}

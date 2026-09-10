@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "valid_json": true,
+    "four_records": true,
+    "correct_first_names": true,
+    "correct_last_names": true,
+    "birthday_format": true,
+    "age_john": true,
+    "age_paul": true,
+    "age_ringo": true,
+    "age_george": true,
+    "null_relatives_excluded": true,
+    "relative_count_george": true
+  },
+  "passed": true,
+  "spontaneous_tests": true
+}
