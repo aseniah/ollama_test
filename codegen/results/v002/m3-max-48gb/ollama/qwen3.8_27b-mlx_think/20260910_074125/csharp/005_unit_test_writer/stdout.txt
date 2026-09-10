@@ -1,0 +1,8 @@
+PASS: price=10.0, quantity=9 (no discount)
+PASS: price=10.0, quantity=10 (10% discount)
+PASS: price=10.0, quantity=49 (10% discount)
+PASS: price=10.0, quantity=50 (25% discount)
+PASS: price=20.0, quantity=100 (25% discount)
+PASS: price=5.0, quantity=1 (no discount)
+
+Results: 6 passed, 0 failed out of 6 tests.

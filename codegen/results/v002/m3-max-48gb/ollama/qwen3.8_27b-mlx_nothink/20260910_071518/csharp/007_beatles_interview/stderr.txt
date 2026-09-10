@@ -1,0 +1,19 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,75): warning CS0164: This label has not been referenced
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(1,1): error CS0103: The name 'I' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(1,2): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(1,2): error CS1010: Newline in constant
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(1,2): error CS1012: Too many characters in character literal
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(1,110): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,1): error CS0246: The type or namespace name 'Let' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,8): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,8): error CS0246: The type or namespace name 'first' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,20): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,20): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,33): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,33): error CS0246: The type or namespace name 'format' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,45): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,45): error CS0246: The type or namespace name 'to' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,56): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,56): error CS0246: The type or namespace name 'the' could not be found (are you missing a using directive or an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,75): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpj4pd5itj/solution.csx(3,81): error CS1733: Expected expression

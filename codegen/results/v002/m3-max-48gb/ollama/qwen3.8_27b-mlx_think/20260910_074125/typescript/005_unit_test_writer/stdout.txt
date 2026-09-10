@@ -1,0 +1,8 @@
+PASS: quantity 9 (no discount, below threshold)
+PASS: quantity 10 (boundary: 10% discount applies)
+PASS: quantity 49 (boundary: still 10% discount)
+PASS: quantity 50 (boundary: 25% discount applies)
+PASS: quantity 1 (no discount, single item)
+PASS: quantity 100 (25% discount, above 50)
+
+--- Results: 6 passed, 0 failed, 6 total ---

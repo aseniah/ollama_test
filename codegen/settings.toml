@@ -12,8 +12,8 @@ anthropic_models = [
 ]
 
 [harness]
-# default = "ollama"
-default = "lmstudio"
+default = "ollama"
+# default = "lmstudio"
 
 # Each model entry:
 #   alias      how the model is labelled in results, dir names, and findings (required)
@@ -29,6 +29,14 @@ base_url = "http://localhost:11434"
 models = [
   { alias = "qwen3.8:27b",                  think = false, enabled = false },
   { alias = "qwen3.8:27b",                  think = true,  enabled = false, infer_timeout = 300 },
+  # `-mlx` is an nvfp4 build (`ollama show`: quantization nvfp4), run on Ollama's
+  # MLX runner with MTP speculative decoding ON by default (needs 32GB+ unified).
+  # vs the GGUF qwen3.8:27b above it changes engine + quant + decoding at once, so
+  # the ~3x speedup is NOT a clean MLX measurement — see FINDINGS_v002 Harness
+  # Comparison. `think: false` IS honored here (no LM Studio bug). n=3 done:
+  # nothink 85 (nvfp4 cost, -6), think 91 (parity, ~17s/task — best Ollama config).
+  { alias = "qwen3.8:27b-mlx",              think = false, enabled = true },
+  { alias = "qwen3.8:27b-mlx",              think = true,  enabled = true, infer_timeout = 600, max_tokens = 8192 },
   { alias = "qwen3-coder:30b",              think = false, enabled = false },
   { alias = "qwen2.5-coder:7b",             think = false, enabled = false },
   { alias = "gemma4:26b",                   think = false, enabled = false },
@@ -84,7 +92,7 @@ models = [
   # qwen3.8:27b — same weights, three quants. Compare against Ollama's qwen3.8:27b.
   # GGUF honors enable_thinking natively (the bug is MLX-only), so it opts out of
   # the nothink_prefix hack; the MLX nothink entry needs it.
-  { alias = "qwen3.8-27b-gguf-q4km", model_id = "qwen/qwen3.8-27b@q4_k_m", think = false, enabled = true,  infer_timeout = 300, nothink_prefix = "" },
+  { alias = "qwen3.8-27b-gguf-q4km", model_id = "qwen/qwen3.8-27b@q4_k_m", think = false, enabled = false,  infer_timeout = 300, nothink_prefix = "" },
   { alias = "qwen3.8-27b-mlx-4bit",  model_id = "qwen/qwen3.8-27b@4bit",   think = false, enabled = false, infer_timeout = 300 },                      # nothink needs the hack; done, n=5
   { alias = "qwen3-coder-30b-mlx",   model_id = "qwen/qwen3-coder-30b",    think = false, enabled = false, infer_timeout = 300, nothink_prefix = "" },  # no <think> mechanism; done, n=5
   # { alias = "qwen3.8-27b-mlx-8bit", model_id = "qwen/qwen3.8-27b@8bit",   think = false, enabled = false, infer_timeout = 300 },                      # ~2x slower for no quality gain; see FINDINGS

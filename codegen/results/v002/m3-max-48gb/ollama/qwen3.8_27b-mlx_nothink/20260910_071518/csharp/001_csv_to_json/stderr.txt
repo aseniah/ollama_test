@@ -1,0 +1,5 @@
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdzz_t3lb/solution.csx(20,11): error CS1002: ; expected
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdzz_t3lb/solution.csx(20,11): error CS0103: The name 'writer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdzz_t3lb/solution.csx(20,36): error CS0234: The type or namespace name 'StringWriter' does not exist in the namespace 'System.Text' (are you missing an assembly reference?)
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdzz_t3lb/solution.csx(21,15): error CS0103: The name 'writer' does not exist in the current context
+/private/var/folders/sk/d4w9czzj16lgy5fljsgqh57r0000gn/T/tmpdzz_t3lb/solution.csx(22,15): error CS0103: The name 'writer' does not exist in the current context

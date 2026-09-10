@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-12 to 2026-04-19  
 **Machine:** MacBook Pro M3 Max (48GB unified memory)  
-**Scope:** 26 model configurations on the Ollama harness, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each). `qwen3-coder:30b` and `qwen3.8:27b` also ran on LM Studio — `qwen3.8:27b` across GGUF, MLX 4-bit, and MLX 8-bit, nothink and think, most 3–5 runs — see Harness Comparison. All runs are on one machine (`m3-max-48gb`, MacBook Pro / M3 Max / 48 GB).
+**Scope:** 26 model configurations on the Ollama harness, 8 tests × 4 languages, 3 runs each (Claude models: 1 run each). `qwen3-coder:30b` and `qwen3.8:27b` also ran on LM Studio — `qwen3.8:27b` across GGUF, MLX 4-bit, and MLX 8-bit, nothink and think, most 3–5 runs. `qwen3.8:27b` additionally ran on Ollama's own MLX runner (`qwen3.8:27b-mlx`, an nvfp4 build that runs with MTP speculative decoding, nothink and think, 3 runs each) — see Harness Comparison. All runs are on one machine (`m3-max-48gb`, MacBook Pro / M3 Max / 48 GB).
 
 ---
 
@@ -28,9 +28,11 @@ Each model generates a solution in response to a task prompt. The solution is ex
 
 **`qwen3.6:35b` nothink (score 89) at ~11s** is the best sub-15s dense option — 4 points below qwen3.8:27b nothink but at less than half the time.
 
-**nvfp4 quantization is lossless at 27B nothink**: ±0 points for 32% faster generation. At 27B think the speed gain nearly vanishes (−2 points, 5% faster); at 4B think it costs 13 points for 58% faster.
+**nvfp4 quantization is model-dependent at 27B nothink**: lossless for `qwen3.5:27b` (±0 points, 32% faster), but −6 points for the newer `qwen3.8:27b`. In think mode neither loses ground (`qwen3.5` −2, `qwen3.8` +1). At 4B think it costs 13 points for 58% faster.
 
 **On LM Studio, run Qwen in think mode.** The `<think></think>` nothink workaround (needed for LM Studio's MLX thinking bug) costs ~4 points — GGUF nothink goes 84 → 88 with it removed, and MLX nothink can't remove it, so it sits at 82. MLX **think** mode sidesteps the whole problem: **94 / 93% pass**, the benchmark's best `qwen3.8:27b`. A small ~3-point LM-Studio-vs-Ollama residual remains at matched quant (88 vs 91). `qwen3-coder:30b` takes a genuine ~6-point MLX-4bit hit — use GGUF for it.
+
+**Ollama's MLX runner honors `think: false`** (no `<think>` hack needed, unlike LM Studio) and runs `qwen3.8:27b-mlx` ~3× faster wall-clock than the GGUF tag — but that speed is mostly **MTP speculative decoding**, which Ollama's MLX runner enables by default for this build and the bare `qwen3.8:27b` GGUF tag has no draft heads for, **not** the MLX engine itself. The `-mlx` tag is also an **nvfp4** quant, which costs **−6 score in nothink** (91 → 85) while reaching **parity in think** (90 → 91). Best Ollama configuration for this model is `qwen3.8:27b-mlx` in think mode; isolating the MLX engine's own contribution needs a matched-quant, matched-speculation run that was not done here.
 
 **Apple's FoundationModel scores 39 / 34% pass rate** — low, and weak on everything except Python, but it runs with essentially no thermal signature: no fan noise, no visible GPU load, unlike every Ollama model.
 
@@ -77,6 +79,8 @@ When score exceeds pass rate, the model is earning partial credit on failures �
 | 26 | `apple-foundationmodel` | — | **39** | 34% (33/96) | ~7s |
 
 > **Avg time** is average wall clock time per test/language combination from generation start to result, over cells that actually produced output (timeouts excluded from the average but counted as failures elsewhere). Codegen tasks require 100–500+ output tokens; thinking-mode tasks often exceed 1000 tokens. Claude timing was not instrumented; times will include API round-trip latency and are not comparable to Ollama on-device measurements.
+>
+> `qwen3.8:27b` also ran on Ollama's MLX runner (`qwen3.8:27b-mlx`, nvfp4 + MTP speculative decoding): score **85 nothink / 91 think**, ~10s / ~17s per task. Kept out of this table because it changes quant, engine, and decoding strategy at once — see Harness Comparison.
 
 ---
 
@@ -141,6 +145,10 @@ The nvfp4 format is an **MLX-native quantization** for Apple Silicon's unified m
 | `qwen3.5:27b` think | 91 | 89 | **−2** | ~109s → ~103s (5% faster) |
 | `qwen3.5:4b` nothink | 48 | 44 | **−4** | ~8s → ~8s (~same) |
 | `qwen3.5:4b` think | 68 | 55 | **−13** | ~45s → ~19s (58% faster) |
+| `qwen3.8:27b` nothink | 91 | 85 | **−6** | confounded (see note) |
+| `qwen3.8:27b` think | 90 | 91 | **+1** | confounded (see note) |
+
+> `qwen3.8:27b` standard = Ollama GGUF Q4_K_M; nvfp4 = the `qwen3.8:27b-mlx` tag. The nvfp4 run also carries MTP speculative decoding (on by default in Ollama's MLX runner), so its ~3× wall-clock speedup is not a clean quantization measurement — see Harness Comparison. The score deltas are clean: speculative decoding is distribution-preserving.
 
 **At 27B nothink**, nvfp4 is a free win: no measurable score cost for 32% faster generation and lower memory. Use it whenever memory is a consideration.
 
@@ -150,23 +158,29 @@ The nvfp4 format is an **MLX-native quantization** for Apple Silicon's unified m
 
 **At 4B think**, nvfp4 is 58% faster with a 13-point score drop. That is a steep exchange — at a standard-weights base of 68, the quantized 55 falls back into "weak" territory.
 
+**At 27B, the newer `qwen3.8` generation shows a larger nvfp4 nothink cost than `qwen3.5` did** — −6 vs ±0 — but no cost in think mode (+1, within noise). If you run `qwen3.8:27b` on Ollama's nvfp4 build, use think mode; the nothink quantization hit is real and lands on C# and TypeScript.
+
 ---
 
 ## Harness Comparison: Ollama vs LM Studio
 
-`qwen3-coder:30b` and `qwen3.8:27b` both ran on Ollama (GGUF Q4_K_M) and LM Studio (MLX 4-bit, MLX 8-bit, GGUF Q4_K_M) to separate harness effect from quantization effect. Identical decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) were sent to every run. The LM Studio rows below are multi-run (an overnight batch), so the numbers are no longer n=1 noise.
+`qwen3-coder:30b` and `qwen3.8:27b` both ran on Ollama (GGUF Q4_K_M) and LM Studio (MLX 4-bit, MLX 8-bit, GGUF Q4_K_M) to separate harness effect from quantization effect, and `qwen3.8:27b` additionally on Ollama's own MLX runner (nvfp4). Identical decoding parameters (`temperature 1`, `top_k 20`, `top_p 0.95`, `min_p 0`, `repeat_penalty 1`) were sent to every run. The LM Studio rows below are multi-run (an overnight batch), so the numbers are no longer n=1 noise.
 
 ### `qwen3.8:27b`
 
 | Harness | Quant | Mode | nothink hack | Runs | Score | Pass | tok/s |
 |---|---|---|---|---|---|---|---|
 | Ollama | GGUF Q4_K_M | nothink | — (native) | 3 | 91 | 84% | ~18 |
-| Ollama | GGUF Q4_K_M | think | — | 3 | 90 | 89% | ~17 |
+| Ollama | GGUF Q4_K_M | think | — | 3 | 90 | 90% | ~17 |
+| Ollama MLX | nvfp4 | nothink | — (native) | 3 | 85 | 80% | ~56 \* |
+| Ollama MLX | nvfp4 | think | — | 3 | 91 | 91% | ~54 \* |
 | LM Studio | GGUF Q4_K_M | nothink | **no** | 3 | 88 | 83% | ~20 |
 | LM Studio | GGUF Q4_K_M | nothink | yes | 4 | 84 | 78% | ~20 |
 | LM Studio | MLX 4-bit | nothink | yes (forced) | 5 | 82 | 78% | ~23 |
 | LM Studio | MLX 8-bit | nothink | yes (forced) | 1 | 81 | 78% | ~13 |
 | LM Studio | MLX 4-bit | **think** | — | 3 | **94** | **93%** | ~23 |
+
+> \* The Ollama MLX rows run with MTP speculative decoding on by default (avg 3.0 draft tokens/step, ~0.83 acceptance). The tok/s is not comparable to the plain-decode rows — it reflects speculation, not raw engine throughput. A dense 27B at 4-bit is bandwidth-bound to ~25 tok/s on this M3 Max.
 
 ### The nothink workaround costs ~4 points; a smaller harness residual remains
 
@@ -183,6 +197,27 @@ A **~3-point residual** still separates LM Studio GGUF no-hack (88) from Ollama 
 MLX 4-bit **think** mode sidesteps both the bug and the hack — real reasoning, no prefill — and scores **94 / 93% pass** at ~23 tok/s: the best `qwen3.8:27b` result anywhere in the benchmark, above Ollama's own think (90) and nothink (91). The `max_tokens = 8192` bump for the reasoning volume held — no truncation — and the run-to-run spread (94 / 91 / 97) is far tighter than the nothink runs (86–89 no-hack, 76–88 hacked).
 
 The model's real level is ~88–94 across every harness and quant; only hacked / bug-forced nothink underperforms. If you run Qwen 3.x on LM Studio, **use think mode**.
+
+### `qwen3.8:27b` on Ollama's own MLX runner — `think:false` works; the speed number is a three-way confound
+
+`qwen3.8:27b-mlx` was run against the Ollama GGUF baseline, nothink and think, 3 runs each, identical decoding params.
+
+| Runtime | Quant | Mode | Score (per-run) | Pass | Chars/token |
+|---|---|---|---|---|---|
+| Ollama llama.cpp | GGUF Q4_K_M | nothink | 91 | 84% (81/96) | 3.18 |
+| Ollama llama.cpp | GGUF Q4_K_M | think | 90 | 90% (86/96) | 1.35 |
+| Ollama MLX | nvfp4 | nothink | 85 (84 / 87 / 83) | 80% (77/96) | 3.05 |
+| Ollama MLX | nvfp4 | think | 91 (91 / 91 / 93) | 91% (87/96) | 1.45 |
+
+**`think: false` is honored on the MLX path** — no `<think></think>` hack needed, in direct contrast to LM Studio's MLX engine. The chars-per-output-token ratio is the discriminator: reasoning tokens are stripped from `response_raw` but still counted in `eval_count`, so a variant that secretly reasons has its ratio collapse toward ~1.4. MLX nothink sits at **3.05**, right next to GGUF nothink's 3.18; both think variants drop to ~1.4. No `<think>` tags leak into `response_raw`, and MLX nothink `eval_count` (~496) is far below MLX think (~828). The LM Studio bug is absent.
+
+**Quality: the MLX-tag run costs ~6 points in nothink, reaches parity in think — this is an nvfp4 quantization effect, not an engine one.** `ollama show qwen3.8:27b-mlx` reports `quantization nvfp4`, not Q4_K_M, so the comparison changes quant. Speculative decoding (below) is distribution-preserving, so it does not move quality. nvfp4 nothink 91 → 85, with the regression concentrated in the C# and TypeScript cells where qwen3.8 is already weakest — the failures are the same `.csx` patterns already in Known Failure Patterns (`The node already has a parent`, null refs, `.csx` compile errors), just more frequent at this quant. nvfp4 think 90 → 91, parity. This extends the doc's nvfp4 finding: near-lossless for `qwen3.5:27b` nothink (±0), a real ~6-point nothink cost for `qwen3.8:27b`.
+
+**Speed: ~3× faster wall-clock (~10s vs ~23s nothink, ~17s vs ~54s think) — but it is mostly speculative decoding, not the MLX engine.** The server log shows Ollama's MLX runner enabling **MTP speculative decoding** by default for this build on every generation of both runs (`speculative decode stats`: avg 3.0 draft tokens/step, ~0.83 acceptance, ~2.5 accepted); the bare `qwen3.8:27b` GGUF tag has no MTP draft heads and decodes one token at a time. A dense 27B at 4-bit is memory-bandwidth-bound to ~25 tok/s on this M3 Max — the GGUF run measured 17.8 tok/s (~71% of that ceiling), and the MLX run's ~55 tok/s only clears the wall because ~2.5 tokens emerge per weight-read pass. The number is real for "what `ollama run qwen3.8:27b-mlx` gives you," but it bundles three changes at once — MLX engine, nvfp4 quant, MTP speculation — and does not isolate the engine. LM Studio's MLX (no speculation) ran the same weights at ~23 tok/s, ~15% over its own GGUF; that is closer to the MLX engine's standalone contribution.
+
+**One MLX-path flake:** one cell (001 TypeScript, 1 of 96) returned `HTTP 500 … XML syntax error … element <function> closed by </parameter>` from `/api/chat` — chat-template tool scaffolding leaking into the parser, the same class as the MLX 8-bit `<tool_call>` leak seen on LM Studio. The MLX runner is newer and less hardened than the llama.cpp path.
+
+**To isolate the MLX engine**, a matched matrix is needed: `qwen3.8:27b-mtp-q4_K_M` on llama.cpp (speculation on, quant held constant) and/or the nvfp4 build with speculation disabled. Not run here.
 
 ### `qwen3-coder:30b` — a real MLX quant cost
 
@@ -210,6 +245,9 @@ The ~5-hour unattended batch showed zero drift: tok/s held to ±2% across every 
 - **For Qwen 3.x on LM Studio, run think mode** — `qwen3.8:27b` MLX hits 94 / 93%, sidesteps bug and hack, best in the benchmark.
 - **qwen3-coder:30b: use GGUF.** MLX 4-bit costs a real ~6 points and think mode isn't an option (no reasoning path).
 - **MLX 8-bit: skip it** on bandwidth-bound Apple Silicon.
+- **Ollama's MLX runner honors `think: false`** — the LM Studio bug does not exist here, so no `<think>` hack is ever needed on Ollama.
+- **`qwen3.8:27b-mlx` on Ollama: use think mode.** The nvfp4 quant costs ~6 points in nothink (91 → 85) but reaches parity in think (90 → 91).
+- **Do not read the `qwen3.8:27b-mlx` ~3× speedup as an MLX-engine result.** It bundles nvfp4 quant and default MTP speculative decoding; the bare GGUF tag has neither. A clean engine comparison was not run.
 
 ---
 
@@ -446,6 +484,8 @@ Think mode is a targeted trade rather than an upgrade. The aggregate score drops
 
 Failure breakdown: nothink 7 compile / 8 logic; think 7 compile / 2 logic / 1 runtime. Consistency: 91% nothink, 88% think. Requires ~16–18GB RAM (dense 27.3B weights). Use nothink as the default; switch to think only for 007-class tasks.
 
+**On Ollama's MLX runner** (`qwen3.8:27b-mlx`, an nvfp4 build), nothink drops to score 85 / 80% pass — a real ~6-point quantization cost landing on the C# and TypeScript cells — while think holds at 91 / 91%. `think: false` is honored on this path (no LM Studio-style bug). The build also runs with MTP speculative decoding on by default (~0.83 acceptance), giving a ~3× wall-clock speedup that is mostly the speculation, not the engine. Best Ollama configuration for this model: `qwen3.8:27b-mlx` in think mode — GGUF-think quality at meaningfully lower latency. See Harness Comparison for the full breakdown and caveats.
+
 ### qwen3.6:35b — score 90 think / 89 nothink — pass 82% / 81%
 
 Score 89 nothink at ~11s trails only `qwen3.8:27b` (91) and `gemma4:31b` (91) among nothink local configs — and at less than half their time. Despite being a dense 35B model it runs considerably faster than the smaller `qwen3.5:27b` (~31s nothink), reflecting efficiency gains in the 3.6 generation.
@@ -574,10 +614,13 @@ The speed/quality leaders at the interactive tier:
 - **`qwen3-coder:30b`** — score 94 in ~4s. The fastest model in the benchmark is also the highest-scoring local one. There is no tradeoff to make here; it is the default local recommendation.
 - **`qwen3.6:35b-a3b-coding-nvfp4` nothink** — score 85 in ~5s. The best score under 10s after qwen3-coder.
 - **`qwen3.6:35b` nothink** — score 89 in ~11s. Second-highest nothink score, at a latency that is still comfortably interactive.
-- **`qwen3.5:35b-a3b-coding-nvfp4` think** — score 88 in ~13s. The only thinking-mode configuration with interactive latency; every other think config is ~43s or slower.
+- **`qwen3.5:35b-a3b-coding-nvfp4` think** — score 88 in ~13s. Among the GGUF/plain-decode rows, the only thinking config with interactive latency; every other is ~43s or slower.
+- **`qwen3.8:27b-mlx` think** — score 91 in ~17s (nvfp4 + MTP speculative decoding). The highest-scoring interactive thinking option on Ollama, if you accept the nvfp4 build. Same quality as GGUF think (90) at a third of the latency (~54s).
 - **`qwen3.8:27b` nothink** — score 91 in ~23s. The highest-scoring dense nothink option, but it costs ~5× the latency of qwen3-coder for a 3-point *lower* score. Prefer it over qwen3-coder only when qwen3-coder's specific 007 weakness matters and think mode isn't an option.
 
 The `qwen3.5:4b-nvfp4` models are notably fast (~85–86 tok/s) due to MLX memory bandwidth — faster token generation than anything else in this table, but the quality floor at 4B limits their usefulness.
+
+`qwen3.8:27b-mlx` (nvfp4) is not in this table: at ~56 tok/s nothink / ~54 think it would top every dense row, but Ollama's MLX runner has MTP speculative decoding on by default for that build, so the rate is not comparable to the plain-decode rows here. Score 85 nothink / 91 think, ~10s / ~17s per task. See Harness Comparison.
 
 ---
 
@@ -684,7 +727,7 @@ Not all models support structured tool calling (function calling). Support is re
 
 ### Top 3 models to evaluate in an agentic harness — thinking
 
-1. **`qwen3.5:35b-a3b-coding-nvfp4` think** — Score 88, 91% consistent, ~13s/turn. The only thinking-mode model with interactive latency. First choice when you want a reasoning pass without background-tier waits.
+1. **`qwen3.5:35b-a3b-coding-nvfp4` think** — Score 88, 91% consistent, ~13s/turn. The only thinking-mode model with interactive latency among the GGUF/plain-decode configs. First choice when you want a reasoning pass without background-tier waits. **`qwen3.8:27b-mlx` think** (nvfp4 + MTP speculation) is a stronger alternative if you accept the nvfp4 build — score 91, ~17s/turn — but its MLX runner is newer and threw one parser 500 across 96 first-shot cells, so validate error handling under real tool-call load.
 
 2. **`gemma4:31b` think** — Score 93, 97% consistent, ~79s/turn. The highest-scoring local model and the strongest on 007 (11/12). 97% consistency is the best of any local model in think mode. Best for batch/background agentic tasks where quality is the priority.
 
